@@ -90,8 +90,10 @@ body.oc-open .offcanvas-backdrop { opacity: 1; visibility: visible; }
 
 /* Home hero */
 .home-hero { position: relative; color: #fff; background: var(--primary); overflow: hidden; }
-.home-hero::before { content: ""; position: absolute; inset: 0; background: var(--hero-image, none) center/cover; opacity: .4; }
-.home-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,29,68,.88) 0%, rgba(7,29,68,.72) 100%); }
+.home-hero::before { content: ""; position: absolute; inset: 0; background: var(--hero-image, none) center/cover; opacity: .7; }
+.home-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,29,68,.72) 0%, rgba(7,29,68,.5) 100%); }
+.home-hero h1, .home-hero p, .hero-contact { text-shadow: 0 1px 12px rgba(3,15,40,.45); }
+.home-hero .btn { text-shadow: none; }
 .home-hero .container { position: relative; z-index: 1; padding: 120px 20px 150px; display: grid; grid-template-columns: 1.3fr .7fr; gap: 40px; align-items: center; }
 .home-hero h1 { color: #fff; font-size: clamp(34px, 5vw, 58px); margin-bottom: 18px; }
 .home-hero p { font-size: 18px; color: #d4e0f4; max-width: 600px; }
