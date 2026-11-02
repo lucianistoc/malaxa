@@ -1,0 +1,63 @@
+[
+ {
+  "slug": "anunt-public-proiect-modernizare",
+  "date": "2026-08-12",
+  "title": "Anunț public privind proiectul de modernizare a spitalului",
+  "category": "Anunțuri",
+  "excerpt": "Informăm publicul interesat cu privire la etapa de încadrare a proiectului de modernizare.",
+  "body": [
+   "[Textul anunțului – de completat.]",
+   "Documentația poate fi consultată la sediul spitalului, de luni până vineri, în timpul programului de lucru."
+  ]
+ },
+ {
+  "slug": "anunt-public-decizia-etapei-de-incadrare",
+  "date": "2026-08-11",
+  "title": "Anunț public privind decizia etapei de încadrare",
+  "category": "Anunțuri",
+  "excerpt": "Titularul proiectului anunță publicul interesat asupra deciziei etapei de încadrare.",
+  "body": [
+   "[Textul anunțului – de completat.]"
+  ]
+ },
+ {
+  "slug": "anunt-proiect-extindere",
+  "date": "2026-07-22",
+  "title": "Anunț proiect de extindere și modernizare",
+  "category": "Anunțuri",
+  "excerpt": "Anunț privind depunerea solicitării de emitere a acordului de mediu.",
+  "body": [
+   "[Textul anunțului – de completat.]"
+  ]
+ },
+ {
+  "slug": "campanie-de-preventie",
+  "date": "2026-06-10",
+  "title": "Campanie de prevenție: analize gratuite pentru comunitate",
+  "category": "Evenimente",
+  "excerpt": "Spitalul organizează o campanie de screening gratuit pentru afecțiuni cardiovasculare.",
+  "body": [
+   "[Detaliile campaniei – de completat.]"
+  ]
+ },
+ {
+  "slug": "interviu-medic",
+  "date": "2026-05-02",
+  "title": "Interviu cu un medic din echipa noastră",
+  "category": "Apariții media",
+  "excerpt": "Despre vocație, responsabilitate și ce înseamnă să fii alături de pacienți.",
+  "body": [
+   "[Textul interviului – de completat.]"
+  ]
+ },
+ {
+  "slug": "apartie-media",
+  "date": "2026-04-15",
+  "title": "Spitalul nostru în presă",
+  "category": "Apariții media",
+  "excerpt": "O selecție a aparițiilor recente în presa scrisă și online.",
+  "body": [
+   "[Conținut – de completat.]"
+  ]
+ }
+]

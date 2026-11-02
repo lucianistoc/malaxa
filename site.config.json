@@ -1,0 +1,58 @@
+{
+  "name": "Spitalul Malaxa",
+  "short_name": "Malaxa",
+  "legal_name": "Spitalul Clinic Malaxa",
+  "tagline": "Grijă pentru comunitate",
+  "hero_title": "Îngrijire medicală de încredere, pentru fiecare pacient",
+  "hero_subtitle": "Medici dedicați, aparatură modernă și o echipă care pune omul pe primul loc.",
+  "founded": "1950",
+  "years": "75",
+  "logo_image": "",
+  "logo_text": "MALAXA",
+  "logo_subtext": "SPITALUL CLINIC",
+  "colors": {
+    "primary": "#061f5c",
+    "primary_dark": "#03184a",
+    "accent": "#10b4d1",
+    "accent_dark": "#0b8fa7",
+    "highlight": "#e2231a",
+    "soft": "#f3f7fd"
+  },
+  "contact": {
+    "phone": "021 000 00 00",
+    "phone_href": "+40210000000",
+    "phone_hours": "08:00 – 20:00",
+    "phone_appointments": "021 000 00 01",
+    "email": "secretariat@exemplu.ro",
+    "email_public_info": "informatii@exemplu.ro",
+    "public_info_officer": "[Nume persoană responsabilă]",
+    "address": "Str. Exemplu nr. 1, Sector X, București",
+    "address_short": "Str. Exemplu nr. 1, București",
+    "map_query": "Bucuresti",
+    "program": "Luni – Vineri: 08:00 – 20:00",
+    "audiente": "Marți: 10:00 – 12:00, cu programare la secretariat",
+    "cui": "RO00000000"
+  },
+  "transport": {
+    "metrou": "Stația [de completat] – M1/M3",
+    "autobuz": "Liniile [de completat]",
+    "troleibuz": "Liniile [de completat]",
+    "tramvai": "Liniile [de completat]"
+  },
+  "stats": [
+    {"value": 100000, "label": "Pacienți/an"},
+    {"value": 400, "label": "Servicii decontate"},
+    {"value": 350, "label": "Medici"},
+    {"value": 300, "label": "Locuri spitalizare"},
+    {"value": 25, "label": "Specialități medicale"}
+  ],
+  "social": {
+    "facebook": "https://facebook.com/",
+    "instagram": "",
+    "youtube": "",
+    "linkedin": ""
+  },
+  "accreditation_badge": "ANMCS – Acreditat",
+  "base_url": "https://www.exemplu.ro",
+  "lang": "ro"
+}

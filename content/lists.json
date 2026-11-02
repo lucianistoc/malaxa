@@ -1,0 +1,70 @@
+{
+  "faq": [
+    {"q": "Cum fac o programare?", "a": "Programările se fac telefonic, la numărul de programări, de luni până vineri, în intervalul afișat. Pentru unele specialități există și numere dedicate, menționate pe pagina fiecărei secții."},
+    {"q": "De ce documente am nevoie pentru o consultație gratuită?", "a": "Bilet de trimitere de la medicul de familie sau de la un medic specialist aflat în contract cu CAS, act de identitate și dovada calității de asigurat (card de sănătate)."},
+    {"q": "Pot veni la consultație fără bilet de trimitere?", "a": "Da, în regim cu plată, conform listei de tarife afișate în secțiunea Servicii medicale cu plată."},
+    {"q": "Ce trebuie să aduc la internare?", "a": "Actul de identitate, cardul de sănătate, biletul de internare, documentele medicale anterioare, lista medicației curente și obiecte de igienă personală."},
+    {"q": "Cum obțin o copie a documentelor medicale?", "a": "Pe baza unei cereri depuse la registratură sau trimise prin email, conform procedurii afișate în secțiunea Eliberare fișe și certificate medicale."},
+    {"q": "Care este programul de vizită?", "a": "Programul de vizită și regulile pentru vizitatori sunt afișate pe pagina Reguli și program de vizită."},
+    {"q": "Unde pot depune o sesizare sau o reclamație?", "a": "La registratura spitalului, prin email la adresa secretariatului sau folosind formularul de feedback de pe site."},
+    {"q": "Există parcare pentru pacienți?", "a": "[Informație de completat – parcare, acces auto, acces persoane cu dizabilități.]"}
+  ],
+  "prices": [
+    {"group": "Consultații", "items": [["Consultație medic primar", "200 lei"], ["Consultație medic specialist", "150 lei"], ["Control (în 30 de zile)", "100 lei"], ["Interpretare investigații", "80 lei"]]},
+    {"group": "Laborator – Biochimie", "items": [["Glicemie", "15 lei"], ["Colesterol total", "15 lei"], ["Trigliceride", "15 lei"], ["Creatinină", "15 lei"], ["TGO / TGP", "15 lei / analiză"]]},
+    {"group": "Laborator – Hematologie", "items": [["Hemoleucogramă completă", "25 lei"], ["VSH", "10 lei"], ["Timp de protrombină + INR", "25 lei"]]},
+    {"group": "Imagistică", "items": [["Radiografie toracică", "80 lei"], ["Ecografie abdominală", "150 lei"], ["CT (o regiune, nativ)", "400 lei"], ["RMN (o regiune, nativ)", "700 lei"]]},
+    {"group": "Cardiologie", "items": [["EKG", "50 lei"], ["Ecocardiografie", "200 lei"], ["Holter EKG 24h", "250 lei"]]},
+    {"group": "Proceduri ambulatorii", "items": [["Pansament simplu", "30 lei"], ["Scoatere fire", "40 lei"], ["Injecție intramusculară", "15 lei"]]},
+    {"group": "Documente medicale", "items": [["Certificat medical", "50 lei"], ["Duplicat documente medicale", "30 lei"]]}
+  ],
+  "public_interest": [
+    {"title": "Declarații de avere și interese", "icon": "document"},
+    {"title": "Achiziții publice", "icon": "cart"},
+    {"title": "Contracte", "icon": "contract"},
+    {"title": "Contracte achiziții", "icon": "handshake"},
+    {"title": "Bugete și bilanțuri", "icon": "chart"},
+    {"title": "Contractul colectiv de muncă", "icon": "pen"},
+    {"title": "Membrii consiliului de administrație", "icon": "people"},
+    {"title": "Consiliul de etică", "icon": "people"},
+    {"title": "Drepturi salariale", "icon": "money"},
+    {"title": "Rapoarte", "icon": "clipboard"},
+    {"title": "Farmacie", "icon": "pill"},
+    {"title": "Regulament intern al spitalului", "icon": "document"},
+    {"title": "Registrul riscurilor de corupție", "icon": "gavel"},
+    {"title": "Codul de etică și de conduită", "icon": "star"},
+    {"title": "Plan de integritate", "icon": "check"},
+    {"title": "Organigramă", "icon": "org"},
+    {"title": "Linii de gardă", "icon": "hands"},
+    {"title": "SPLIAAM", "icon": "shield"},
+    {"title": "Medicina Muncii", "icon": "helmet"},
+    {"title": "Programe naționale", "icon": "people"}
+  ],
+  "management": [
+    {"name": "[Nume Prenume]", "role": "Manager"},
+    {"name": "[Nume Prenume]", "role": "Director medical"},
+    {"name": "[Nume Prenume]", "role": "Director financiar-contabil"}
+  ],
+  "board": [
+    {"group": "Reprezentanți ai Ministerului Sănătății", "members": ["[Nume Prenume]", "[Nume Prenume]"]},
+    {"group": "Reprezentanți ai Primarului General", "members": ["[Nume Prenume]", "[Nume Prenume]"]},
+    {"group": "Reprezentant al Consiliului General", "members": ["[Nume Prenume]"]},
+    {"group": "Reprezentant al Administrației Spitalelor", "members": ["[Nume Prenume]"]},
+    {"group": "Reprezentanți ai universității de medicină", "members": ["[Nume Prenume]", "[Nume Prenume]"]},
+    {"group": "Reprezentanți ai Colegiului Medicilor (invitați)", "members": ["[Nume Prenume]", "[Nume Prenume]"]},
+    {"group": "Reprezentanți OAMGMAMR (invitați)", "members": ["[Nume Prenume]", "[Nume Prenume]"]},
+    {"group": "Reprezentanți ai sindicatului", "members": ["[Nume Prenume]", "[Nume Prenume]"]},
+    {"group": "Secretar", "members": ["[Nume Prenume]"]}
+  ],
+  "values": [
+    {"title": "Empatie, umanitate și respect", "text": "Tratăm fiecare pacient cu demnitate, ascultăm și explicăm."},
+    {"title": "Excelență profesională", "text": "Investim continuu în formarea echipei și în standarde clinice înalte."},
+    {"title": "Inovație și progres", "text": "Adoptăm tehnologii și metode noi atunci când aduc beneficii reale pacienților."},
+    {"title": "Transparență", "text": "Comunicăm deschis despre activitatea, rezultatele și resursele spitalului."}
+  ],
+  "contests": [
+    {"title": "Concurs ocupare post medic specialist – [secție]", "date": "2026-09-15", "status": "Rezultate finale"},
+    {"title": "Concurs ocupare post asistent medical – [secție]", "date": "2026-08-20", "status": "Rezultate proba scrisă"},
+    {"title": "Concurs ocupare post infirmier – [secție]", "date": "2026-07-10", "status": "Anunț concurs"}
+  ]
+}

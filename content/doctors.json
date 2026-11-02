@@ -1,0 +1,578 @@
+[
+ {
+  "slug": "medic-ambulatoriu-integrat-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "ambulatoriu-integrat",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-ambulatoriu-integrat-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "ambulatoriu-integrat",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-ambulatoriu-integrat-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "ambulatoriu-integrat",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-ambulatoriu-sportivi-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "ambulatoriu-sportivi",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-ambulatoriu-sportivi-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "ambulatoriu-sportivi",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-ambulatoriu-sportivi-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "ambulatoriu-sportivi",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-anatomie-patologica-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "anatomie-patologica",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-anatomie-patologica-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "anatomie-patologica",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-anatomie-patologica-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "anatomie-patologica",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-ati-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "ati",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-ati-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "ati",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-ati-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "ati",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-boli-infectioase-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "boli-infectioase",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-boli-infectioase-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "boli-infectioase",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-boli-infectioase-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "boli-infectioase",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-cardiologie-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "cardiologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-cardiologie-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "cardiologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-cardiologie-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "cardiologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-chirurgie-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "chirurgie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-chirurgie-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "chirurgie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-chirurgie-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "chirurgie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-cpu-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "cpu",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-cpu-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "cpu",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-cpu-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "cpu",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-dermatologie-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "dermatologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-dermatologie-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "dermatologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-dermatologie-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "dermatologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-endocrinologie-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "endocrinologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-endocrinologie-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "endocrinologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-endocrinologie-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "endocrinologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-epidemiologie-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "epidemiologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-epidemiologie-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "epidemiologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-epidemiologie-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "epidemiologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-hematologie-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "hematologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-hematologie-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "hematologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-hematologie-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "hematologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-laborator-analize-medicale-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "laborator-analize-medicale",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-laborator-analize-medicale-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "laborator-analize-medicale",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-laborator-analize-medicale-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "laborator-analize-medicale",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-laborator-de-hematologie-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "laborator-de-hematologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-laborator-de-hematologie-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "laborator-de-hematologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-laborator-de-hematologie-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "laborator-de-hematologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-medicina-interna-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "medicina-interna",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-medicina-interna-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "medicina-interna",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-medicina-interna-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "medicina-interna",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-medicina-muncii-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "medicina-muncii",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-medicina-muncii-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "medicina-muncii",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-medicina-muncii-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "medicina-muncii",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-neurologie-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "neurologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-neurologie-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "neurologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-neurologie-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "neurologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-obstetrica-ginecologie-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "obstetrica-ginecologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-obstetrica-ginecologie-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "obstetrica-ginecologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-obstetrica-ginecologie-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "obstetrica-ginecologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-oftalmologie-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "oftalmologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-oftalmologie-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "oftalmologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-oftalmologie-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "oftalmologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-oncologie-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "oncologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-oncologie-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "oncologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-oncologie-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "oncologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-orl-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "orl",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-orl-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "orl",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-orl-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "orl",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-psihiatrie-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "psihiatrie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-psihiatrie-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "psihiatrie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-psihiatrie-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "psihiatrie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-radiologie-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "radiologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-radiologie-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "radiologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-radiologie-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "radiologie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-radioterapie-1",
+  "name": "Dr. Nume Prenume 1",
+  "grade": "Medic primar",
+  "specialty": "radioterapie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-radioterapie-2",
+  "name": "Dr. Nume Prenume 2",
+  "grade": "Medic primar",
+  "specialty": "radioterapie",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "medic-radioterapie-3",
+  "name": "Dr. Nume Prenume 3",
+  "grade": "Medic specialist",
+  "specialty": "radioterapie",
+  "photo": "",
+  "bio": ""
+ }
+]
