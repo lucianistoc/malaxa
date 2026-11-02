@@ -1,0 +1,60 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  b97f18f3-bc5d-45e8-9311-d6a3e6eda718:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 2feb8465-150a-4309-8135-e4950c163841 # Titlu secțiune
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: acf96a84-50d9-4a8a-9b63-59dc402d888a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: d357be62-5f79-4691-acd2-751d09445d0c # Text
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cb7ccf37-f05e-4e1a-b6db-36ccbde36e86
+            userCondition: null
+            warning: null
+            width: 100
+        name: Conținut
+        uid: 1ed07052-9c45-490d-a5d2-3c12131da1fb
+        userCondition: null
+    thumbFieldKey: null
+handle: blockText
+hasTitleField: false
+icon: null
+name: Text
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{heading ?: "Text"}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

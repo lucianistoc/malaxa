@@ -1,0 +1,139 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  3033a932-738d-487b-abaa-4a6bc8ee7123:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: f9149a1e-d7ce-4b6c-b652-8addf5eddc19
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 000061d7-26b1-4619-9d7e-b92c666ac71f # Specialitate
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 376af0cd-575f-419a-91ac-7e090865cc20
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 3497914f-130f-4935-8115-df692aef0ea4 # Grad profesional
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d5146847-7120-4818-8217-4ae5c0cd7745
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 5d135726-90c4-4987-9460-025acea75b9c # Funcție
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fe5a38fa-39ac-45c2-b673-d374fbd89dc4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 2b85a2a8-ee09-44ff-894d-b0ee8790ba3b # Fotografie
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e3710e3c-6f4f-4071-97d9-321af76553a0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: b0bffc6d-e026-4976-b227-5ba29c849407 # Despre medic
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 826aa757-acf0-438c-ab35-d6f54c7a009a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Conținut
+        uid: 51a1f905-0877-4ac4-8821-b1a6074a797a
+        userCondition: null
+    thumbFieldKey: null
+handle: doctor
+hasTitleField: true
+icon: null
+name: Medic
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

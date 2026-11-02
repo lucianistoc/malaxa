@@ -1,0 +1,63 @@
+columnSuffix: null
+handle: tableRows
+instructions: null
+name: 'Rânduri tabel'
+searchable: false
+settings:
+  addRowLabel: 'Adaugă rând'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Coloana 1'
+            -
+              - handle
+              - c1
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Coloana 2'
+            -
+              - handle
+              - c2
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Coloana 3'
+            -
+              - handle
+              - c3
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

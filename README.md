@@ -12,6 +12,9 @@ old site is the "Declarații de avere" tile, which points to the old site's page
 Still to complete by the hospital: doctor photos (`photo` in `content/doctors.json`), the GDPR page text
 (`confidentialitate`), dates for news items, and the mission/values texts in `content/lists.json`.
 
+> **Craft CMS version:** the same site, editable from a CMS control panel, lives in [`craft/`](craft/README.md).
+> The static generator below stays as-is and still powers the GitHub Pages deploy.
+
 A complete static website for a Romanian public hospital. The page structure and navigation follow a typical
 clinical-hospital site: about, management, specialties, outpatient clinic, doctors, patient and visitor info,
 public-interest (Legea 544/2001) and contact. Everything brand-specific lives in one config file, so the same code can

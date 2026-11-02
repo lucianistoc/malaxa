@@ -1,0 +1,77 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  6a75a301-1467-46ac-b6a8-7c0f3b5cbbaa:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 2feb8465-150a-4309-8135-e4950c163841 # Titlu secțiune
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5dc57cdc-4265-461b-93b2-30df58ec1fa0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f1a7547d-48cb-4421-b19e-268c4bf46fde # Capete de tabel
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 41955b82-e110-4fe3-b84b-afac5c11ad79
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ce2df70c-d69e-48d0-a892-9e58cf1e5902 # Rânduri tabel
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 38cdfe8b-c6ab-4166-9932-a0ed0f600c0a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Conținut
+        uid: ccc52a00-e370-4b8f-865d-1de2cd951c99
+        userCondition: null
+    thumbFieldKey: null
+handle: blockTable
+hasTitleField: false
+icon: null
+name: Tabel
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{heading ?: "Tabel"}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

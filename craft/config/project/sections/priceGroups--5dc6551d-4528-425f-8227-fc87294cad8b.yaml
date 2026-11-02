@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 1cf60fe9-5c8d-4eb3-b096-7b1e295b1e66 # Grupă de tarife
+handle: priceGroups
+maxAuthors: 1
+minAuthors: 1
+name: Tarife
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  41b27c9e-7368-451c-a99e-d03a10527f71: # Test
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: 7d345b0c-cfe1-4e80-9966-5db0b24d059e
+type: structure

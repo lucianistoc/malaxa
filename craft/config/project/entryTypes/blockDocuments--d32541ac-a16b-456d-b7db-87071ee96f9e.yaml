@@ -1,0 +1,77 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  1256a40e-10c2-4a7c-8e49-b8b0a401c793:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 2feb8465-150a-4309-8135-e4950c163841 # Titlu secțiune
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a5496c0d-e382-49fe-bec1-ef8551a48a66
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: e14f4e4d-3c59-4e9f-9989-1632e801beee # Documente
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9947632d-a596-46e2-95bf-34caf4f8ca2e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: be4f204c-5fa3-46e7-ad16-46409de6eb56 # Linkuri
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d0b4a33b-50c7-4df2-8c26-b78f41d93cb3
+            userCondition: null
+            warning: null
+            width: 100
+        name: Conținut
+        uid: c9905a4a-3da2-45d4-a31a-d85bfdd17fb0
+        userCondition: null
+    thumbFieldKey: null
+handle: blockDocuments
+hasTitleField: false
+icon: null
+name: Documente
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{heading ?: "Documente"}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

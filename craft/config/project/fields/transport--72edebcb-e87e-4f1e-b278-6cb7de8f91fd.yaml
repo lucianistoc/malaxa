@@ -1,0 +1,63 @@
+columnSuffix: null
+handle: transport
+instructions: null
+name: Transport
+searchable: false
+settings:
+  addRowLabel: 'Adaugă rând'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Mijloc
+            -
+              - handle
+              - label
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Linii / stații'
+            -
+              - handle
+              - text
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - Iconiță
+            -
+              - handle
+              - icon
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

@@ -1,0 +1,115 @@
+{% extends '_layout' %}
+{% from '_partials/icons.twig' import icon %}
+{% import '_partials/ui.twig' as ui %}
+{% set pageTitle = siteSettings.legalName %}
+
+{% block content %}
+{%- set s = siteSettings -%}
+{%- set book = s.bookingUrl ?: siteUrl('contact') ~ '#programari' -%}
+{%- set tgt = book matches '/^https?:/' ? ' target="_blank" rel="noopener"' : '' -%}
+{%- set img = entry.image.one() -%}
+<section class="home-hero">
+  <div class="container">
+    <div>
+      <span class="eyebrow" style="color:var(--accent)">{{ s.legalName }}</span>
+      <h1>{{ s.heroTitle }}</h1>
+      <p>{{ s.heroSubtitle }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="{{ book }}"{{ tgt|raw }}>Programări online</a>
+        <a class="btn btn-outline" style="color:#fff" href="{{ ui.pageUrl('specialitati-medicale') }}">Specialități medicale</a>
+      </div>
+    </div>
+    <div class="hero-contact">
+      <h3>Contactează-ne</h3>
+      <ul>
+        <li>{{ icon('pin') }}<span>{{ s.address }}</span></li>
+        <li>{{ icon('phone') }}<span>Centrală: <a href="tel:{{ ui.tel(s.phone) }}">{{ s.phone }}</a></span></li>
+        {% if s.phoneAppointments %}<li>{{ icon('calendar') }}<span>Programări: <a href="tel:{{ ui.tel(s.phoneAppointments) }}">{{ s.phoneAppointments }}</a></span></li>{% endif %}
+        <li>{{ icon('mail') }}<a href="mailto:{{ s.email }}">{{ s.email }}</a></li>
+        <li>{{ icon('ambulance') }}<span>Gardă non-stop, 24/24 h</span></li>
+      </ul>
+      <a class="btn btn-white" href="{{ ui.pageUrl('contact') }}">Contact {{ icon('arrow') }}</a>
+    </div>
+  </div>
+</section>
+<div class="container"><div class="quick-links">
+  {%- for q in [['Informații pacienți', 'internare-si-externare', 'clipboard'], ['Program ambulatoriu', 'ambulatoriu', 'calendar'], ['Program de vizită', 'reguli-si-program-de-vizita', 'clock'], ['Anunțuri și concursuri', 'cariere', 'document'], ['Tarife', 'servicii-medicale-cu-plata', 'money']] -%}
+    <a href="{{ ui.pageUrl(q[1]) }}">{{ icon(q[2]) }}<span>{{ q[0] }}</span></a>
+  {%- endfor -%}
+</div></div>
+
+<section class="section">
+  <div class="container split">
+    <div class="media">{% if img %}<img src="{{ img.url }}" alt="Sediul {{ s.legalName }}">{% else %}{{ icon('hospital') }}{% endif %}<div class="media-badge"><strong>{{ s.founded }}</strong>anul înființării</div></div>
+    <div>
+      <span class="eyebrow">Despre noi</span>
+      <h2 class="h2">{{ entry.heading }}</h2>
+      <div class="muted">{{ entry.body }}</div>
+      <div class="stats stats-light" style="grid-template-columns:repeat(2,1fr);text-align:left;margin:30px 0">
+        {% for st in s.stats|slice(0, 4) %}{{ ui.stat(st.value, st.label) }}{% endfor %}
+      </div>
+      <div class="hero-actions"><a class="btn btn-primary" href="{{ ui.pageUrl('despre-noi') }}">Află mai multe</a>
+      <a class="btn btn-outline" style="color:var(--primary)" href="tel:{{ ui.tel(s.phone) }}">{{ icon('phone') }} {{ s.phone }}</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm bg-primary"><div class="container stats">{% for st in s.stats %}{{ ui.stat(st.value, st.label) }}{% endfor %}</div></section>
+
+<section class="section bg-soft">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Specialități medicale</span><h2>Secții, compartimente și laboratoare</h2>
+      <p>Secții clinice cu paturi, servicii paraclinice și ambulatoriu de specialitate, care lucrează împreună pentru diagnostic și tratament.</p></div>
+    <div class="grid g4">{% for sp in craft.entries.section('specialties').ambulatoryOnly('not 1').all() %}{{ ui.specCard(sp) }}{% endfor %}</div>
+  </div>
+</section>
+
+<section class="section"><div class="container"><div class="cta-band">
+  <div><h2>Servicii decontate prin CASMB</h2><p>Consultații, analize și investigații gratuite pentru asigurați, pe baza biletului de trimitere.</p></div>
+  <a class="btn btn-white" href="{{ ui.pageUrl('servicii-decontate-prin-cas') }}">Mai multe detalii {{ icon('arrow') }}</a>
+</div></div></section>
+
+<section class="section bg-soft">
+  <div class="container split" style="align-items:start">
+    <div>
+      <span class="eyebrow">Programări</span><h2 class="h2">Ai nevoie de o consultație sau de o internare?</h2>
+      <p class="muted">Programările se fac telefonic sau online. Internarea poate fi programată și de medicul curant, după consultul în ambulatoriu.</p>
+      <div class="info-box"><span class="ring">{{ icon('phone') }}</span><div><small>Centrală (apoi tasta secției)</small><strong>{{ s.phone }}</strong></div></div>
+      {% if s.phoneAppointments %}<div class="info-box"><span class="ring">{{ icon('calendar') }}</span><div><small>Programări</small><strong>{{ s.phoneAppointments }}</strong></div></div>{% endif %}
+      <a class="btn btn-primary" href="{{ book }}"{{ tgt|raw }}>Programează-te online {{ icon('arrow') }}</a>
+    </div>
+    <div class="form-card">
+      <h3>{{ icon('clock') }} Program de vizită</h3>
+      <ul class="visit-list">{% for v in s.visiting %}<li><strong>{{ v.section }}:</strong> {{ v.line1 }}{% if v.line2 %}<br>{{ v.line2 }}{% endif %}</li>{% endfor %}</ul>
+      <a class="read-more" href="{{ ui.pageUrl('reguli-si-program-de-vizita') }}">Reguli pentru vizitatori →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">De ce să ne alegi?</span><h2>Pentru că în centrul a tot ceea ce facem ești tu, pacientul nostru.</h2></div>
+    <div class="grid g2">
+      {% for c in entry.cardItems %}<div class="feature"><div class="card-icon">{{ icon(c.icon) }}</div><div><h3>{{ c.title }}</h3><p>{{ c.text }}</p></div></div>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section bg-soft">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Profesionalism și dăruire</span><h2>Cunoaște-ne echipa</h2>
+      <p>Medici cu experiență, care lucrează împreună pentru un singur lucru: binele tău.</p></div>
+    {%- set featured = craft.entries.section('doctors').role(['Șef*', 'Coordonator*']).limit(8).all() -%}
+    <div class="grid g4">{% for d in featured %}{{ ui.doctorCard(d, true) }}{% endfor %}</div>
+    <div class="center mt-40"><a class="btn btn-primary" href="{{ ui.pageUrl('team') }}">Toți medicii</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Noutăți</span><h2>Noutăți și campanii</h2></div>
+    <div class="grid g3">{% for n in craft.entries.section('news').limit(3).all() %}{{ ui.postCard(n) }}{% endfor %}</div>
+    <div class="center mt-40"><a class="btn btn-primary" href="{{ ui.pageUrl('noutati') }}">Vezi toate</a></div>
+  </div>
+</section>
+{% endblock %}

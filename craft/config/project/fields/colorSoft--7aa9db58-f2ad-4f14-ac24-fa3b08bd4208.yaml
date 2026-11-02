@@ -1,0 +1,10 @@
+columnSuffix: null
+handle: colorSoft
+instructions: null
+name: 'Culoare fundal deschis'
+searchable: false
+settings:
+  allowCustomColors: true
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

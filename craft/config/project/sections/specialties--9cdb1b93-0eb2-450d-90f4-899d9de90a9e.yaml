@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 59257e2a-9edc-49dc-b014-de2275ee311e # Specialitate
+handle: specialties
+maxAuthors: 1
+minAuthors: 1
+name: 'Specialități medicale'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  41b27c9e-7368-451c-a99e-d03a10527f71: # Test
+    enabledByDefault: true
+    hasUrls: true
+    template: _specialties/entry
+    uriFormat: 'service/{slug}'
+structure:
+  maxLevels: 1
+  uid: 76a58c47-62c5-44bf-b5e1-bd89eedb3029
+type: structure

@@ -1,0 +1,10 @@
+columnSuffix: null
+handle: colorAccent
+instructions: null
+name: 'Culoare accent'
+searchable: false
+settings:
+  allowCustomColors: true
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

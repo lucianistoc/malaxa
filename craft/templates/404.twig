@@ -1,0 +1,7 @@
+{% extends '_layout' %}
+{% import '_partials/ui.twig' as ui %}
+{% set pageTitle = 'Pagina nu a fost găsită' %}
+{% block content %}
+{{ ui.pageHero('Pagina nu a fost găsită') }}
+<section class="section"><div class="container center"><p>Ne pare rău, pagina căutată nu există.</p><a class="btn btn-primary" href="{{ siteUrl }}">Înapoi la pagina principală</a></div></section>
+{% endblock %}

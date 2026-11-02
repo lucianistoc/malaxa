@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 37fe1922-91ce-4c92-bc92-9816ae841ea9 # Medic
+handle: doctors
+maxAuthors: 1
+minAuthors: 1
+name: Medici
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  41b27c9e-7368-451c-a99e-d03a10527f71: # Test
+    enabledByDefault: true
+    hasUrls: true
+    template: _doctors/entry
+    uriFormat: 'team/{slug}'
+structure:
+  maxLevels: 1
+  uid: 5b86f2c3-ded9-4678-8892-0f8c389240f0
+type: structure

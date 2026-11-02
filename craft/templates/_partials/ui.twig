@@ -1,0 +1,228 @@
+{#- Shared UI macros. Markup and class names match the static site so both share static/css/style.css. -#}
+{% from '_partials/icons.twig' import icon %}
+
+{#- Turn a stored link into an href: absolute URLs, tel:, mailto: and #anchors stay as-is; site paths get the site URL. -#}
+{% macro href(u) -%}
+  {%- if u matches '/^(https?:|tel:|mailto:|#)/' %}{{ u }}{% else %}{{ siteUrl(u) }}{% endif -%}
+{%- endmacro %}
+
+{#- URL of a page in the "Pagini" structure by slug (falls back to the site path). -#}
+{% macro pageUrl(slug) -%}
+  {%- set p = craft.entries.section('pages').slug(slug).one() -%}{{ p ? p.url : siteUrl(slug) }}
+{%- endmacro %}
+
+{% macro isExternal(u) -%}{{ u matches '/^https?:/' ? '1' : '' }}{%- endmacro %}
+
+{% macro tel(phone) -%}+4{{ phone|replace('/\\D/', '') }}{%- endmacro %}
+
+{% macro docLink(title, url, cls) -%}
+  {%- from '_partials/icons.twig' import icon -%}
+  {%- set external = url matches '/^https?:/' -%}
+  {%- set isFile = url matches '/\\.(pdf|docx?|xlsx?)$/i' -%}
+  <a class="{{ cls ?? 'doc-link' }}" href="{{ _self.href(url) }}"{% if external or isFile %} target="_blank" rel="noopener"{% endif %}>{{ icon(isFile ? 'download' : (external ? 'external' : 'arrow')) }}<span>{{ title }}</span></a>
+{%- endmacro %}
+
+{#- Assets (related files) + link rows from a docLinks table -#}
+{% macro docList(assets, links, cls) -%}
+  {%- if assets|length or links|length -%}
+  <div class="doc-list{{ cls ? ' ' ~ cls }}">
+    {%- for a in assets %}{{ _self.docLink(a.title, a.url) }}{% endfor -%}
+    {%- for l in links ?? [] %}{% if l.url %}{{ _self.docLink(l.title, l.url) }}{% endif %}{% endfor -%}
+  </div>
+  {%- endif -%}
+{%- endmacro %}
+
+{% macro list(items, cls) -%}
+  {%- set cls = cls ?? 'list-check' -%}
+  {%- set items = items ?: [] -%}
+  <ul class="{{ cls }}">
+  {%- for row in items -%}
+    {%- set t = row.text ?? row -%}
+    {%- if t|length < 60 and t ends with ':' -%}
+      </ul><h4 class="list-sub">{{ t|trim(':') }}</h4><ul class="{{ cls }}">
+    {%- elseif t -%}
+      <li>{{ t|ucfirst }}</li>
+    {%- endif -%}
+  {%- endfor -%}
+  </ul>
+{%- endmacro %}
+
+{% macro paras(text) -%}
+  {%- for p in text|split("\n\n") %}{% if p|trim %}<p>{{ p|trim|nl2br }}</p>{% endif %}{% endfor -%}
+{%- endmacro %}
+
+{% macro accordion(items, openFirst) -%}
+  <div class="accordion">
+  {%- for i in items -%}
+    <details{% if openFirst ?? true and loop.first %} open{% endif %}><summary>{{ i.q }}</summary><div class="acc-body">{{ i.a|raw }}</div></details>
+  {%- endfor -%}
+  </div>
+{%- endmacro %}
+
+{% macro initials(name) -%}
+  {%- set clean = name|replace('/\\(.*?\\)|^(Dr\\.|Biol\\.|Psiholog)\\s*/', '')|trim -%}
+  {%- set parts = clean|split(' ')|filter(p => p matches '/^\\pL/u') -%}
+  {%- for p in parts|slice(0, 2) %}{{ p|slice(0, 1)|upper }}{% endfor -%}
+{%- endmacro %}
+
+{% macro doctorCard(d, showSpec) -%}
+  {%- set spec = d.specialty.one() -%}
+  {%- set sub = showSpec ?? false ? (spec.title ?? '') : d.grade -%}
+  {%- set role = d.role ? '<em class="role">' ~ d.role|e ~ '</em>' : '' -%}
+  {%- set photo = d.photo.one() -%}
+  {%- if photo -%}
+    <a class="doctor" href="{{ d.url }}"><div class="doctor-photo"><img src="{{ photo.url }}" alt="{{ d.title }}" loading="lazy"></div>{{ role|raw }}<h3>{{ d.title }}</h3><span>{{ sub }}</span></a>
+  {%- else -%}
+    <a class="doctor doctor-card" href="{{ d.url }}"><span class="avatar">{{ _self.initials(d.title) }}</span>{{ role|raw }}<h3>{{ d.title }}</h3><span>{{ sub }}</span></a>
+  {%- endif -%}
+{%- endmacro %}
+
+{% macro specCard(s, anchor) -%}
+  {%- from '_partials/icons.twig' import icon -%}
+  {%- set n = craft.entries.section('doctors').relatedTo({targetElement: s, field: 'specialty'}).count() -%}
+  {%- set foot = n ? n ~ (n == 1 ? ' specialist' : ' specialiști') : s.beds -%}
+  <a class="card" href="{{ s.url }}{{ anchor ?? '' }}">
+    <div class="card-icon">{{ icon(s.iconName.value ?? 'hospital') }}</div><h3>{{ s.title }}</h3><p>{{ s.summary }}</p>
+    <div class="card-foot"><span>{{ foot }}</span><span class="more">Detalii →</span></div></a>
+{%- endmacro %}
+
+{% macro postCard(n) -%}
+  {%- from '_partials/icons.twig' import icon -%}
+  {%- set img = n.image.one() -%}
+  <article class="post-card"><a class="post-thumb" href="{{ n.url }}" tabindex="-1">{% if img %}<img src="{{ img.url }}" alt="" loading="lazy">{% else %}{{ icon('hospital') }}{% endif %}</a>
+  <div class="post-body"><div class="post-meta"><b>{{ n.category }}</b>{% if n.showDate %}<time datetime="{{ n.postDate|date('Y-m-d') }}">{{ n.postDate|date('j F Y') }}</time>{% endif %}</div>
+  <h3><a href="{{ n.url }}">{{ n.title }}</a></h3><p>{{ n.excerpt }}</p>
+  <a class="read-more" href="{{ n.url }}">Citește mai mult →</a></div></article>
+{%- endmacro %}
+
+{% macro cards(items) -%}
+  {%- from '_partials/icons.twig' import icon -%}
+  {%- set items = items ?: [] -%}
+  {#- Long card texts read better two per row; otherwise 4 per row for 4/8 cards, else 3. -#}
+  {%- set textLen = items|reduce((carry, i) => carry + (i.text|length), 0) / max(items|length, 1) -%}
+  {%- set cols = items|length <= 2 or textLen > 90 ? 'g2' : (items|length % 4 == 0 ? 'g4' : 'g3') -%}
+  <div class="grid {{ cols }}">
+  {%- for c in items -%}
+    {%- set tag = c.url ? 'a' : 'div' -%}
+    {%- if c.icon == 'user' -%}
+      {#- People cards: initials avatar, name, then role / details -#}
+      {%- set lines = c.text|split("\n") -%}
+      <div class="card center-card"><div class="doctor-photo sm"><span class="initials">{{ _self.initials(c.title) }}</span></div><h3>{{ c.title }}</h3><p><strong>{{ lines|first }}</strong>{% for l in lines|slice(1) %}<br>{{ l }}{% endfor %}</p></div>
+    {%- else -%}
+    <{{ tag }} class="card{{ not c.text ? ' center-card' }}"{% if c.url %} href="{{ _self.href(c.url) }}"{% if c.url matches '/^https?:/' %} target="_blank" rel="noopener"{% endif %}{% endif %}>
+      <div class="card-icon">{{ icon(c.icon ?: 'hospital') }}</div><h3>{{ c.title }}</h3>
+      {%- if c.text %}<p>{{ c.text|nl2br }}</p>{% endif -%}
+      {%- if c.url %}<span class="read-more">{{ c.url matches '/^https?:/' ? 'Site oficial' : 'Află mai multe' }} →</span>{% endif -%}
+    </{{ tag }}>
+    {%- endif -%}
+  {%- endfor -%}
+  </div>
+{%- endmacro %}
+
+{% macro gallery(images) -%}
+  {%- if images|length -%}
+  <div class="gallery">{% for g in images %}<a href="{{ g.url }}" data-lightbox><img src="{{ g.url }}" alt="{{ g.alt ?? '' }}" loading="lazy"></a>{% endfor %}</div>
+  {%- endif -%}
+{%- endmacro %}
+
+{#- Render a contentBlocks (Matrix) field. -#}
+{% macro blocks(blocks) -%}
+  {%- for b in blocks -%}
+    {%- set h = b.heading ?? '' -%}
+    {%- switch b.type.handle -%}
+      {%- case 'blockText' -%}
+        {% if h %}<h2>{{ h }}</h2>{% endif %}{{ b.body|replace('{siteUrl}', siteUrl) }}
+      {%- case 'blockMedia' -%}
+        {%- set img = b.image.one() -%}
+        <div class="split block-split">
+          <div class="prose">{% if h %}<h2>{{ h }}</h2>{% endif %}{{ b.body }}</div>
+          {% if img %}<div class="media"><img src="{{ img.url }}" alt="{{ img.alt ?? h }}" style="object-fit:contain;background:#fff"></div>{% endif %}
+        </div>
+      {%- case 'blockList' -%}
+        {%- set items = b.listItems ?: [] -%}
+        {%- set avg = items|reduce((c, i) => c + (i.text|length), 0) / max(items|length, 1) -%}
+        {% if h %}<h3>{{ h }}</h3>{% endif %}{{ _self.list(items, items|length > 8 and avg < 70 ? 'list-check cols' : 'list-check') }}
+      {%- case 'blockTable' -%}
+        {%- set heads = b.tableHeadings|split('|')|map(x => x|trim) -%}
+        {%- set used = heads|filter(x => x)|length ?: 3 -%}
+        {% if h %}<h2>{{ h }}</h2>{% endif %}
+        <div class="table-wrap"><table><thead><tr>{% for x in heads|slice(0, used) %}<th{% if not loop.first %} style="text-align:right"{% endif %}>{{ x }}</th>{% endfor %}</tr></thead><tbody>
+        {%- for r in b.tableRows -%}
+          {%- set cells = [r.c1, r.c2, r.c3]|slice(0, used) -%}
+          <tr{% if r.c1 == 'TOTAL' %} class="total"{% endif %}>{% for c in cells %}{% if loop.first %}<td>{{ c }}</td>{% elseif heads[1] == 'Program' %}<td>{{ c }}{% if r.c3 %}<br>{{ r.c3 }}{% endif %}</td>{% else %}<td class="price">{{ c }}</td>{% endif %}{% endfor %}</tr>
+        {%- endfor -%}
+        </tbody></table></div>
+      {%- case 'blockAccordion' -%}
+        {% if h %}<h2 class="h2">{{ h }}</h2>{% endif %}
+        {{ _self.accordion(b.accordionItems|map(i => {q: i.question, a: i.answer matches '/\\n/' ? _self.list(i.answer|split("\n")) : '<p>' ~ i.answer|e ~ '</p>'}), b.accordionItems|length < 10 and h) }}
+      {%- case 'blockDocuments' -%}
+        {% if h %}<h3>{{ h }}</h3>{% endif %}{{ _self.docList(b.documents.all(), b.docLinks, b.documents.count() > 15 ? 'scroll') }}
+      {%- case 'blockCards' -%}
+        <div class="block-cards">{% if h %}<h2>{{ h }}</h2>{% endif %}{{ _self.cards(b.cardItems) }}</div>
+      {%- case 'blockGallery' -%}
+        {% if h %}<h2>{{ h }}</h2>{% endif %}{{ _self.gallery(b.gallery.all()) }}
+      {%- case 'blockNotice' -%}
+        <p class="notice">{{ b.note }}</p>
+    {%- endswitch -%}
+  {%- endfor -%}
+{%- endmacro %}
+
+{% macro pageHero(title, crumbs) -%}
+  {%- from '_partials/icons.twig' import icon -%}
+  {%- set s = siteSettings -%}
+  <section class="page-hero">
+    <span class="hero-side">{{ s.legalName }}</span>
+    <div class="hero-social socials">{{ _self.socials() }}</div>
+    <div class="container"><h1>{{ title }}</h1><div class="breadcrumbs"><a href="{{ siteUrl }}">Acasă</a>
+      {%- for c in crumbs ?? [] %} / {% if c.url ?? false %}<a href="{{ c.url }}">{{ c.title }}</a>{% else %}{{ c.title }}{% endif %}{% endfor -%}
+    </div></div>
+    <a class="hero-phone" href="tel:{{ _self.tel(s.phone) }}"><span class="ring">{{ icon('phone') }}</span>{{ s.phone }}</a>
+  </section>
+{%- endmacro %}
+
+{% macro socials() -%}
+  {%- from '_partials/icons.twig' import icon -%}
+  {%- for l in siteSettings.socialLinks %}{% if l.url %}<a href="{{ l.url }}" aria-label="{{ l.network|capitalize }}" rel="noopener" target="_blank">{{ icon(l.network) }}</a>{% endif %}{% endfor -%}
+{%- endmacro %}
+
+{% macro contactBox(phones, hours) -%}
+  {%- from '_partials/icons.twig' import icon -%}
+  {%- set s = siteSettings -%}
+  {%- set book = s.bookingUrl ?: siteUrl('contact') ~ '#programari' -%}
+  <div class="contact-box">
+    <div class="card-icon">{{ icon('chat') }}</div>
+    <h3>Contactează-ne</h3>
+    <a class="phone" href="tel:{{ _self.tel(s.phone) }}">{{ s.phone }}</a>
+    <a class="mail" href="mailto:{{ s.email }}">{{ s.email }}</a>
+    {%- if hours|length %}<ul class="cb-list">{% for h in hours %}<li>{{ icon('clock') }}<span>{{ h.text }}</span></li>{% endfor %}</ul>{% endif -%}
+    {%- if phones|length %}<ul class="cb-list">{% for p in phones %}<li>{{ icon('phone') }}<span>{{ p.text }}</span></li>{% endfor %}</ul>{% endif -%}
+    <a class="btn btn-white" href="{{ book }}"{% if book matches '/^https?:/' %} target="_blank" rel="noopener"{% endif %}>Programări {{ icon('arrow') }}</a>
+  </div>
+{%- endmacro %}
+
+{% macro stat(value, label) -%}
+  <div><strong data-count="{{ value }}" data-prefix="+">+{{ value|number_format(0, ',', '.') }}</strong><span>{{ label }}</span></div>
+{%- endmacro %}
+
+{#- Full-width page body: every block in its own section; media blocks alternate image side and background. -#}
+{% macro wideBlocks(blocks) -%}
+  {%- set media = 0 -%}
+  {%- for b in blocks -%}
+    {%- set h = b.heading ?? '' -%}
+    {%- if b.type.handle == 'blockMedia' -%}
+      {%- set img = b.image.one() -%}
+      {%- set media = media + 1 -%}
+      <section class="section{{ media is even ? ' bg-soft' }}"><div class="container split">
+        {%- set text -%}<div class="prose">{% if h %}<h2>{{ h }}</h2>{% endif %}{{ b.body }}</div>{%- endset -%}
+        {%- set pic -%}{% if img %}<div class="media"><img src="{{ img.url }}" alt="{{ img.alt ?? h }}"></div>{% endif %}{%- endset -%}
+        {{ (media is odd ? pic ~ text : text ~ pic)|raw }}
+      </div></section>
+    {%- elseif b.type.handle == 'blockCards' -%}
+      <section class="section{{ loop.index is even and media == 0 ? ' bg-soft' }}"><div class="container">
+        {% if h %}<div class="section-head"><h2>{{ h }}</h2></div>{% endif %}{{ _self.cards(b.cardItems) }}
+      </div></section>
+    {%- else -%}
+      <section class="section-sm"><div class="container prose">{{ _self.blocks([b]) }}</div></section>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endmacro %}

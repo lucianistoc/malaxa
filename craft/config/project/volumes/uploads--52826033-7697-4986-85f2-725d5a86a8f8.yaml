@@ -1,0 +1,50 @@
+altTranslationKeyFormat: null
+altTranslationMethod: none
+fieldLayouts:
+  2113f3c3-87f8-43f2-baac-ca06730f931c:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: dfb9cf0d-ddee-47da-a6ce-523a3d5483d2
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e06cebf5-a4ba-4522-a386-1993ee9b85ae
+        userCondition: null
+    thumbFieldKey: null
+fs: uploads
+handle: uploads
+name: Fișiere
+sortOrder: 1
+subpath: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: null
+transformSubpath: ''

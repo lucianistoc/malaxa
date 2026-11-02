@@ -1,0 +1,10 @@
+columnSuffix: null
+handle: colorPrimary
+instructions: null
+name: 'Culoare principală'
+searchable: false
+settings:
+  allowCustomColors: true
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

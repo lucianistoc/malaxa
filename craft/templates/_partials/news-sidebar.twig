@@ -1,0 +1,7 @@
+{% from '_partials/icons.twig' import icon %}
+{% import '_partials/ui.twig' as ui %}
+<aside class="sidebar">
+  <div class="widget"><h3>Caută</h3><form class="search-form" style="padding:0" action="{{ siteUrl('cautare') }}"><input type="search" name="q" aria-label="Caută"><button class="btn btn-primary btn-sm" type="submit">{{ icon('search') }}</button></form></div>
+  <div class="widget"><h3>Articole recente</h3><ul>{% for n in craft.entries.section('news').limit(6).all() %}<li><a href="{{ n.url }}">{{ n.title }}</a>{% if n.showDate %}<time>{{ n.postDate|date('j F Y') }}</time>{% endif %}</li>{% endfor %}</ul></div>
+  <div class="widget"><h3>Anunțuri și concursuri</h3><ul><li><a href="{{ ui.pageUrl('cariere') }}">Concursuri și examene</a></li><li><a href="{{ ui.pageUrl('anunturi') }}">Anunțuri publicitare</a></li></ul></div>
+</aside>

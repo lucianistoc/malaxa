@@ -1,0 +1,60 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  007d353c-7249-4f4e-b054-6547044135b6:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 2feb8465-150a-4309-8135-e4950c163841 # Titlu secțiune
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 424f1f9d-7dc3-451e-958e-6ea3b559f7c9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f7333526-80cc-445a-9cb3-058773718ea9 # Galerie foto
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a6c58b04-8048-4df7-bd95-c42636988850
+            userCondition: null
+            warning: null
+            width: 100
+        name: Conținut
+        uid: bd99a427-c067-445b-bc4a-4ccef2136781
+        userCondition: null
+    thumbFieldKey: null
+handle: blockGallery
+hasTitleField: false
+icon: null
+name: Galerie
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{heading ?: "Galerie"}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

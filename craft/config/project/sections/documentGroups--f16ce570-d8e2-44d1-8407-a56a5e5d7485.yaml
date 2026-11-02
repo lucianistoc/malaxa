@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 6287951d-6a9a-423b-a685-82881dcf1eba # Grupă de documente
+handle: documentGroups
+maxAuthors: 1
+minAuthors: 1
+name: 'Documente de interes public'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  41b27c9e-7368-451c-a99e-d03a10527f71: # Test
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: e724dc59-99fd-4ea3-ba5a-f9eb365d26d8
+type: structure

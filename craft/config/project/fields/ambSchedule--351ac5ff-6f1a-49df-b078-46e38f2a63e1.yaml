@@ -1,0 +1,47 @@
+columnSuffix: null
+handle: ambSchedule
+instructions: null
+name: 'Ambulatoriu – program medici'
+searchable: false
+settings:
+  addRowLabel: 'Adaugă rând'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Medic
+            -
+              - handle
+              - doctor
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Program
+            -
+              - handle
+              - program
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

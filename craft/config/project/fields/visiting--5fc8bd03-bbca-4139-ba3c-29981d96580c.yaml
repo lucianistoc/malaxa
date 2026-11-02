@@ -1,0 +1,63 @@
+columnSuffix: null
+handle: visiting
+instructions: null
+name: 'Program de vizită'
+searchable: false
+settings:
+  addRowLabel: 'Adaugă rând'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Secție
+            -
+              - handle
+              - section
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Program
+            -
+              - handle
+              - line1
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Program (2)'
+            -
+              - handle
+              - line2
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

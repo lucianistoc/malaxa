@@ -1,0 +1,22 @@
+{% extends '_layout' %}
+{% from '_partials/icons.twig' import icon %}
+{% import '_partials/ui.twig' as ui %}
+{% set description = entry.excerpt %}
+
+{% block content %}
+{%- set index = craft.entries.section('pages').slug('noutati').one() -%}
+{{ ui.pageHero(entry.title, [{title: 'Noutăți', url: index.url ?? null}, {title: entry.category}]) }}
+{%- set img = entry.image.one() -%}
+{%- set att = entry.attachment.one() -%}
+<section class="section"><div class="container with-sidebar right">
+  <article class="prose">
+    <div class="post-meta"><b>{{ entry.category }}</b>{% if entry.showDate %}<time datetime="{{ entry.postDate|date('Y-m-d') }}">{{ entry.postDate|date('j F Y') }}</time>{% endif %}</div>
+    {{ entry.body }}
+    {% if att or entry.linkUrl %}<div class="doc-list">{% if att %}{{ ui.docLink('Descarcă afișul (PDF)', att.url) }}{% endif %}{% if entry.linkUrl %}{{ ui.docLink('Site-ul programului', entry.linkUrl) }}{% endif %}</div>{% endif %}
+    {% if img %}<a href="{{ img.url }}" data-lightbox><img class="post-img" src="{{ img.url }}" alt="{{ entry.title }}"></a>{% endif %}
+    <h3 style="margin-top:50px">Articole asemănătoare</h3>
+    <div class="grid g2">{% for n in craft.entries.section('news').id(['not', entry.id]).limit(2).all() %}{{ ui.postCard(n) }}{% endfor %}</div>
+  </article>
+  {% include '_partials/news-sidebar' %}
+</div></section>
+{% endblock %}

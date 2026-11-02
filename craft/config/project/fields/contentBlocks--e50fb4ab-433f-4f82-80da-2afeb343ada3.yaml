@@ -1,0 +1,66 @@
+columnSuffix: null
+handle: contentBlocks
+instructions: 'Construiește pagina din blocuri: text, liste, tabele, acordeoane, documente, carduri, galerie.'
+name: 'Blocuri de conținut'
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 1f940ec0-df57-40df-99a7-7033de2f4aa2 # Text
+    -
+      __assoc__:
+        -
+          - uid
+          - 22091d5d-0326-48e7-ab1d-06b458b745e5 # Text cu imagine
+    -
+      __assoc__:
+        -
+          - uid
+          - a0abe989-fa74-4677-89f1-06d0135e9cba # Listă
+    -
+      __assoc__:
+        -
+          - uid
+          - ea6cfc3d-43a1-45b2-ac62-be5f32c3eaf9 # Tabel
+    -
+      __assoc__:
+        -
+          - uid
+          - 9e2ed1e7-f21f-4c5f-8f7d-989a80c58cf2 # Acordeon
+    -
+      __assoc__:
+        -
+          - uid
+          - d32541ac-a16b-456d-b7db-87071ee96f9e # Documente
+    -
+      __assoc__:
+        -
+          - uid
+          - 5e6f5a5f-3ed7-48c2-bfb6-7a234e4ddd72 # Carduri
+    -
+      __assoc__:
+        -
+          - uid
+          - b794ae97-89ce-49be-980b-7ac43a41c64c # Galerie
+    -
+      __assoc__:
+        -
+          - uid
+          - a899c2b6-0812-4134-8027-f7a347009a0f # Atenționare
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

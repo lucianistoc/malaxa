@@ -1,0 +1,31 @@
+columnSuffix: null
+handle: hours
+instructions: null
+name: Program
+searchable: false
+settings:
+  addRowLabel: 'Adaugă rând'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Text
+            -
+              - handle
+              - text
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

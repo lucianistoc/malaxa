@@ -1,0 +1,13 @@
+columnSuffix: null
+handle: hideFromNav
+instructions: null
+name: 'Ascunde din meniu'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+  showLabelsInCards: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

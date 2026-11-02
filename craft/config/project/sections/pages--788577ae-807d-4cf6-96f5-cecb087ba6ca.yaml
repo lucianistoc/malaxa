@@ -1,0 +1,38 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: e0f81612-5b39-4787-8bb4-5239d44288ec # Pagină
+  -
+    uid: 50bef859-48a6-46ef-87b0-9bac0a75607b # Listă specialități
+  -
+    uid: a4d43f3e-631e-41d5-a775-10ce33c38fbc # Listă ambulatoriu
+  -
+    uid: 4273ff4e-2949-4bbd-97e1-73f19d71aa05 # Listă medici
+  -
+    uid: e9f79389-5287-42fb-9a52-4f4a04c765ad # Listă noutăți
+  -
+    uid: ae4ad608-fa3d-4fcd-8b9d-7509942dee96 # Pagină tarife
+  -
+    uid: 7bbb534c-5c76-440b-af92-3a88cf264c6e # Pagină interes public
+  -
+    uid: bd5bd3ee-0328-4f34-bdc6-b3611d27cc49 # Pagină contact
+handle: pages
+maxAuthors: 1
+minAuthors: 1
+name: Pagini
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  41b27c9e-7368-451c-a99e-d03a10527f71: # Test
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/entry
+    uriFormat: '{slug}'
+structure:
+  maxLevels: 2
+  uid: 751f4365-7678-4d8d-ac68-23128ac1900d
+type: structure
