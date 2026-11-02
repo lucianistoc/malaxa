@@ -11,6 +11,7 @@ import json
 import re
 import shutil
 import unicodedata
+from urllib.parse import quote
 from datetime import date
 from html import escape
 from pathlib import Path
@@ -134,7 +135,7 @@ def ext(url):
 def a_doc(t, u, cls="doc-link"):
     tgt = ' target="_blank" rel="noopener"' if ext(u) else ""
     ic = "download" if u.lower().endswith((".pdf", ".doc", ".docx", ".xls", ".xlsx")) else ("external" if ext(u) else "arrow")
-    href = u if ext(u) else R + u
+    href = u if ext(u) else R + quote(u)
     return f'<a class="{cls}" href="{E(href)}"{tgt}>{icon(ic)}<span>{E(t)}</span></a>'
 
 
@@ -622,7 +623,7 @@ def structure():
     content = f"""<h2>Structura organizatorică</h2>
 <div class="table-wrap"><table><thead><tr><th>Secție / compartiment</th><th style="text-align:right">Paturi</th></tr></thead><tbody>{rows}</tbody></table></div>
 <p>Pe lângă secțiile cu paturi, spitalul are ambulatoriu integrat de specialitate, laborator de analize medicale, laborator de radiologie și imagistică medicală, serviciu de anatomie patologică, cameră de gardă și farmacie.</p>
-{docs_list([["Organigrama Spitalului Clinic „Nicolae Malaxa” (PDF)", "https://www.spitalmalaxa.ro/files/organigrama-sp-malaxa.pdf"]])}"""
+{docs_list([["Organigrama Spitalului Clinic „Nicolae Malaxa” (PDF)", "uploads/docs/files/organigrama-sp-malaxa.pdf"]])}"""
     simple("structura-organizatorica/", "Structura organizatorică", content, ABOUT_CRUMB + [("Structura organizatorică", None)], current="despre-noi/")
 
 
@@ -635,13 +636,13 @@ def management():
 <section class="section"><div class="container"><div class="section-head"><h2>Comitetul director</h2><p>Audiențele se programează prin secretariat.</p></div><div class="grid g3">{mg}</div></div></section>
 <section class="section bg-soft"><div class="container prose"><h2>Consiliul de administrație</h2><ul class="list-check">{board}</ul>{docs_list([bd]) if bd else ""}</div></section>
 <section class="section"><div class="container prose"><h2>Consiliul etic</h2><ul class="list-check">{ethics}</ul>
-{docs_list([["Anuarul consiliului etic – 2020", "https://www.spitalmalaxa.ro/files/Anuarul Etic-2020.pdf"], ["Raportul consiliului etic – Sem. 2 2020", "https://www.spitalmalaxa.ro/files/Raport Consiliul Etic-s2.2020.pdf"]])}
+{docs_list([["Anuarul consiliului etic – 2020", "uploads/docs/files/Anuarul Etic-2020.pdf"], ["Raportul consiliului etic – Sem. 2 2020", "uploads/docs/files/Raport Consiliul Etic-s2.2020.pdf"]])}
 {f'<p>Sesizări privind integritatea: <a href="mailto:{C["email_integrity"]}">{C["email_integrity"]}</a></p>' if C.get("email_integrity") else ""}</div></section>"""
     layout("echipa-de-management/", "Echipa managerială", body, current="despre-noi/")
 
 
 def accreditations():
-    cards = "".join(f'<a class="card tile" href="{E(a["url"])}" target="_blank" rel="noopener"><div class="card-icon">{icon("award")}</div><h3>{E(a["title"])}</h3><span class="read-more">{icon("download")} Vezi documentul</span></a>' for a in L["accreditations"])
+    cards = "".join(f'<a class="card tile" href="{E(a["url"] if ext(a["url"]) else R + quote(a["url"]))}" target="_blank" rel="noopener"><div class="card-icon">{icon("award")}</div><h3>{E(a["title"])}</h3><span class="read-more">{icon("download")} Vezi documentul</span></a>' for a in L["accreditations"])
     img = f'<img src="{R}{CFG["accreditation_image"]}" alt="{E(CFG["accreditation_badge"])}" style="max-width:220px;margin:0 auto 30px">' if CFG.get("accreditation_image") else ""
     body = page_hero("Acreditări / Certificări", ABOUT_CRUMB + [("Acreditări / Certificări", None)]) + f"""
 <section class="section tiles-bg"><div class="container">{img}<div class="grid g3">{cards}</div>
@@ -654,7 +655,7 @@ def indicators():
     content = f"""<h2>Indicatori de activitate</h2>
 <div class="table-wrap"><table><thead><tr><th>Indicator</th><th style="text-align:right">2015</th><th style="text-align:right">2016</th></tr></thead><tbody>{rows}</tbody></table></div>
 <h3>Date și informații referitoare la activitatea spitalului (Ordinul 1117/2025)</h3>
-{docs_list([["Date și informații referitoare la activitatea spitalului (PDF)", "https://www.spitalmalaxa.ro/files/2026/date si informatii referitoare la activitatea spitalului.pdf"]])}
+{docs_list([["Date și informații referitoare la activitatea spitalului (PDF)", "uploads/docs/files/2026/date si informatii referitoare la activitatea spitalului.pdf"]])}
 <h3>Acreditări</h3><p>Spitalul este acreditat ANMCS și certificat ISO 9001; laboratorul de analize medicale este acreditat RENAR.</p>
 <a class="btn btn-primary" href="{R}acreditari/">Acreditări / Certificări</a>"""
     simple("indicatori-de-calitate/", "Indicatori și statistici", content, ABOUT_CRUMB + [("Indicatori și statistici", None)], current="despre-noi/")

@@ -52,7 +52,7 @@
     ["ATI", "Luni – Duminică: 15:00 – 16:00 și 19:00 – 20:00", ""],
     ["Neonatologie", "Luni – Duminică: 14:00 – 15:00 și 19:30 – 20:30", ""]
   ],
-  "visiting_pdf": "https://www.spitalmalaxa.ro/files/program_vizita_apartinatori.pdf",
+  "visiting_pdf": "uploads/docs/files/program_vizita_apartinatori.pdf",
   "feedback_url": "http://infrastructura-sanatate.ms.ro/formulare/pacienti/264",
   "stats": [
     {"value": 263, "label": "Paturi"},

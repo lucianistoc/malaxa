@@ -4,8 +4,10 @@ The site is currently populated with real data from https://www.spitalmalaxa.ro 
 contacts, history, bed structure, management, board and ethics council, 16 sections and outpatient clinics with
 their teams (67 specialists), schedules, equipment, photo galleries, the full price list (Decizia 188/06.11.2024, 361
 services), patient rights and obligations, admission and discharge info, visiting hours, accreditations, the on-call
-rota, job competitions and public-interest documents. Documents (PDFs) link to their originals on spitalmalaxa.ro.
-Images were copied into `uploads/`.
+rota, job competitions and public-interest documents. All documents (175 PDFs, ~190 MB) and images were copied into
+`uploads/` (documents under `uploads/docs/`, same folder structure as on the old site), so the site no longer depends on
+spitalmalaxa.ro. Two documents were already missing (404) on the old site and were dropped. The only remaining link to the
+old site is the "Declarații de avere" tile, which points to the old site's page.
 
 Still to complete by the hospital: doctor photos (`photo` in `content/doctors.json`), the GDPR page text
 (`confidentialitate`), dates for news items, and the mission/values texts in `content/lists.json`.
@@ -28,6 +30,7 @@ python3 -m http.server -d public 8000
 ```
 
 Then open http://localhost:8000. The `public/` folder is the deployable site (GitHub Pages, Netlify, any web host).
+It is generated and not committed; run `python3 build.py` (e.g. as the host's build command) to produce it.
 
 ## Re-branding (white-label)
 

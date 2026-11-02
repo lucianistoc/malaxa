@@ -6,7 +6,7 @@
   "category": "Campanii",
   "excerpt": "Spitalul colectează medicamentele expirate sau neutilizate de la populație, pentru eliminarea lor în siguranță.",
   "image": "uploads/afise/colectare-medicamente-expirate.png",
-  "attachment": "https://www.spitalmalaxa.ro/afise/colectare-medicamente-expirate-populatie.pdf",
+  "attachment": "uploads/docs/afise/colectare-medicamente-expirate-populatie.pdf",
   "body": [
    "Spitalul Clinic „Nicolae Malaxa” participă la acțiunea de colectare a medicamentelor expirate sau neutilizate de la populație.",
    "Detalii complete în afișul campaniei."
@@ -30,7 +30,7 @@
   "category": "Campanii",
   "excerpt": "Informații pentru viitoarele mămici.",
   "image": "uploads/afise/babyboom.jpg",
-  "attachment": "https://www.spitalmalaxa.ro/afise/babyboom.pdf",
+  "attachment": "uploads/docs/afise/babyboom.pdf",
   "body": [
    "Detalii complete în afișul campaniei."
   ]
