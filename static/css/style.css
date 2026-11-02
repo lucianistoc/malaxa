@@ -36,9 +36,8 @@ p { margin: 0 0 1em; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 92px; gap: 20px; max-width: 1320px; }
 .logo { display: inline-flex; flex-direction: column; line-height: 1; flex-shrink: 0; }
 .logo img { max-height: 54px; width: auto; }
-.logo-word { font-weight: 800; font-size: 26px; color: var(--primary); letter-spacing: .01em; }
-.logo-word span { color: var(--highlight); }
-.logo-sub { margin-top: 3px; background: var(--primary); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .14em; padding: 2px 6px; text-align: center; }
+.logo-word { font-weight: 800; font-size: 26px; color: var(--highlight); letter-spacing: .01em; }
+.logo-sub { margin-top: 3px; background: var(--highlight); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .14em; padding: 2px 6px; text-align: center; }
 .footer .logo { background: #fff; padding: 8px 10px; border-radius: 4px; }
 
 .nav { flex: 1; min-width: 0; }
@@ -377,7 +376,7 @@ body.a11y-grayscale { filter: grayscale(1); }
 /* ---- Additions for real-content pages ---- */
 .logo { flex-direction: row; align-items: center; gap: 10px; }
 .logo-txt { display: inline-flex; flex-direction: column; line-height: 1; }
-.logo-icon { width: 46px; height: auto; }
+.logo-icon { width: 52px; height: 52px; border-radius: 4px; }
 .footer .logo { padding: 8px 12px; }
 .badge-img { height: 64px; width: auto; background: #fff; border-radius: 8px; padding: 4px; }
 .quick-links { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; background: #fff; border-radius: 18px; box-shadow: var(--shadow); margin-top: -50px; position: relative; z-index: 2; overflow: hidden; }

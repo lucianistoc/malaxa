@@ -186,8 +186,8 @@ def amb_specs():
 def logo(r):
     if CFG.get("logo_image"):
         return f'<a class="logo" href="{r}" aria-label="{E(NAME)} – acasă"><img src="{r}{CFG["logo_image"]}" alt="{E(NAME)}"></a>'
-    ic = f'<img class="logo-icon" src="{r}{CFG["logo_icon"]}" alt="" width="46" height="47">' if CFG.get("logo_icon") else ""
-    return (f'<a class="logo" href="{r}" aria-label="{E(NAME)} – acasă">{ic}<span class="logo-txt"><span class="logo-word">{E(CFG["logo_text"])}<span>+</span></span>'
+    ic = f'<img class="logo-icon" src="{r}{CFG["logo_icon"]}" alt="" width="52" height="52">' if CFG.get("logo_icon") else ""
+    return (f'<a class="logo" href="{r}" aria-label="{E(NAME)} – acasă">{ic}<span class="logo-txt"><span class="logo-word">{E(CFG["logo_text"])}</span>'
             f'<span class="logo-sub">{E(CFG["logo_subtext"])}</span></span></a>')
 
 
