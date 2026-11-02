@@ -33,7 +33,7 @@ p { margin: 0 0 1em; }
 
 /* Header */
 .header { position: sticky; top: 0; z-index: 100; background: #fff; box-shadow: 0 2px 14px rgba(3,24,74,.07); }
-.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 92px; gap: 20px; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 92px; gap: 20px; max-width: 1320px; }
 .logo { display: inline-flex; flex-direction: column; line-height: 1; flex-shrink: 0; }
 .logo img { max-height: 54px; width: auto; }
 .logo-word { font-weight: 800; font-size: 26px; color: var(--primary); letter-spacing: .01em; }
@@ -41,10 +41,10 @@ p { margin: 0 0 1em; }
 .logo-sub { margin-top: 3px; background: var(--primary); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .14em; padding: 2px 6px; text-align: center; }
 .footer .logo { background: #fff; padding: 8px 10px; border-radius: 4px; }
 
-.nav { flex: 1; }
-.nav > ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 4px; justify-content: flex-start; }
+.nav { flex: 1; min-width: 0; }
+.nav > ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: nowrap; gap: 0 2px; justify-content: center; }
 .nav li { position: relative; }
-.nav > ul > li > a { display: flex; align-items: center; gap: 4px; padding: 14px 10px; font-weight: 500; color: var(--primary); }
+.nav > ul > li > a { display: flex; align-items: center; gap: 4px; padding: 14px 9px; font-weight: 500; color: var(--primary); white-space: nowrap; }
 .nav > ul > li > a:hover, .nav > ul > li.active > a { color: var(--highlight); }
 .caret { width: 10px; height: 10px; }
 .submenu { position: absolute; top: 100%; left: 0; min-width: 260px; background: #fff; border-top: 3px solid var(--accent); border-radius: 0 0 12px 12px; box-shadow: var(--shadow); list-style: none; margin: 0; padding: 10px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: .2s; z-index: 10; }
@@ -330,6 +330,11 @@ body.a11y-grayscale { filter: grayscale(1); }
 .results small { color: var(--muted); }
 
 /* Responsive */
+@media (max-width: 1320px) and (min-width: 1181px) {
+  .header-inner { gap: 12px; }
+  .nav > ul > li > a { padding: 14px 6px; font-size: 14px; }
+  .logo-word { font-size: 23px; }
+}
 @media (max-width: 1180px) {
   .nav { display: none; }
   .mobile-nav { display: block; margin-top: 10px; }
