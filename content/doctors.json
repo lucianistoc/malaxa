@@ -1,0 +1,605 @@
+[
+ {
+  "slug": "havriliuc-raluca-gabriela",
+  "name": "Dr. Havriliuc Raluca Gabriela",
+  "grade": "Medic primar ATI",
+  "specialty": "ati",
+  "role": "Coordonator ATI",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "olaru-daniela-diana",
+  "name": "Dr. Olaru Daniela Diana",
+  "grade": "Medic primar ATI",
+  "specialty": "ati",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "birnoiu-carmen",
+  "name": "Dr. Bîrnoiu Carmen",
+  "grade": "Medic specialist ATI",
+  "specialty": "ati",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "munteanu-andreea",
+  "name": "Dr. Munteanu Andreea",
+  "grade": "Medic specialist ATI",
+  "specialty": "ati",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "toba-maria",
+  "name": "Dr. Toba Maria",
+  "grade": "Medic specialist ATI",
+  "specialty": "ati",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "popescu-florin-dan",
+  "name": "Dr. Popescu Florin-Dan",
+  "grade": "Conferențiar universitar, medic primar alergologie și imunologie clinică",
+  "specialty": "alergologie",
+  "role": "Șef secție",
+  "photo": "",
+  "bio": "Medic primar Alergologie și Imunologie Clinică, cadru didactic cu integrare clinică; Șef Clinică universitară și Disciplină Alergologie a U.M.F. „Carol Davila”; coordonator program de rezidențiat pentru specialitatea Alergologie și Imunologie Clinică, Centrul Universitar București; membru al Comisiei de Specialitate a Ministerului Sănătății."
+ },
+ {
+  "slug": "bucur-irina-gabriela",
+  "name": "Dr. Bucur Irina Gabriela",
+  "grade": "Medic primar alergologie și imunologie clinică",
+  "specialty": "alergologie",
+  "role": "",
+  "photo": "",
+  "bio": "Ambulatoriu integrat de specialitate; secretar al Comisiilor de Specialitate ale Colegiului Medicilor și Ministerului Sănătății."
+ },
+ {
+  "slug": "marghidan-ganea-carmen-saviana",
+  "name": "Dr. Marghidan (Ganea) Carmen-Saviana",
+  "grade": "Medic primar alergologie și imunologie clinică",
+  "specialty": "alergologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "cristea-ana-maria-antoaneta",
+  "name": "Dr. Cristea Ana-Maria-Antoaneta",
+  "grade": "Medic specialist alergologie și imunologie clinică",
+  "specialty": "alergologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "kinn-dragos-alexandru",
+  "name": "Dr. Kinn Dragoș Alexandru",
+  "grade": "Medic primar chirurgie generală",
+  "specialty": "chirurgie",
+  "role": "Șef secție",
+  "photo": "",
+  "bio": "Competențe: chirurgie laparoscopică nivel II (avansat), senologie, chirurgie oncologică."
+ },
+ {
+  "slug": "mavru-mihai",
+  "name": "Dr. Mavru Mihai",
+  "grade": "Medic primar chirurgie generală, doctor în științe medicale",
+  "specialty": "chirurgie",
+  "role": "",
+  "photo": "",
+  "bio": "Competențe: chirurgie laparoscopică nivel I, ecografie generală, endoscopie digestivă diagnostică."
+ },
+ {
+  "slug": "anton-ligia",
+  "name": "Dr. Anton Ligia",
+  "grade": "Medic primar chirurgie generală",
+  "specialty": "chirurgie",
+  "role": "",
+  "photo": "",
+  "bio": "Competențe: chirurgie laparoscopică nivel I, ecografie generală, endoscopie digestivă diagnostică, chirurgie oncologică."
+ },
+ {
+  "slug": "vladu-florentina",
+  "name": "Dr. Vladu Florentina",
+  "grade": "Medic primar chirurgie generală",
+  "specialty": "chirurgie",
+  "role": "",
+  "photo": "",
+  "bio": "Competențe: chirurgie laparoscopică nivel II (avansat), ecografie generală, endoscopie digestivă diagnostică, managementul serviciilor în sănătate."
+ },
+ {
+  "slug": "andrei-septimiu-bogdan",
+  "name": "Dr. Andrei Septimiu Bogdan",
+  "grade": "Medic specialist chirurgie generală",
+  "specialty": "chirurgie",
+  "role": "",
+  "photo": "",
+  "bio": "Competențe: chirurgie laparoscopică nivel II (avansat)."
+ },
+ {
+  "slug": "dobjanschi-carmen-gabriela",
+  "name": "Dr. Dobjanschi Carmen Gabriela",
+  "grade": "Medic primar diabet, nutriție și boli metabolice, doctor în științe medicale, șef de lucrări UMF „Carol Davila”",
+  "specialty": "diabet",
+  "role": "Șef secție",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "rusu-emilia",
+  "name": "Dr. Rusu Emilia",
+  "grade": "Medic primar diabet, nutriție și boli metabolice, șef de lucrări UMF „Carol Davila”",
+  "specialty": "diabet",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "adamescu-petrisor-eduard",
+  "name": "Dr. Adamescu Petrișor Eduard",
+  "grade": "Medic primar diabet, nutriție și boli metabolice, doctor în științe medicale",
+  "specialty": "diabet",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "radu-ana-cristina",
+  "name": "Dr. Radu Ana Cristina",
+  "grade": "Medic primar diabet, nutriție și boli metabolice",
+  "specialty": "diabet",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "tache-mirela-elena",
+  "name": "Dr. Tache Mirela Elena",
+  "grade": "Medic primar diabet, nutriție și boli metabolice",
+  "specialty": "diabet",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "neacsu-oana-maria",
+  "name": "Dr. Neacșu Oana Maria",
+  "grade": "Medic primar diabet, nutriție și boli metabolice",
+  "specialty": "diabet",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "valceanu-coravu-diana-elena",
+  "name": "Dr. Vâlceanu (Coravu) Diana Elena",
+  "grade": "Medic primar diabet, nutriție și boli metabolice",
+  "specialty": "diabet",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "sava-isabella-laurentia",
+  "name": "Dr. Sava Isabella Laurenția",
+  "grade": "Medic primar diabet, nutriție și boli metabolice",
+  "specialty": "diabet",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "dinca-cornelia",
+  "name": "Dr. Dincă Cornelia",
+  "grade": "Medic specialist pediatru, diabet, nutriție și boli metabolice",
+  "specialty": "diabet",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "meroiu-andreea",
+  "name": "Dr. Meroiu Andreea",
+  "grade": "Medic specialist diabet, nutriție și boli metabolice",
+  "specialty": "diabet",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "nica-andra-elena",
+  "name": "Dr. Nica Andra Elena",
+  "grade": "Medic specialist diabet, nutriție și boli metabolice",
+  "specialty": "diabet",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "preda-mariana",
+  "name": "Biol. Preda Mariana",
+  "grade": "Asistent universitar, biolog principal",
+  "specialty": "laborator",
+  "role": "Șef laborator",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "nyerges-loreta-paula",
+  "name": "Dr. Nyerges Loreta Paula",
+  "grade": "Medic primar medicină de laborator",
+  "specialty": "laborator",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "munteanu-nicoleta",
+  "name": "Biol. Munteanu Nicoleta",
+  "grade": "Biolog principal",
+  "specialty": "laborator",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "gavrila-simona",
+  "name": "Dr. Gavrilă Simona",
+  "grade": "Medic primar radiologie și imagistică medicală",
+  "specialty": "radiologie",
+  "role": "Coordonator",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "patrasescu-luminita-maria",
+  "name": "Dr. Pătrășescu Luminița Maria",
+  "grade": "Medic primar radiologie și imagistică medicală",
+  "specialty": "radiologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "runcanu-nicolae",
+  "name": "Dr. Runcanu Nicolae",
+  "grade": "Medic primar medicină internă, doctor în medicină, șef de lucrări",
+  "specialty": "medicina-interna",
+  "role": "Șef secție",
+  "photo": "",
+  "bio": "Competență în ecografie generală, endoscopie digestivă, managementul serviciilor de sănătate."
+ },
+ {
+  "slug": "obilisteanu-gabriela-carmen",
+  "name": "Dr. Obilișteanu Gabriela Carmen",
+  "grade": "Medic primar medicină internă",
+  "specialty": "medicina-interna",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "draghici-oana-monica",
+  "name": "Dr. Drăghici Oana Monica",
+  "grade": "Medic primar medicină internă",
+  "specialty": "medicina-interna",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "dumitru-ana-maria",
+  "name": "Dr. Dumitru Ana-Maria",
+  "grade": "Medic primar medicină internă",
+  "specialty": "medicina-interna",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "haj-abdo-husein",
+  "name": "Dr. Haj-Abdo Husein",
+  "grade": "Medic primar medicină internă, competență în ecografie generală",
+  "specialty": "medicina-interna",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "lungana-mihai-florin",
+  "name": "Dr. Lungana Mihai Florin",
+  "grade": "Medic specialist medicină internă",
+  "specialty": "medicina-interna",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "patrascu-georgeta",
+  "name": "Dr. Pătrașcu Georgeta",
+  "grade": "Medic primar neonatologie, medic specialist pediatrie, competență ecografie generală",
+  "specialty": "neonatologie",
+  "role": "Șef secție",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "bacescu-liubovi",
+  "name": "Dr. Băcescu Liubovi",
+  "grade": "Medic primar neonatologie, medic specialist pediatrie",
+  "specialty": "neonatologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "cercasov-ana-maria",
+  "name": "Dr. Cercasov Ana-Maria",
+  "grade": "Medic specialist neonatologie",
+  "specialty": "neonatologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "nica-maria-cristina",
+  "name": "Dr. Nica Maria Cristina",
+  "grade": "Medic specialist neonatologie",
+  "specialty": "neonatologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "edu-antoine",
+  "name": "Dr. Edu Antoine",
+  "grade": "Conferențiar universitar UMF „Carol Davila”, medic primar obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "Șef secție",
+  "photo": "",
+  "bio": "Coordonator program de rezidențiat pentru specialitatea obstetrică-ginecologie."
+ },
+ {
+  "slug": "conci-stelian",
+  "name": "Dr. Conci Stelian",
+  "grade": "Asistent universitar, medic primar obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "bujor-moraru-mihaela-adriana",
+  "name": "Dr. Bujor-Moraru Mihaela Adriana",
+  "grade": "Asistent universitar, medic primar obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "isopescu-florin",
+  "name": "Dr. Isopescu Florin",
+  "grade": "Asistent universitar, medic primar obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "alexandru-ispas-constantin",
+  "name": "Dr. Alexandru Ispas Constantin",
+  "grade": "Asistent universitar, medic primar obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "popescu-cristian",
+  "name": "Dr. Popescu Cristian",
+  "grade": "Medic primar obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "dumitrascu-sandrino",
+  "name": "Dr. Dumitrașcu Sandrino",
+  "grade": "Medic primar obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "ionescu-sorin",
+  "name": "Dr. Ionescu Sorin",
+  "grade": "Medic primar obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "pintilie-aurelian",
+  "name": "Dr. Pintilie Aurelian",
+  "grade": "Medic primar obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "popescu-maria",
+  "name": "Dr. Popescu Maria",
+  "grade": "Medic primar obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "radulescu-corina",
+  "name": "Dr. Rădulescu Corina",
+  "grade": "Medic specialist obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "mateescu-radu",
+  "name": "Dr. Mateescu Radu",
+  "grade": "Medic specialist obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "rotaru-ana-maria",
+  "name": "Dr. Rotaru Ana-Maria",
+  "grade": "Medic specialist obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "antonovici-marina",
+  "name": "Dr. Antonovici Marina",
+  "grade": "Medic specialist obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "teodorescu-cristina",
+  "name": "Dr. Teodorescu Cristina",
+  "grade": "Medic primar obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "Nucleu cercetare studii clinice",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "gardescu-marie-jeanne",
+  "name": "Dr. Gârdescu Marie Jeanne",
+  "grade": "Medic primar obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "Nucleu cercetare studii clinice",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "andrei-plotogea-mihaela-nicoleta",
+  "name": "Dr. Andrei (Plotogea) Mihaela Nicoleta",
+  "grade": "Șef de lucrări UMF „Carol Davila”, medic primar obstetrică-ginecologie",
+  "specialty": "obstetrica-ginecologie",
+  "role": "Nucleu cercetare studii clinice",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "burloiu-adrian",
+  "name": "Dr. Burloiu Adrian",
+  "grade": "Medic primar oftalmolog, doctor în științe medicale",
+  "specialty": "oftalmologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "chiotoroiu-silvia",
+  "name": "Dr. Chiotoroiu Silvia",
+  "grade": "Medic primar oftalmolog, doctor în științe medicale",
+  "specialty": "oftalmologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "gavanescu-adrian",
+  "name": "Dr. Găvănescu Adrian",
+  "grade": "Medic specialist oftalmolog",
+  "specialty": "oftalmologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "toporeanu-ion",
+  "name": "Dr. Toporeanu Ion",
+  "grade": "Medic specialist ORL",
+  "specialty": "orl",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "cristina-nae",
+  "name": "Psiholog Cristina Nae",
+  "grade": "Psiholog clinician – licență și master în psihologie clinică",
+  "specialty": "psihologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "meila-ana-magdalena",
+  "name": "Dr. Meilă Ana-Magdalena",
+  "grade": "Medic primar medicină fizică și de reabilitare",
+  "specialty": "recuperare",
+  "role": "Șef secție",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "ismana-aureliana",
+  "name": "Dr. Ismana Aureliana",
+  "grade": "Medic primar medicină fizică și de reabilitare",
+  "specialty": "recuperare",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "socol-zsuzsana",
+  "name": "Dr. Socol Zsuzsana",
+  "grade": "Medic primar anatomie patologică",
+  "specialty": "anatomie-patologica",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "sahlean-danut-ion",
+  "name": "Dr. Sahlean Dănuț Ion",
+  "grade": "Medic specialist anatomie patologică",
+  "specialty": "anatomie-patologica",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ },
+ {
+  "slug": "daragiu-delia-elena",
+  "name": "Dr. Daragiu Delia-Elena",
+  "grade": "Medic primar ortodonție și ortopedie dento-facială, șef de lucrări universitar, doctor în științe medicale",
+  "specialty": "stomatologie",
+  "role": "",
+  "photo": "",
+  "bio": ""
+ }
+]

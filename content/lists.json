@@ -1,0 +1,2728 @@
+{
+ "faq": [
+  {
+   "q": "Cum fac o programare?",
+   "a": "Telefonic, la 021 255 54 05 (centrală, apoi tasta secției dorite) sau la 021 570 96 72 (programări), ori online pe programari.axamedis.ro/malaxa. Internarea poate fi programată și de medicul curant, după consultul în ambulatoriu, în funcție de locurile disponibile."
+  },
+  {
+   "q": "Ce documente trebuie să am la internare?",
+   "a": "Bilet de internare de la medicul de familie sau bilet de trimitere de la medicul din ambulatoriu / scrisoare medicală, cardul de sănătate, dovada calității de asigurat și CI / BI / pașaport / certificat de naștere (original și xerocopie)."
+  },
+  {
+   "q": "Ce se întâmplă dacă nu sunt asigurat?",
+   "a": "Dacă pacientul nu este asigurat sau nu poate face dovada calității de asigurat, la internare va semna angajamentul de plată, prin care se angajează să prezinte în timp util dovada calității de asigurat sau să achite contravaloarea serviciilor medicale."
+  },
+  {
+   "q": "Ce documente primesc la externare?",
+   "a": "Biletul de externare, scrisoarea medicală pentru medicul de familie, rețeta pentru tratament (în funcție de diagnostic), concediul medical (dacă este cazul) și decontul de cheltuieli ocazionate de spitalizare."
+  },
+  {
+   "q": "Care este programul de vizită?",
+   "a": "Secții: Luni – Vineri 15:00 – 19:00, Sâmbătă – Duminică 10:00 – 16:00 și 19:00 – 20:00. ATI: zilnic 15:00 – 16:00 și 19:00 – 20:00. Neonatologie: zilnic 14:00 – 15:00 și 19:30 – 20:30."
+  },
+  {
+   "q": "Care este programul punctului de recoltare analize?",
+   "a": "Recoltare: Luni – Vineri 07:30 – 13:00. Eliberare rezultate: Luni – Vineri 13:30 – 15:00."
+  },
+  {
+   "q": "Spitalul are gardă non-stop?",
+   "a": "Da. Spitalul asigură asistență medicală 24/24 h, 7/7 zile, cu linii de gardă pentru obstetrică-ginecologie, neonatologie, diabet, medicină internă, chirurgie generală, ATI și laborator. Urgențele de tip anafilaxie, angioedem sau bronhospasm sever trebuie adresate celui mai apropiat spital de urgență cu UPU."
+  },
+  {
+   "q": "Cât costă internarea însoțitorului unui copil?",
+   "a": "Aparținătorii copiilor internați, cu vârsta mai mare de 3 ani, plătesc spitalizarea – 15 lei/zi (cu excepția celor cu certificat de handicap, conform legii)."
+  },
+  {
+   "q": "Ce trebuie să am la mine pe durata internării?",
+   "a": "Pijama, halat, papuci de interior, obiecte și produse de igienă personală, precum și medicamentele pentru tratamentul afecțiunilor cronice, unde este cazul."
+  }
+ ],
+ "prices": [
+  {
+   "group": "Alergologie și Imunologie",
+   "items": [
+    [
+     "Consultatie initiala alergologie medic primar",
+     "150 lei"
+    ],
+    [
+     "Consultatie control alergologie medic primar",
+     "75 lei"
+    ],
+    [
+     "Consultatie initiala alergologie cu spirometrie",
+     "200 lei"
+    ],
+    [
+     "Consultatie initiala alergologie cu spirometrie cu test bronhodilatator",
+     "240 lei"
+    ],
+    [
+     "Consultatie control alergologie cu spirometrie",
+     "125 lei"
+    ],
+    [
+     "Consultatie control alergologie cu spirometrie cu test bronhodilatator",
+     "165 lei"
+    ],
+    [
+     "Teste cutanate alergologice prick la aeroalergene (maxim 8, in functie de indicatie si disponibilitate, inclusiv control pozitiv si negativ)",
+     "160 lei"
+    ],
+    [
+     "Teste cutanate alergologice patch la haptene de contact (maxim 20, in functie de indicatie si disponibilitate)",
+     "400 lei"
+    ],
+    [
+     "Teste cutanate alergologice la anestezice locale de uz stomatologic (nu include anestezicul fara vasoconstrictor, in functie de indicatie si disponibilitate)",
+     "125 lei"
+    ],
+    [
+     "Test cutanat la cub de gheata (nu include tratament post-testare )",
+     "80 lei"
+    ],
+    [
+     "Test multiplex lgE specifice serice (multialergene si componente moleculare) de tip Allergy Explorer (ALEX)",
+     "720 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Diabet zaharat, nutriție și boli metabolice",
+   "items": [
+    [
+     "Consultație inițială medic primar",
+     "150 lei"
+    ],
+    [
+     "Consultatie de control medic primar",
+     "75 lei"
+    ],
+    [
+     "Consultatie initiala medic specialist",
+     "75 lei"
+    ],
+    [
+     "Consultație de control medic specialist",
+     "60 lei"
+    ],
+    [
+     "Consultatie dislipidemie medic primar",
+     "150 lei"
+    ],
+    [
+     "Consultatie dislipidemie medic specialist",
+     "100 lei"
+    ],
+    [
+     "Determinare - test rapid - glicozurie/cetonurie",
+     "6 lei"
+    ],
+    [
+     "Determinare - test rapid - glicemie (glucometru)",
+     "10 lei"
+    ],
+    [
+     "Tratament injectabil intramuscular (fără prețul substanței)",
+     "10 lei"
+    ],
+    [
+     "Tratament injectabil subcutanat (fără prețul substanței)",
+     "10 lei"
+    ],
+    [
+     "Perfuzie intravenoasa (fară prețul substanței",
+     "50 lei"
+    ],
+    [
+     "Zi de îngrijire în spitalizare continuă",
+     "330 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Medicină internă",
+   "items": [
+    [
+     "Consultatie inițială medic primar",
+     "120 lei"
+    ],
+    [
+     "Consultație de control medic primar",
+     "70 lei"
+    ],
+    [
+     "Consultatie initială medic specialist",
+     "100 lei"
+    ],
+    [
+     "Consultatie de control medic specialist",
+     "60 lei"
+    ],
+    [
+     "Ecografie abdominală",
+     "200 lei"
+    ],
+    [
+     "Ecografie cardiaca",
+     "100 lei"
+    ],
+    [
+     "Ecografie tiroidiană",
+     "90 lei"
+    ],
+    [
+     "Ecografie Doppler artere carotidiene",
+     "90 lei"
+    ],
+    [
+     "Ecografie pelvină",
+     "200 lei"
+    ],
+    [
+     "Ecografie abdomino-pelvină (generală)",
+     "250 lei"
+    ],
+    [
+     "Zi de îngrijire în spitalizare continuă",
+     "330 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Chirurgie generală",
+   "items": [
+    [
+     "Consultație inițială medic primar",
+     "120 lei"
+    ],
+    [
+     "Consultatie de control medic primar",
+     "70 lei"
+    ],
+    [
+     "Consultație inițială medic specialist",
+     "100 lei"
+    ],
+    [
+     "Consultație de control medic specialist",
+     "60 lei"
+    ],
+    [
+     "Endoscopie digestivă superioară",
+     "350 lei"
+    ],
+    [
+     "Endoscopie digestivă inferioară rectocolon (până la valva ileocecală cu anestezie IV)",
+     "450 lei"
+    ],
+    [
+     "Endoscopie digestivă inferioara rectosigmoidiana",
+     "200 lei"
+    ],
+    [
+     "Ecografie abdomino-pelvină (generală)",
+     "250 lei"
+    ],
+    [
+     "Ecografie abdominală",
+     "200 lei"
+    ],
+    [
+     "Ecografie pelvină",
+     "200 lei"
+    ],
+    [
+     "lntervenții de mică chirurgie efectuate în regim ambulator, sub anestezie locală (leziuni cutanate superficiale, arsuri termice <10%, degeraturi grad I si II, leziuni externe prin agenti chimici <10%, panaritiu, tumori mici, chisturi, lipoame neinfectate, furuncul, abces, panaritiu osos, hidrosadenita, serom, posttraumatic, supuratii postoperatorii, fimoza",
+     "150 lei"
+    ],
+    [
+     "Pansament plăgi",
+     "50 lei"
+    ],
+    [
+     "Tratament injectabil intramuscular (fără prețul substanței)",
+     "10 lei"
+    ],
+    [
+     "Tratament injectabil intravenos (fără prețul substanței)",
+     "15 lei"
+    ],
+    [
+     "Tratament injectabil subcutanat (fără prețul substanței)",
+     "10 lei"
+    ],
+    [
+     "Zi de îngrijire în spitalizare continuă",
+     "350 lei"
+    ],
+    [
+     "Interventie chiurgicala/ora",
+     "550 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Neonatologie",
+   "items": [
+    [
+     "Zi de îngrijire în spitalizare continuă - normoponderali",
+     "330 lei"
+    ],
+    [
+     "Zi de îngrijire în spitalizare continuă - compartiment prematuri",
+     "680 lei"
+    ],
+    [
+     "Zi de îngrijire în spitalizare continuă - terapie intensivă nou-născuți",
+     "660 lei"
+    ],
+    [
+     "Consult - medic primar",
+     "120 lei"
+    ],
+    [
+     "Echografie transfontanelara",
+     "100 lei"
+    ],
+    [
+     "Ecografie abdominala nou-nascut",
+     "120 lei"
+    ],
+    [
+     "Consiliere prenatala a gravidei privind alaptatul si ingrijirea nou-nascutului",
+     "80 lei"
+    ],
+    [
+     "Cateterizarea arterială/venoasă ombilicală (+/- ghidaj ecografic)",
+     "230 lei"
+    ],
+    [
+     "Intubația oro-traheală",
+     "45 lei"
+    ],
+    [
+     "Nutritie enterala/zi",
+     "350 lei"
+    ],
+    [
+     "Puncția arterială",
+     "100 lei"
+    ],
+    [
+     "Puncția lombară diagnostică",
+     "160 lei"
+    ],
+    [
+     "Ventilația artificială invazivă / oră",
+     "130 lei"
+    ],
+    [
+     "Ventilația artificială non-invazivă / oră",
+     "100 lei"
+    ],
+    [
+     "Fototerapie (sedință)",
+     "200 lei"
+    ],
+    [
+     "Exsangvinotransfuzie",
+     "300 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Obstetrică-Ginecologie",
+   "items": [
+    [
+     "Consultație inițială medic primar",
+     "120 lei"
+    ],
+    [
+     "Consultatie de control medic primar",
+     "70 lei"
+    ],
+    [
+     "Consultație inițială medic specialist",
+     "100 lei"
+    ],
+    [
+     "Consultație de control medic specialist",
+     "60 lei"
+    ],
+    [
+     "Histerosalpingografie",
+     "320 lei"
+    ],
+    [
+     "Ecografie sarcina trimestrul I",
+     "120 lei"
+    ],
+    [
+     "Ecografie sarcina trimestrul II",
+     "170 lei"
+    ],
+    [
+     "Ecografie transvaginală",
+     "100 lei"
+    ],
+    [
+     "Colposcopie",
+     "120 lei"
+    ],
+    [
+     "Montare dispozitiv intrauterin",
+     "250 lei"
+    ],
+    [
+     "Extragere dispozitiv intrauterin",
+     "120 lei"
+    ],
+    [
+     "E.R.A.D. + biopsie",
+     "400 lei"
+    ],
+    [
+     "Cauterizare",
+     "220 lei"
+    ],
+    [
+     "lnstilatii uterotubare (6/pachet)",
+     "300 lei"
+    ],
+    [
+     "Curetaj uterin (pachet de servicii)",
+     "500 lei"
+    ],
+    [
+     "Curetaj uterin cu anestezie prin sedare intravenoasa (pachet de servicii)",
+     "800 lei"
+    ],
+    [
+     "Excizie condiloame (tarif/leziune) 45",
+     "45 lei"
+    ],
+    [
+     "Prelevare citologie cervico-vaginala (pentru examen Babes- Papanicolau)",
+     "50 lei"
+    ],
+    [
+     "Cazare in rezervă cu un pat/zi",
+     "200 lei"
+    ],
+    [
+     "Cazare in rezervă cu doua paturi/zi",
+     "150 lei"
+    ],
+    [
+     "Zi de îngrijire in spitalizare continuă",
+     "350 lei"
+    ],
+    [
+     "Interventie chiurgicala/ora",
+     "550 lei"
+    ],
+    [
+     "Pachet Sonohisterografie substanta de contrast,dispozitiv injectare substanta de contrast, ecografie transvaginala 3D",
+     "700 lei"
+    ],
+    [
+     "Ecografie de screening pentru anomalii de sarcina in trimestru I",
+     "300 lei"
+    ],
+    [
+     "Ecografie de screening pentru anomalii de sarcina in trimestru II",
+     "500 lei"
+    ],
+    [
+     "Ecografie de screening pentru anomalii de sarcina in trimestru III",
+     "400 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Recuperare, medicină fizică și balneologie",
+   "items": [
+    [
+     "Consultație inițială medic primar",
+     "120 lei"
+    ],
+    [
+     "Consultație de control medic primar",
+     "70 lei"
+    ],
+    [
+     "Proceduri de electroterapie/sedință",
+     "25 lei"
+    ],
+    [
+     "Baie galvanica/ședință",
+     "20 lei"
+    ],
+    [
+     "Terapie cu impulsuri electromagnetice terapeutice (Papimi)/şedință",
+     "30 lei"
+    ],
+    [
+     "Terapie cu unde soc (ESWT)/şedință",
+     "50 lei"
+    ],
+    [
+     "Masaj terapeutic/regiune/şedință",
+     "30 lei"
+    ],
+    [
+     "Ședința kinetoterapie",
+     "40 lei"
+    ],
+    [
+     "Infiltrație intraarticulară/periarticulară (nu include prețul substanței)",
+     "100 lei"
+    ],
+    [
+     "Infiltrație părți moi (nu include prețul substanței)",
+     "100 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Laborator de analize medicale",
+   "items": [
+    [
+     "Zi de îngrijire in spitalizare continua",
+     "330 lei"
+    ],
+    [
+     "Hemoleucograma",
+     "25 lei"
+    ],
+    [
+     "Examen citologic frotiu sanguin",
+     "30 lei"
+    ],
+    [
+     "VSH",
+     "10 lei"
+    ],
+    [
+     "Timp de protromobina (Timp Quick, activitate protombinica, INR)",
+     "20 lei"
+    ],
+    [
+     "APTT",
+     "22 lei"
+    ],
+    [
+     "Fibrinogen",
+     "18 lei"
+    ],
+    [
+     "Determinare grup sanguin ABO",
+     "25 lei"
+    ],
+    [
+     "Determinare Rh",
+     "25 lei"
+    ],
+    [
+     "Acid uric seric",
+     "10 lei"
+    ],
+    [
+     "Amilaza serica",
+     "16 lei"
+    ],
+    [
+     "Echilibru acido-bazic (Na, K, CI, Rezerva alcalina) lonograma",
+     "50 lei"
+    ],
+    [
+     "Bilirubina directa",
+     "10 lei"
+    ],
+    [
+     "Bilirubina indirecta",
+     "10 lei"
+    ],
+    [
+     "Bilirubina totala",
+     "10 lei"
+    ],
+    [
+     "Calciu ionic seric",
+     "18 lei"
+    ],
+    [
+     "Calciu total seric",
+     "13 lei"
+    ],
+    [
+     "CK-Creatinkinaza totală",
+     "16 lei"
+    ],
+    [
+     "CK-MB",
+     "17 lei"
+    ],
+    [
+     "Clor seric",
+     "10 lei"
+    ],
+    [
+     "Colesterol seric",
+     "9 lei"
+    ],
+    [
+     "HDL-Colesterol",
+     "15 lei"
+    ],
+    [
+     "LDL-ColesteroI",
+     "15 lei"
+    ],
+    [
+     "VLDL-Colesterol",
+     "9 lei"
+    ],
+    [
+     "Creatinina serică",
+     "12 lei"
+    ],
+    [
+     "Electroforeză proteine serice",
+     "32 lei"
+    ],
+    [
+     "Fier (sideremie)",
+     "14 lei"
+    ],
+    [
+     "Fosfataza alcalină",
+     "15 lei"
+    ],
+    [
+     "Gama-glutamiltranspeptidaza (GGT)",
+     "14 lei"
+    ],
+    [
+     "Glucoza serica (glicemie)",
+     "10 lei"
+    ],
+    [
+     "Hemoglobină glicozilată",
+     "45 lei"
+    ],
+    [
+     "Test de toleranță la glucoză",
+     "35 lei"
+    ],
+    [
+     "Creatinină urinară",
+     "14 lei"
+    ],
+    [
+     "Lactatdehidrogenaza (LDH)",
+     "17 lei"
+    ],
+    [
+     "Lipide totale",
+     "10 lei"
+    ],
+    [
+     "Magneziu seric",
+     "10 lei"
+    ],
+    [
+     "Microalbuminurie",
+     "32 lei"
+    ],
+    [
+     "Potasiu seric",
+     "15 lei"
+    ],
+    [
+     "Sodiu seric",
+     "13 lei"
+    ],
+    [
+     "Proteine serice totale",
+     "14 lei"
+    ],
+    [
+     "Aspartataminotransferaza (TGO/AST)",
+     "10 lei"
+    ],
+    [
+     "Alaninaminotransferaza (TGP/ALT)",
+     "10 lei"
+    ],
+    [
+     "Trigliceride serice",
+     "14 lei"
+    ],
+    [
+     "Uree serica",
+     "10 lei"
+    ],
+    [
+     "Troponina",
+     "35 lei"
+    ],
+    [
+     "Examen complet de urina (sumar+sediment)",
+     "18 lei"
+    ],
+    [
+     "lgG",
+     "22 lei"
+    ],
+    [
+     "IgM",
+     "25 lei"
+    ],
+    [
+     "IgA",
+     "25 lei"
+    ],
+    [
+     "IgE",
+     "28 lei"
+    ],
+    [
+     "Antistreptolizina O (ASLO)",
+     "28 lei"
+    ],
+    [
+     "Proteina C Reactiva (CRP)",
+     "22 lei"
+    ],
+    [
+     "Factor reumatoid",
+     "29 lei"
+    ],
+    [
+     "Complement C3",
+     "40 lei"
+    ],
+    [
+     "Complement C4",
+     "40 lei"
+    ],
+    [
+     "Complement C1",
+     "48 lei"
+    ],
+    [
+     "Crioglobuline",
+     "17 lei"
+    ],
+    [
+     "Anticorpi antiADNdc (SLE)",
+     "30 lei"
+    ],
+    [
+     "VDRL sau RPR",
+     "14 lei"
+    ],
+    [
+     "Confirmare TPHA",
+     "19 lei"
+    ],
+    [
+     "Alfafetoproteina (AFP)",
+     "45 lei"
+    ],
+    [
+     "Antigen carcinoembrionar (CEA)",
+     "55 lei"
+    ],
+    [
+     "Antigen Specific Prostatic (PSA)",
+     "45 lei"
+    ],
+    [
+     "Free PSA",
+     "45 lei"
+    ],
+    [
+     "Antigen HBs - screening",
+     "30 lei"
+    ],
+    [
+     "Anticorpi anti-HCV",
+     "55 lei"
+    ],
+    [
+     "Anticorpi anti-HlV (1+2) - screening",
+     "40 lei"
+    ],
+    [
+     "Anticorpi antiHelicobacter Pylori - screening",
+     "60 lei"
+    ],
+    [
+     "TSH",
+     "45 lei"
+    ],
+    [
+     "FT4",
+     "40 lei"
+    ],
+    [
+     "Estradiol",
+     "40 lei"
+    ],
+    [
+     "Progesteron",
+     "38 lei"
+    ],
+    [
+     "Prolactina",
+     "43 lei"
+    ],
+    [
+     "FSH",
+     "45 lei"
+    ],
+    [
+     "LH",
+     "55 lei"
+    ],
+    [
+     "Anticorpi anti-TPO",
+     "48 lei"
+    ],
+    [
+     "Examen bacteriologic exudat faringian - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "30 lei"
+    ],
+    [
+     "Examen fungic exudat faringian - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "40 lei"
+    ],
+    [
+     "Examen bacteriologic exudat nazal - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "30 lei"
+    ],
+    [
+     "Examen fungic exudat nazal - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "40 lei"
+    ],
+    [
+     "Examen bacteriologic spută - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "30 lei"
+    ],
+    [
+     "Examen fungic spută - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "40 lei"
+    ],
+    [
+     "Examen bacteriologic secreție otică - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "30 lei"
+    ],
+    [
+     "Examen fungic secreție otică - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "40 lei"
+    ],
+    [
+     "Examen bacteriologic secreție conjunctivală - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "30 lei"
+    ],
+    [
+     "Examen fungic secreție conjunctivală - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "40 lei"
+    ],
+    [
+     "Examen bacteriologic secreție purulentă - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "30 lei"
+    ],
+    [
+     "Examen fungic secreție purulentă - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "40 lei"
+    ],
+    [
+     "Examen bacteriologic lichid de puncție - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "30 lei"
+    ],
+    [
+     "Examen fungic secreție lichid de puncție - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "40 lei"
+    ],
+    [
+     "Examen bacteriologic secreție vaginală - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "30 lei"
+    ],
+    [
+     "Examen fungic secreție vaginală - Examen microscopic nativ şi colorat, cultură şi identificare bacteriană",
+     "40 lei"
+    ],
+    [
+     "Urocultura",
+     "40 lei"
+    ],
+    [
+     "Antibiograma",
+     "30 lei"
+    ],
+    [
+     "Antifungigrama",
+     "30 lei"
+    ],
+    [
+     "Examen coproparazitologic",
+     "20 lei"
+    ],
+    [
+     "lgE specifice alergene inhalatorii (line blot)",
+     "300 lei"
+    ],
+    [
+     "lgE specifice alergene alimentare (line blot)",
+     "270 lei"
+    ],
+    [
+     "IgE specifice alergene crossreactive polenuri-alimente",
+     "270 lei"
+    ],
+    [
+     "IgE specifice alergene recombinate SPAC POLLEN 1 (line blot)",
+     "320 lei"
+    ],
+    [
+     "IgE specifice alergene recombinate SPAC PEDIATRIC (line blot)",
+     "270 lei"
+    ],
+    [
+     "Autoanticorpi boli hepatice autoimune profil ALD (line blot)",
+     "270 lei"
+    ],
+    [
+     "Autoanticorpi boli autoimune profil ANA3 (line blot)",
+     "270 lei"
+    ],
+    [
+     "T3",
+     "50 lei"
+    ],
+    [
+     "Test rapid COVID-19 Ag",
+     "35 lei"
+    ],
+    [
+     "Anticorpi IgG Covid",
+     "90 lei"
+    ],
+    [
+     "Anticorpi IgM Covid",
+     "90 lei"
+    ],
+    [
+     "D-dimer",
+     "70 lei"
+    ],
+    [
+     "Procalcitonina",
+     "90 lei"
+    ],
+    [
+     "Lipaza",
+     "60 lei"
+    ],
+    [
+     "25-Hidroxi Vitamina D",
+     "80 lei"
+    ],
+    [
+     "Test PCR COVID",
+     "290 lei"
+    ],
+    [
+     "Free Beta-HCG (Immulite 2000)",
+     "50 lei"
+    ],
+    [
+     "IMMULITE 2000 Anti-Herpes simplex I &ll IgG",
+     "80 lei"
+    ],
+    [
+     "IMMULITE 2000 Anti-CMV lgG",
+     "60 lei"
+    ],
+    [
+     "IMMULITE 2000 Anti-CMV IgM",
+     "80 lei"
+    ],
+    [
+     "IMMULITE 2000 Anti-Rubella IgM",
+     "60 lei"
+    ],
+    [
+     "IMMULITE 2000 Anti-Rubella IgG quant.",
+     "60 lei"
+    ],
+    [
+     "IMMULITE 2000 Anti-Toxoplasma IgG quant.",
+     "60 lei"
+    ],
+    [
+     "IMMULITE 2000 Toxoplasma IgM y-Capture",
+     "60 lei"
+    ],
+    [
+     "IMMULITE 2000 Troponin I",
+     "60 lei"
+    ],
+    [
+     "IMMULITE 2000 intact PTH",
+     "80 lei"
+    ],
+    [
+     "IMMULITE 2000 AFP",
+     "75 lei"
+    ],
+    [
+     "Feritina",
+     "80 lei"
+    ],
+    [
+     "Clostridioides Difficile GDH, toxina A/B",
+     "100 lei"
+    ],
+    [
+     "Coprocultura",
+     "40 lei"
+    ],
+    [
+     "Antigen Helicobacter Pylori",
+     "40 lei"
+    ],
+    [
+     "Hemoragii oculte",
+     "40 lei"
+    ],
+    [
+     "NTproBNP",
+     "160 lei"
+    ],
+    [
+     "Cortizol",
+     "50 lei"
+    ],
+    [
+     "Parathormon",
+     "50 lei"
+    ],
+    [
+     "Insulinemie",
+     "55 lei"
+    ],
+    [
+     "Peptid C",
+     "90 lei"
+    ],
+    [
+     "IgE specific C1 Penicilloyl G",
+     "50 lei"
+    ],
+    [
+     "IgE specific C2 Penicilloyl V",
+     "50 lei"
+    ],
+    [
+     "IgE specific C204 Amoxicillin",
+     "50 lei"
+    ],
+    [
+     "IgE specific C203 Ampicillin",
+     "50 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Anatomie patologică",
+   "items": [
+    [
+     "Examen histopatologic procedura completa HE (1-3 blocuri)",
+     "160 lei"
+    ],
+    [
+     "Examen histopatologic procedura completa HE (4-6 blocuri)",
+     "250 lei"
+    ],
+    [
+     "Examen histopatologic procedura completa HE si coloratii speciale (1-3 blocuri)",
+     "190 lei"
+    ],
+    [
+     "Examen histopatologic procedura completa HE si coloratii speciale (4-6 blocuri)",
+     "300 lei"
+    ],
+    [
+     "Examen citologic cervico-vaginal Babes-Papanicolau",
+     "60 lei"
+    ],
+    [
+     "Citodiagnostic lichid de punctie",
+     "100 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Oftalmologie",
+   "items": [
+    [
+     "Consultatie inițială medic primar",
+     "120 lei"
+    ],
+    [
+     "Consultație de control medic primar",
+     "70 lei"
+    ],
+    [
+     "Tensiune intraoculara",
+     "35 lei"
+    ],
+    [
+     "Examen fundului de ochi",
+     "60 lei"
+    ],
+    [
+     "Examen camp vizual",
+     "100 lei"
+    ],
+    [
+     "Tomografie incoerenta optica",
+     "230 lei"
+    ],
+    [
+     "Examenul cailor lacrimale",
+     "70 lei"
+    ],
+    [
+     "Tratament laser (pe Sedință)",
+     "70 lei"
+    ],
+    [
+     "Pahimetrie si/sau biometrie",
+     "80 lei"
+    ],
+    [
+     "Zi de îngrijire în spitalizare continuă",
+     "350 lei"
+    ],
+    [
+     "Interventie chiurgicala/ora",
+     "450 lei"
+    ],
+    [
+     "Tomografie de pol anterior AO",
+     "60 lei"
+    ],
+    [
+     "Tomografie nerv optic AO",
+     "80 lei"
+    ],
+    [
+     "Tomografie de macula AO",
+     "80 lei"
+    ],
+    [
+     "Tomografie corneana AO",
+     "80 lei"
+    ],
+    [
+     "Microscopie speculara",
+     "60 lei"
+    ],
+    [
+     "Capsulotomie laser YAG (1 ochi)",
+     "80 lei"
+    ],
+    [
+     "Fotocoagulare laser (1 ochi)/sedinta",
+     "60 lei"
+    ],
+    [
+     "Fotocoagulare laser (2 ochi)/sedinta",
+     "80 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Explorări funcționale",
+   "items": [
+    [
+     "Determinare Indice glezna/brat",
+     "45 lei"
+    ],
+    [
+     "E.K.G",
+     "35 lei"
+    ],
+    [
+     "Spirometrie",
+     "35 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Cardiologie",
+   "items": [
+    [
+     "Consultatie inițială medic primar",
+     "120 lei"
+    ],
+    [
+     "Consultație de control medic primar",
+     "70 lei"
+    ],
+    [
+     "Ecografie de cord",
+     "200 lei"
+    ]
+   ]
+  },
+  {
+   "group": "ORL",
+   "items": [
+    [
+     "Consultatie initiala medic primar",
+     "120 lei"
+    ],
+    [
+     "Consultatie de control medic primar",
+     "70 lei"
+    ],
+    [
+     "Consultatie initiala medic specialist",
+     "100 lei"
+    ],
+    [
+     "Consultatie de control medic specialist",
+     "60 lei"
+    ],
+    [
+     "Extractie corp strain auricular",
+     "30 lei"
+    ],
+    [
+     "Extractie corp strain nazal si orofaringian",
+     "30 lei"
+    ],
+    [
+     "Aspiratie secretii otice si nazale",
+     "30 lei"
+    ],
+    [
+     "Spalatura auriculara unilaterala",
+     "40 lei"
+    ],
+    [
+     "Spalatura auriculara bilaterala",
+     "70 lei"
+    ],
+    [
+     "Tamponament nazal",
+     "120 lei"
+    ],
+    [
+     "Tratament topic",
+     "70 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Radiologie",
+   "items": [
+    [
+     "Radiografie cardiopulmonara: fata",
+     "70 lei"
+    ],
+    [
+     "Radiografie cardiopulmonara: fata+profiI",
+     "90 lei"
+    ],
+    [
+     "Radiografie grilaj costal",
+     "70 lei"
+    ],
+    [
+     "Radiografie abdominala pe gol",
+     "80 lei"
+    ],
+    [
+     "Radiografie renovezicala simpla",
+     "80 lei"
+    ],
+    [
+     "Radiografie sinusuri (SAF)",
+     "70 lei"
+    ],
+    [
+     "Radiografie craniu fata/profil",
+     "70 lei"
+    ],
+    [
+     "Radiografie craniu fata+profiI",
+     "80 lei"
+    ],
+    [
+     "Radiografie Coloana cervicala fata/profil",
+     "60 lei"
+    ],
+    [
+     "Radiografie Coloana cervicala fata+profiI",
+     "80 lei"
+    ],
+    [
+     "Radiografie coloana toracala fata+profiI",
+     "90 lei"
+    ],
+    [
+     "Radiografie coloana lombara fata+profiI",
+     "90 lei"
+    ],
+    [
+     "Radiografie bazin (articulatii coxofemurale)",
+     "80 lei"
+    ],
+    [
+     "Radiografie articulatii sacroiliace",
+     "70 lei"
+    ],
+    [
+     "Radiografie articulatie scapulohumerala",
+     "70 lei"
+    ],
+    [
+     "Radiografie parti schelet (humerus, antebrat, femur, gamba,mana, picior) fata+profil",
+     "80 lei"
+    ],
+    [
+     "Radiografie articulatii (cot, pumn, genunchi, glezna) fata+profil",
+     "80 lei"
+    ],
+    [
+     "Tranzit baritat eso-gastro-duodenal",
+     "140 lei"
+    ],
+    [
+     "Mamografie digitala bilateral",
+     "250 lei"
+    ],
+    [
+     "Mamografie digitala unilateral",
+     "180 lei"
+    ],
+    [
+     "Ecografie abdominala",
+     "200 lei"
+    ],
+    [
+     "Ecografie pelvina",
+     "200 lei"
+    ],
+    [
+     "Ecografie abdomino-pelvina",
+     "250 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Computer tomograf (CT)",
+   "items": [
+    [
+     "CT craniu nativ",
+     "350 lei"
+    ],
+    [
+     "CT craniu nativ + substanță de contrast",
+     "575 lei"
+    ],
+    [
+     "CT sinusuri nativ",
+     "350 lei"
+    ],
+    [
+     "CT sinusuri nativ + substanță de contrast",
+     "575 lei"
+    ],
+    [
+     "CT mastoida nativ",
+     "350 lei"
+    ],
+    [
+     "CT mastoida nativ + substanță de contrast",
+     "575 lei"
+    ],
+    [
+     "CT regiune gat nativ",
+     "350 lei"
+    ],
+    [
+     "CT regiune gat nativ + substanță de contrast",
+     "575 lei"
+    ],
+    [
+     "CT torace nativ",
+     "380 lei"
+    ],
+    [
+     "CT torace nativ + substanță de contrast",
+     "650 lei"
+    ],
+    [
+     "CT abdomen nativ",
+     "380 lei"
+    ],
+    [
+     "CT abdomen nativ + substanță de contrast",
+     "650 lei"
+    ],
+    [
+     "CT pelvis nativ",
+     "380 lei"
+    ],
+    [
+     "CT pelvis nativ + substanță de contrast",
+     "650 lei"
+    ],
+    [
+     "CT abdomen + pelvis nativ",
+     "550 lei"
+    ],
+    [
+     "CT abdomen + pelvis nativ + substanță de contrast",
+     "900 lei"
+    ],
+    [
+     "CT torace + abdomen + pelvis nativ",
+     "750 lei"
+    ],
+    [
+     "CT torace + abdomen + pelvis nativ + substanță de contrast",
+     "1400 lei"
+    ],
+    [
+     "CT Craniu + Torace + Abdomen + Pelvis nativ",
+     "850 lei"
+    ],
+    [
+     "CT Craniu + Torace + Abdomen + Pelvis nativ + substanță de contrast",
+     "1600 lei"
+    ],
+    [
+     "Angio CT Torace",
+     "600 lei"
+    ],
+    [
+     "Angio CT Abdomen",
+     "600 lei"
+    ],
+    [
+     "CT Coloana vertebrala 1 segment (cervicala/toracica/lombara) nativ",
+     "350 lei"
+    ],
+    [
+     "CT Coloana vertebrala 1 segment (cervicala/toracica/lombara) nativ + substanță de contrast",
+     "575 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Stomatologie",
+   "items": [
+    [
+     "Consultatie primara",
+     "100 lei"
+    ],
+    [
+     "Periaj profesional/arcadă",
+     "75 lei"
+    ],
+    [
+     "Detartraj ultrasunete/arcada",
+     "100 lei"
+    ],
+    [
+     "Periaj profesional + fluorizare topică/arcada",
+     "115 lei"
+    ],
+    [
+     "Detartraj ultrasunete + periaj profesional + fluorizare topica/arcada",
+     "170 lei"
+    ],
+    [
+     "Sigilare dinte temporar/dinte",
+     "110 lei"
+    ],
+    [
+     "Sigilare dinte permanent/dinte",
+     "150 lei"
+    ],
+    [
+     "Sigilare largita",
+     "180 lei"
+    ],
+    [
+     "Fluorizare topică/arcada",
+     "100 lei"
+    ],
+    [
+     "Obturatie coronara compozit fotopolimerizabil fizionomică pe o suprafata",
+     "200 lei"
+    ],
+    [
+     "Obturatie coronara compozit fotopolimerizabil fizionomică pe 2 suprafete",
+     "250 lei"
+    ],
+    [
+     "Obturatie coronara compozit fotopolimerizabil fizionomică pe 3 suprafate/atipica",
+     "300 lei"
+    ],
+    [
+     "Extractie dinte temporar mobil",
+     "100 lei"
+    ],
+    [
+     "Extractie dinte temporar imobil",
+     "150 lei"
+    ],
+    [
+     "Extracție dinte permanent monoradicular",
+     "200 lei"
+    ],
+    [
+     "Extracție dinte permanent pluriradicular",
+     "250 lei"
+    ],
+    [
+     "Extracție dinte permanent parodontotic",
+     "200 lei"
+    ],
+    [
+     "Pansament calmant/drenaj",
+     "100 lei"
+    ],
+    [
+     "Tratamentul afecțiunilor pulpare / gangrenei la dinte permanent monoradicular",
+     "400 lei"
+    ],
+    [
+     "Tratamentul afecțiunilor pulpare / gangrenei la dinte permanent pluriradicular",
+     "550 lei"
+    ],
+    [
+     "Tratamentul afecțiunilor pulpare / gangrenei la dinte temporar monoradicular",
+     "300 lei"
+    ],
+    [
+     "Tratamentul afecțiunilor pulpare / gangrenei la dinte temporar pluriradicular",
+     "350 lei"
+    ],
+    [
+     "Tratament antiinflamator parodontal",
+     "150 lei"
+    ],
+    [
+     "Decapusonare",
+     "100 lei"
+    ],
+    [
+     "Activare, control cu aparat ortodontic mobil/sedinta",
+     "80 lei"
+    ],
+    [
+     "Mentinator de spațiu",
+     "700 lei"
+    ],
+    [
+     "Reparatie aparat ortodontic",
+     "600 lei"
+    ],
+    [
+     "Deconditionarea tulburarilor functionale prin aparate ortodontice/arcada",
+     "1000 lei"
+    ],
+    [
+     "Obturatie coronara dinte temporar cu glassionomer",
+     "180 lei"
+    ]
+   ]
+  },
+  {
+   "group": "Documente medicale",
+   "items": [
+    [
+     "Eliberare adeverinta medicala",
+     "30 lei"
+    ],
+    [
+     "Intocmire referat medical",
+     "40 lei"
+    ],
+    [
+     "Eliberare certificat medical",
+     "70 lei"
+    ]
+   ]
+  }
+ ],
+ "price_note": [
+  "Prețurile se aplică în una din următoarele situații: pacientul nu este asigurat; pacientul nu are bilet de trimitere; pacientul nu are programare și solicită aceste servicii medicale în timpul programului de lucru al cabinetelor din ambulatoriul spitalului.",
+  "Anexa la Decizia nr. 188/06.11.2024 – Lista serviciilor medicale cu plată și tariful acestora."
+ ],
+ "public_interest": [
+  {
+   "title": "Declarații de avere și interese",
+   "icon": "document",
+   "docs": [],
+   "link": "https://www.spitalmalaxa.ro/5-informatii-publice.php"
+  },
+  {
+   "title": "Achiziții publice",
+   "icon": "cart",
+   "docs": [
+    [
+     "PAAP 2026",
+     "uploads/docs/informatii-financiare/2026/PAAP-2026.pdf"
+    ],
+    [
+     "Anunt publicitar - Servicii de paza si protectie a bunurilor si persoanelor, servicii de supravegere video si servicii privind situatii de urgenta",
+     "uploads/docs/diverse/anunt publicitar.pdf"
+    ],
+    [
+     "Anunt publicitar - servicii juridice",
+     "uploads/docs/concursuri/servicii-juridice.pdf"
+    ],
+    [
+     "Anunt publicitar - servicii de arhivare",
+     "uploads/docs/concursuri/20241212174338.pdf"
+    ],
+    [
+     "Anunt achizitie - Servicii de consultanta si reprezentare juridica",
+     "uploads/docs/diverse/servicii_juridice-anunt.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Contracte",
+   "icon": "contract",
+   "docs": [
+    [
+     "Acord cadru paza aprilie 2023",
+     "uploads/docs/informatii/acord cadru paza.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Bugete și bilanțuri",
+   "icon": "chart",
+   "docs": [
+    [
+     "Buget 2024 HCGMB 95 - 22.03.2024",
+     "uploads/docs/informatii-financiare/2024/Buget 2024 HCGMB 95-22.03.2024.pdf"
+    ],
+    [
+     "Buget 2023 HCGMB nr 148 - 29.05.2023",
+     "uploads/docs/informatii-financiare/2023/Buget 2023 HCGMB nr 148 29.05.2023.pdf"
+    ],
+    [
+     "Buget 2023 - HCGMB nr. 37 - 03.02.2023",
+     "uploads/docs/informatii-financiare/2023/Buget 2023 HCGMB nr 37 03.02.2023.pdf"
+    ],
+    [
+     "Buget 2022 - HCGMB nr. 418 - 31.08.2022",
+     "uploads/docs/informatii-financiare/Buget 2022 HCGMB nr 418 31.08.2022.pdf"
+    ],
+    [
+     "Cont rezultat patrimonial 31.03.2022",
+     "uploads/docs/informatii-financiare/Cont rezultat patrimonial 31.03.2022.pdf"
+    ],
+    [
+     "Cont executie venituri 31.03.2022",
+     "uploads/docs/informatii-financiare/Cont executie venituri 31.03.2022.pdf"
+    ],
+    [
+     "Cont executie cheltuieli 31.03.2022",
+     "uploads/docs/informatii-financiare/Cont executie cheltuieli 31.03.2022.pdf"
+    ],
+    [
+     "BUGET 2022 HCGMB NR.151 07.03.2022",
+     "uploads/docs/informatii-financiare/Buget 2022 HCGMB NR 151 07.03.2022.pdf"
+    ],
+    [
+     "Cont rezultat patrimonial 31.12.2021",
+     "uploads/docs/informatii-financiare/Cont rezultat patrimonial 31.12.2021.pdf"
+    ],
+    [
+     "Cont executie venituri 31.12.2021",
+     "uploads/docs/informatii-financiare/Cont executie venituri 31.12.2021.pdf"
+    ],
+    [
+     "Cont executie cheltuieli 31.12.2021",
+     "uploads/docs/informatii-financiare/Cont executie cheltuieli 31.12.2021.pdf"
+    ],
+    [
+     "Buget 2021 HCGMB 293 07.09.2021",
+     "uploads/docs/informatii-financiare/Buget 2021 HCGMB 293 07.09.2021.pdf"
+    ],
+    [
+     "Cont rezultat patrimonial 30.09.2021",
+     "uploads/docs/informatii-financiare/Cont rezultat patrimonial 30.09.2021.pdf"
+    ],
+    [
+     "Cont executie venituri 30.09.2021",
+     "uploads/docs/informatii-financiare/Cont executie venituri 30.09.2021.pdf"
+    ],
+    [
+     "Cont executie cheltuieli 30.09.2021",
+     "uploads/docs/informatii-financiare/Cont executie cheltuieli 30.09.2021.pdf"
+    ],
+    [
+     "Cont rezultat patrimonial 30.06.2021",
+     "uploads/docs/informatii-financiare/Cont rezultat patrimonial 30.06.2021.pdf"
+    ],
+    [
+     "Cont executie venituri 30.06.2021",
+     "uploads/docs/informatii-financiare/Cont executie venituri 30.06.2021.pdf"
+    ],
+    [
+     "Cont executie cheltuieli 30.06.2021",
+     "uploads/docs/informatii-financiare/Cont executie cheltuieli 30.06.2021.pdf"
+    ],
+    [
+     "PROGRAM INVESTITII 2021 HCGMB 121 07.05.2021",
+     "uploads/docs/informatii-financiare/PROGRAM INVESTITII 2021 HCGMB 121 07.05.2021.pdf"
+    ],
+    [
+     "BUGET 2021 HCGMB 121 07.05.2021",
+     "uploads/docs/informatii-financiare/BUGET 2021 HCGMB 121 07.05.2021.pdf"
+    ],
+    [
+     "Cont rezultat patrimonial 31.03.2021",
+     "uploads/docs/informatii-financiare/Cont rezultat patrimonial 31.03.2021.pdf"
+    ],
+    [
+     "Cont executie venituri 31.03.2021",
+     "uploads/docs/informatii-financiare/Cont executie venituri 31.03.2021.pdf"
+    ],
+    [
+     "Cont rezultat patrimonial 31.03.2020",
+     "uploads/docs/informatii-financiare/2020/Cont rezultat patrimonial 31.03.2020.pdf"
+    ],
+    [
+     "Cont executie venituri 31.03.2020",
+     "uploads/docs/informatii-financiare/2020/Cont executie venituri 31.03.2020.pdf"
+    ],
+    [
+     "Cont executie cheltuieli 31.03.2020",
+     "uploads/docs/informatii-financiare/2020/Cont executie cheltuieli 31.03.2020.pdf"
+    ],
+    [
+     "Buget 2020",
+     "uploads/docs/informatii-financiare/2020/Buget 2020.pdf"
+    ],
+    [
+     "Anexa 1 - dec.2024",
+     "uploads/docs/informatii-financiare/2024/Anexa 1 31.12.2024.pdf"
+    ],
+    [
+     "Anexa 2 - dec.2024",
+     "uploads/docs/informatii-financiare/2024/Anexa 2 31.12.2024.pdf"
+    ],
+    [
+     "Anexa 7b - dec.2024",
+     "uploads/docs/informatii-financiare/2024/Anexa 7b 31.12.2024.pdf"
+    ],
+    [
+     "Anexa 9 - dec.2024",
+     "uploads/docs/informatii-financiare/2024/Anexa 9 31.12.2024.pdf"
+    ],
+    [
+     "Buget 2024 - virare septembrie referat 146297 - 03.09.2024",
+     "uploads/docs/informatii-financiare/2024/Buget 2024 - virare septembrie referat 146297 03.09.2024.pdf"
+    ],
+    [
+     "Buget 2024 - rectificare august HCGMB 174 - 31.07.2024",
+     "uploads/docs/informatii-financiare/2024/Buget 2024 - rectificare august HCGMB 174 31.07.2024 .pdf"
+    ],
+    [
+     "Buget 2024 - virare iunie referat nr 98724 - 12.06.2024",
+     "uploads/docs/informatii-financiare/2024/Buget 2024 - virare iunie referat nr 98724 12.06.2024.pdf"
+    ],
+    [
+     "Anexa 9 - sep.2024",
+     "uploads/docs/informatii-financiare/2024/Anexa 9 30.09.2024.pdf"
+    ],
+    [
+     "Anexa 7b - sep.2024",
+     "uploads/docs/informatii-financiare/2024/Anexa 7b 30.09.2024.pdf"
+    ],
+    [
+     "Anexa 2 - sep.2024",
+     "uploads/docs/informatii-financiare/2024/Anexa 2 30.09.2024.pdf"
+    ],
+    [
+     "Anexa 1 - sep.2024",
+     "uploads/docs/informatii-financiare/2024/Anexa 1 30.09.2024.pdf"
+    ],
+    [
+     "Anexa 9 - iun.2024",
+     "uploads/docs/informatii-financiare/2024/Anexa 9 30.06.2024.pdf"
+    ],
+    [
+     "Anexa 7b - iun.2024",
+     "uploads/docs/informatii-financiare/2024/Anexa 7b 30.06.2024.pdf"
+    ],
+    [
+     "Anexa 2 - iun.2024",
+     "uploads/docs/informatii-financiare/2024/Anexa 2 30.06.2024.pdf"
+    ],
+    [
+     "Anexa 1 - iun.2024",
+     "uploads/docs/informatii-financiare/2024/Anexa 1 30.06.2024.pdf"
+    ],
+    [
+     "Anexa 1 bilant 31.12.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 1 31.12.2023.pdf"
+    ],
+    [
+     "Anexa 2 bilant 31.12.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 2 31.12.2023.pdf"
+    ],
+    [
+     "Anexa 7b bilant 31.12.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 7b 31.12.2023.pdf"
+    ],
+    [
+     "Anexa 9 bilant 31.12.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 9 31.12.2023.pdf"
+    ],
+    [
+     "Anexa 1 bilant 30.09.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 1 30.09.2023.pdf"
+    ],
+    [
+     "Anexa 2 bilant 30.09.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 2 30.09.2023.pdf"
+    ],
+    [
+     "Anexa 7 bilant 30.09.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 7 30.09.2023.pdf"
+    ],
+    [
+     "Anexa 9 bilant 30.09.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 9 30.09.2023.pdf"
+    ],
+    [
+     "Anexa 1 bilant 30.06.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 1 30.06.2023.pdf"
+    ],
+    [
+     "Anexa 2 bilant 30.06.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 2 30.06.2023.pdf"
+    ],
+    [
+     "Anexa 7b bilant 30.06.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 7b 30.06.2023.pdf"
+    ],
+    [
+     "Anexa 9 bilant 30.06.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 9 30.06.2023.pdf"
+    ],
+    [
+     "Anexa 1 bilant 31.03.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 1 bilant 31.03.2023.pdf"
+    ],
+    [
+     "Anexa 2 bilant 31.03.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 2 bilant 31.03.2023.pdf"
+    ],
+    [
+     "Anexa 7b bilant 31.03.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 7b bilant 31.03.2023.pdf"
+    ],
+    [
+     "Anexa 9 bilant 31.03.2023",
+     "uploads/docs/informatii-financiare/2023/Anexa 9 bilant 31.03.2023.pdf"
+    ],
+    [
+     "Anexa 1 bilant 31.12.2022",
+     "uploads/docs/informatii-financiare/Anexa 1 bilant 31.12.2022.pdf"
+    ],
+    [
+     "Anexa 2 bilant 31.12.2022",
+     "uploads/docs/informatii-financiare/Anexa 2 bilant 31.12.2022.pdf"
+    ],
+    [
+     "Anexa 7b bilant 31.12.2022",
+     "uploads/docs/informatii-financiare/Anexa 7b bilant 31.12.2022.pdf"
+    ],
+    [
+     "Anexa 9 bilant 31.12.2022",
+     "uploads/docs/informatii-financiare/Anexa 9 bilant 31.12.2022.pdf"
+    ],
+    [
+     "Cont de executie anexa 9 - 30.09.2022",
+     "uploads/docs/informatii-financiare/Cont de executie anexa 9 30.09.2022.pdf"
+    ],
+    [
+     "Cont de executie anexa 7b - 30.09.2022",
+     "uploads/docs/informatii-financiare/Cont de executie anexa 7b 30.09.2022.pdf"
+    ],
+    [
+     "Bilant anexa 2 - 30.09.2022",
+     "uploads/docs/informatii-financiare/Bilant anexa 2 30.09.2022.pdf"
+    ],
+    [
+     "Bilant anexa 1 - 30.09.2022",
+     "uploads/docs/informatii-financiare/Bilant anexa 1 30.09.2022.pdf"
+    ],
+    [
+     "Cont rezultat patrimonial - 30.06.2022",
+     "uploads/docs/informatii-financiare/Cont rezultat patrimonial 30.06.2022.pdf"
+    ],
+    [
+     "Cont executie venituri venituri - 30.06.2022",
+     "uploads/docs/informatii-financiare/Cont executie venituri venituri 30.06.2022.pdf"
+    ],
+    [
+     "Cont executie cheltuieli - 30.06.2022",
+     "uploads/docs/informatii-financiare/Cont executie cheltuieli 30.06.2022.pdf"
+    ],
+    [
+     "Bilant 30.06.2022",
+     "uploads/docs/informatii-financiare/Bilant 30.06.2022.pdf"
+    ],
+    [
+     "Bilant 31.03.2022",
+     "uploads/docs/informatii-financiare/Bilant 31.03.2022.pdf"
+    ],
+    [
+     "Bilant 31.12.2021",
+     "uploads/docs/informatii-financiare/Bilant 31.12.2021.pdf"
+    ],
+    [
+     "Bilant 30.09.2021",
+     "uploads/docs/informatii-financiare/Bilant 30.09.2021.pdf"
+    ],
+    [
+     "Bilant 30.06.2021",
+     "uploads/docs/informatii-financiare/Bilant 30.06.2021.pdf"
+    ],
+    [
+     "Bilant 31.03.2021",
+     "uploads/docs/informatii-financiare/Bilant 31.03.2021.pdf"
+    ],
+    [
+     "Bilant 31.06.2020",
+     "uploads/docs/informatii-financiare/2020/Bilant 30.06.2020.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Program de investiții",
+   "icon": "building",
+   "docs": [
+    [
+     "Program investitii 2025 - HCGMB 119 - apr.2025",
+     "uploads/docs/informatii-financiare/2025/Program investitii 2025 HCGMB 119 03.04.2025.pdf"
+    ],
+    [
+     "Program de investitii publice 2024 HCGMB 95 - 22.03.2024.pdf",
+     "uploads/docs/informatii-financiare/2024/Program de investitii publice 2024 HCGMB 95-22.03.2024.pdf"
+    ],
+    [
+     "Program investitii 2023 - HCGMB nr. 37 - 03.02.2023",
+     "uploads/docs/informatii-financiare/2023/Program investitii 2023 HCGMB nr 37 03.02.2023.pdf"
+    ],
+    [
+     "Program investitii 2021 HCGM 293 07.09.2021",
+     "uploads/docs/informatii-financiare/Program investitii 2021 HCGM 293 07.09.2021.pdf"
+    ],
+    [
+     "PROGRAM INVESTITII 2021 HCGMB 121 07.05.2021",
+     "uploads/docs/informatii-financiare/PROGRAM INVESTITII 2021 HCGMB 121 07.05.2021.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Contractul colectiv de muncă",
+   "icon": "pen",
+   "docs": [
+    [
+     "Contract colectiv de munca",
+     "uploads/docs/files/CCM 2024-2026.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Membrii consiliului de administrație",
+   "icon": "people",
+   "page": "echipa-de-management/"
+  },
+  {
+   "title": "Consiliul de etică",
+   "icon": "people",
+   "docs": [
+    [
+     "Anuarul consiliului etic – 2020",
+     "uploads/docs/files/Anuarul Etic-2020.pdf"
+    ],
+    [
+     "Raportul consiliului etic – Sem. 2 2020",
+     "uploads/docs/files/Raport Consiliul Etic-s2.2020.pdf"
+    ],
+    [
+     "Anunt privind alegerile Consiliului Etic 2025",
+     "uploads/docs/informatii/Anunt privind alegerile Consiliului Etic 2025.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Drepturi salariale",
+   "icon": "money",
+   "docs": [
+    [
+     "Transparenta veniturilor salariale - mar.2026",
+     "uploads/docs/informatii-financiare/2026/42. Lista transparenta salariala-Martie 2026.pdf"
+    ],
+    [
+     "Transparenta veniturilor salariale - sep.2025",
+     "uploads/docs/informatii-financiare/2025/transparenta veniturilor septembrie 2025.pdf"
+    ],
+    [
+     "Transparenta veniturilor salariale - mar.2025 Anexa 9 31.03.2025 Anexa 7 31.03.2025 Anexa 2 31.03.2025 Anexa 1 31.03.2025 Buget 2025 - HCGMB 119 - apr.2025",
+     "uploads/docs/informatii-financiare/2025/Transparenta veniturilor salariale Martie 2025.pdf"
+    ],
+    [
+     "Lista transparenta salariala - sep.2024",
+     "uploads/docs/informatii-financiare/2024/42. Lista transparenta salariala-sep.2024.pdf"
+    ],
+    [
+     "Lista transparenta salariala - mar.2024",
+     "uploads/docs/informatii-financiare/2024/42. Lista transparenta salariala-martie 2024.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Rapoarte și statistici",
+   "icon": "clipboard",
+   "docs": [
+    [
+     "Date și informații referitoare la activitatea spitalului (Ord. 1117/2025)",
+     "uploads/docs/files/2026/date si informatii referitoare la activitatea spitalului.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Farmacie",
+   "icon": "pill",
+   "docs": [
+    [
+     "Consum medicamente ianuarie 2023",
+     "uploads/docs/informatii/Consum medicamente ianuarie 2023.pdf"
+    ],
+    [
+     "Consum medicamente martie 2022",
+     "uploads/docs/informatii/Consum medicamente martie 2022.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Regulamente",
+   "icon": "document",
+   "docs": [
+    [
+     "Regulament de organizare si functionare",
+     "uploads/docs/files/Regulament de organizare si functionare.pdf"
+    ],
+    [
+     "Regulament intern",
+     "uploads/docs/files/Regulament Intern.pdf"
+    ],
+    [
+     "Regulament de transfer",
+     "uploads/docs/files/regulament_transfer.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Strategia Națională Anticorupție",
+   "icon": "gavel",
+   "docs": [
+    [
+     "Raport narativ stadiu implementare - SNA 2022",
+     "uploads/docs/files/Raport narativ stadiu implementare SNA 01.01.2022-31.12.2022.pdf"
+    ],
+    [
+     "Agenda de integritate",
+     "uploads/docs/files/Agenda de integritate .pdf"
+    ],
+    [
+     "Decizie consilier de etica",
+     "uploads/docs/files/Decizie consilier de etica.pdf"
+    ],
+    [
+     "Inventar masuri preventive",
+     "uploads/docs/files/Inventar masuri preventive.pdf"
+    ],
+    [
+     "Planul de integritate 2021-2025",
+     "uploads/docs/files/Planul de integritate2021-2025.pdf"
+    ],
+    [
+     "Declaratie manager SNA 2021-2025",
+     "uploads/docs/files/Declaratie manager SNA 2021-2025.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Organigramă",
+   "icon": "org",
+   "docs": [
+    [
+     "Organigrama Spitalului Clinic „Nicolae Malaxa”",
+     "uploads/docs/files/organigrama-sp-malaxa.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Linii de gardă",
+   "icon": "hands",
+   "page": "program-garzi/"
+  },
+  {
+   "title": "Programe naționale",
+   "icon": "people",
+   "docs": [
+    [
+     "Valoare contract 2022 Programul national de diabet",
+     "uploads/docs/informatii-financiare/Valoare contract 2022 Programul national de diabet.pdf"
+    ],
+    [
+     "Fila buget 2022 PN XIII",
+     "uploads/docs/informatii-financiare/Fila buget 2022 PN XIII.pdf"
+    ],
+    [
+     "Executie bugetara PN XIII Trim II 2022",
+     "uploads/docs/informatii-financiare/Executie bugetara PN XIII Trim II 2022.pdf"
+    ],
+    [
+     "Contract UP0040 Programul national de diabet",
+     "uploads/docs/informatii-financiare/Contract UP0040 Programul national de diabet.pdf"
+    ],
+    [
+     "Contract 2022 Programul National de vaccinare",
+     "uploads/docs/informatii-financiare/Contract 2022 Programul National de vaccinare.pdf"
+    ],
+    [
+     "Contract 2022 PN XIII Programul national de sanatate al femeii si copilului",
+     "uploads/docs/informatii-financiare/Contract 2022 PN XIII Programul national de sanatate al femeii si copilului.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Mass-media",
+   "icon": "chat",
+   "docs": [
+    [
+     "Regulament acces mass-media",
+     "uploads/docs/files/Regulament acces mass-media.pdf"
+    ]
+   ],
+   "note": "Purtător de cuvânt: Dr. Ana Magdalena Meilă – 0722 794 401"
+  },
+  {
+   "title": "Meniu zilnic pacienți",
+   "icon": "calendar",
+   "docs": [
+    [
+     "Meniu săptămânal pacienți",
+     "uploads/docs/files/2026/meniu-saptamanal.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Hotărârea 470/2021 – alocația de hrană",
+   "icon": "document",
+   "docs": [
+    [
+     "Hotărârea 470/2021",
+     "uploads/docs/Hotarare 470 2021.pdf"
+    ]
+   ]
+  },
+  {
+   "title": "Acreditări / Certificări",
+   "icon": "award",
+   "page": "acreditari/"
+  }
+ ],
+ "management": [
+  {
+   "name": "Dr. Ștefănescu Alexandru Mihai",
+   "role": "Manager",
+   "audiente": "Vineri: 12:00 – 13:00"
+  },
+  {
+   "name": "Dr. Obilișteanu Gabriela Carmen",
+   "role": "Director medical",
+   "audiente": "Marți: 14:00 – 15:00"
+  },
+  {
+   "name": "Ec. Lazăr Marilena",
+   "role": "Director financiar-contabil",
+   "audiente": "Miercuri: 10:00 – 11:00"
+  }
+ ],
+ "board": [
+  {
+   "group": "Consiliul de administrație",
+   "members": [
+    "PREȘEDINTE - Conf. Univ. Dr. Rusu Emilia - reprezentant al Colegiului Medicilor din Municipiul București, membru titular",
+    "Dr. Smarandache Marian Romeo - reprezentant al Colegiului Medicilor din Municipiul București, membru supleant",
+    "Dr. Horațiu - Cristian Popescu - Vâlceanu – reprezentant al Primăriei Generale a Municipiului București – membru titular",
+    "Dna. Brumaru Elena Adriana - reprezentant al Primăriei Generale a Municipiului București – membru supleant",
+    "Dna. Rusu Olguța - reprezentant al Consiliului General al Municipiului București din cadrul structurii cu atribuții specifice în domeniul sănătății (Administrația Spitalelor și Serviciilor Medicale București) – membru titular",
+    "Dr. Mateescu Radu Nicolae – reprezentant al Universității de Medicină și Farmacie „Carol Davila” – membru titular",
+    "Dr. Ispas Costin Alexandru - reprezentant al Universității de Medicină și Farmacie „Carol Davila” – membru supleant",
+    "Dna. Bone Mariana – reprezentant al Direcției de Sănătate Publică a Municipiului București – membru titular",
+    "Dna. Schiaua Ana Maria - reprezentant al Direcției de Sănătate Publică a Municipiului București – membru supleant",
+    "Asist. med. princ. Ștefan Elena - reprezentant al Ordinului Asistenților Medicali Generaliști, Moașelor și Asistenților Medicali - Filiala București - membru invitat",
+    "Asist. med. princ Lazăr Nicoleta - reprezentant al Ordinului Asistenților Medicali Generaliști, Moașelor și Asistenților Medicali - Filiala București - membru supleant",
+    "Asist. med. princ. Grosu Liliana – Reprezentant SANITAS – membru invitat"
+   ]
+  }
+ ],
+ "board_doc": [
+  "Regulament de funcționare a Consiliului de administrație",
+  "uploads/docs/files/ROF CA.pdf"
+ ],
+ "ethics": [
+  "Dr. Ispas Costin Alexandru - Președinte",
+  "Dr. Meila Ana Magdalena - Președinte supleant",
+  "Dr. Adamescu Eduard Petrisor - Membru permanent",
+  "Dr. Nica Cristina Maria - Membru permanent",
+  "As.med. Boc Amalia - Membru permanent",
+  "As.med. Condrea Ruxandra Cornelia - Membru permanent",
+  "Dr. Rusu Emilia - Membru supleant",
+  "Dr. Runcanu Nicolae - Membru supleant",
+  "Dr. Mavru Mihai - Membru supleant",
+  "Dr. Radulescu Corina - Membru supleant",
+  "As.med. Morega Paula Veronica - Membru supleant",
+  "As.med. Milita Adriana - Membru supleant",
+  "Dl. Vasile Barbu – Reprezentant Asociatia Nationala pentru Protectia Pacientilor",
+  "Dr. Teodorescu Cristina - secretar permanent",
+  "Dr. Nica Andra Elena – secretar supleant"
+ ],
+ "values": [
+  {
+   "title": "Empatie, umanitate și respect",
+   "text": "Tratăm fiecare pacient cu demnitate, ascultăm și explicăm."
+  },
+  {
+   "title": "Excelență profesională",
+   "text": "Investim continuu în formarea echipei și în standarde clinice înalte."
+  },
+  {
+   "title": "Inovație și progres",
+   "text": "Adoptăm tehnologii și metode noi atunci când aduc beneficii reale pacienților."
+  },
+  {
+   "title": "Transparență",
+   "text": "Comunicăm deschis despre activitatea, rezultatele și resursele spitalului."
+  }
+ ],
+ "contests": [
+  {
+   "title": "Anunt concurs asistent medical radiologie debutant",
+   "url": "uploads/docs/concursuri/20261030104820_compressed.pdf"
+  },
+  {
+   "title": "Centralizator cu doasarele depuse la anuntul pentru transferul postului vacant de asistent medical generalist principal",
+   "url": "uploads/docs/concursuri/20261029114942.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei interviu la concursul pentru ocuparea posturilor vacante de infirmiera debutanta si infirmiera",
+   "url": "uploads/docs/concursuri/20261028133712.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul final la concursul pentru ocuparea postului vacant de asistent medical principal camera de garda",
+   "url": "uploads/docs/concursuri/0588_261026093537_001.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul final la concursul pentru ocuparea posturilor vacante de registrator medical debutant",
+   "url": "uploads/docs/concursuri/20261022090040.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei scrise la concursul pentru ocuparea posturilor vacante de infirmiera debutanta si infirmiera",
+   "url": "uploads/docs/concursuri/20261022075720.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei interviu la concursul pentru ocuparea postului vacant de asistent medical principal",
+   "url": "uploads/docs/concursuri/20261021115322.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei interviu la concursul pentru ocuparea posturilor vacante de registrator medical debutant",
+   "url": "uploads/docs/concursuri/20261019124914.pdf"
+  },
+  {
+   "title": "Anunt concurs medic specialist radiologie",
+   "url": "uploads/docs/concursuri/fara semnaturi_compressed.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul selectiei dosarelor la concursul pentru ocuparea posturilor vacante de infirmiera si infirmiera debutanta",
+   "url": "uploads/docs/concursuri/0574_261016083215_001.pdf"
+  },
+  {
+   "title": "Anunt transfer asistent medical generalist principal",
+   "url": "uploads/docs/concursuri/0571_261015102735_001_compressed.pdf"
+  },
+  {
+   "title": "Centralizator rezultate finale Referent specialitate debutant",
+   "url": "uploads/docs/concursuri/0570_261015081714_001.pdf"
+  },
+  {
+   "title": "centralizator cu rezultatele probei scrise pentru Asistent medical principal - Camera de Garda",
+   "url": "uploads/docs/concursuri/0569_261015081045_001.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatele finale la concursul pentru ocuparea posturilor vacante de ingrijitoare",
+   "url": "uploads/docs/concursuri/20261013112949.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei scrise la concursul pentru ocuparea posturilor vacante de registratori medicali debutanti",
+   "url": "uploads/docs/concursuri/20261013101957.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul final la concursul pentru ocuparea postului vacant de asistent medical generalist debutant",
+   "url": "uploads/docs/concursuri/0568_261012141910_001.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei interviu la concursul pentru ocuparea postului vacant de referent specialitate debutant",
+   "url": "uploads/docs/concursuri/20261012073042.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei interviu la concursul pentru ocuparea posturilor vacante de ingrijitoare",
+   "url": "uploads/docs/concursuri/0561_261008130425_001.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatele finale la concursul pentru ocuparea postului vacant de muncitor necalificat",
+   "url": "uploads/docs/concursuri/20261008113222.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul selectiei dosarelor la concursul pentru ocuparea postului vacant de registrator medical debutant",
+   "url": "uploads/docs/concursuri/0560_261007155006_001.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul selectiei dosarelor la concursul pentru ocuparea postului vacant de asistent medical principal",
+   "url": "uploads/docs/concursuri/20261007123707.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei interviu la concursul pentru ocuparea postului vacant de asistent medical debutant",
+   "url": "uploads/docs/concursuri/20261007090807.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei scrise la concursul pentru ocuparea postului vacant de referent specialitate debutant",
+   "url": "uploads/docs/concursuri/0556_261006081723_001.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei interviu la concursul pentru ocuparea postului vacant de muncitor necalificat",
+   "url": "uploads/docs/concursuri/0549_261005083058_001.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul final la concursul pentru ocuparea postului vacant de asistent medical laborator",
+   "url": "uploads/docs/concursuri/0548_261002125611_001.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei scrise la concursul pentru ocuparea posturilor vacante de ingrijitoare",
+   "url": "uploads/docs/concursuri/20261002081912.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei scrise la concursul pentru ocuparea postului vacant de asistent medical debutant",
+   "url": "uploads/docs/concursuri/20261001122141.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul final la concursul pentru ocuparea postului vacant de garderobier",
+   "url": "uploads/docs/concursuri/20261001114335.pdf"
+  },
+  {
+   "title": "Anunt concurs infirmiera debutanta si infirmiera",
+   "url": "uploads/docs/concursuri/20260930132144.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei scrise la concursul pentru ocuparea postului vacant de muncitor necalificat",
+   "url": "uploads/docs/concursuri/0534_260929121308_001.pdf"
+  },
+  {
+   "title": "Erata centralizator proba interviu la concursul pentru ocuparea postului vacant de asistent medical laborator",
+   "url": "uploads/docs/concursuri/0533_260929111405_001.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul selectiei dosarelor la concursul pentru ocuparea postului vacant de referent specialitate debutant",
+   "url": "uploads/docs/concursuri/20260929092736.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei interviu la concursul pentru ocuparea postului vacant de asistent medical laborator",
+   "url": "uploads/docs/concursuri/0531_260928104614_001.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul probei interviu la concursul pentru ocuparea postului vacant de garderobier",
+   "url": "uploads/docs/concursuri/0530_260928104547_001.pdf"
+  },
+  {
+   "title": "Centralizator selectie dosare ingrijitoare",
+   "url": "uploads/docs/concursuri/0529_260925125756_001.pdf"
+  },
+  {
+   "title": "centralizator selectie dosare asistent medical debutant sectia Diabet zaharat, Nutritie si Boli Metabolice",
+   "url": "uploads/docs/concursuri/0525_260924083648_001.pdf"
+  },
+  {
+   "title": "Centralizator cu rezultatul selectiei dosarelor la concursul pentru postul vacant de muncitor necalificat, bucatar II",
+   "url": "uploads/docs/concursuri/0524_260923120625_001.pdf"
+  },
+  {
+   "title": "Erata la anuntul de concurs muncitor necalificat, bucatar II",
+   "url": "uploads/docs/concursuri/20260923080811.pdf"
+  },
+  {
+   "title": "Anunt concurs asistent medical generalist principal",
+   "url": "uploads/docs/concursuri/20260922143237_compressed.pdf"
+  },
+  {
+   "title": "Anunt concurs registratori medicali debutanti",
+   "url": "uploads/docs/concursuri/20260922141341.pdf"
+  }
+ ],
+ "announcements": [
+  {
+   "title": "Anunt publicitar - Servicii de paza si protectie a bunurilor si persoanelor, servicii de supravegere video si servicii privind situatii de urgenta",
+   "url": "uploads/docs/diverse/anunt publicitar.pdf"
+  },
+  {
+   "title": "Anunt publicitar - servicii juridice",
+   "url": "uploads/docs/concursuri/servicii-juridice.pdf"
+  },
+  {
+   "title": "Anunt publicitar - servicii de arhivare",
+   "url": "uploads/docs/concursuri/20241212174338.pdf"
+  },
+  {
+   "title": "Servicii de paza si protectie a bunurilor si persoanelor, servicii de supravegere video si servicii privind situatii de urgenta - apr.2023",
+   "url": "uploads/docs/diverse/Anunt publicitar-apr2023.pdf"
+  },
+  {
+   "title": "Anunt achizitie - Servicii de consultanta si reprezentare juridica",
+   "url": "uploads/docs/diverse/servicii_juridice-anunt.pdf"
+  },
+  {
+   "title": "Caiet sarcini - Servicii de consultanta si reprezentare juridica",
+   "url": "uploads/docs/diverse/servicii_juridice-caiet_sarcini.pdf"
+  },
+  {
+   "title": "Model acord cadru - Servicii de consultanta si reprezentare juridica",
+   "url": "uploads/docs/diverse/servicii_juridice-model_acord_cadru.pdf"
+  },
+  {
+   "title": "Modele Formulare - Servicii de consultanta si reprezentare juridica",
+   "url": "uploads/docs/diverse/servicii_juridice-modele_formulare.pdf"
+  },
+  {
+   "title": "03.2019 - Acord Transport gratuit pentru persoanele cu dizabilitati",
+   "url": "uploads/docs/diverse/promovareServiciiDizabilitati_Malaxa.jpg"
+  }
+ ],
+ "garzi": [
+  {
+   "title": "Garzi Medici spital - nov.2026",
+   "url": "uploads/docs/garzi-program/garzi-medici-spital-nov.2026.pdf"
+  },
+  {
+   "title": "Garzi Medici spital - oct.2026",
+   "url": "uploads/docs/garzi-program/garzi-medici-spital-oct.2026.pdf"
+  },
+  {
+   "title": "Garzi Medici spital - sep.2026",
+   "url": "uploads/docs/garzi-program/garzi-medici-spital-sep.2026.pdf"
+  },
+  {
+   "title": "Garzi Medici spital - aug.2026",
+   "url": "uploads/docs/garzi-program/garzi-medici-spital-aug.2026.pdf"
+  },
+  {
+   "title": "Garzi Medici spital - iun.2026",
+   "url": "uploads/docs/garzi-program/garzi-medici-spital-iun.2026.pdf"
+  }
+ ],
+ "accreditations": [
+  {
+   "title": "Certificat de acreditare ANMCS",
+   "url": "uploads/docs/acreditari/Certificat acreditare.pdf"
+  },
+  {
+   "title": "Certificat ISO 9001",
+   "url": "uploads/docs/acreditari/ISO9001.pdf"
+  },
+  {
+   "title": "Certificat RENAR",
+   "url": "uploads/docs/acreditari/Certificat Renar.pdf"
+  },
+  {
+   "title": "Diplomă medici",
+   "url": "uploads/docs/acreditari/Diploma medici.pdf"
+  },
+  {
+   "title": "Diplomă asistenți",
+   "url": "uploads/docs/acreditari/Diploma asistenti.pdf"
+  }
+ ],
+ "structure": [
+  [
+   "Secția Clinică Medicină Internă",
+   "50 paturi"
+  ],
+  [
+   "Secția Medicină Fizică și de Reabilitare",
+   "32 paturi"
+  ],
+  [
+   "Secția Clinică Diabet Zaharat, Nutriție și Boli Metabolice",
+   "45 paturi"
+  ],
+  [
+   "Compartiment Clinic Alergologie și Imunologie",
+   "18 paturi"
+  ],
+  [
+   "Secția Chirurgie Generală",
+   "30 paturi"
+  ],
+  [
+   "– din care Compartiment Oftalmologie",
+   "5 paturi"
+  ],
+  [
+   "Secția Clinică Obstetrică-Ginecologie",
+   "50 paturi"
+  ],
+  [
+   "Compartiment Anestezie și Terapie Intensivă",
+   "13 paturi"
+  ],
+  [
+   "Secția Neonatologie",
+   "25 paturi"
+  ],
+  [
+   "– din care Compartiment Prematuri",
+   "5 paturi"
+  ],
+  [
+   "– din care Compartiment ATI neonatal",
+   "5 paturi"
+  ],
+  [
+   "Spitalizare de zi",
+   "10 paturi"
+  ],
+  [
+   "TOTAL",
+   "263 paturi"
+  ]
+ ],
+ "statistics": [
+  [
+   "Pacienți internați – spitalizare continuă",
+   "10.415",
+   "10.877"
+  ],
+  [
+   "Pacienți internați – spitalizare de zi",
+   "11.767",
+   "11.007"
+  ],
+  [
+   "Analize de laborator",
+   "527.887",
+   "576.168"
+  ],
+  [
+   "Explorări funcționale",
+   "11.007",
+   "21.620"
+  ],
+  [
+   "Consultații în ambulatoriu",
+   "87.233",
+   "82.432"
+  ]
+ ],
+ "partners": [
+  [
+   "Direcția Generală de Asistență Socială a Municipiului București",
+   "Colaborare în ceea ce privește cazurile sociale și copiii abandonați.",
+   "https://dgas.ro"
+  ],
+  [
+   "Info Sănătate",
+   "Activități de comunicare și prevenție în sălile de așteptare, prin afișare video, pentru informarea și educația pacienților.",
+   ""
+  ],
+  [
+   "UMF „Carol Davila”",
+   "Instruire și formare clinică a studenților.",
+   "https://umfcd.ro"
+  ],
+  [
+   "Spitalul Sf. Pantelimon",
+   "Transfer interclinic al pacienților.",
+   ""
+  ]
+ ],
+ "research": [
+  [
+   "Cercetare obstetrică-ginecologie",
+   "Activitatea de cercetare este realizată atât de medicii cercetători științifici, cât și de celelalte cadre medicale; în cadrul secției se desfășoară constant studii clinice."
+  ],
+  [
+   "Cercetare diabet",
+   "Preocupările se extind în domeniul activității didactice și de cercetare, cu studii clinice în derulare."
+  ],
+  [
+   "Cercetare alergologie",
+   "Activități de cercetare în domeniul alergologiei moleculare."
+  ]
+ ],
+ "admission": {
+  "intro": [
+   "In spitalul clinic “N.Malaxa” se poate interna prin programare orice pacient care nu constituie urgenta medico-chirurgicala. Prioritate pentru accesul la serviciile medicale oferite o reprezinta starea clinica a pacientului.",
+   "In lipsa locurilor disponibile, pacienții care solicită internarea pot cere înscrierea în registrul de programări pentru a putea fi anunțați în timp util despre disponibilitatea acestora."
+  ],
+  "how": [
+   "telefonic; programarea telefonica se realizează între intervalul orarul stabilit de fiecare sectie, de catre pacienți sau apartinatorii acestora avand la dispoziție pe site-ul spitalului informatiile de contact",
+   "de catre medicul curant, dupa consultul de specialitate in ambulator, care programeaza internarea in functie de locurile disponibile"
+  ],
+  "docs": [
+   "Bilet de internare de la medicul de familie sau bilet trimitere de la medicul din ambulator/scrisoare medicala",
+   "Cardul de sanatate",
+   "Dovada calitatii de asigurat",
+   "CI/Bl/Pasaport/Certificat de nastere , original si xerocopie"
+  ],
+  "warning": [
+   "ATENTIE !!! in cazul in care pacientul nu este asigurat/nu poate face dovada calitatii de asigurat, la internare va semna ANGAJAMENTUL DE PLATA (document prin care pacientul se angajeaza sa prezinte in timp util dovada calitati de asigurat , in caz contrar sa achite cheltuielile aferente spitalizarii sale)"
+  ],
+  "discharge_docs": [
+   "biletul de externare",
+   "scrisoarea medicala pentru medicul de familie",
+   "reteta pentru tratament, functie de diagnostice",
+   "concediul medical, daca este cazul",
+   "decontul de cheltuieli ocazionate de spitalizarea acestuia"
+  ],
+  "discharge_text": [
+   "Fiecare pacient primeste la externare o scrisoare medicala, un document cuprinzator ce include date privind motivele internarii, evolutia in timpul internarii, evaluarea medicala (diagnosticul stabilit), durata de spitalizare, schema de tratament efectuate, recomandarile medicale de urmat. Toate aceste informatii sunt destinate atat pacientului cat si medicului specialist sau medicului de familie pentru continuarea tratamentului.",
+   "Pe biletul de iesire din spital va fi recomandata data la care revine la control sau efectuarea controlului in ambulator sau la medicul de familie, dupa caz.",
+   "Pacientul se va asigura la externare ca a inteles toate indicatiile si recomandarile de urmat! Daca este necesara o programare pentru o alta vizita la medicul specialist pacientul sau apartinatorul se va asigura ca programarea este facuta si se va obtine datele de contact."
+  ]
+ },
+ "rights": {
+  "intro": [
+   "Drepturile pacientilor sunt reglementate de Legea nr.46/2003 privind drepturile pacientului si Ordinul MSP nr.386/2004 privind aprobarea Normelor de aplicare a Legii drepturilor pacientului nr.46/2003."
+  ],
+  "groups": [
+   {
+    "title": "Drepturi generale",
+    "items": [
+     "Pacientii au dreptul la îngrijiri medicale de cea mai înaltă calitate.",
+     "Pacientul are dreptul de a fi respectat ca persoană umană, fără nici o discriminare."
+    ]
+   },
+   {
+    "title": "Drepturile pacientului la informația medicală",
+    "items": [
+     "Pacientul are dreptul de a fi informat cu privire la serviciile medicale disponibile, precum si la modul de a le utiliza.",
+     "Pacientul are dreptul de a fi informat asupra identitatii si statutului profesional al furnizorilor serviciilor de sanatate.",
+     "Pacientul internat are dreptul de a fi informat asupra regulilor si obiceiurilor pe care trebuie sa le respecte pe durata spitalizarii.",
+     "Pacientul are dreptul de a fi informat asupra starii sale de sanatate, a interventiilor medicale propuse, a riscurilor potentiale ale fiecarei proceduri, a alternativelor existente la procedurile propuse, inclusiv asupra neefectuarii tratamentului si nerespectarii recomandarilor medicale, precum si cu privire la datele despre diagnostic si prognostic.",
+     "Pacientul are dreptul de a decide daca mai doreste sa fie informat in cazul in care informatiile prezentate de catre medic i-ar cauza suferinta.",
+     "Informatiile se aduc la cunostinta pacientului intr-un limbaj respectuos, clar, cu minimalizarea terminologiei de specialitate; in cazul in care pacientul nu cunoaste limba romana, informatiile I se aduc la cunostinta in limba materna ori in limba pe care o cunoaste sau, dupa caz, se va cauta o alta forma de comunicare.",
+     "Pacientul are dreptul de a cere in mod expres sa nu fie informat si de a alege o alta persoana care sa fie informata in locul sau.",
+     "Rudele si prietenii pacientului pot fi informati despre evolutia investigatiilor, diagnostic si tratament, cu acordul pacientului.",
+     "Pacientul are dreptul de a cere si de a obtine o alta opinie medicala.",
+     "Pacientul are dreptul sa solicite si sa primeasca, la externare, un rezumat scris al investigatiilor, dianosticului, tratamentului si ingrijirilor acordate pe perioada spitalizarii."
+    ]
+   },
+   {
+    "title": "Consimțământul pacientului privind intervenția medicală",
+    "items": [
+     "Pacientul are dreptul sa refuze sau sa opreasca o interventie medicala asumandu-si, in scris, raspunderea pentru decizia sa; consecintele refuzului sau ale opririi actelor medicale trebuie explicate pacientului.",
+     "Cand pacientul nu isi poate exprima vointa, dar este necesara o interventie medicala de urgenta, personalul medical are dreptul sa deduca acordul pacientului dintr-o exprimare anterioara a vointei acestuia.",
+     "In cazul in care pacientul necesita o interventie medicala de urgenta, consimtamantul reprezentantului legal nu mai este necesar.",
+     "In cazul in care se cere consimtamantul reprezentantului legal, pacientul trebuie sa fie implicat in procesul de luare a deciziei atat cat permite capacitatea lui de intelegere.",
+     "In cazul in care furnizorii de servicii medicale considera ca interventia este in interesul pacientului, iar reprezentantul legal refuza sa isi dea consimtamantul, decizia este declinata unei comisii de arbitraj de specialitate.",
+     "Comisia de arbitraj este constituita din 3 medici pentru pacientii internati in spitale si din 2 medici pentru pacientii din ambulatoriu.",
+     "Consimtamantul pacientului este obligatoriu pentru recoltarea, pastrarea, folosirea tuturor produselor biologice prelevate din corpul sau, in vederea stabilirii diagnosticului sau a tratamentului cu care acesta este de acord.",
+     "Consimtamantul pacientului este obligatoriu in cazul participarii sale in invatamantul medical clinic si la cercetarea stiintifica. Nu pot fi folosite pentru cercetare stiintifica persoanele care nu sunt capabile sa isi exprime vointa, cu exceptia obtinerii consimtamantului de la reprezentantul legal si daca cercetarea este facuta si in interesul pacientului.",
+     "Pacientul nu poate fi fotografiat sau fimat intr-o unitate medicala fara consimtamantul sau, cu exceptia cazurilor in care imaginile sunt necesare diagnosticului sau tratamentului si evitarii suspectarii unei culpe medicale."
+    ]
+   },
+   {
+    "title": "Dreptul la confidențialitatea informațiilor și viața privată a pacientului",
+    "items": [
+     "Toate informatiile privind starea pacientului, rezultatele investigatiilor, diagnosticul, prognosticul, tratamentul, datele personale sunt confidentiale chiar si dupa decesul acestuia.",
+     "Informatiile cu caracter confidential pot fi furnizate numai in cazul in care pacientul isi da consimtamantul explicit si daca legea o cere in mod expres.",
+     "In cazul in care informatiile sunt necesare altor furnizori de servicii medicale acreditati, implicati in tratamentul pacientului, acordarea consimtamantului nu mai este obligatoie.",
+     "Pacientul are acces la datele medicale personale.",
+     "Orice amestec in viata privata, familiala a pacientului este interzis, cu exceptia cazurilor in care aceasta imixtitudine influenteaza pozitiv dignosticul, tratamentul ori ingrijirile acordate si numai cu consimtamantul pacientului.",
+     "Sunt considerate exceptii cazurile in care pacientul reprezinta pericol pentru sine sau pentru sanatatea publica."
+    ]
+   },
+   {
+    "title": "Drepturile pacientului la tratament și îngrijiri medicale",
+    "items": [
+     "In cazul in care furnizorii sunt obligati sa recurga la selectarea pacientilor pentru anumite tipuri de tratament care sunt disponibile in numar limitat, selectarea se face numai pe baza criteriilor medicale.",
+     "Criteriile medicale privind selectarea pacientilor pentru anumite tipuri de tratament se elaboreaza de catre Ministerul Sanatatii si Familiei in termen de 30 de zile de la data intrarii in vigoare a prezentei legi si se aduc la cunostinta publicului.",
+     "Interventiile medicale asupra pacientului se pot efectua numai daca exista conditiile de dotare necesare si personal acreditat.",
+     "Se excepteaza de la prevederile alin. (1) cazurile de urgenta aparute in situatii extreme.",
+     "Pacientul are dreptul la ingrijiri terminale pentru a putea muri in demnitate.",
+     "Pacientul poate beneficia de sprijinul familiei, al prietenilor, de suport spiritual, material si de sfaturi pe tot parcursul ingrijirilor medicale. La solicitarea pacientului, in masura posibilitatilor, mediul de ingrijire si tratament va fi creat cat mai aproape de cel familial.",
+     "Pacientul internat are dreptul si la servicii medicale acordate de catre un medic acreditat din afara spitalului.",
+     "Personalul medical sau nemedical din unitatile sanitare nu are dreptul sa supuna pacientul nici unei forme de presiune pentru a-l determina pe acesta sa il recompenseze astfel decat prevad reglementarile de plata legale din cadrul unitatii respective.",
+     "Pacientul poate oferi angajatilor sau unitatii unde a fost ingrijit plati suplimentare sau donatii, cu respectarea legii.",
+     "Pacientul are dreptul la ingrijiri medicale continue pana la ameliorarea starii sale de sanatate sau pana la vindecare.",
+     "Continuitatea ingrijirilor se asigura prin colaborarea si parteneriatul dintre diferitele unitati medicale publice si nepublice, spitalicesti si ambulatorii, de specialitate sau de medicina generala, oferite de medici, cadre medii sau de alt personal calificat. Dupa externare pacientii au dreptul la servicii comunitare disponibile.",
+     "Pacientul are dreptul sa beneficieze de asistenta medicala de urgenta, de asistenta stomatologica de urgenta si de servicii farmaceutice, in program continuu."
+    ]
+   }
+  ],
+  "obligations": [
+   "Să respecte regulile referitoare la obligaţiile ce ii revin pe perioada internării.",
+   "Apartinatorii copiilor internati, cu varsta mai mare de 3 ani, vor plati spitalizarea – 15 lei/zi (cu exceptia celor cu cerificat de handicap, conform legii )",
+   "La INTERNARE:",
+   "Dupa completarea documentelor medicale, va fi directionat catre salon",
+   "Sa aiba asupra lor: pijama, halat, papuci de interior, obiecte si produse de igiena personala",
+   "Medicamente pentru tratamentul afectiunilor cronice, unde este cazul (diabetici, etc.)",
+   "La SALON:",
+   "nu se permite degradarea mobilierului şi bunurilor din dotarea secţiei şi spitalului, în caz contrar vor fi obligaţi la plata contravalorii bunurilor deteriorate",
+   "iesirea sau plecarea din spital se face numai cu permisiunea medicilor si instiintarea asistentei de serviciu",
+   "sa mentina usa salonului inchisa, aerisirea se va face numai pe geam, sa permita infirmierei sa faca curatenia zilnica si sa aeriseasca ,ori de cate ori este nevoie",
+   "sunt obligaţi să respecte regulile de igienă personala, altfel vor fi insotiti de o infirmiera la grupul sanitar si vor fi igienizati",
+   "sa respecte ordinea şi liniştea, sa păstreze curăţenia în saloane, sala de mese, coridoare",
+   "bolnavii internaţi sunt obligaţi să respecte personalul medical din secţia unde sunt internaţi şi din spital",
+   "este interzisă circulaţia bolnavilor în alte secţii decât cele în care sunt internaţi, cu excepţia cazurilor care necesită investigaţii",
+   "este rugat sa limiteze pe cât posibil numarul vizitatorilor, acestia sa respecte orele de vizita impuse de specificul sectiei, iar la intrarea in sectie sa fie echipati cu halate si papuci de protectie",
+   "să asigure individual paza şi protecţia bunurilor personale, de valoare pe care le introduc în spital, asumându-şi întreaga responsabilitate cu privire la acestea",
+   "să respecte cu stricteţe planul de tratament şi să discute despre orice schimbare pe care o doresc, sau care intervine din cauze externe, cu medicii curanţi sau cu medici din aceeaşi arie de specializare cu cei care au stabilit tratamentul",
+   "să îşi asume întreaga responsabilitate pentru consecinţele ce apar în cazul refuzului de a urma tratamentul, instrucţiunile şi recomandările personalului medical",
+   "să informeze personalul medical, întocmai şi la timp, cu privire la orice manifestare sau reacţie la tratamentul sau medicamentele prescrise",
+   "este interzis consumul de băuturi alcoolice şi fumatul în incinta spitalului",
+   "să respecte regulile de acces, de conduită şi disciplină ale spitalului",
+   "să achite contravaloarea serviciilor medicale în cazul în care pacientul nu este asigurat în sistemul de asigurări sociale de sănătate",
+   "La EXTERNARE:",
+   "va prezenta asistentei medicale de serviciu/infirmierei, camera cu bunurile si utilitatile sale integre si în stare de functionare; în cazul în care se constata deteriorari ale bunurilor spitalului, pacientul plateste contravaloarea",
+   "la externare primeste documentele medicale, va lasa chestionarul de satisfactie completat în urna special amenajata în sectie"
+  ]
+ }
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Spitalul Clinic „Nicolae Malaxa”",
+  "short_name": "Malaxa",
+  "legal_name": "Spitalul Clinic „Nicolae Malaxa”",
+  "tagline": "Spital clinic al Municipiului București, din 1963",
+  "hero_title": "Îngrijire medicală de încredere, pentru fiecare pacient",
+  "hero_subtitle": "Secții clinice, ambulatoriu de specialitate și gardă non-stop, în inima sectorului 2 din București.",
+  "hero_image": "uploads/images/sediu.jpg",
+  "founded": "1963",
+  "years": "60",
+  "logo_image": "",
+  "logo_icon": "uploads/images/logo-malaxa.jpg",
+  "logo_text": "MALAXA",
+  "logo_subtext": "SPITALUL CLINIC",
+  "colors": {
+    "primary": "#0b2d63",
+    "primary_dark": "#071d44",
+    "accent": "#1aa3c9",
+    "accent_dark": "#11819f",
+    "highlight": "#d7262e",
+    "soft": "#f2f6fc"
+  },
+  "contact": {
+    "phone": "021 255 54 05",
+    "phone_href": "+40212555405",
+    "phone_hours": "centrală",
+    "phone_appointments": "021 570 96 72",
+    "phone_appointments_href": "+40215709672",
+    "fax": "021 255 52 75",
+    "phone_hr": "021 255 50 85",
+    "online_booking": "https://programari.axamedis.ro/malaxa/",
+    "email": "secretariat@spitalmalaxa.ro",
+    "email_office": "office@spitalmalaxa.ro",
+    "email_public_info": "office@spitalmalaxa.ro",
+    "email_integrity": "integritate@spitalmalaxa.ro",
+    "public_info_officer": "",
+    "spokesperson": "Dr. Ana Magdalena Meilă – 0722 794 401",
+    "address": "Șoseaua Vergului nr. 12, Sector 2, cod poștal 022441, București",
+    "address_short": "Șos. Vergului nr. 12, Sector 2, București",
+    "map_query": "Spitalul Clinic Nicolae Malaxa, Soseaua Vergului 12, Bucuresti",
+    "program": "Gardă non-stop · Ambulatoriu: Luni – Vineri",
+    "audiente": "Manager: vineri 12:00 – 13:00 · Director medical: marți 14:00 – 15:00 · Director financiar-contabil: miercuri 10:00 – 11:00",
+    "cui": ""
+  },
+  "transport": {
+    "metrou": "Stația Ing. Costin Georgian (M1)",
+    "tramvai": "Liniile 14, 36, 40, 46, 56",
+    "autobuz": "Liniile 102, 202"
+  },
+  "visiting": [
+    ["Secții", "Luni – Vineri: 15:00 – 19:00", "Sâmbătă – Duminică: 10:00 – 16:00 și 19:00 – 20:00"],
+    ["ATI", "Luni – Duminică: 15:00 – 16:00 și 19:00 – 20:00", ""],
+    ["Neonatologie", "Luni – Duminică: 14:00 – 15:00 și 19:30 – 20:30", ""]
+  ],
+  "visiting_pdf": "uploads/docs/files/program_vizita_apartinatori.pdf",
+  "feedback_url": "http://infrastructura-sanatate.ms.ro/formulare/pacienti/264",
+  "stats": [
+    {"value": 263, "label": "Paturi"},
+    {"value": 82000, "label": "Consultații ambulatoriu/an"},
+    {"value": 10800, "label": "Internări continue/an"},
+    {"value": 570000, "label": "Analize de laborator/an"},
+    {"value": 67, "label": "Medici și specialiști"}
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/NicolaeMalaxa/",
+    "instagram": "",
+    "youtube": "",
+    "linkedin": ""
+  },
+  "accreditation_badge": "Acreditat ANMCS",
+  "accreditation_image": "uploads/acreditari/anmcs-4.png",
+  "external_links": [
+    ["Administrația Spitalelor și Serviciilor Medicale București", "http://assmb.ro/"],
+    ["CASMB – servicii pentru asigurați", "https://www.casmb.ro/asigurati_servicii.php"],
+    ["Lista cabinetelor de medicină de familie", "http://www.cnas.ro/casmb/page/lista-cabinete-medicina-de-familie.html"]
+  ],
+  "base_url": "https://www.spitalmalaxa.ro",
+  "lang": "ro"
+}

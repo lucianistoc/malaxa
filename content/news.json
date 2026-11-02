@@ -1,0 +1,62 @@
+[
+ {
+  "slug": "colectare-medicamente-expirate",
+  "date": "",
+  "title": "Colectarea medicamentelor expirate de la populație",
+  "category": "Campanii",
+  "excerpt": "Spitalul colectează medicamentele expirate sau neutilizate de la populație, pentru eliminarea lor în siguranță.",
+  "image": "uploads/afise/colectare-medicamente-expirate.png",
+  "attachment": "uploads/docs/afise/colectare-medicamente-expirate-populatie.pdf",
+  "body": [
+   "Spitalul Clinic „Nicolae Malaxa” participă la acțiunea de colectare a medicamentelor expirate sau neutilizate de la populație.",
+   "Detalii complete în afișul campaniei."
+  ]
+ },
+ {
+  "slug": "o-picatura-de-sange",
+  "date": "",
+  "title": "O picătură de sânge",
+  "category": "Campanii",
+  "excerpt": "Campanie de informare și prevenție.",
+  "image": "uploads/afise/o_picatura_de_sange.jpg",
+  "body": [
+   "Detalii complete în afișul campaniei."
+  ]
+ },
+ {
+  "slug": "baby-boom",
+  "date": "",
+  "title": "Baby Boom",
+  "category": "Campanii",
+  "excerpt": "Informații pentru viitoarele mămici.",
+  "image": "uploads/afise/babyboom.jpg",
+  "attachment": "uploads/docs/afise/babyboom.pdf",
+  "body": [
+   "Detalii complete în afișul campaniei."
+  ]
+ },
+ {
+  "slug": "program-fiv-assmb",
+  "date": "",
+  "title": "Programul de fertilizare in vitro (FIV) – ASSMB",
+  "category": "Programe",
+  "excerpt": "Programul de fertilizare in vitro derulat de Administrația Spitalelor și Serviciilor Medicale București.",
+  "image": "uploads/afise/fiv3-assmb.jpg",
+  "link": "https://fiv.assmb.ro/",
+  "body": [
+   "Informații despre programul FIV derulat de ASSMB găsiți pe site-ul dedicat: fiv.assmb.ro."
+  ]
+ },
+ {
+  "slug": "fii-pregatit",
+  "date": "",
+  "title": "Fii pregătit!",
+  "category": "Campanii",
+  "excerpt": "Campania națională de pregătire a populației pentru situații de urgență.",
+  "image": "uploads/afise/fiipregatit.jpg",
+  "link": "https://fiipregatit.ro/",
+  "body": [
+   "Informații despre cum să te pregătești pentru situații de urgență găsiți pe fiipregatit.ro."
+  ]
+ }
+]
