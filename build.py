@@ -6,8 +6,10 @@ static website to ./public. No dependencies beyond the Python 3 standard library
 
     python3 build.py              # build into ./public
     python3 -m http.server -d public 8000   # preview at http://localhost:8000
+    BASE_PATH=/malaxa/ python3 build.py     # when served from a sub-path (GitHub Pages project site)
 """
 import json
+import os
 import re
 import shutil
 import unicodedata
@@ -30,6 +32,9 @@ E = escape
 MONTHS = ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august",
           "septembrie", "octombrie", "noiembrie", "decembrie"]
 SEARCH_INDEX = []
+# URL path the site is served from; only the root 404.html needs it (all other links are relative).
+# e.g. BASE_PATH=/malaxa/ for https://<user>.github.io/malaxa/
+BASE_PATH = "/" + os.environ.get("BASE_PATH", "/").strip("/") + "/" if os.environ.get("BASE_PATH", "/").strip("/") else "/"
 
 
 def num(v):
@@ -1039,7 +1044,7 @@ def search_page():
 def not_found():
     body = page_hero("Pagina nu a fost găsită") + f'<section class="section"><div class="container center"><p>Ne pare rău, pagina căutată nu există.</p><a class="btn btn-primary" href="{R}">Înapoi la pagina principală</a></div></section>'
     layout("404/", "Pagina nu a fost găsită", body)
-    (OUT / "404.html").write_text((OUT / "404/index.html").read_text(encoding="utf-8").replace('"../', '"/'), encoding="utf-8")
+    (OUT / "404.html").write_text((OUT / "404/index.html").read_text(encoding="utf-8").replace('"../', f'"{BASE_PATH}'), encoding="utf-8")
 
 
 def build():

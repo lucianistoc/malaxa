@@ -32,6 +32,15 @@ python3 -m http.server -d public 8000
 Then open http://localhost:8000. The `public/` folder is the deployable site (GitHub Pages, Netlify, any web host).
 It is generated and not committed; run `python3 build.py` (e.g. as the host's build command) to produce it.
 
+## Deploy (GitHub Pages)
+
+`.github/workflows/pages.yml` builds the site and publishes `public/` to GitHub Pages on every push to `main`, or on
+demand from the Actions tab (*Deploy to GitHub Pages → Run workflow*). One-time setup: in the repository's
+**Settings → Pages**, set **Source** to **GitHub Actions**.
+
+The site is served from a sub-path (`https://<user>.github.io/<repo>/`); the workflow passes that path to the build as
+`BASE_PATH` so the 404 page resolves correctly. All other links are relative and work under any path or custom domain.
+
 ## Re-branding (white-label)
 
 | What | Where |
