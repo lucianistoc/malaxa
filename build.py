@@ -221,12 +221,12 @@ def nav_html(r, current):
 def mobile_nav(r):
     out = []
     for label, url, sub in NAV:
-        if sub is None:
+        if sub is None or sub == "AMB":  # Ambulatoriu is a plain link on mobile, like Medici and Contact
             out.append(f'<li><a href="{r}{url}">{label}</a></li>')
             continue
         pairs = [(t, u) for t, u in nav_pairs(sub) if u]
-        items = f'<li><a href="{r}{url}">Vezi tot – {label}</a></li>' + "".join(f'<li><a href="{r}{u}">{E(t)}</a></li>' for t, u in pairs)
-        out.append(f'<li><details><summary>{label}</summary><ul>{items}</ul></details></li>')
+        items = f'<li><a href="{r}{url}">Vezi tot</a></li>' + "".join(f'<li><a href="{r}{u}">{E(t)}</a></li>' for t, u in pairs)
+        out.append(f'<li><details><summary>{label} {icon("caret", "caret")}</summary><ul>{items}</ul></details></li>')
     return '<nav class="mobile-nav" aria-label="Meniu mobil"><ul>' + "".join(out) + "</ul></nav>"
 
 
@@ -299,10 +299,15 @@ def layout(path, title, body, desc=None, current=None, section="Pagini"):
 </header>
 
 <div class="offcanvas-backdrop" id="ocBackdrop"></div>
+<button class="oc-close" id="ocClose" aria-label="Închide meniul">{icon('close')}</button>
 <aside class="offcanvas" id="offcanvas" aria-hidden="true" aria-label="Meniu lateral">
-  <button class="icon-btn close" id="ocClose" aria-label="Închide">{icon('close')}</button>
   {logo(r)}
   {mobile_nav(r)}
+  <div class="oc-mobile-extra">
+    <button class="oc-search" id="ocSearch" aria-label="Caută">{icon('search')}</button>
+    <div class="oc-social">{socials()}</div>
+  </div>
+  <div class="oc-info">
   <h4>{E(CFG['legal_name'])}</h4>
   <p class="muted">{E(CFG['tagline'])}. {E(CFG['hero_subtitle'])}</p>
   <h4>Contactează-ne</h4>
@@ -315,6 +320,7 @@ def layout(path, title, body, desc=None, current=None, section="Pagini"):
   <a class="btn btn-accent" style="margin-top:16px" href="{book}"{book_attr}>Programări online {icon('arrow')}</a>
   <h4>Urmărește-ne</h4>
   <div class="socials">{socials()}</div>
+  </div>
 </aside>
 
 <main id="main">

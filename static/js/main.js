@@ -7,6 +7,12 @@
   const closeOC = () => { document.body.classList.remove("oc-open"); $("#offcanvas").setAttribute("aria-hidden", "true"); };
   $("#burger")?.addEventListener("click", openOC);
   $("#ocClose")?.addEventListener("click", closeOC);
+  $("#ocSearch")?.addEventListener("click", () => {
+    closeOC();
+    const sp = $("#searchPanel"); sp.classList.add("open");
+    $("#searchToggle")?.setAttribute("aria-expanded", "true");
+    $("input", sp).focus();
+  });
   $("#ocBackdrop")?.addEventListener("click", closeOC);
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeOC(); });
 
