@@ -1,4 +1,14 @@
-# White-label hospital website
+# White-label hospital website – Spitalul Clinic „Nicolae Malaxa”
+
+The site is currently populated with real data from https://www.spitalmalaxa.ro (crawled November 2026):
+contacts, history, bed structure, management, board and ethics council, 16 sections and outpatient clinics with
+their teams (67 specialists), schedules, equipment, photo galleries, the full price list (Decizia 188/06.11.2024, 361
+services), patient rights and obligations, admission and discharge info, visiting hours, accreditations, the on-call
+rota, job competitions and public-interest documents. Documents (PDFs) link to their originals on spitalmalaxa.ro.
+Images were copied into `uploads/`.
+
+Still to complete by the hospital: doctor photos (`photo` in `content/doctors.json`), the GDPR page text
+(`confidentialitate`), dates for news items, and the mission/values texts in `content/lists.json`.
 
 A complete static website for a Romanian public hospital. The page structure and navigation follow a typical
 clinical-hospital site: about, management, specialties, outpatient clinic, doctors, patient and visitor info,

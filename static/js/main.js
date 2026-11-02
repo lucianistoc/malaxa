@@ -97,6 +97,36 @@
     document.body.style.fontSize = (15 * fs / 100) + "px";
   });
 
+  // Lightbox for galleries
+  const lb = $("#lightbox");
+  if (lb) {
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest("a[data-lightbox]"); if (!a) return;
+      e.preventDefault(); $("img", lb).src = a.href; lb.hidden = false;
+    });
+    lb.addEventListener("click", () => { lb.hidden = true; });
+  }
+
+  // Price list filter
+  const pf = $("#priceFilter");
+  pf?.addEventListener("input", () => {
+    const q = pf.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    $$("#priceAccordion details").forEach((d) => {
+      let hits = 0;
+      $$("tbody tr", d).forEach((tr) => {
+        const ok = !q || tr.textContent.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(q);
+        tr.hidden = !ok; if (ok) hits++;
+      });
+      d.hidden = q && !hits; d.open = !!q && hits > 0;
+    });
+  });
+
+  // Public-interest tiles open their documents panel
+  $$("a[data-open]").forEach((a) => a.dataset.open && a.addEventListener("click", () => {
+    const d = document.getElementById(a.dataset.open); if (d) d.open = true;
+  }));
+  if (location.hash.startsWith("#doc-")) { const d = $(location.hash); if (d) d.open = true; }
+
   // Back to top
   const bt = $("#backTop");
   addEventListener("scroll", () => bt?.classList.toggle("show", scrollY > 600), { passive: true });
