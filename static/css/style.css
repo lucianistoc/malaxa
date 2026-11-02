@@ -76,8 +76,9 @@ body.oc-open .offcanvas-backdrop { opacity: 1; visibility: visible; }
 
 /* Page hero */
 .page-hero { position: relative; color: #fff; text-align: center; background: var(--primary); overflow: hidden; }
-.page-hero::before { content: ""; position: absolute; inset: 0; background: var(--hero-image, none) center/cover; opacity: .35; }
-.page-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(3,24,74,.55), rgba(3,24,74,.85)), var(--pattern); }
+.page-hero::before { content: ""; position: absolute; inset: 0; background: var(--hero-image, none) center/cover; opacity: .7; }
+.page-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,29,68,.72) 0%, rgba(7,29,68,.5) 100%); }
+.page-hero h1, .page-hero .breadcrumbs, .hero-side { text-shadow: 0 1px 12px rgba(3,15,40,.45); }
 .page-hero .container { position: relative; z-index: 1; padding: 110px 20px 120px; }
 .page-hero h1 { color: #fff; font-size: clamp(30px, 4.6vw, 52px); margin: 0; }
 .breadcrumbs { margin-top: 14px; font-size: 14px; color: #c9d6ee; }
