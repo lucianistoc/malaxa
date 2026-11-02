@@ -1,0 +1,10 @@
+columnSuffix: null
+handle: colorHighlight
+instructions: null
+name: 'Culoare evidențiere'
+searchable: false
+settings:
+  allowCustomColors: true
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

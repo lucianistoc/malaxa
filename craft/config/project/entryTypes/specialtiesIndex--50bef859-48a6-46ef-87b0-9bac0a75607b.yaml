@@ -1,0 +1,145 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  37a9f5ce-6554-47d2-8706-987ae3c6311a:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 73a9782c-e984-4c8f-a344-4c068c039190
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 2feb8465-150a-4309-8135-e4950c163841 # Titlu secțiune
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f13a1d5a-ef10-42c2-98d7-25172be8883c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: d357be62-5f79-4691-acd2-751d09445d0c # Text
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6f4a9e3c-1c88-49b7-a55f-383e06e72379
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: e50fb4ab-433f-4f82-80da-2afeb343ada3 # Blocuri de conținut
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6c8ce8e0-3f5e-4147-bfa8-7a6fe71576de
+            userCondition: null
+            warning: null
+            width: 100
+        name: Conținut
+        uid: d4f83106-cd67-4bd1-ab2d-f1f798d55a6c
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 8a8522c9-f51e-4886-96ad-a93afb3da725 # Ascunde din meniu
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c6422d9f-4a05-4e42-884c-db7e60be2a8e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f1a773e1-ee6e-40ba-9a27-6c0e9e0018bb # Grup în meniu
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b10de86a-130a-48f3-9ddc-d35f3bc81ae0
+            userCondition: null
+            warning: null
+            width: 100
+        name: Navigare
+        uid: 6e063cc8-d271-47ef-a786-3bf3cf330739
+        userCondition: null
+    thumbFieldKey: null
+handle: specialtiesIndex
+hasTitleField: true
+icon: null
+name: 'Listă specialități'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

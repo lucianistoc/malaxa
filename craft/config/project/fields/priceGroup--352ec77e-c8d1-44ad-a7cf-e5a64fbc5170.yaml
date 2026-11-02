@@ -1,0 +1,25 @@
+columnSuffix: null
+handle: priceGroup
+instructions: 'Tarifele afișate pe pagina specialității.'
+name: 'Grupă de tarife'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: null
+  showSearchInput: true
+  showSiteMenu: false
+  showUnpermittedEntries: false
+  showUnpermittedSections: false
+  sources:
+    - 'section:5dc6551d-4528-425f-8227-fc87294cad8b' # Tarife
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries

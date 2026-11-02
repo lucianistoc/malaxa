@@ -1,0 +1,43 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  e775d36f-3136-4f41-bc76-104753707871:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 1d831964-6cb5-4950-a9fa-06df17603d23 # Notă
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1ff72639-5cd3-4c90-a6ad-899632163fa1
+            userCondition: null
+            warning: null
+            width: 100
+        name: Conținut
+        uid: 48e8cb20-5c40-40ca-a197-f1aff490589f
+        userCondition: null
+    thumbFieldKey: null
+handle: blockNotice
+hasTitleField: false
+icon: null
+name: Atenționare
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{heading ?: "Atenționare"}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

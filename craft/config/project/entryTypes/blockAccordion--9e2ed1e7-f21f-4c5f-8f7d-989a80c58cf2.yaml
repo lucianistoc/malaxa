@@ -1,0 +1,60 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  21bfa583-bb0e-4851-b52f-8cc27bf4ab07:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 2feb8465-150a-4309-8135-e4950c163841 # Titlu secțiune
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7bace674-720d-4cc8-8a71-28bd1f19d3aa
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: e2f11d1d-7c61-48c1-8bdb-765388e73893 # Elemente acordeon
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: de966a00-d09d-422b-8e4e-7032a8343bec
+            userCondition: null
+            warning: null
+            width: 100
+        name: Conținut
+        uid: efd37aca-a40e-4ea2-99df-044b2de00be9
+        userCondition: null
+    thumbFieldKey: null
+handle: blockAccordion
+hasTitleField: false
+icon: null
+name: Acordeon
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{heading ?: "Acordeon"}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

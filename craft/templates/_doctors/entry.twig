@@ -1,0 +1,30 @@
+{% extends '_layout' %}
+{% from '_partials/icons.twig' import icon %}
+{% import '_partials/ui.twig' as ui %}
+{% set sp = entry.specialty.one() %}
+{% set description = entry.title ~ ' – ' ~ entry.grade ~ (sp ? ', ' ~ sp.title) %}
+
+{% block content %}
+{%- set photo = entry.photo.one() -%}
+{#- Outpatient schedule row for this doctor, matched on last name -#}
+{%- set amb = null -%}
+{%- for r in sp.ambSchedule ?? [] -%}
+  {%- set last = (r.doctor|split('–')|last|trim|split(' ')|last) -%}
+  {%- if amb is null and last and last in entry.title %}{% set amb = r.program %}{% endif -%}
+{%- endfor -%}
+<section class="section"><div class="container profile">
+  <div>
+    <div class="doctor-photo">{% if photo %}<img src="{{ photo.url }}" alt="{{ entry.title }}">{% else %}<span class="initials">{{ ui.initials(entry.title) }}</span>{% endif %}</div>
+    {% if sp %}<div class="profile-spec"><a href="{{ sp.url }}">{{ sp.title }}</a></div>{% endif %}
+    {{ ui.contactBox(sp.phones ?? []) }}
+  </div>
+  <div class="prose">
+    <h1>{{ entry.title }}</h1>
+    {% if entry.role %}<p class="pill">{{ entry.role }}</p>{% endif %}
+    <p class="grade">{{ entry.grade }}</p>
+    {{ ui.paras(entry.bio) }}
+    {% if amb %}<div class="info-box"><span class="ring">{{ icon('clock') }}</span><div><small>Program ambulatoriu</small><strong>{{ amb }}</strong></div></div>{% endif %}
+    {% if sp %}<p><a class="btn btn-primary" href="{{ sp.url }}">{{ sp.title }} {{ icon('arrow') }}</a></p>{% endif %}
+  </div>
+</div></section>
+{% endblock %}

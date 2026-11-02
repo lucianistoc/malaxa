@@ -1,0 +1,47 @@
+columnSuffix: null
+handle: accordionItems
+instructions: null
+name: 'Elemente acordeon'
+searchable: false
+settings:
+  addRowLabel: 'Adaugă rând'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Titlu / întrebare'
+            -
+              - handle
+              - question
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Conținut / răspuns'
+            -
+              - handle
+              - answer
+            -
+              - type
+              - multiline
+            -
+              - width
+              - ''
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

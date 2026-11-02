@@ -1,0 +1,47 @@
+columnSuffix: null
+handle: stats
+instructions: null
+name: Cifre
+searchable: false
+settings:
+  addRowLabel: 'Adaugă rând'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Valoare
+            -
+              - handle
+              - value
+            -
+              - type
+              - number
+            -
+              - width
+              - ''
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Etichetă
+            -
+              - handle
+              - label
+            -
+              - type
+              - singleline
+            -
+              - width
+              - ''
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

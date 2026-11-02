@@ -1,0 +1,378 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  5ca25ba8-6b0c-4fd6-9535-b423fcabc6f9:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 43704db7-453d-4fbe-9749-2d9566c41767
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: a14a8059-4767-4a33-bd02-f11e3727c1c8 # Iconiță
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cf01dbef-bd58-4501-8ec8-e9379cd99734
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 1c808e13-8e8e-49ff-b55f-4e636337f139 # Rezumat
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 85497e90-2d12-41e4-8293-6f3867d14413
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7614de45-c8f5-40ff-81ac-053174b747ef # Paturi
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0fd1a360-b98d-4e73-a1d9-2a51a7063306
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: d357be62-5f79-4691-acd2-751d09445d0c # Text
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 887a24c4-317b-40f4-8239-08920a385d05
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: e50fb4ab-433f-4f82-80da-2afeb343ada3 # Blocuri de conținut
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 46d65d24-ffbf-4839-9e1e-fee88c83b595
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: e1f2d152-afdb-4e60-9369-1924d79cc0b9 # Dotări
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f40250b6-76f9-41ce-ab56-6d2dcad3ba89
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f7333526-80cc-445a-9cb3-058773718ea9 # Galerie foto
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9c60fe05-f729-4b68-af47-2d5cd0709bb2
+            userCondition: null
+            warning: null
+            width: 100
+        name: Conținut
+        uid: e62c5954-069b-4af1-bd7c-3c65e2f467a9
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f1ba0221-a386-4433-b06e-1c64483e90da # Program
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8ead7a91-0e6c-4a45-a397-53cfd74d4456
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 8ff9eaed-07c8-4d31-a76f-2cb9ebb52190 # Telefoane
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3f1e78e6-9eb2-40b0-8106-71422a351a28
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: be4f204c-5fa3-46e7-ad16-46409de6eb56 # Linkuri
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e825c33f-0868-437a-b03e-9ab15fb51e9f
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Program și contact'
+        uid: e0b8fced-f66d-4bc9-8545-3fcadd2bd209
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ee5bf176-eacc-4837-ae5f-7064680752b8 # Are cabinet în ambulatoriu
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 71e7f70b-baf0-4721-a4dd-c1ccd555b2f9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 629309ff-bb40-4d4a-9914-83ac5ab97c60 # Doar ambulatoriu
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cc7b78e0-88a6-4bea-976d-3510fd319cd0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 80a18167-49a4-4bc0-a562-37cc46c9d6d8 # Ambulatoriu – descriere
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7ad23580-91ae-4c35-a442-ad8ca1a6bd4f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: a7a116f7-7f82-44d5-b072-307bcbbf9c14 # Ambulatoriu – program
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: beafd30a-3407-45f9-b763-c75f758facd3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 316245e8-98db-4d66-b7b4-0848653906bf # Ambulatoriu – telefoane
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c15ea46b-5037-4593-b87b-51e94ce718cd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 351ac5ff-6f1a-49df-b078-46e38f2a63e1 # Ambulatoriu – program medici
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3cd6e06c-f2dd-49fb-bb0d-e9ccca6b49dc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 2e3517ab-f491-4f92-82be-21eee383a4a2 # Ambulatoriu – servicii
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 771f18a6-6676-426e-9571-44ecf782a4cb
+            userCondition: null
+            warning: null
+            width: 100
+        name: Ambulatoriu
+        uid: eff02689-2501-4728-9c7f-7fcee287916d
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 352ec77e-c8d1-44ad-a7cf-e5a64fbc5170 # Grupă de tarife
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7c0119f0-6f6c-481c-b3f3-eaf9636507ba
+            userCondition: null
+            warning: null
+            width: 100
+        name: Tarife
+        uid: 6f0fe0ff-4e92-4ca8-8198-ed1be8da4af5
+        userCondition: null
+    thumbFieldKey: null
+handle: specialty
+hasTitleField: true
+icon: null
+name: Specialitate
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

@@ -1,0 +1,13 @@
+columnSuffix: null
+handle: hasAmbulatory
+instructions: null
+name: 'Are cabinet în ambulatoriu'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+  showLabelsInCards: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

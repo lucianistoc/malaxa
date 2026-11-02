@@ -1,0 +1,25 @@
+columnSuffix: null
+handle: linkedPage
+instructions: 'Opțional: în loc de documente, cardul trimite către această pagină.'
+name: 'Pagină asociată'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: null
+  showSearchInput: true
+  showSiteMenu: false
+  showUnpermittedEntries: false
+  showUnpermittedSections: false
+  sources:
+    - 'section:788577ae-807d-4cf6-96f5-cecb087ba6ca' # Pagini
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries

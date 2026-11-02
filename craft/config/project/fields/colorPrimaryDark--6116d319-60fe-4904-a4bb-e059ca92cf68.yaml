@@ -1,0 +1,10 @@
+columnSuffix: null
+handle: colorPrimaryDark
+instructions: null
+name: 'Culoare principală (închisă)'
+searchable: false
+settings:
+  allowCustomColors: true
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

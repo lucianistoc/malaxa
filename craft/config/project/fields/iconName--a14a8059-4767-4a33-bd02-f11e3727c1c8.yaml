@@ -1,0 +1,671 @@
+columnSuffix: null
+handle: iconName
+instructions: null
+name: Iconiță
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - stethoscope
+        -
+          - value
+          - stethoscope
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - run
+        -
+          - value
+          - run
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - microscope
+        -
+          - value
+          - microscope
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - heartbeat
+        -
+          - value
+          - heartbeat
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - virus
+        -
+          - value
+          - virus
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - heart
+        -
+          - value
+          - heart
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - scalpel
+        -
+          - value
+          - scalpel
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - ambulance
+        -
+          - value
+          - ambulance
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - skin
+        -
+          - value
+          - skin
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - document
+        -
+          - value
+          - document
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - gland
+        -
+          - value
+          - gland
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - shield
+        -
+          - value
+          - shield
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - drop
+        -
+          - value
+          - drop
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - flask
+        -
+          - value
+          - flask
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - clipboard
+        -
+          - value
+          - clipboard
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - helmet
+        -
+          - value
+          - helmet
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - brain
+        -
+          - value
+          - brain
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - female
+        -
+          - value
+          - female
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - eye
+        -
+          - value
+          - eye
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - ribbon
+        -
+          - value
+          - ribbon
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - ear
+        -
+          - value
+          - ear
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - mind
+        -
+          - value
+          - mind
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - xray
+        -
+          - value
+          - xray
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - atom
+        -
+          - value
+          - atom
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - phone
+        -
+          - value
+          - phone
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - mail
+        -
+          - value
+          - mail
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - pin
+        -
+          - value
+          - pin
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - clock
+        -
+          - value
+          - clock
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - arrow
+        -
+          - value
+          - arrow
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - user
+        -
+          - value
+          - user
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - chat
+        -
+          - value
+          - chat
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - cart
+        -
+          - value
+          - cart
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - contract
+        -
+          - value
+          - contract
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - handshake
+        -
+          - value
+          - handshake
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - chart
+        -
+          - value
+          - chart
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - pen
+        -
+          - value
+          - pen
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - people
+        -
+          - value
+          - people
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - money
+        -
+          - value
+          - money
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - pill
+        -
+          - value
+          - pill
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - gavel
+        -
+          - value
+          - gavel
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - star
+        -
+          - value
+          - star
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - check
+        -
+          - value
+          - check
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - org
+        -
+          - value
+          - org
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - hands
+        -
+          - value
+          - hands
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - hospital
+        -
+          - value
+          - hospital
+        -
+          - default
+          - true
+    -
+      __assoc__:
+        -
+          - label
+          - award
+        -
+          - value
+          - award
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - cpu
+        -
+          - value
+          - cpu
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - facebook
+        -
+          - value
+          - facebook
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - instagram
+        -
+          - value
+          - instagram
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - youtube
+        -
+          - value
+          - youtube
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - linkedin
+        -
+          - value
+          - linkedin
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - a11y
+        -
+          - value
+          - a11y
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - calendar
+        -
+          - value
+          - calendar
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - metro
+        -
+          - value
+          - metro
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - bus
+        -
+          - value
+          - bus
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - tram
+        -
+          - value
+          - tram
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - download
+        -
+          - value
+          - download
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - tooth
+        -
+          - value
+          - tooth
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - external
+        -
+          - value
+          - external
+        -
+          - default
+          - false
+    -
+      __assoc__:
+        -
+          - label
+          - building
+        -
+          - value
+          - building
+        -
+          - default
+          - false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown
