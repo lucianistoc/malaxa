@@ -566,16 +566,15 @@ html.site-scrollbars ::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .sb[hidden] { display: none; }
 .sb-thumb {
   position: absolute; border-radius: 999px; cursor: default; touch-action: none;
-  background: color-mix(in srgb, var(--primary) 42%, transparent);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, .55);          /* stays visible on dark sections */
+  background: color-mix(in srgb, var(--primary) 60%, transparent);
   transition: width var(--dur-fast) var(--ease-out), height var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out), right var(--dur-fast) var(--ease-out), bottom var(--dur-fast) var(--ease-out);
 }
 .sb-y .sb-thumb { top: 0; right: 3px; width: 6px; }
 .sb-x .sb-thumb { left: 0; bottom: 3px; height: 6px; }
-.sb-y:hover .sb-thumb, .sb-y.drag .sb-thumb { width: 10px; right: 2px; background: color-mix(in srgb, var(--primary) 65%, transparent); }
-.sb-x:hover .sb-thumb, .sb-x.drag .sb-thumb { height: 10px; bottom: 2px; background: color-mix(in srgb, var(--primary) 65%, transparent); }
-.sb-light .sb-thumb { background: rgba(255, 255, 255, .45); box-shadow: none; }
-.sb-light:hover .sb-thumb, .sb-light.drag .sb-thumb { background: rgba(255, 255, 255, .7); }
+.sb-y:hover .sb-thumb, .sb-y.drag .sb-thumb { width: 10px; right: 2px; background: color-mix(in srgb, var(--primary) 80%, transparent); }
+.sb-x:hover .sb-thumb, .sb-x.drag .sb-thumb { height: 10px; bottom: 2px; background: color-mix(in srgb, var(--primary) 80%, transparent); }
+.sb-light .sb-thumb { background: rgba(255, 255, 255, .6); }
+.sb-light:hover .sb-thumb, .sb-light.drag .sb-thumb { background: rgba(255, 255, 255, .85); }
 body.oc-open .sb-page { opacity: 0 !important; pointer-events: none; } /* the page doesn't scroll behind the open panel visually */
 @media (hover: none) {                                         /* touch: a thin indicator only, like iOS */
   .sb.on { pointer-events: none; }
