@@ -1,5 +1,7 @@
 (function () {
   const $ = (s, c = document) => c.querySelector(s);
+  // Honour the OS "Reduce Motion" setting (Apple HIG): skip decorative animation, keep state changes.
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
 
   // Off-canvas menu
@@ -45,13 +47,13 @@
 
   // Animated counters
   const fmt = (n) => n.toLocaleString("ro-RO");
-  if ("IntersectionObserver" in window) {
+  if ("IntersectionObserver" in window && !reduceMotion.matches) {
     const io = new IntersectionObserver((entries) => entries.forEach((e) => {
       if (!e.isIntersecting) return;
       const el = e.target, target = +el.dataset.count, pre = el.dataset.prefix || "";
       const t0 = performance.now();
       const tick = (t) => {
-        const p = Math.min((t - t0) / 1400, 1);
+        const p = Math.min((t - t0) / 800, 1); // brief: under a second, decelerating
         el.textContent = pre + fmt(Math.round(target * (1 - Math.pow(1 - p, 3))));
         if (p < 1) requestAnimationFrame(tick);
       };
@@ -109,8 +111,14 @@
     document.addEventListener("click", (e) => {
       const a = e.target.closest("a[data-lightbox]"); if (!a) return;
       e.preventDefault(); $("img", lb).src = a.href; lb.hidden = false;
+      requestAnimationFrame(() => requestAnimationFrame(() => lb.classList.add("open")));
     });
-    lb.addEventListener("click", () => { lb.hidden = true; });
+    const closeLb = () => {
+      lb.classList.remove("open");
+      setTimeout(() => { if (!lb.classList.contains("open")) lb.hidden = true; }, reduceMotion.matches ? 0 : 260);
+    };
+    lb.addEventListener("click", closeLb);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lb.hidden) closeLb(); });
   }
 
   // Price list filter
@@ -136,5 +144,5 @@
   // Back to top
   const bt = $("#backTop");
   addEventListener("scroll", () => bt?.classList.toggle("show", scrollY > 600), { passive: true });
-  bt?.addEventListener("click", () => scrollTo({ top: 0 }));
+  bt?.addEventListener("click", () => scrollTo({ top: 0, behavior: reduceMotion.matches ? "auto" : "smooth" }));
 })();

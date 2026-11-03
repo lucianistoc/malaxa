@@ -78,6 +78,9 @@ index.
 - Specialty pages: sidebar menu, medical team, schedule table, treated conditions, services, prices, equipment, FAQ
 - Doctors directory filterable by specialty
 - Accessibility panel (text size, contrast, grayscale, underlined links)
+- Motion following Apple's Human Interface Guidelines: one set of timing/easing tokens at the end of
+  `static/css/style.css`, spring-like panels that leave faster than they arrive, press feedback, smooth accordions,
+  and full support for the OS "Reduce Motion" setting (movement becomes short cross-fades)
 - Responsive down to 360px
 
 ## Forms
