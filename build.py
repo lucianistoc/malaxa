@@ -276,6 +276,8 @@ def layout(path, title, body, desc=None, current=None, section="Pagini"):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{r}static/css/style.css">
+<!-- Hide native scrollbars before first paint (site-rendered bars in main.js); without JS the native ones stay. -->
+<script>document.documentElement.classList.add("site-scrollbars")</script>
 <style>:root{{--primary:{col['primary']};--primary-dark:{col['primary_dark']};--accent:{col['accent']};--accent-dark:{col['accent_dark']};--highlight:{col['highlight']};--soft:{col['soft']};--pattern:{PATTERN};{hero_img}}}</style>
 </head>
 <body>
