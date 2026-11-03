@@ -212,7 +212,7 @@ a.doctor:hover .doctor-photo { transform: translateY(-2px); }
 .list-check { list-style: none; padding: 0 !important; display: grid; gap: 10px; }
 .list-check.cols { grid-template-columns: 1fr 1fr; gap: 10px 30px; }
 .list-check li { position: relative; padding-left: 30px; margin: 0; }
-.list-check li::before { content: ""; position: absolute; left: 0; top: 5px; width: 18px; height: 18px; border-radius: 50%; background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/12px no-repeat; }
+.list-check li::before { content: "–"; position: absolute; left: 4px; top: 0; color: var(--accent-dark); font-weight: 700; }   /* dashed lists, as the hospital asked */
 .info-box { display: flex; gap: 16px; align-items: center; background: var(--soft); border-radius: var(--radius); padding: 20px 24px; margin: 24px 0; }
 .info-box .ring { width: 48px; height: 48px; border-radius: 50%; background: var(--primary); color: #fff; display: grid; place-items: center; flex-shrink: 0; font-size: 20px; }
 .info-box small { display: block; color: var(--muted); }
@@ -552,6 +552,28 @@ body.oc-open .oc-close { transform: none; transition: opacity var(--dur-base) va
 .lightbox img { transform: scale(.96); transition: transform var(--dur-dismiss) var(--ease-in); }
 .lightbox.open { opacity: 1; transition-duration: var(--dur-base); }
 .lightbox.open img { transform: none; transition: transform var(--dur-panel) var(--ease-spring); }
+
+/* Hospital vs outpatient: two clearly separate entry points */
+.split-choice { max-width: 980px; margin: 0 auto; }
+.choice { display: flex; align-items: center; gap: 20px; padding: 28px; border-radius: 20px; background: var(--primary); color: #fff; box-shadow: var(--shadow); transition: transform var(--dur-base) var(--ease-spring), background-color var(--dur-fast) var(--ease-out); }
+.choice + .choice { background: var(--accent-dark); }
+.choice:hover { transform: translateY(-2px); }
+.choice:active { transform: scale(.985); transition-duration: var(--dur-press); }
+.choice-icon { width: 64px; height: 64px; border-radius: 16px; background: rgba(255,255,255,.14); display: grid; place-items: center; font-size: 32px; flex-shrink: 0; }
+.choice small { display: block; opacity: .8; font-size: 13px; }
+.choice strong { display: block; font-size: 26px; line-height: 1.2; }
+.choice em { display: block; font-style: normal; opacity: .85; font-size: 14px; margin-top: 4px; }
+.choice-go { margin-left: auto; font-size: 24px; }
+.side-menu .label { color: #9fb7da; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 12px 12px 4px; }
+
+/* Presentation types: one row per aspect (specificații, timp, modalități, condiții, documente, excepții) */
+.pres { display: grid; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: #fff; }
+.pres-row { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 20px 24px; border-top: 1px solid var(--border); }
+.pres-row:first-child { border-top: 0; }
+.pres-row h3 { margin: 0; font-size: 16px; color: var(--primary); }
+.pres-row p:last-child, .pres-row ul:last-child { margin-bottom: 0; }
+.prose h2 .icon { color: var(--accent); vertical-align: -3px; }
+@media (max-width: 700px) { .pres-row { grid-template-columns: 1fr; gap: 6px; } .choice { padding: 22px; } .choice strong { font-size: 22px; } }
 
 /* Site-rendered scrollbars (see main.js). Native bars are hidden only when the script has added
    .site-scrollbars, so without JavaScript the browser's own bars remain. */

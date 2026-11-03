@@ -1,0 +1,756 @@
+[
+ {
+  "slug": "alergologie",
+  "name": "Cabinet Alergologie și Imunologie Clinică",
+  "icon": "flask",
+  "summary": "Consultații de alergologie și imunologie clinică, testare alergologică.",
+  "intro": [
+   "Cabinetul de alergologie și imunologie clinică asigură consultații de specialitate pentru afecțiunile alergice sau cu componentă alergică: rinita și conjunctivita alergică, astmul, alergiile alimentare și medicamentoase, dermatitele de contact și urticaria."
+  ],
+  "hours": [
+   "Consultații (parter): Luni – Vineri, 09:00 – 14:00",
+   "Programări consultație: Luni – Vineri, 12:30 – 14:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 59 44"
+  ],
+  "structure": "alergologie",
+  "price_group": "Alergologie și Imunologie"
+ },
+ {
+  "slug": "boli-infectioase",
+  "name": "Cabinet Boli Infecțioase",
+  "icon": "virus",
+  "summary": "Consultații pentru afecțiuni infecțioase.",
+  "pending": true,
+  "intro": [
+   "Informațiile despre program și medici pentru acest cabinet sunt în curs de actualizare. Pentru programări, sunați la centrala spitalului."
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ]
+ },
+ {
+  "slug": "cardiologie",
+  "name": "Cabinet Cardiologie",
+  "icon": "heart",
+  "summary": "Consultații de cardiologie, electrocardiogramă, ecografie cardiacă.",
+  "intro": [
+   "Cabinetul de cardiologie asigură consultații de specialitate, electrocardiogramă și ecografie cardiacă.",
+   "Informațiile despre program și medici pentru acest cabinet sunt în curs de actualizare. Pentru programări, sunați la centrala spitalului."
+  ],
+  "pending": true,
+  "price_group": "Cardiologie",
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ]
+ },
+ {
+  "slug": "chirurgie",
+  "name": "Cabinet Chirurgie Generală",
+  "icon": "scalpel",
+  "summary": "Consultații chirurgicale și consultații preoperatorii.",
+  "intro": [
+   "Se efectuează consulturi preoperatorii pentru intervențiile chirurgicale complexe, cu accent pe chirurgia minim invazivă (laparoscopică), pentru afecțiuni benigne și maligne, chirurgia obezității morbide și chirurgia piciorului diabetic."
+  ],
+  "hours": [
+   "Program ambulatoriu: Luni – Vineri, 07:00 – 15:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ],
+  "schedule": [
+   [
+    "Dr. Vladu Florentina",
+    "Luni – Vineri: 09:00 – 11:00"
+   ],
+   [
+    "Dr. Mavru Mihai",
+    "Luni – Vineri: 11:00 – 13:00"
+   ],
+   [
+    "Dr. Anton Ligia",
+    "Luni – Vineri: 13:00 – 15:00"
+   ]
+  ],
+  "structure": "chirurgie",
+  "price_group": "Chirurgie generală"
+ },
+ {
+  "slug": "colposcopie",
+  "name": "Cabinet Colposcopie",
+  "icon": "female",
+  "summary": "Colposcopie și video-colposcopie.",
+  "intro": [
+   "Cabinetul de colposcopie efectuează colposcopii și video-colposcopii, cu colposcop cu electrocauter, în colaborare cu Secția Clinică Obstetrică-Ginecologie.",
+   "Informațiile despre program și medici pentru acest cabinet sunt în curs de actualizare. Pentru programări, sunați la centrala spitalului."
+  ],
+  "structure": "obstetrica-ginecologie",
+  "pending": true,
+  "price_group": "Obstetrică-Ginecologie",
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ]
+ },
+ {
+  "slug": "dermatovenerologie",
+  "name": "Cabinet Dermatovenerologie",
+  "icon": "skin",
+  "summary": "Consultații pentru afecțiunile pielii.",
+  "pending": true,
+  "intro": [
+   "Informațiile despre program și medici pentru acest cabinet sunt în curs de actualizare. Pentru programări, sunați la centrala spitalului."
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ]
+ },
+ {
+  "slug": "diabet",
+  "name": "Cabinet Diabet Zaharat, Nutriție și Boli Metabolice",
+  "icon": "drop",
+  "summary": "Consultații zilnice, Programul Național de Diabet.",
+  "intro": [
+   "Centrul de diabet, nutriție și boli metabolice oferă consultații în cabinetele de specialitate din ambulatoriu, cu program zilnic. La nivelul spitalului se derulează Programul Național de Sănătate – Diabet."
+  ],
+  "hours": [
+   "Cabinetele 30, 31, 37 și 38 – program zilnic"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05",
+   "Interior 3117 – cab. 37",
+   "Interior 3158 – cab. 38",
+   "Interior 1030 – cab. 30",
+   "Interior 3127 – cab. 31"
+  ],
+  "schedule": [
+   [
+    "Cab. 37 – Dr. Dincă Ruxandra",
+    "Luni, Marți: 07:00 – 12:00 · Miercuri – Vineri: 14:00 – 19:00"
+   ],
+   [
+    "Cab. 37 – Dr. Meroiu Andreea",
+    "Luni, Marți, Joi, Vineri: 07:00 – 12:00 · Miercuri: 14:00 – 19:00"
+   ],
+   [
+    "Cab. 37 – Dr. Coravu Diana",
+    "Luni, Marți: 14:00 – 19:00 · Miercuri – Vineri: 07:00 – 12:00"
+   ],
+   [
+    "Cab. 30 – Dr. Radu Cristina",
+    "Luni – Vineri: 12:00 – 14:00"
+   ],
+   [
+    "Cab. 30 – Dr. Tache Mirela",
+    "Luni – Vineri: 12:00 – 14:00"
+   ],
+   [
+    "Cab. 38 – Dr. Neacșu Oana",
+    "Luni – Vineri: 12:00 – 14:00"
+   ],
+   [
+    "Cab. 38 – Dr. Sava Isabella",
+    "Luni – Vineri: 08:00 – 10:00"
+   ],
+   [
+    "Cab. 31 – Dr. Adamescu Eduard",
+    "Luni – Vineri: 07:00 – 12:00"
+   ]
+  ],
+  "structure": "diabet",
+  "price_group": "Diabet zaharat, nutriție și boli metabolice"
+ },
+ {
+  "slug": "ecografie",
+  "name": "Cabinet Explorări Imagistice Generale (Ecografie)",
+  "icon": "xray",
+  "summary": "Ecografii generale.",
+  "pending": true,
+  "price_group": "Radiologie",
+  "intro": [
+   "Informațiile despre program și medici pentru acest cabinet sunt în curs de actualizare. Pentru programări, sunați la centrala spitalului."
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ]
+ },
+ {
+  "slug": "endoscopie",
+  "name": "Endoscopie Digestivă",
+  "icon": "stethoscope",
+  "summary": "Endoscopie digestivă superioară și inferioară (colonoscopie).",
+  "intro": [
+   "Explorările endoscopice digestive superioare și inferioare (colonoscopie) se efectuează în Laboratorul de endoscopie digestivă și terapeutică, cu videoendoscop.",
+   "Informațiile despre program și medici pentru acest cabinet sunt în curs de actualizare. Pentru programări, sunați la centrala spitalului."
+  ],
+  "structure": "endoscopie",
+  "pending": true,
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ]
+ },
+ {
+  "slug": "laborator",
+  "name": "Recoltare analize medicale",
+  "icon": "flask",
+  "summary": "Punct de recoltare – analize de hematologie, biochimie, imunologie.",
+  "intro": [
+   "Analizele se recoltează la punctul de recoltare al Laboratorului de analize medicale, acreditat RENAR conform ISO 15189. Pentru analizele decontate de CASMB este necesar biletul de trimitere; analizele cu plată se efectuează cu programare telefonică."
+  ],
+  "hours": [
+   "Recoltare: Luni – Vineri, 07:30 – 13:00",
+   "Eliberare rezultate: Luni – Vineri, 13:30 – 15:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – tasta 6 (Laborator analize), urmată de tasta 1 (Punct de recoltare)"
+  ],
+  "structure": "laborator",
+  "price_group": "Laborator de analize medicale"
+ },
+ {
+  "slug": "medicina-interna",
+  "name": "Cabinet Medicină Internă",
+  "icon": "stethoscope",
+  "summary": "Consultații pentru afecțiuni acute și cronice.",
+  "sections": [
+   {
+    "title": "Servicii medicale",
+    "items": [
+     "Situații de urgență medicală: consultații, anamneză, examen clinic și tratament, în limita competenței și a dotării",
+     "Consultații pentru afecțiuni acute și cronice",
+     "Anamneză, examen clinic, analize, explorări și/sau interpretarea celor efectuate de medicul de familie sau de alți medici specialiști, pentru stabilirea diagnosticului",
+     "Prescrierea tratamentului igieno-dietetic și medicamentos, stabilirea conduitei terapeutice și profilactice",
+     "Urmărirea evoluției sub tratamentul stabilit la externarea din spital, dispensarizare",
+     "Recomandări pentru îngrijiri la domiciliu, după caz",
+     "Recomandări pentru dispozitive medicale, după caz",
+     "Bilet de internare",
+     "Bilet de trimitere pentru alte specialități",
+     "Bilet de trimitere pentru investigații paraclinice, după caz",
+     "Eliberare concediu medical"
+    ]
+   }
+  ],
+  "hours": [
+   "Ambulatoriu: Luni – Vineri, 07:00 – 13:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ],
+  "schedule": [
+   [
+    "Dr. Runcanu Nicolae",
+    "Marți: 09:00 – 10:30 · Joi, Vineri: 09:00 – 11:00"
+   ],
+   [
+    "Dr. Drăghici Oana Monica",
+    "Miercuri: 12:00 – 13:00 · Joi, Vineri: 11:00 – 13:00"
+   ],
+   [
+    "Dr. Haj-Abdo Husein",
+    "Luni: 07:00 – 13:00 · Marți – Vineri: 07:00 – 09:00"
+   ]
+  ],
+  "structure": "medicina-interna",
+  "price_group": "Medicină internă",
+  "intro": []
+ },
+ {
+  "slug": "recuperare",
+  "name": "Cabinet Medicină Fizică și de Reabilitare",
+  "icon": "run",
+  "summary": "Consultații de recuperare și proceduri de fizioterapie.",
+  "intro": [],
+  "hours": [
+   "Luni – Vineri: 13:00 – 20:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – interior 3223"
+  ],
+  "sections": [
+   {
+    "title": "Tratamentul de fizioterapie se adresează următoarelor afecțiuni",
+    "items": [
+     "Osteofitoză calcaneană / fasciită plantară",
+     "Lombosciatică, hernie de disc cervicală / dorsală / lombară, protruzie discală",
+     "Tulburări de postură: cifoză, scolioză etc.",
+     "Reumatism inflamator: spondilită anchilozantă, poliartrită reumatoidă, colagenoze, vasculite – în fazele cronice",
+     "Reumatismul țesutului moale / abarticular: periartrita scapulo-humerală (PSH), periartrita coxo-femurală, tendinite, bursite, sindroame dureroase miofasciale și musculo-ligamentare",
+     "Recuperare posttraumatică – după fracturi, entorse, luxații, contuzii",
+     "Sechele post-traumatice: după o entorsă, luxație, fractură",
+     "Sechele neurologice: sindrom de tunel carpian, sechele după accident vascular cerebral (AVC) – hemipareză, hemiplegie, scleroză multiplă, boala Parkinson, leziuni de nervi periferici",
+     "Nevralgie Arnold, nevralgie de trigemen",
+     "Migrenă",
+     "Sinuzită cronică",
+     "Insuficiență venoasă cronică"
+    ]
+   },
+   {
+    "title": "Contraindicații fizioterapie",
+    "items": [
+     "în cazul celor cu pacemaker cardiac – pentru electroterapie",
+     "sindroame febrile",
+     "infecții acute, inclusiv respiratorii",
+     "sarcină",
+     "afecțiune cutanată – eritem, pustulă, iritație"
+    ]
+   },
+   {
+    "title": "Proceduri efectuate",
+    "accordion": [
+     {
+      "q": "Laserterapia",
+      "a": [
+       "Are efect analgezic, miorelaxant, antiedematos, de biostimulare și vasodilatator",
+       "Îmbunătațește microcirculatia, crește circulația oxigenului, utilizarea mai eficientă a glucozei, activeaza procesele metabolice la nivel celular",
+       "Afecțiuni stomatologice și dermatologice"
+      ]
+     },
+     {
+      "q": "Curenți interferențiali",
+      "a": [
+       "Au o acțiune stimulatoare asupra musculaturii scheletice, efect de stimulare asupra mușchilor netezi hipotoni, acțiune analgetică, acțiune vasomotorie cu efect hiperemizant, efecte decontracturante miorelaxante, trofice"
+      ]
+     },
+     {
+      "q": "TENS",
+      "a": [
+       "Poate trata stări dureroase în orice fază a bolii, care nu răspund la alte metode terapeutice indicate (farmacologice, electrice), sau care constituie contraindicații la alte mijloace terapeutice fizice (neoplazii)"
+      ]
+     },
+     {
+      "q": "Unde scurte / microunde",
+      "a": [
+       "Are indicații numeroase datorită efectului de endotermie (căldura se formează în interiorul țesuturilor organismului), în afecțiuni ale aparatului locomotor, neurologice, ginecologice, ORL și dermatologice"
+      ]
+     },
+     {
+      "q": "Curenți diadinamici",
+      "a": [
+       "Principalele efecte sunt cele analgetice, hiperemiante și miorelaxante",
+       "Sunt indicați în afecțiuni ale aparatului locomotor, stări post-traumatice, afecțiuni reumatice, tulburări circulatorii periferice"
+      ]
+     },
+     {
+      "q": "Curenți Trabert",
+      "a": [
+       "Se obține un veritabil electromasaj (vibrații puternice ale maselor musculare) și are indicații în radiculopatii prin procese vertebrale degenerative, artroze, mialgii, miogeloze, PSH, spondilită, stări post-traumatice (contuzii, entorse, luxații, întinderi ligamentare)"
+      ]
+     },
+     {
+      "q": "Curentul galvanic",
+      "a": [
+       "Are efecte biologice asupra fibrelor nervoase motorii și sensitive, asupra nervilor vasomotori și asupra vaselor, asupra musculaturii striate, asupra sistemului nervos central și asupra sistemului vegetativ",
+       "Este indicat în procese algice diverse, stări traumatice și post-traumatice, tulburări circulatorii arteriale periferice",
+       "Se aplică sub formă de galvanizare simplă cu electrozi placă, ionogalvanizare sau baie galvanică patru-celulară"
+      ]
+     },
+     {
+      "q": "ESWT",
+      "a": [
+       "Efectul de bază cel mai important este cel analgezic și anume eliminarea durerii cronice regăsite la nivelul sistemului musculo-scheletal",
+       "Un alt efect este hiperemia - afluxul de sânge într-o zonă a corpului, care, oferind o aprovizionare mai buna cu energie a mușchilor și a structurilor ligamentoase, duce la inhibarea spasmelor musculare",
+       "De asemenea, prin creșterea producției de colagen pe care o determină, procesele de vindecare la nivelul structurilor mioscheletale și ligamentoase sunt mai rapide",
+       "Folosirea tehnologiei shockwave este eficientă și în cazul celulelor calcificate din țesutul conjunctiv, redând astfel mobilitatea articulațiilor afectate"
+      ]
+     },
+     {
+      "q": "Ultrasunete",
+      "a": [
+       "Reprezintă un masaj vibrator de mare frecvență",
+       "Îmbunătățeste circulația locală și metabolismul, reduce durerile locale de tip ischemic, îmbunătățește capacitatea de regenerare tisulara și produce relaxare musculară"
+      ]
+     },
+     {
+      "q": "Magnetoterapia",
+      "a": [
+       "Influențează metabolismul celular, aparatul cardiovascular, excitabilitatea neuromusculară, acționeaza asupra glandelor endocrine și echilibreaza procesele de excitație și de inhibiție de la nivel cortical"
+      ]
+     },
+     {
+      "q": "Crioterapia",
+      "a": [
+       "crioterapia localizată - se utilizează pentru a trata durerea localizată, inflamația și tumefacția articulațiilor și a mușchilor; adesea utilizată în cazul leziunilor sportive și al recuperării post-chirurgicale"
+      ]
+     },
+     {
+      "q": "Drenajul venolimfatic al membrelor",
+      "a": [
+       "Drenajul limfatic este o procedură care poate avea loc atât manual, cât și mecanic, cu ajutorul unor aparate special concepute în acest scop. Este un tip de masaj prin care se pune o mică presiune asupra vaselor limfatice, pentru a mări volumul fluxului limfatic. Chiar dacă se efectuează cu ajutorul unor aparate speciale, nu este o procedură invazivă. Această procedură contribuie atât la tonifierea pielii, cât și la eliminarea din corp a toxinelor. Sistemul limfatic are o funcție de susținere a sistemului imunitar și reglează circulația sângelui în organism. Prin acest sistem se realizează schimbul de substanțe între sânge și țesuturi, având loc o filtrare a reziduurilor metabolice și substanțelor toxice. Fluidele care ajung în țesuturi, în afara sistemului circulator, sunt extrase din acele zone și sunt readuse în vasele de sânge"
+      ]
+     },
+     {
+      "q": "Diapulse",
+      "a": [
+       "Pulsațiile electromagnetice generate de aparatul Diapulse pătrund în profunzime, către zona bolnavă, fără riscul de a încălzi țesutul. Procedura accelerează vindecarea rănilor și scurtează timpul de regenerare a țesuturilor afectate. Tratamentul poate fi aplicat și prin haine sau prin pansamentele chirurgicale."
+      ]
+     },
+     {
+      "q": "Baie galvanică patru-celulară",
+      "a": [
+       "Baia galvanică patru-celulară este folosită în tratamentul bolilor degenerative articulare, al arteriopatiilor și al nevralgiilor, pe baza efectelor simultane ale apei încălzite și ale curentului electric continuu asupra brațelor și picioarelor. Metoda este utilizată în bolile sistemului circulator, ale sistemului musculo-scheletic, ale sistemului nervos și în diabet. Procedura ajută la îmbunătățirea circulației sângelui și a limfei, accelerează procesele metabolice din țesuturi și ameliorează durerea, inflamația și crampele."
+      ]
+     },
+     {
+      "q": "Parafină",
+      "a": [
+       "Tratamentul cu parafină este o formă de terapie termică profundă. Ceara de parafină lichefiată absoarbe și reține foarte bine căldura. Când parafina este aplicată pe zona afectată, căldura se transferă din ceară în zona dureroasă, pe măsură ce ceara se solidifică. Căldura crește circulația și ameliorează durerea și rigiditatea. Parafina înmoaie pielea și îi crește alimentarea cu sânge, deschizând în același timp porii și captând umezeala din straturile subiacente ale pielii."
+      ]
+     },
+     {
+      "q": "Kinetoterapia",
+      "a": [
+       "Obiectivele sunt de refacere a forței musculare și creșterea rezistenței musculare, creșterea și adaptarea capacității de efort, menținerea și creșterea mobilității articulare, ameliorarea troficității musculare, refacerea schemelor de mișcare, ameliorarea funcției de coordonare, control și echilibru, relaxare, corectarea posturii și aliniamentul corpului, creșterea mobilității articulare, reeducarea respiratorie și a sensibilității"
+      ]
+     },
+     {
+      "q": "Masajul",
+      "a": [
+       "Acțiune locală: sedativă, decontracturanta muscular, hiperemianta (datorită îmbunătățirii circulației), resorbtivă (prin înlăturarea lichidelor interstițiale de stază)",
+       "Acțiune generală: stimulează funcția aparatului respirator și circulator, crește metabolismul bazal, efecte favorabile asupra stării generale de sănătate"
+      ]
+     }
+    ]
+   }
+  ],
+  "equipment": [
+   "Aparate magnetodiaflux",
+   "Aparate unde scurte",
+   "Aparat microunda",
+   "Diapulse",
+   "Parafină",
+   "Baie galvanică patru-celulară",
+   "Aparate de laserterapie",
+   "Shock Master",
+   "Aparat de crioterapie",
+   "Aparate ultrasunete",
+   "Aparat de drenaj limfatic pentru membrul superior și inferior"
+  ],
+  "structure": "recuperare",
+  "price_group": "Recuperare, medicină fizică și balneologie"
+ },
+ {
+  "slug": "nefrologie",
+  "name": "Cabinet Nefrologie",
+  "icon": "drop",
+  "summary": "Consultații pentru afecțiunile rinichilor.",
+  "pending": true,
+  "intro": [
+   "Informațiile despre program și medici pentru acest cabinet sunt în curs de actualizare. Pentru programări, sunați la centrala spitalului."
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ]
+ },
+ {
+  "slug": "neonatologie",
+  "name": "Cabinet Neonatologie / Pediatrie",
+  "icon": "hands",
+  "summary": "Consultații pentru nou-născuți și copii.",
+  "structure": "neonatologie",
+  "pending": true,
+  "intro": [
+   "Informațiile despre program și medici pentru acest cabinet sunt în curs de actualizare. Pentru programări, sunați la centrala spitalului."
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ]
+ },
+ {
+  "slug": "neurologie-psihiatrie",
+  "name": "Cabinet Neurologie / Psihiatrie",
+  "icon": "brain",
+  "summary": "Consultații de neurologie și psihiatrie.",
+  "pending": true,
+  "intro": [
+   "Informațiile despre program și medici pentru acest cabinet sunt în curs de actualizare. Pentru programări, sunați la centrala spitalului."
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ]
+ },
+ {
+  "slug": "obstetrica-ginecologie",
+  "name": "Cabinet Obstetrică-Ginecologie",
+  "icon": "female",
+  "summary": "Consultații ginecologice și monitorizarea sarcinii.",
+  "intro": [
+   "Ambulatoriul este dotat cu masă ginecologică, pat de consultații, ecograf, tensiometru, termometru etc. Personalul medical și auxiliar asigură servicii medicale de specialitate în condiții de siguranță, inclusiv recoltarea analizelor medicale."
+  ],
+  "hours": [
+   "Program ambulatoriu: Luni – Vineri, 07:00 – 15:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ],
+  "schedule": [
+   [
+    "Dr. Bujor-Moraru Mihaela Adriana",
+    "Marți: 11:30 – 15:00"
+   ],
+   [
+    "Dr. Popescu Maria",
+    "Miercuri: 08:00 – 11:30"
+   ],
+   [
+    "Dr. Alexandru Ispas Constantin",
+    "Miercuri: 11:30 – 15:00"
+   ],
+   [
+    "Dr. Dumitrașcu Sandrino",
+    "Joi: 08:00 – 11:30"
+   ],
+   [
+    "Dr. Conci Stelian",
+    "Joi: 11:30 – 15:00"
+   ],
+   [
+    "Dr. Pintilie Aurelian",
+    "Vineri: 08:00 – 11:30"
+   ],
+   [
+    "Dr. Edu Antoine",
+    "Vineri: 11:30 – 15:00"
+   ]
+  ],
+  "structure": "obstetrica-ginecologie",
+  "price_group": "Obstetrică-Ginecologie"
+ },
+ {
+  "slug": "oftalmologie",
+  "name": "Cabinet Oftalmologie",
+  "icon": "eye",
+  "summary": "Consult oftalmologic complet, câmp vizual, laserterapie.",
+  "sections": [
+   {
+    "title": "Servicii medicale",
+    "items": [
+     "Consult oftalmologic complet",
+     "Câmp vizual",
+     "Laserterapie pentru retinopatia diabetică și alte afecțiuni retiniene",
+     "Biometrie, ecografie, pahimetrie"
+    ]
+   }
+  ],
+  "hours": [
+   "Program: Luni – Vineri, 07:00 – 19:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05",
+   "Interior: 3118"
+  ],
+  "structure": "oftalmologie",
+  "price_group": "Oftalmologie",
+  "intro": []
+ },
+ {
+  "slug": "oncologie",
+  "name": "Cabinet Oncologie Medicală",
+  "icon": "ribbon",
+  "summary": "Consultații de oncologie medicală.",
+  "pending": true,
+  "intro": [
+   "Informațiile despre program și medici pentru acest cabinet sunt în curs de actualizare. Pentru programări, sunați la centrala spitalului."
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ]
+ },
+ {
+  "slug": "orl",
+  "name": "Cabinet ORL",
+  "icon": "ear",
+  "summary": "Afecțiuni ale urechii, nasului și gâtului.",
+  "sections": [
+   {
+    "title": "Servicii medicale oferite",
+    "items": [
+     "laringoscopii indirecte",
+     "laringoscopii directe",
+     "aspirații de secreții otice",
+     "orofaringoscopii",
+     "rinoscopii anterioare",
+     "rinoscopii posterioare",
+     "examen clinic de specialitate",
+     "spălături auriculare (o ureche sau ambele)"
+    ]
+   }
+  ],
+  "equipment": [
+   "Combină ORL",
+   "Instrumentar de specialitate"
+  ],
+  "hours": [
+   "Luni – Vineri: 13:00 – 20:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05",
+   "Interior: 3146"
+  ],
+  "price_group": "ORL",
+  "intro": []
+ },
+ {
+  "slug": "planificare-familiala",
+  "name": "Cabinet Planificare Familială",
+  "icon": "hands",
+  "summary": "Consiliere și metode de planificare familială.",
+  "pending": true,
+  "intro": [
+   "Informațiile despre program și medici pentru acest cabinet sunt în curs de actualizare. Pentru programări, sunați la centrala spitalului."
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ]
+ },
+ {
+  "slug": "pneumologie",
+  "name": "Cabinet Pneumologie",
+  "icon": "heartbeat",
+  "summary": "Consultații pentru afecțiunile respiratorii.",
+  "pending": true,
+  "intro": [
+   "Informațiile despre program și medici pentru acest cabinet sunt în curs de actualizare. Pentru programări, sunați la centrala spitalului."
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ]
+ },
+ {
+  "slug": "psihologie",
+  "name": "Cabinet Psihologie",
+  "icon": "mind",
+  "summary": "Evaluare psihologică clinică, testare și consiliere psihologică.",
+  "sections": [
+   {
+    "title": "Servicii cabinet psihologie clinică",
+    "items": [
+     "testare psihologică",
+     "consiliere psihologică",
+     "investigarea și psihodiagnosticul tulburărilor psihice și al altor afecțiuni în care intervin mecanisme psihologice"
+    ]
+   },
+   {
+    "title": "Solicită cu încredere ajutorul psihologului atunci când:",
+    "items": [
+     "ai atacuri de panică",
+     "ai accese de furie, stări de suferință, de neîmplinire, de neîncredere, de lipsă de comunicare, de retragere socială, de autoizolare, de lipsă a speranței",
+     "ai stări de emotivitate și de timiditate",
+     "ai fobii și temeri existențiale",
+     "ai tulburări psihosomatice",
+     "ai pierdut pe cineva drag",
+     "ți-ai pierdut locul de muncă",
+     "ești suprasolicitat și traversezi o perioadă stresantă",
+     "ai insomnii",
+     "traversezi o perioadă de stres posttraumatic",
+     "ești în dezacord cu tine și cu cei din jurul tău și nu găsești soluția la ceea ce te frământă"
+    ]
+   },
+   {
+    "title": "",
+    "text": [
+     "Toate acestea le poți TRECE, dacă VREI! Psihologul te poate asculta, te poate înțelege și te poate ajuta!",
+     "„Cunoaște-te pe tine însuți!” (Socrate)"
+    ]
+   }
+  ],
+  "hours": [
+   "Luni – Vineri: 15:00 – 22:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ],
+  "intro": []
+ },
+ {
+  "slug": "radiologie",
+  "name": "Radiologie și imagistică (RX, mamografie, CT)",
+  "icon": "xray",
+  "summary": "Radiografii, mamografie digitală, computer tomograf, ecografie.",
+  "intro": [
+   "În laboratorul nostru se efectuează investigații radioimagistice de înaltă performanță, de către un personal bine instruit și dedicat pacienților, atât pentru pacienții internați, cât și pentru pacienții din ambulatoriu."
+  ],
+  "sections": [
+   {
+    "title": "Servicii medicale oferite",
+    "items": [
+     "Radiografii (craniu, sinusuri – SAF, coloană vertebrală, torace, torace osos, centură scapulară, pelvis, membre, articulații, radiografie abdominală pe gol, radiografie reno-vezicală simplă, tranzit baritat eso-gastro-duodenal)",
+     "Tomografii computerizate (CT) – craniu, sinusuri, mastoidă, gât, torace, abdomen, pelvis – native și cu substanță de contrast intravenoasă",
+     "Mamografii digitale",
+     "Ecografii abdominale, pelvine și abdomino-pelvine"
+    ]
+   },
+   {
+    "title": "Servicii decontate de CASMB",
+    "text": [
+     "Serviciile în regim ambulatoriu sunt decontate integral de CASMB pe baza biletului de trimitere de la medicul specialist în contract cu CASMB. Pacientul trebuie să se prezinte cu:"
+    ],
+    "items": [
+     "Bilet de trimitere de la medicul de familie / medicul specialist (decontat de CASMB)",
+     "Buletin sau carte de identitate",
+     "Dovada calității de asigurat (card de sănătate sau adeverință eliberată de CASMB)"
+    ]
+   },
+   {
+    "title": "Servicii cu plată",
+    "text": [
+     "În lipsa biletului de trimitere decontat de CASMB, serviciile pot fi oferite contra cost. Pacientul trebuie să se prezinte cu recomandare de la medicul de familie / specialist și act de identitate."
+    ]
+   }
+  ],
+  "hours": [
+   "Radiografii și mamografii: Luni – Vineri, 09:00 – 11:00 și 14:00 – 16:00",
+   "Tomografii (CT) și ecografii: Luni – Vineri, 12:00 – 14:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – tasta 4 (Imagistică medicală), urmată de tasta 1 (Radiologie), tasta 2 (CT) sau tasta 3 (Mamograf)"
+  ],
+  "structure": "radiologie",
+  "price_group": "Radiologie"
+ },
+ {
+  "slug": "stomatologie",
+  "name": "Cabinet Stomatologie",
+  "icon": "tooth",
+  "summary": "Stomatologie pentru copii și adulți, ortodonție, profilaxie.",
+  "sections": [
+   {
+    "title": "Servicii medicale oferite",
+    "items": [
+     "Tratarea leziunilor odontale ale dinților permanenți prin obturații (plombe), la adulți și copii",
+     "Tratamentul leziunilor carioase – obturații din compozit fotopolimerizabil sau ciment ionomer de sticlă",
+     "Tratamentul cariilor profunde ale dinților temporari și permanenți tineri",
+     "Coroane pedodontice",
+     "Extracții de dinți temporari",
+     "Ortodonție",
+     "Menținătoare de spațiu",
+     "Profilaxia și prevenția cariei dentare la copii",
+     "Sigilarea șanțurilor și fosetelor dentare",
+     "Periaj profesional",
+     "Detartraj cu ultrasunete, igienizare"
+    ]
+   }
+  ],
+  "hours": [
+   "Luni, Miercuri: 12:00 – 19:00",
+   "Marți, Joi, Vineri: 07:00 – 14:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ],
+  "price_group": "Stomatologie",
+  "intro": []
+ },
+ {
+  "slug": "urologie",
+  "name": "Cabinet Urologie",
+  "icon": "drop",
+  "summary": "Consultații de urologie.",
+  "pending": true,
+  "intro": [
+   "Informațiile despre program și medici pentru acest cabinet sunt în curs de actualizare. Pentru programări, sunați la centrala spitalului."
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ]
+ }
+]
