@@ -145,4 +145,112 @@
   const bt = $("#backTop");
   addEventListener("scroll", () => bt?.classList.toggle("show", scrollY > 600), { passive: true });
   bt?.addEventListener("click", () => scrollTo({ top: 0, behavior: reduceMotion.matches ? "auto" : "smooth" }));
+
+  // Site-rendered scrollbars: the native bars are hidden (only once this script runs, so without JS the browser's
+  // own bars stay) and replaced with thin overlay bars that fade in while scrolling. Wheel, touch and keyboard
+  // scrolling are untouched; the bars can also be dragged, and clicking the track jumps there.
+  const SCROLL_AREAS = ".side-menu ul, .doc-list.scroll, .offcanvas, .table-wrap";
+  if (CSS.supports("scrollbar-width", "none") || CSS.supports("selector(::-webkit-scrollbar)")) {
+    document.documentElement.classList.add("site-scrollbars");
+    const bars = [];
+    const page = document.scrollingElement || document.documentElement;
+    const metrics = (b) => {
+      const el = b.el || page, v = b.axis === "y";
+      return {
+        size: v ? el.clientHeight : el.clientWidth,
+        total: v ? el.scrollHeight : el.scrollWidth,
+        pos: v ? el.scrollTop : el.scrollLeft,
+      };
+    };
+    const place = (b) => {
+      const { size, total, pos } = metrics(b);
+      if (b.el) {
+        const r = b.el.getBoundingClientRect();
+        const offscreen = !r.width || !r.height || r.bottom <= 0 || r.top >= innerHeight || r.right <= 0 || r.left >= innerWidth;
+        b.track.hidden = offscreen || total <= size + 1;
+        if (b.track.hidden) return;
+        Object.assign(b.track.style, b.axis === "y"
+          ? { top: r.top + 4 + "px", left: r.right - 14 + "px", height: r.height - 8 + "px", width: "" }
+          : { left: r.left + 4 + "px", top: r.bottom - 14 + "px", width: r.width - 8 + "px", height: "" });
+      } else {
+        b.track.hidden = total <= size + 1;
+        if (b.track.hidden) return;
+      }
+      const len = b.axis === "y" ? b.track.clientHeight : b.track.clientWidth;
+      const thumb = Math.max(32, Math.round(len * size / total));
+      const offset = (len - thumb) * (pos / (total - size));
+      b.thumb.style[b.axis === "y" ? "height" : "width"] = thumb + "px";
+      b.thumb.style.transform = b.axis === "y" ? "translateY(" + offset + "px)" : "translateX(" + offset + "px)";
+      b.thumbLen = thumb; b.trackLen = len;
+    };
+    const reveal = (b) => {
+      b.track.classList.add("on");
+      clearTimeout(b.timer);
+      b.timer = setTimeout(() => { if (!b.hover && !b.drag) b.track.classList.remove("on"); }, 1000);
+    };
+    const scrollAreaTo = (b, value) => {
+      const opts = { [b.axis === "y" ? "top" : "left"]: value, behavior: "instant" };
+      (b.el || window).scrollTo(opts);
+    };
+    const make = (el, axis) => {
+      const track = document.createElement("div");
+      track.className = "sb sb-" + axis + (el ? "" : " sb-page") + (el && el.closest(".side-menu") ? " sb-light" : "");
+      track.setAttribute("aria-hidden", "true");
+      const thumb = document.createElement("div");
+      thumb.className = "sb-thumb";
+      track.append(thumb);
+      document.body.append(track);
+      const b = { el, axis, track, thumb };
+      track.addEventListener("pointerenter", () => { b.hover = true; reveal(b); });
+      track.addEventListener("pointerleave", () => { b.hover = false; reveal(b); });
+      thumb.addEventListener("pointerdown", (e) => {
+        e.preventDefault(); e.stopPropagation();
+        thumb.setPointerCapture(e.pointerId);
+        b.drag = { start: b.axis === "y" ? e.clientY : e.clientX, pos: metrics(b).pos };
+        track.classList.add("drag");
+      });
+      thumb.addEventListener("pointermove", (e) => {
+        if (!b.drag) return;
+        const { size, total } = metrics(b);
+        const delta = (b.axis === "y" ? e.clientY : e.clientX) - b.drag.start;
+        scrollAreaTo(b, b.drag.pos + delta * (total - size) / Math.max(1, b.trackLen - b.thumbLen));
+      });
+      const endDrag = () => { b.drag = null; track.classList.remove("drag"); reveal(b); };
+      thumb.addEventListener("pointerup", endDrag);
+      thumb.addEventListener("pointercancel", endDrag);
+      track.addEventListener("pointerdown", (e) => {
+        if (e.target !== track) return;
+        const r = track.getBoundingClientRect();
+        const at = b.axis === "y" ? e.clientY - r.top : e.clientX - r.left;
+        const { size, total } = metrics(b);
+        scrollAreaTo(b, (at - b.thumbLen / 2) / Math.max(1, b.trackLen - b.thumbLen) * (total - size));
+      });
+      (el || window).addEventListener("scroll", () => { place(b); reveal(b); }, { passive: true });
+      bars.push(b);
+      place(b);
+      return b;
+    };
+
+    const pageBar = make(null, "y");
+    $$(SCROLL_AREAS).forEach((el) => make(el, el.matches(".table-wrap") ? "x" : "y"));
+
+    // Keep inner bars glued to their boxes when the page scrolls, resizes or content opens/closes.
+    let queued = false;
+    const refresh = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => { queued = false; bars.forEach(place); });
+    };
+    addEventListener("scroll", refresh, { passive: true });
+    addEventListener("resize", refresh);
+    if ("ResizeObserver" in window) {
+      const ro = new ResizeObserver(refresh);
+      ro.observe(document.body);
+      bars.forEach((b) => b.el && ro.observe(b.el));
+    }
+    document.addEventListener("toggle", refresh, true);           // <details> open/close
+    $("#offcanvas")?.addEventListener("transitionend", refresh);   // side panel finished sliding
+    // Mouse near the right edge reveals the page bar, like macOS overlay scrollbars.
+    addEventListener("pointermove", (e) => { if (e.pointerType === "mouse" && e.clientX > innerWidth - 24) reveal(pageBar); }, { passive: true });
+  }
 })();
