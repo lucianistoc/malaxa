@@ -1,0 +1,904 @@
+[
+ {
+  "slug": "medicina-interna",
+  "name": "Secția Clinică Medicină Internă",
+  "category": "clinic",
+  "icon": "stethoscope",
+  "summary": "Secție clinică cu 50 de paturi, laborator de ecografie, endoscopie și explorări funcționale.",
+  "beds": "50 paturi",
+  "intro": [],
+  "sections": [
+   {
+    "title": "Servicii medicale",
+    "items": [
+     "Diagnosticul și tratamentul principalelor boli interne",
+     "Diagnosticul și tratamentul bolilor cardiovasculare, respiratorii, digestive, hepatobiliare și pancreatice, al afecțiunilor renale, al bolilor hematologice, de colagen și reumatismale",
+     "Consulturi interdisciplinare"
+    ]
+   },
+   {
+    "title": "Laborator de ultrasonografie",
+    "text": [
+     "Secția de medicină internă dispune de 4 ecografe performante și efectuează toate tipurile de ecografii: ecografii generale (abdominale și pelvine), ecografii cardiace, ecografii vasculare și ecografii de părți moi."
+    ]
+   },
+   {
+    "title": "Laborator de explorări funcționale",
+    "text": [
+     "Program: Luni – Vineri, tura 1: 06:30 – 14:30, tura 2: 12:00 – 20:00."
+    ],
+    "items": [
+     "Electrocardiografie pentru pacienții din spital și din ambulatoriu",
+     "Monitorizare Holter a tensiunii arteriale pentru pacienții din spital",
+     "Probe funcționale ventilatorii pentru pacienții din spital și din ambulatoriu",
+     "Oscilometrie pentru pacienții din spital și din ambulatoriu"
+    ]
+   }
+  ],
+  "equipment": [
+   "50 de paturi, din care 7 paturi terapie acută",
+   "Laborator de endoscopie digestivă superioară și inferioară cu videoendoscop",
+   "4 ecografe performante"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – tasta 5 (Secții spital), urmată de tasta 3 (Medicină internă)"
+  ],
+  "gallery": [
+   "uploads/images/galerie-foto/medicina/1.jpg",
+   "uploads/images/galerie-foto/medicina/2.jpg",
+   "uploads/images/galerie-foto/medicina/3.jpg",
+   "uploads/images/galerie-foto/medicina/4.jpg",
+   "uploads/images/galerie-foto/medicina/5.jpg"
+  ],
+  "price_group": "Medicină internă",
+  "cabinet": "medicina-interna"
+ },
+ {
+  "slug": "recuperare",
+  "name": "Secția Medicină Fizică și de Reabilitare",
+  "category": "clinic",
+  "icon": "run",
+  "summary": "Secție cu 32 de paturi și bază de tratament: fizioterapie, kinetoterapie, masaj.",
+  "beds": "32 paturi",
+  "intro": [
+   "Secția de medicină fizică și de reabilitare dispune de 32 de paturi, repartizate la etajele 1 și 2 ale spitalului. Personal: 2 medici, 9 asistente medicale generaliste, 4 infirmiere, 3 îngrijitoare, 6 asistenți medicali BFT, 3 kinetoterapeuți, 2 maseuri."
+  ],
+  "sections": [
+   {
+    "title": "Tratamentul de fizioterapie se adresează următoarelor afecțiuni",
+    "items": [
+     "Osteofitoză calcaneană / fasciită plantară",
+     "Lombosciatică, hernie de disc cervicală / dorsală / lombară, protruzie discală",
+     "Tulburări de postură: cifoză, scolioză etc.",
+     "Reumatism inflamator: spondilită anchilozantă, poliartrită reumatoidă, colagenoze, vasculite – în fazele cronice",
+     "Reumatismul țesutului moale / abarticular: periartrita scapulo-humerală (PSH), periartrita coxo-femurală, tendinite, bursite, sindroame dureroase miofasciale și musculo-ligamentare",
+     "Recuperare posttraumatică – după fracturi, entorse, luxații, contuzii",
+     "Sechele post-traumatice: după o entorsă, luxație, fractură",
+     "Sechele neurologice: sindrom de tunel carpian, sechele după accident vascular cerebral (AVC) – hemipareză, hemiplegie, scleroză multiplă, boala Parkinson, leziuni de nervi periferici",
+     "Nevralgie Arnold, nevralgie de trigemen",
+     "Migrenă",
+     "Sinuzită cronică",
+     "Insuficiență venoasă cronică"
+    ]
+   },
+   {
+    "title": "Contraindicații fizioterapie",
+    "items": [
+     "în cazul celor cu pacemaker cardiac – pentru electroterapie",
+     "sindroame febrile",
+     "infecții acute, inclusiv respiratorii",
+     "sarcină",
+     "afecțiune cutanată – eritem, pustulă, iritație"
+    ]
+   },
+   {
+    "title": "Proceduri efectuate",
+    "accordion": [
+     {
+      "q": "Laserterapia",
+      "a": [
+       "Are efect analgezic, miorelaxant, antiedematos, de biostimulare și vasodilatator",
+       "Îmbunătațește microcirculatia, crește circulația oxigenului, utilizarea mai eficientă a glucozei, activeaza procesele metabolice la nivel celular",
+       "Afecțiuni stomatologice și dermatologice"
+      ]
+     },
+     {
+      "q": "Curenți interferențiali",
+      "a": [
+       "Au o acțiune stimulatoare asupra musculaturii scheletice, efect de stimulare asupra mușchilor netezi hipotoni, acțiune analgetică, acțiune vasomotorie cu efect hiperemizant, efecte decontracturante miorelaxante, trofice"
+      ]
+     },
+     {
+      "q": "TENS",
+      "a": [
+       "Poate trata stări dureroase în orice fază a bolii, care nu răspund la alte metode terapeutice indicate (farmacologice, electrice), sau care constituie contraindicații la alte mijloace terapeutice fizice (neoplazii)"
+      ]
+     },
+     {
+      "q": "Unde scurte / microunde",
+      "a": [
+       "Are indicații numeroase datorită efectului de endotermie (căldura se formează în interiorul țesuturilor organismului), în afecțiuni ale aparatului locomotor, neurologice, ginecologice, ORL și dermatologice"
+      ]
+     },
+     {
+      "q": "Curenți diadinamici",
+      "a": [
+       "Principalele efecte sunt cele analgetice, hiperemiante și miorelaxante",
+       "Sunt indicați în afecțiuni ale aparatului locomotor, stări post-traumatice, afecțiuni reumatice, tulburări circulatorii periferice"
+      ]
+     },
+     {
+      "q": "Curenți Trabert",
+      "a": [
+       "Se obține un veritabil electromasaj (vibrații puternice ale maselor musculare) și are indicații în radiculopatii prin procese vertebrale degenerative, artroze, mialgii, miogeloze, PSH, spondilită, stări post-traumatice (contuzii, entorse, luxații, întinderi ligamentare)"
+      ]
+     },
+     {
+      "q": "Curentul galvanic",
+      "a": [
+       "Are efecte biologice asupra fibrelor nervoase motorii și sensitive, asupra nervilor vasomotori și asupra vaselor, asupra musculaturii striate, asupra sistemului nervos central și asupra sistemului vegetativ",
+       "Este indicat în procese algice diverse, stări traumatice și post-traumatice, tulburări circulatorii arteriale periferice",
+       "Se aplică sub formă de galvanizare simplă cu electrozi placă, ionogalvanizare sau baie galvanică patru-celulară"
+      ]
+     },
+     {
+      "q": "ESWT",
+      "a": [
+       "Efectul de bază cel mai important este cel analgezic și anume eliminarea durerii cronice regăsite la nivelul sistemului musculo-scheletal",
+       "Un alt efect este hiperemia - afluxul de sânge într-o zonă a corpului, care, oferind o aprovizionare mai buna cu energie a mușchilor și a structurilor ligamentoase, duce la inhibarea spasmelor musculare",
+       "De asemenea, prin creșterea producției de colagen pe care o determină, procesele de vindecare la nivelul structurilor mioscheletale și ligamentoase sunt mai rapide",
+       "Folosirea tehnologiei shockwave este eficientă și în cazul celulelor calcificate din țesutul conjunctiv, redând astfel mobilitatea articulațiilor afectate"
+      ]
+     },
+     {
+      "q": "Ultrasunete",
+      "a": [
+       "Reprezintă un masaj vibrator de mare frecvență",
+       "Îmbunătățeste circulația locală și metabolismul, reduce durerile locale de tip ischemic, îmbunătățește capacitatea de regenerare tisulara și produce relaxare musculară"
+      ]
+     },
+     {
+      "q": "Magnetoterapia",
+      "a": [
+       "Influențează metabolismul celular, aparatul cardiovascular, excitabilitatea neuromusculară, acționeaza asupra glandelor endocrine și echilibreaza procesele de excitație și de inhibiție de la nivel cortical"
+      ]
+     },
+     {
+      "q": "Crioterapia",
+      "a": [
+       "crioterapia localizată - se utilizează pentru a trata durerea localizată, inflamația și tumefacția articulațiilor și a mușchilor; adesea utilizată în cazul leziunilor sportive și al recuperării post-chirurgicale"
+      ]
+     },
+     {
+      "q": "Drenajul venolimfatic al membrelor",
+      "a": [
+       "Drenajul limfatic este o procedură care poate avea loc atât manual, cât și mecanic, cu ajutorul unor aparate special concepute în acest scop. Este un tip de masaj prin care se pune o mică presiune asupra vaselor limfatice, pentru a mări volumul fluxului limfatic. Chiar dacă se efectuează cu ajutorul unor aparate speciale, nu este o procedură invazivă. Această procedură contribuie atât la tonifierea pielii, cât și la eliminarea din corp a toxinelor. Sistemul limfatic are o funcție de susținere a sistemului imunitar și reglează circulația sângelui în organism. Prin acest sistem se realizează schimbul de substanțe între sânge și țesuturi, având loc o filtrare a reziduurilor metabolice și substanțelor toxice. Fluidele care ajung în țesuturi, în afara sistemului circulator, sunt extrase din acele zone și sunt readuse în vasele de sânge"
+      ]
+     },
+     {
+      "q": "Diapulse",
+      "a": [
+       "Pulsațiile electromagnetice generate de aparatul Diapulse pătrund în profunzime, către zona bolnavă, fără riscul de a încălzi țesutul. Procedura accelerează vindecarea rănilor și scurtează timpul de regenerare a țesuturilor afectate. Tratamentul poate fi aplicat și prin haine sau prin pansamentele chirurgicale."
+      ]
+     },
+     {
+      "q": "Baie galvanică patru-celulară",
+      "a": [
+       "Baia galvanică patru-celulară este folosită în tratamentul bolilor degenerative articulare, al arteriopatiilor și al nevralgiilor, pe baza efectelor simultane ale apei încălzite și ale curentului electric continuu asupra brațelor și picioarelor. Metoda este utilizată în bolile sistemului circulator, ale sistemului musculo-scheletic, ale sistemului nervos și în diabet. Procedura ajută la îmbunătățirea circulației sângelui și a limfei, accelerează procesele metabolice din țesuturi și ameliorează durerea, inflamația și crampele."
+      ]
+     },
+     {
+      "q": "Parafină",
+      "a": [
+       "Tratamentul cu parafină este o formă de terapie termică profundă. Ceara de parafină lichefiată absoarbe și reține foarte bine căldura. Când parafina este aplicată pe zona afectată, căldura se transferă din ceară în zona dureroasă, pe măsură ce ceara se solidifică. Căldura crește circulația și ameliorează durerea și rigiditatea. Parafina înmoaie pielea și îi crește alimentarea cu sânge, deschizând în același timp porii și captând umezeala din straturile subiacente ale pielii."
+      ]
+     },
+     {
+      "q": "Kinetoterapia",
+      "a": [
+       "Obiectivele sunt de refacere a forței musculare și creșterea rezistenței musculare, creșterea și adaptarea capacității de efort, menținerea și creșterea mobilității articulare, ameliorarea troficității musculare, refacerea schemelor de mișcare, ameliorarea funcției de coordonare, control și echilibru, relaxare, corectarea posturii și aliniamentul corpului, creșterea mobilității articulare, reeducarea respiratorie și a sensibilității"
+      ]
+     },
+     {
+      "q": "Masajul",
+      "a": [
+       "Acțiune locală: sedativă, decontracturanta muscular, hiperemianta (datorită îmbunătățirii circulației), resorbtivă (prin înlăturarea lichidelor interstițiale de stază)",
+       "Acțiune generală: stimulează funcția aparatului respirator și circulator, crește metabolismul bazal, efecte favorabile asupra stării generale de sănătate"
+      ]
+     }
+    ]
+   }
+  ],
+  "equipment": [
+   "Aparate magnetodiaflux",
+   "Aparate unde scurte",
+   "Aparat microunda",
+   "Diapulse",
+   "Parafină",
+   "Baie galvanică patru-celulară",
+   "Aparate de laserterapie",
+   "Shock Master",
+   "Aparat de crioterapie",
+   "Aparate ultrasunete",
+   "Aparat de drenaj limfatic pentru membrul superior și inferior"
+  ],
+  "hours": [
+   "Consultații: Luni – Vineri, 07:00 – 14:00",
+   "Proceduri / tratamente: Luni – Vineri, 07:00 – 19:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – tasta 5 (Secții spital), urmată de tasta 6 (Recuperare)"
+  ],
+  "gallery": [
+   "uploads/images/galerie-foto/recuperare/1.jpg",
+   "uploads/images/galerie-foto/recuperare/2.jpg",
+   "uploads/images/galerie-foto/recuperare/3.jpg",
+   "uploads/images/galerie-foto/recuperare/4.jpg",
+   "uploads/images/galerie-foto/recuperare/5.jpg",
+   "uploads/images/galerie-foto/recuperare/6.jpg",
+   "uploads/images/galerie-foto/recuperare/7.jpg",
+   "uploads/images/galerie-foto/recuperare/8.jpg",
+   "uploads/images/galerie-foto/recuperare/9.jpg",
+   "uploads/images/galerie-foto/recuperare/10.jpg",
+   "uploads/images/galerie-foto/recuperare/11.jpg",
+   "uploads/images/galerie-foto/recuperare/12.jpg",
+   "uploads/images/galerie-foto/recuperare/13.jpg",
+   "uploads/images/galerie-foto/recuperare/14.jpg",
+   "uploads/images/galerie-foto/recuperare/15.jpg"
+  ],
+  "price_group": "Recuperare, medicină fizică și balneologie",
+  "cabinet": "recuperare"
+ },
+ {
+  "slug": "diabet",
+  "name": "Secția Clinică Diabet Zaharat, Nutriție și Boli Metabolice",
+  "category": "clinic",
+  "icon": "drop",
+  "summary": "Centru de diabet cu 45 de paturi, spitalizare de zi și cabinete zilnice în ambulatoriu.",
+  "beds": "45 paturi",
+  "intro": [
+   "Patologia metabolică a înregistrat în ultimii ani un trend ascendent, având în prezent o pondere importantă și în țara noastră, prin numărul de cazuri de diabet, obezitate și dislipidemii. Diabetul zaharat este asociat cu un număr mare de complicații cronice invalidante și cu creșterea riscului de mortalitate.",
+   "Managementul nutriției, tratamentul modern al diabetului zaharat, monitorizarea multidisciplinară și educația terapeutică a pacienților fac din echipa de specialiști în diabet, nutriție și boli metabolice a Spitalului Clinic „Nicolae Malaxa” unul dintre cele mai performante colective. Preocupările se extind în domeniul activității didactice și de cercetare, cu studii clinice în derulare.",
+   "Centrul de diabet, nutriție și boli metabolice al Spitalului Clinic „Nicolae Malaxa” oferă servicii medicale în cabinete de specialitate din ambulatoriu, cu program zilnic, în spitalizare de zi și în spitalizare continuă, în secția de profil cu 45 de paturi. La nivelul spitalului se derulează Programul Național de Sănătate – Diabet zaharat (componenta curativă), care asigură cele mai moderne metode de tratament."
+  ],
+  "equipment": [
+   "1 EKG portabil",
+   "1 ECO Dopler",
+   "Aparat de determinare a glicemiei (glucometru)",
+   "Injectomate"
+  ],
+  "hours": [
+   "Programare internări: Luni – Vineri, 09:00 – 15:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – tasta 5 (Secții spital), urmată de tasta 4 (Diabet)"
+  ],
+  "gallery": [
+   "uploads/images/galerie-foto/diabet/1.jpg"
+  ],
+  "price_group": "Diabet zaharat, nutriție și boli metabolice",
+  "cabinet": "diabet"
+ },
+ {
+  "slug": "alergologie",
+  "name": "Compartimentul Clinic Alergologie și Imunologie Clinică",
+  "category": "clinic",
+  "icon": "flask",
+  "summary": "Clinică universitară: diagnosticul, profilaxia și tratamentul bolilor alergice.",
+  "beds": "18 paturi",
+  "intro": [
+   "Alergologia se ocupă cu depistarea și diagnosticarea, profilaxia și tratamentul (medicamentos și/sau imunoterapie, după caz), monitorizarea și educația complexă a pacienților cu boli alergice, afecțiuni de hipersensibilitate inițiate prin mecanisme imunologice.",
+   "Asistența medicală în alergologie se adresează afecțiunilor alergice sau cu componentă alergică, care includ în principal rinita alergică, conjunctivita alergică, rinoconjunctivita alergică, unele forme de rinosinuzită, astm și alte afecțiuni respiratorii, alergii alimentare, dermatite de contact alergice, și pacienților cu antecedente personale de reacții adverse medicamentoase cu componentă imunoalergică, după caz. Urticaria spontană recurentă sau cronică, autoreactivă sau autoimună, poate de asemenea beneficia de evaluare imunoalergologică.",
+   "Afecțiunile alergice pot necesita, pe lângă măsurile profilactice, tratament antialergic, antiinflamator sau imunomodulator, sistemic și/sau topic. Nu în ultimul rând, pacienții cu unele afecțiuni alergice mediate IgE, cum ar fi rinitele, rinoconjunctivitele alergice și astmul alergic, pot beneficia, în anumite condiții, de imunoterapie alergenică, inclusiv de forme moderne cu administrare noninjectabilă.",
+   "Personalul medical al Spitalului Clinic „Nicolae Malaxa” cuprinde medici primari și specialiști alergologi cu experiență, care asigură asistență medicală profesionistă și de calitate în clinică și în ambulatoriul de specialitate. Educația complexă a pacienților alergici, farmacoterapia și imunoterapia prescrise cu atenție și adaptate nevoilor pacienților constituie o prioritate pentru personalul nostru medical. Cadrele didactice universitare ale Universității de Medicină și Farmacie „Carol Davila” din București, care își desfășoară activitatea integrată în Spitalul Clinic „Nicolae Malaxa”, coordonează și activitatea din centrul de învățământ universitar și postuniversitar, prin activități educaționale multiple."
+  ],
+  "sections": [
+   {
+    "title": "Documente necesare la internare sau consult",
+    "items": [
+     "Bilet de trimitere de la medicul de familie / medic specialist în contract cu casa de asigurări",
+     "Cardul de sănătate",
+     "Dovada calității de asigurat",
+     "CI / BI / Pașaport / Certificat de naștere, original și xerocopie"
+    ]
+   },
+   {
+    "title": "Clinica universitară de Alergologie",
+    "text": [
+     "Dotări: peak-flowmetre, nebulizatoare, pulsoximetre portabile, truse pentru diagnostic alergologic in vivo pentru: testare cutanată prick cu alergene de mediu, inclusiv panelul european de aeroalergene recomandat de rețeaua de excelență Global Allergy and Asthma European Network; testare cutanată prick sau prick-prick cu alergene alimentare disponibile; testare cutanată patch cu alergene de contact selecționate, inclusiv din seria de referință europeană; sisteme sterile de recoltare și reinjectare pentru serurile pregătite pentru teste de autoreactivitate și vaccinuri; spirometrie în ambulatoriu."
+    ]
+   },
+   {
+    "title": "Laborator de Imunologie Clinică",
+    "text": [
+     "Dotări: nefelometru automat de înaltă performanță pentru determinări de proteine specifice, imunoglobuline și fracțiuni ale complementului; sisteme de imunoanaliză colorimetrică multiparametrică în fază solidă, de tip line blot, pentru determinarea in vitro a IgE specifice la extracte native de aeroalergene și alergene alimentare, la alergene cross-reactive polenuri-alimente, la alergene recombinante de polenuri și alimentare din serii screening și a unor autoanticorpi screening din bolile autoimune; sistem automat de imunoanaliză bazat pe chemiluminiscență amplificată enzimatic în fază lichidă, pentru determinarea biomarkerilor hormonali și de autoimunitate asociați; centrifugă performantă cu răcire pentru pregătirea serurilor pentru testarea autoreactivității la pacienții cu urticarie cronică sau recurentă; sisteme rapide de imunodiagnostic pentru biomarkeri infecțioși, biomarkeri de autoimunitate și biomarkeri tumorali."
+    ]
+   },
+   {
+    "title": "Manevre și proceduri diagnostice și terapeutice",
+    "items": [
+     "Teste alergologice in vivo, care necesită indicație și supraveghere de specialitate",
+     "indicate după anamneza alergologică detaliată, inclusiv cu evaluarea anamnestică a dietei pacienților, evaluarea istoricului legat de farmacoterapie, imunoterapie sau alte tipuri de tratamente, a antecendentelor de reacții adverse medicamentoase alergice și nonalergice, evaluarea expunerii la alergene de origine animală, vegetală, fungică, chimică sau medicamentoasă, precum și a altor factori trigger sau de agravare, corelate cu evaluarea particularităților de viață și mediu ale pacienților, examenul clinic obiectiv și evaluarea prealabilă a parametrilor cardiovasculari (TA, ECG), funcționali respiratori (PEF sau flow-screen), a patologiei asociate / contraindicațiilor",
+     "testarea cutanată alergologică prick la aeroalergene de mediu include extracte alergenice, inclusiv din seria recomandată la nivel european, testare cutanată alergologică prick , prick - prick trofalergene disponibile; testare cutanată alergologică la agenți fizici pentru urticaria la factori fizici legați de temperatură, cu evaluare crioproteine în cazul urticariei la rece, după caz; testare cutanată alergologică patch la alergene de contact selecționate, inclusiv din seria de referință europeană; teste de provocare sistemică (orală sau parenterală) cu risc crescut asumat, după caz; teste efectuate în condiții de evaluare prealabilă și minimalizare a riscurilor de asumat (proceduri realizate cu consimțământ informat scris).",
+     "N.B. Testele cutanate prick sunt recomandate de medicul specialist alergolog în cazul suspiciunii unei hipersensibilități imunologice mediate IgE. Procedurile alergologice diagnostice in vivo au riscuri diferite, sunt laborioase și se pot desfășura în mai multe etape. În anumite situații testele cutanate alergologice pot fi amânate, inclusiv din cauza unor tratamente, sau se poate opta pentru alte metode diagnostice in vitro (din sânge).",
+     "N.B. Toate testele alergologice in vivo (pe pacient) se realizează în condiții optime de farmacovigilență și siguranță alergologică; din acest motiv se efectuează numai cu programare, după consultația alergologică de specialitate, cu evaluarea riscurilor și cu consimțământ informat scris. În cazul unor riscuri nejustificate sau neasumate ori al unor factori etiopatogenici nealergici, pot fi indicate teste in vitro, în cadrul asistenței multidisciplinare clinice și de laborator.",
+     "N.B. Urgențele de tip anafilaxie, angioedem, bronhospasm sever, reacții adverse medicamentoase (urgențe care pot fi atât alergice, cât și nealergice) trebuie adresate și tratate în cel mai apropiat spital de urgență cu UPU, datorită caracteristicilor lor evolutive și pentru că nu trebuie temporizate.",
+     "Testele alergologice in vivo nu sunt recomandate în perioadele de control deficitar al afecțiunilor alergice, în anumite patologii sau condiții asociate, în situații de urgență sau atunci când există un risc nejustificat pentru pacient, prin existența unor alternative diagnostice sau terapeutice.",
+     "Test in vivo de autoimunitate/autoreactivitate la pacienții cu urticarie cronică sau recurentă (test injectabil intradermic cu componentă lichidă noncelulară sanguină autologă), după anamneza alergologică detaliată, în condiții stricte de biosiguranță, cu determinarea prealabilă, în timp util, a unor imunomarkeri serologici virali și cu acordul informat scris al pacientului internat",
+     "Evaluare funcțională ventilatorie , după anamneza alergologică detaliată",
+     "debit expirator maxim instantaneu de vârf prin peak flow-metrie",
+     "spirometrie, după caz, spirometrie post-bronhodilatator.",
+     "Recomandări terapeutice sau tratamente antialergice, antiinflamatoare sau imunomodulatoare, sistemice și/sau topice, inclusiv tratamente topice intranazale, inhalatorii (prin dispozitive cu aerosoli lichizi sau solizi) sau topice cutanate, după caz, ținându-se cont și de particularitățile unității sanitare",
+     "Recomandări imunoterapeutice alergen-specifice sau imunoterapie alergenică, după evaluarea diagnostică de specialitate de către medicul specialist alergolog prescriptor, în special forme moderne cu administrare noninjectabilă pentru alergiile respiratorii și oculare mediate imunologic prin IgE alergen-specifice; recomandări de vaccinări, proceduri de imunoprofilaxie sau alte tipuri de imunoterapie, după caz, ținându-se cont și de particularitățile unității sanitare",
+     "Educație profilactică și terapeutică a pacientului cu patologie imunoalergică prin evaluare diagnostică de specialitate de calitate, cu măsuri complexe, inclusiv fișe/pliante cu informații detaliate referitoare la măsuri profilactice de evitare a expunerii la alergene sau alți factori declanșatori sau agravanți ai unor reacții adverse de hipersensibilitate."
+    ]
+   }
+  ],
+  "hours": [
+   "Programări internare: Luni – Vineri, 11:30 – 13:30",
+   "Internările se fac între 08:00 – 11:30, pe bază de programare",
+   "Compartimentul clinic de alergologie nu are linie de gardă de specialitate"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – tasta 5 (Secții spital), urmată de tasta 7 (Alergologie)",
+   "Telefon programări: 0726 502 558 (Luni – Vineri, 11:30 – 13:30)"
+  ],
+  "gallery": [
+   "uploads/images/galerie-foto/alergologie/1.jpg"
+  ],
+  "price_group": "Alergologie și Imunologie",
+  "cabinet": "alergologie"
+ },
+ {
+  "slug": "chirurgie",
+  "name": "Secția Chirurgie Generală",
+  "category": "clinic",
+  "icon": "scalpel",
+  "summary": "Chirurgie generală, chirurgie abdominală minim-invazivă și chirurgia piciorului diabetic.",
+  "beds": "30 paturi, din care Compartimentul Oftalmologie",
+  "intro": [
+   "Secția Chirurgie Generală, Chirurgie Abdominală Minim-Invazivă și Chirurgia Piciorului Diabetic.",
+   "În secția de chirurgie se efectuează intervenții chirurgicale complexe, cu accent pe chirurgia minim invazivă (laparoscopică): chirurgia piciorului diabetic, chirurgia stomacului, a intestinelor și a căilor biliare, chirurgia varicelor și a rupturii vechi de perineu.",
+   "Cele 25 de paturi ale secției sunt dispuse în 9 saloane, cu grup sanitar, care asigură confortul și intimitatea pacienților.",
+   "Sălile de operație sunt dotate cu aparatură modernă, care permite realizarea intervențiilor chirurgicale în condiții de siguranță pentru pacient.",
+   "Durata medie de spitalizare este de 5 zile.",
+   "Pe lângă acestea, 5 paturi ale secției sunt alocate Compartimentului de oftalmologie."
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – tasta 5 (Secții spital), urmată de tasta 5 (Chirurgie)"
+  ],
+  "gallery": [
+   "uploads/images/galerie-foto/chirurgie/1.jpg",
+   "uploads/images/galerie-foto/chirurgie/2.jpg",
+   "uploads/images/galerie-foto/chirurgie/3.jpg",
+   "uploads/images/galerie-foto/chirurgie/4.jpg"
+  ],
+  "price_group": "Chirurgie generală",
+  "cabinet": "chirurgie"
+ },
+ {
+  "slug": "oftalmologie",
+  "name": "Compartimentul Oftalmologie",
+  "category": "clinic",
+  "icon": "eye",
+  "summary": "Compartiment cu 5 paturi, bloc operator, chirurgia cataractei și a glaucomului.",
+  "beds": "În cadrul Secției Chirurgie Generală",
+  "intro": [
+   "Compartimentul de oftalmologie are două cabinete de consultații, bloc operator și două rezerve pentru pacienți. În ultimii doi ani, laboratorul de oftalmologie-imagistică a înregistrat un progres semnificativ, atât prin amenajarea și modernizarea spațiilor, cu asigurarea circuitelor funcționale, cât și prin dotarea cu aparatură de ultimă generație.",
+   "Compartimentul dispune de 5 paturi și de condiții de cazare la standarde europene; pacienții sunt tratați cu maximă seriozitate și beneficiază de asistență medicală modernă."
+  ],
+  "sections": [
+   {
+    "title": "Servicii medicale oferite",
+    "items": [
+     "Consult oftalmologic complet",
+     "Câmp vizual",
+     "Laserterapie pentru retinopatia diabetică și alte afecțiuni retiniene",
+     "Biometrie, ecografie, pahimetrie",
+     "Intervenții chirurgicale",
+     "Intervenții pe polul anterior",
+     "Operații de cataractă prin facoemulsificare, cu implant de cristalin",
+     "Operații de glaucom",
+     "Operații de pleoape: entropion, ectropion, șalazion, ptoză palpebrală, blefarorafii",
+     "Injecții intravitreene pentru retinopatia diabetică, glaucomul neovascular și accidentele vasculare retiniene"
+    ]
+   }
+  ],
+  "equipment": [
+   "autokeratorefractometru",
+   "tonometru noncontact",
+   "ecograf",
+   "biometru",
+   "câmp vizual",
+   "două biomicroscoape",
+   "aparat de facoemulsificare Infiniti",
+   "microscop operator Zeiss"
+  ],
+  "hours": [
+   "Program: Luni – Vineri, 07:00 – 19:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05",
+   "Interior: 3118"
+  ],
+  "gallery": [
+   "uploads/images/galerie-foto/oftalmologie/1.jpg",
+   "uploads/images/galerie-foto/oftalmologie/2.jpg",
+   "uploads/images/galerie-foto/oftalmologie/3.jpg",
+   "uploads/images/galerie-foto/oftalmologie/4.jpg",
+   "uploads/images/galerie-foto/oftalmologie/5.jpg"
+  ],
+  "price_group": "Oftalmologie",
+  "cabinet": "oftalmologie"
+ },
+ {
+  "slug": "obstetrica-ginecologie",
+  "name": "Secția Clinică Obstetrică-Ginecologie",
+  "category": "clinic",
+  "icon": "female",
+  "summary": "Secție clinică cu 50 de paturi, 2 săli de naștere și gardă non-stop cu 3 linii.",
+  "beds": "50 paturi",
+  "intro": [
+   "Departamentul de obstetrică și ginecologie al Spitalului Clinic „Nicolae Malaxa” cuprinde medici bine pregătiți și cu experiență în acordarea de servicii medicale de excelență, care pun mereu femeia în centrul atenției, oferindu-le pacientelor acces la cele mai moderne metode de diagnostic și tratament și, nu în ultimul rând, confort fizic și psihic.",
+   "Colectivul, bazat pe înțelegere și comunicare, atât între membrii echipei, cât și în relația medic-pacient, permite abordarea și tratarea unor cazuri complexe, atât din sfera ginecologică, cât și din cea obstetricală; femeia gravidă are nevoie de empatie și înțelegere, dar și de tratament și monitorizare permanentă. Este asigurată o varietate de servicii care acoperă majoritatea afecțiunilor feminine, indiferent de vârstă: de la infertilitate, asistență la naștere, afecțiuni ginecologice sau oncologice, până la menopauză.",
+   "Secția de obstetrică (sala de nașteri, obstetrică patologică) asigură dispensarizarea și monitorizarea gravidelor pe toată perioada sarcinii, cu evaluare clinică, biologică și ecografică și cu tratarea complicațiilor specifice fiecărui trimestru de sarcină. Sala de nașteri asigură asistența la naștere atât pentru nașterile normale, cât și pentru cele complicate sau cu risc crescut cunoscut, susținând fiecare pacientă fiziologic și psihologic în procesul nașterii. Secția de neonatologie asigură îngrijirea nou-născuților cu vârsta gestațională mai mare de 32 de săptămâni. Îngrijirea postpartum a mamei și a nou-născutului se face în regim de rooming-in, cu posibilitatea cazării în rezerve cu confort sporit.",
+   "Secția de ginecologie efectuează intervenții ginecologice prin abord abdominal deschis sau laparoscopic, chirurgie ginecologică oncologică, chirurgie vaginală și intervenții în regim de spitalizare de zi (chiuretaje uterine hemostatice și biopsice, histeroscopii, histerosalpingografii, colposcopii și video-colposcopii, întreruperea cursului normal al sarcinii). Secția clinică are 6 cadre universitare, care asigură instruirea și formarea studenților și a medicilor rezidenți, susținând astfel dezvoltarea cunoștințelor, aptitudinilor și tehnicilor necesare viitorilor medici.",
+   "Departamentul cuprinde un nucleu de cercetare, alcătuit din 3 cercetători științifici, în cadrul căruia se desfășoară în permanență studii clinice.",
+   "Ambulatoriul de specialitate este asigurat de medicii secției.",
+   "Serviciul de gardă asigură asistență non-stop, cu 3 linii de gardă."
+  ],
+  "equipment": [
+   "50 de paturi",
+   "2 săli de operație dotate ultramodern, cu linie de laparoscopie STORZ și aparatură de electrochirurgie",
+   "2 săli de naștere",
+   "4 aparate de ultrasonografie",
+   "8 cardiotocografe pentru monitorizarea uterofetală externă",
+   "Colposcop cu electrocauter.",
+   "Laparoscop cu histeroscop."
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – tasta 5 (Secții spital), urmată de tasta 1 (Obstetrică-Ginecologie)"
+  ],
+  "gallery": [
+   "uploads/images/galerie-foto/ginecologie/1.jpg",
+   "uploads/images/galerie-foto/ginecologie/2.jpg",
+   "uploads/images/galerie-foto/ginecologie/3.jpg"
+  ],
+  "price_group": "Obstetrică-Ginecologie",
+  "cabinet": "obstetrica-ginecologie"
+ },
+ {
+  "slug": "ati",
+  "name": "Compartimentul Anestezie și Terapie Intensivă (ATI)",
+  "category": "clinic",
+  "icon": "heartbeat",
+  "summary": "Compartiment cu 13 paturi: anestezie, terapie intensivă și transfuzii.",
+  "beds": "13 paturi",
+  "intro": [
+   "Compartimentul ATI are 13 paturi și asigură serviciile de anestezie, terapie intensivă și transfuzii. Compartimentul nu face internări proprii: pacienții sunt transferați din celelalte secții ale spitalului, cu acordul medicului șef ATI.",
+   "Punctul de transfuzii este în subordinea Compartimentului ATI și determină grupa sanguină, Rh-ul și compatibilitățile. Compartimentul ATI deservește toate secțiile spitalului pentru consulturi interdisciplinare, transfuzii, montarea cateterelor venoase centrale (CVC) și a cateterelor arteriale pentru determinarea gazelor sanguine (ASTRUP)."
+  ],
+  "sections": [
+   {
+    "title": "Servicii medicale efectuate",
+    "items": [
+     "Consult preanestezic",
+     "Consulturi interdisciplinare",
+     "Puncții arteriale și venoase",
+     "Montare de catetere venoase centrale (CVC)",
+     "Anestezii de toate tipurile: anestezii de conducere, rahianestezii, anestezie peridurală, anestezie analgetică, anestezii intravenoase, anestezii pe pivot volatil",
+     "Anestezii inhalatorii"
+    ]
+   }
+  ],
+  "equipment": [
+   "monitoare",
+   "injectomate",
+   "defibrilatoare",
+   "aspiratoare de secreții",
+   "ventilatoare mecanice",
+   "aparat de anestezie",
+   "pulsoximetre",
+   "sistem de compresie mecanică pentru prevenirea trombozei venoase profunde (TVP)",
+   "pompe de alimentație",
+   "nebulizatoare",
+   "bronhoscop",
+   "sistem de oximetrie",
+   "aparate de incalzire",
+   "aparat de gazometrie"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – tasta 5 (Secții spital), urmată de tasta 9 (Compartiment ATI)"
+  ],
+  "gallery": [
+   "uploads/images/galerie-foto/ati/1.jpg",
+   "uploads/images/galerie-foto/ati/2.jpg",
+   "uploads/images/galerie-foto/ati/3.jpg",
+   "uploads/images/galerie-foto/ati/4.jpg"
+  ]
+ },
+ {
+  "slug": "neonatologie",
+  "name": "Secția Neonatologie",
+  "category": "clinic",
+  "icon": "hands",
+  "summary": "25 de paturi, inclusiv terapie intensivă neonatală și compartiment prematuri.",
+  "beds": "25 paturi, din care Compartimentul Prematuri și Compartimentul Terapie Intensivă",
+  "intro": [
+   "Secția de neonatologie a Spitalului Clinic „Nicolae Malaxa” are 25 de paturi, din care fac parte Compartimentul de terapie intensivă și Compartimentul de prematuri."
+  ],
+  "equipment": [
+   "aparatură performantă pentru susținerea respiratorie",
+   "incubatoare",
+   "monitoare",
+   "aparat pentru determinarea transcutanată a bilirubinei",
+   "aparat de testare auditivă",
+   "analizor de gaze sanghine,",
+   "lămpi de fototerapie",
+   "ecograf,",
+   "aparat de radiologie portabil",
+   "biberoneria secției, dotată cu aparatură proprie de sterilizare și pompă electrică de muls"
+  ],
+  "hours": [
+   "Program medici: 08:00 – 14:00",
+   "Linie de gardă permanentă"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – tasta 5 (Secții spital), urmată de tasta 2 (Neonatologie)"
+  ],
+  "gallery": [
+   "uploads/images/galerie-foto/neonat/1.jpg",
+   "uploads/images/galerie-foto/neonat/2.jpg",
+   "uploads/images/galerie-foto/neonat/3.jpg",
+   "uploads/images/galerie-foto/neonat/4.jpg"
+  ],
+  "price_group": "Neonatologie",
+  "cabinet": "neonatologie"
+ },
+ {
+  "slug": "spitalizare-de-zi",
+  "name": "Spitalizare de zi",
+  "category": "clinic",
+  "icon": "calendar",
+  "beds": "10 paturi",
+  "summary": "Investigații și tratamente care nu necesită internare continuă, cu externare în aceeași zi.",
+  "intro": [
+   "Spitalizarea de zi este o alternativă la internarea continuă pentru afecțiunile care pot fi investigate și tratate în cursul aceleiași zile, fără ca pacientul să rămână internat peste noapte."
+  ],
+  "links": [
+   [
+    "Tipuri de prezentare: internarea de zi",
+    "tipuri-de-prezentare/#internare-de-zi"
+   ]
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ],
+  "gallery": []
+ },
+ {
+  "slug": "camera-de-garda",
+  "name": "Camera de gardă",
+  "category": "clinic",
+  "icon": "ambulance",
+  "summary": "Asistență medicală cu personal specializat 24/24 h, 7/7 zile.",
+  "intro": [
+   "Spitalul Clinic „Nicolae Malaxa” asigură asistență medicală cu personal specializat 24/24 h, 7/7 zile, având linii de gardă pentru următoarele specialități: obstetrică-ginecologie, neonatologie, diabet, nutriție și boli metabolice, medicină internă, chirurgie generală, ATI și laborator de analize medicale."
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – tasta 1 (Camera de gardă)"
+  ],
+  "hours": [
+   "Non-stop, 24/24 h, 7/7 zile"
+  ],
+  "gallery": [
+   "uploads/images/galerie-foto/garda/1.jpg",
+   "uploads/images/galerie-foto/garda/2.jpg",
+   "uploads/images/galerie-foto/garda/3.jpg",
+   "uploads/images/galerie-foto/garda/4.jpg"
+  ],
+  "links": [
+   [
+    "Programul gărzilor din spital",
+    "program-garzi/"
+   ]
+  ]
+ },
+ {
+  "slug": "laborator",
+  "name": "Laboratorul de Analize Medicale",
+  "category": "paraclinic",
+  "icon": "flask",
+  "summary": "Laborator acreditat RENAR (ISO 15189) – hematologie, biochimie, imunologie, parazitologie.",
+  "intro": [
+   "Analizele medicale au o pondere însemnată în stabilirea diagnosticului; echipa de profesioniști și aparatura laboratorului vă stau la dispoziție cu o gamă extinsă de analize medicale.",
+   "Laboratorul este acreditat RENAR, conform ISO 15189:2013, pentru: hematologie, chimie clinică, imunologie și parazitologie."
+  ],
+  "sections": [
+   {
+    "title": "Hematologie",
+    "items": [
+     "Hemoleucogramă completă, cu formulă leucocitară",
+     "Determinarea factorului Rh (D)",
+     "Determinarea grupei sanguine",
+     "Examen citologic – frotiu sanguin",
+     "VSH"
+    ]
+   },
+   {
+    "title": "Coagulare",
+    "items": [
+     "Fibrinogen",
+     "Timp de protrombină",
+     "INR",
+     "APTT"
+    ]
+   },
+   {
+    "title": "Biochimie",
+    "items": [
+     "Acid uric",
+     "Amilază",
+     "Albumină urinară",
+     "Bilirubină directă",
+     "Bilirubină totală",
+     "Calciu seric total",
+     "Calciu seric ionic",
+     "CK-MB",
+     "CK",
+     "Colesterol total",
+     "HDL-colesterol",
+     "LDL-colesterol",
+     "Creatinină",
+     "Creatinină urinară",
+     "Fier seric (sideremie)",
+     "Fosfatază alcalină",
+     "GGT",
+     "LDH",
+     "Magneziu",
+     "Proteine totale",
+     "Transaminaze (TGO / TGP)",
+     "Uree",
+     "Examen sumar de urină și sediment"
+    ]
+   },
+   {
+    "title": "Imunologie",
+    "items": [
+     "Anticorpi anti-TPO",
+     "TSH",
+     "FT4",
+     "Prolactină",
+     "Progesteron",
+     "FSH",
+     "LH",
+     "PSA",
+     "Free PSA",
+     "PCR cantitativ",
+     "ASLO cantitativ",
+     "Factor reumatoid cantitativ"
+    ]
+   }
+  ],
+  "equipment": [
+   "Analizor de hematologie HMX Beckman Coulter",
+   "Analizor de hematologie Mythic 22",
+   "Analizor de imunologie Immulite 1000",
+   "Analizor de imunologie BN ProSpec",
+   "Analizor HbA1c D-10",
+   "Analizor de electroforeză Hydrasys (Hyrys)",
+   "Analizor EasyStat",
+   "Analizor EasyLyte",
+   "Analizoare de biochimie ILab 600 (2)",
+   "Analizor de coagulare ACL 3000",
+   "Analizor de urină iRICELL"
+  ],
+  "hours": [
+   "Punct de recoltare: Luni – Vineri, 07:30 – 13:00",
+   "Eliberare analize: Luni – Vineri, 13:30 – 15:00",
+   "Program laborator: Luni – Vineri, 08:00 – 15:00, cu linie de gardă"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – tasta 6 (Laborator analize), urmată de tasta 1 (Punct de recoltare)"
+  ],
+  "gallery": [
+   "uploads/images/galerie-foto/laborator/1.jpg",
+   "uploads/images/galerie-foto/laborator/2.jpg",
+   "uploads/images/galerie-foto/laborator/3.jpg",
+   "uploads/images/galerie-foto/laborator/4.jpg",
+   "uploads/images/galerie-foto/laborator/5.jpg"
+  ],
+  "price_group": "Laborator de analize medicale",
+  "cabinet": "laborator"
+ },
+ {
+  "slug": "radiologie",
+  "name": "Laboratorul de Radiologie și Imagistică Medicală",
+  "category": "paraclinic",
+  "icon": "xray",
+  "summary": "Radiografii, computer tomograf (CT), mamografie digitală și ecografie.",
+  "intro": [
+   "În laboratorul nostru se efectuează investigații radioimagistice de înaltă performanță, de către un personal bine instruit și dedicat pacienților, atât pentru pacienții internați, cât și pentru pacienții din ambulatoriu.",
+   "Prin buna colaborare cu specialitățile clinice am obținut creșterea calității actului medical în beneficiul pacientului, prin scurtarea semnificativă a intervalului de timp necesar stabilirii diagnosticului corect și implicit, instituirea tratamentului optim.",
+   "În ultimii doi ani, laboratorul de radiologie și imagistică a înregistrat un progres semnificativ, atât prin amenajarea și modernizarea spațiilor, cu asigurarea circuitelor funcționale, cât și prin dotarea cu aparatură de ultimă generație."
+  ],
+  "sections": [
+   {
+    "title": "Servicii medicale oferite",
+    "items": [
+     "Radiografii (craniu, sinusuri – SAF, coloană vertebrală, torace, torace osos, centură scapulară, pelvis, membre, articulații, radiografie abdominală pe gol, radiografie reno-vezicală simplă, tranzit baritat eso-gastro-duodenal)",
+     "Tomografii computerizate (CT) – craniu, sinusuri, mastoidă, gât, torace, abdomen, pelvis – native și cu substanță de contrast intravenoasă",
+     "Mamografii digitale",
+     "Ecografii abdominale, pelvine și abdomino-pelvine"
+    ]
+   },
+   {
+    "title": "Servicii decontate de CASMB",
+    "text": [
+     "Serviciile în regim ambulatoriu sunt decontate integral de CASMB pe baza biletului de trimitere de la medicul specialist în contract cu CASMB. Pacientul trebuie să se prezinte cu:"
+    ],
+    "items": [
+     "Bilet de trimitere de la medicul de familie / medicul specialist (decontat de CASMB)",
+     "Buletin sau carte de identitate",
+     "Dovada calității de asigurat (card de sănătate sau adeverință eliberată de CASMB)"
+    ]
+   },
+   {
+    "title": "Servicii cu plată",
+    "text": [
+     "În lipsa biletului de trimitere decontat de CASMB, serviciile pot fi oferite contra cost. Pacientul trebuie să se prezinte cu recomandare de la medicul de familie / specialist și act de identitate."
+    ]
+   }
+  ],
+  "equipment": [
+   "Aparat Rtg Duodiagnost Philips",
+   "Aparat Rtg Polymibil",
+   "Aparat RTG Transportix",
+   "Aparat Rtg Siremobil cu brat C",
+   "Computer tomograf multislice GE",
+   "Mamograf digital Giotto Image",
+   "Ecograf Doppler color multidisciplinar",
+   "Mașina de developare",
+   "Negatoscop, imprimante digitale"
+  ],
+  "hours": [
+   "Radiografii și mamografii: Luni – Vineri, 09:00 – 11:00 și 14:00 – 16:00",
+   "Tomografii (CT) și ecografii: Luni – Vineri, 12:00 – 14:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – tasta 4 (Imagistică medicală), urmată de tasta 1 (Radiologie), tasta 2 (CT) sau tasta 3 (Mamograf)"
+  ],
+  "gallery": [
+   "uploads/images/galerie-foto/radiologie/1.jpg",
+   "uploads/images/galerie-foto/radiologie/2.jpg",
+   "uploads/images/galerie-foto/radiologie/3.jpg",
+   "uploads/images/galerie-foto/radiologie/4.jpg",
+   "uploads/images/galerie-foto/ct/5.jpg",
+   "uploads/images/galerie-foto/ct/6.jpg",
+   "uploads/images/galerie-foto/ct/7.jpg",
+   "uploads/images/galerie-foto/ct/8.jpg"
+  ],
+  "price_group": "Radiologie",
+  "cabinet": "radiologie"
+ },
+ {
+  "slug": "explorari-functionale",
+  "name": "Laboratorul de Explorări Funcționale",
+  "category": "paraclinic",
+  "icon": "heartbeat",
+  "summary": "Electrocardiografie, monitorizare Holter a tensiunii arteriale, probe funcționale ventilatorii, oscilometrie.",
+  "intro": [
+   "Laboratorul de explorări funcționale efectuează investigații pentru pacienții internați și pentru pacienții din ambulatoriu."
+  ],
+  "sections": [
+   {
+    "title": "Investigații efectuate",
+    "items": [
+     "Electrocardiografie, pentru pacienții din spital și din ambulatoriu",
+     "Monitorizare Holter a tensiunii arteriale, pentru pacienții din spital",
+     "Probe funcționale ventilatorii, pentru pacienții din spital și din ambulatoriu",
+     "Oscilometrie, pentru pacienții din spital și din ambulatoriu"
+    ]
+   }
+  ],
+  "hours": [
+   "Luni – Vineri, tura 1: 06:30 – 14:30",
+   "Luni – Vineri, tura 2: 12:00 – 20:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ],
+  "price_group": "Explorări funcționale",
+  "gallery": []
+ },
+ {
+  "slug": "endoscopie",
+  "name": "Laboratorul de Endoscopie Digestivă și Terapeutică",
+  "category": "paraclinic",
+  "icon": "stethoscope",
+  "summary": "Endoscopie digestivă superioară și inferioară (colonoscopie), cu videoendoscop.",
+  "intro": [
+   "Laboratorul de endoscopie digestivă și terapeutică efectuează explorări endoscopice digestive superioare și inferioare (colonoscopie), cu videoendoscop."
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05"
+  ],
+  "cabinet": "endoscopie",
+  "gallery": []
+ },
+ {
+  "slug": "anatomie-patologica",
+  "name": "Serviciul de Anatomie Patologică",
+  "category": "paraclinic",
+  "icon": "microscope",
+  "summary": "Diagnostic histopatologic pentru piesele operatorii și biopsiile din spital.",
+  "intro": [
+   "Serviciul de anatomie patologică pune diagnosticul histopatologic pentru piesele operatorii rezultate din secția de chirurgie și oftalmologie, cât și pentru chiuretajele biopsice rezultate din secția de obstetrică-ginecologie."
+  ],
+  "hours": [
+   "Luni – Vineri: 08:00 – 14:00"
+  ],
+  "phone": [
+   "Telefon: 021 255 54 05 – tasta 5 (Secții spital), urmată de tasta 8 (Anatomie patologică)"
+  ],
+  "price_group": "Anatomie patologică",
+  "sections": [
+   {
+    "title": "Compartimente",
+    "items": [
+     "Compartimentul de histopatologie",
+     "Compartimentul de citologie",
+     "Compartimentul de prosectură"
+    ]
+   }
+  ],
+  "gallery": []
+ },
+ {
+  "slug": "farmacie",
+  "name": "Farmacia spitalului",
+  "category": "paraclinic",
+  "icon": "pill",
+  "summary": "Asigură medicamentele și materialele sanitare pentru pacienții internați.",
+  "intro": [
+   "Farmacia spitalului asigură aprovizionarea secțiilor și compartimentelor cu medicamentele și materialele sanitare necesare tratamentului pacienților internați. Datele privind consumul de medicamente sunt publicate în secțiunea de interes public."
+  ],
+  "links": [
+   [
+    "Consumul de medicamente (interes public)",
+    "interes-public/#doc-farmacie"
+   ]
+  ],
+  "gallery": []
+ },
+ {
+  "slug": "sterilizare",
+  "name": "Stația de Sterilizare",
+  "category": "paraclinic",
+  "icon": "shield",
+  "summary": "Sterilizarea instrumentarului și a materialelor folosite în secții și în blocul operator.",
+  "intro": [
+   "Stația de sterilizare asigură curățarea, dezinfecția și sterilizarea instrumentarului medical și a materialelor folosite în secțiile spitalului, în blocul operator și în sala de nașteri, cu respectarea circuitelor funcționale."
+  ],
+  "gallery": [
+   "uploads/images/galerie-foto/sterilizare/1.jpg"
+  ]
+ },
+ {
+  "slug": "nucleu-de-cercetare",
+  "name": "Nucleul de Cercetare",
+  "category": "other",
+  "icon": "microscope",
+  "summary": "Studii clinice și activitate de cercetare științifică.",
+  "intro": [
+   "Nucleul de cercetare funcționează în cadrul spitalului și este alcătuit din cercetători științifici care desfășoară studii clinice, în special în domeniul obstetricii și ginecologiei. Activitatea de cercetare se extinde și în domeniul diabetului, nutriției și bolilor metabolice, precum și al alergologiei moleculare."
+  ],
+  "links": [
+   [
+    "Cercetare și proiecte",
+    "cercetare-si-inovare/"
+   ]
+  ],
+  "gallery": []
+ }
+]

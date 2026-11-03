@@ -21,11 +21,9 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 OUT = ROOT / "public"
 CFG = json.loads((ROOT / "site.config.json").read_text(encoding="utf-8"))
-SPECS = json.loads((ROOT / "content/specialties.json").read_text(encoding="utf-8"))
 DOCS = json.loads((ROOT / "content/doctors.json").read_text(encoding="utf-8"))
 NEWS = sorted(json.loads((ROOT / "content/news.json").read_text(encoding="utf-8")), key=lambda n: n["date"], reverse=True)
 L = json.loads((ROOT / "content/lists.json").read_text(encoding="utf-8"))
-SPEC_BY = {s["slug"]: s for s in SPECS}
 C = CFG["contact"]
 NAME = CFG["name"]
 E = escape
@@ -140,18 +138,9 @@ def ext(url):
 def a_doc(t, u, cls="doc-link"):
     tgt = ' target="_blank" rel="noopener"' if ext(u) else ""
     ic = "download" if u.lower().endswith((".pdf", ".doc", ".docx", ".xls", ".xlsx")) else ("external" if ext(u) else "arrow")
-    href = u if ext(u) else R + quote(u)
+    href = u if ext(u) else R + quote(u, safe="/#")
     return f'<a class="{cls}" href="{E(href)}"{tgt}>{icon(ic)}<span>{E(t)}</span></a>'
 
-
-def ul(items, cls="list-check"):
-    out = []
-    for x in items:
-        if x.endswith(":") and len(x) < 60:
-            out.append(f'</ul><h4 class="list-sub">{E(x.rstrip(":"))}</h4><ul class="{cls}">')
-        else:
-            out.append(f"<li>{E(cap(x))}</li>")
-    return f'<ul class="{cls}">' + "".join(out) + "</ul>"
 
 
 def paras(lst):
@@ -159,33 +148,12 @@ def paras(lst):
 
 
 # ---------------------------------------------------------------- navigation
-def spec_url(s): return f"service/{s['slug']}/"
+
 def doc_url(d): return f"team/{d['slug']}/"
 def post_url(n): return (f"{n['date'][:4]}/{n['date'][5:7]}/{n['date'][8:10]}/{n['slug']}/" if n.get("date") else f"noutati/{n['slug']}/")
 
 
-NAV = [
-    ("Despre noi", "despre-noi/", [
-        ("Scurt istoric", "despre-noi/"), ("Structura organizatorică", "structura-organizatorica/"),
-        ("Echipa managerială", "echipa-de-management/"), ("Acreditări / Certificări", "acreditari/"),
-        ("Indicatori și statistici", "indicatori-de-calitate/"), ("Noutăți și campanii", "noutati/"),
-        ("Cercetare și proiecte", "cercetare-si-inovare/"), ("Parteneriate", "parteneriate/"), ("Cariere", "cariere/")]),
-    ("Specialități medicale", "specialitati-medicale/", "SPECS"),
-    ("Ambulatoriu", "ambulatoriu/", "AMB"),
-    ("Medici", "team/", None),
-    ("Informații utile", "informatii-utile/", [
-        ("§Pentru pacienți", None), ("Internare și externare", "internare-si-externare/"),
-        ("Servicii decontate prin CASMB", "servicii-decontate-prin-cas/"), ("Tarife servicii medicale", "servicii-medicale-cu-plata/"),
-        ("Drepturile și obligațiile pacienților", "drepturile-pacientilor/"), ("Program gărzi spital", "program-garzi/"),
-        ("Chestionar de feedback", "chestionar-de-feedback/"), ("Întrebări frecvente", "intrebari-frecvente/"),
-        ("§Pentru vizitatori și aparținători", None), ("Program și reguli de vizită", "reguli-si-program-de-vizita/"),
-        ("§Interes public", None), ("Informații de interes public", "interes-public/"), ("Anunțuri și achiziții", "anunturi/")]),
-    ("Contact", "contact/", None),
-]
 
-
-def amb_specs():
-    return [s for s in SPECS if s.get("ambulatoriu")]
 
 
 def logo(r):
@@ -196,38 +164,7 @@ def logo(r):
             f'<span class="logo-sub">{E(CFG["logo_subtext"])}</span></span></a>')
 
 
-def nav_pairs(sub):
-    if sub == "SPECS":
-        return [(s["name"], spec_url(s)) for s in SPECS if not s.get("ambulatoriu_only")]
-    if sub == "AMB":
-        return [(s["name"], spec_url(s) + "#ambulatoriu") for s in amb_specs()]
-    return sub
 
-
-def nav_html(r, current):
-    out = []
-    for label, url, sub in NAV:
-        active = " active" if current and current.split("/")[0] == url.split("/")[0] else ""
-        if sub is None:
-            out.append(f'<li class="{active.strip()}"><a href="{r}{url}">{label}</a></li>')
-            continue
-        pairs = nav_pairs(sub)
-        items = "".join(f'<li class="label">{t[1:]}</li>' if t.startswith("§") else f'<li><a href="{r}{u}">{E(t)}</a></li>' for t, u in pairs)
-        cls = "submenu cols" if len(pairs) > 12 and sub in ("SPECS", "AMB") else "submenu"
-        out.append(f'<li class="has-sub{active}"><a href="{r}{url}">{label} {icon("caret", "caret")}</a><ul class="{cls}">{items}</ul></li>')
-    return "<ul>" + "".join(out) + "</ul>"
-
-
-def mobile_nav(r):
-    out = []
-    for label, url, sub in NAV:
-        if sub is None or sub == "AMB":  # Ambulatoriu is a plain link on mobile, like Medici and Contact
-            out.append(f'<li><a href="{r}{url}">{label}</a></li>')
-            continue
-        pairs = [(t, u) for t, u in nav_pairs(sub) if u]
-        items = f'<li><a href="{r}{url}">Vezi tot</a></li>' + "".join(f'<li><a href="{r}{u}">{E(t)}</a></li>' for t, u in pairs)
-        out.append(f'<li><details><summary>{label} {icon("caret", "caret")}</summary><ul>{items}</ul></details></li>')
-    return '<nav class="mobile-nav" aria-label="Meniu mobil"><ul>' + "".join(out) + "</ul></nav>"
 
 
 def socials():
@@ -340,7 +277,8 @@ def layout(path, title, body, desc=None, current=None, section="Pagini"):
       <h4>{E(CFG['legal_name'])}</h4>
       <ul>
         <li><a href="{r}despre-noi/">Scurt istoric</a></li>
-        <li><a href="{r}specialitati-medicale/">Specialități medicale</a></li>
+        <li><a href="{r}conducere/">Conducere</a></li>
+        <li><a href="{r}spital/">Spital</a></li>
         <li><a href="{r}ambulatoriu/">Ambulatoriu</a></li>
         <li><a href="{r}team/">Medici</a></li>
         <li><a href="{r}cariere/">Cariere</a></li>
@@ -350,8 +288,9 @@ def layout(path, title, body, desc=None, current=None, section="Pagini"):
     <div>
       <h4>Informații utile</h4>
       <ul>
-        <li><a href="{r}internare-si-externare/">Internare și externare</a></li>
-        <li><a href="{r}servicii-medicale-cu-plata/">Tarife servicii medicale</a></li>
+        <li><a href="{r}tipuri-de-prezentare/">Tipuri de prezentare</a></li>
+        <li><a href="{r}servicii-medicale-cu-plata/">Plata serviciilor medicale</a></li>
+        <li><a href="{r}contracte-casmb-cnas/">Contracte CASMB / CNAS</a></li>
         <li><a href="{r}reguli-si-program-de-vizita/">Program de vizită</a></li>
         <li><a href="{r}interes-public/">Interes public</a></li>
         <li><a href="{r}intrebari-frecvente/">Întrebări frecvente</a></li>
@@ -440,20 +379,6 @@ def initials(name):
     return "".join(p[0] for p in parts[:2]).upper()
 
 
-def doctor_card(d, show_spec=False):
-    role = f'<em class="role">{E(d["role"])}</em>' if d.get("role") else ""
-    sub = SPEC_BY[d["specialty"]]["name"] if show_spec else d["grade"]
-    if d.get("photo"):
-        return f'<a class="doctor" href="{R}{doc_url(d)}"><div class="doctor-photo"><img src="{R}{d["photo"]}" alt="{E(d["name"])}" loading="lazy"></div>{role}<h3>{E(d["name"])}</h3><span>{E(sub)}</span></a>'
-    return f'<a class="doctor doctor-card" href="{R}{doc_url(d)}"><span class="avatar">{initials(d["name"])}</span>{role}<h3>{E(d["name"])}</h3><span>{E(sub)}</span></a>'
-
-
-def spec_card(s, anchor=""):
-    n = len([d for d in DOCS if d["specialty"] == s["slug"]])
-    foot = f"{n} {'specialist' if n == 1 else 'specialiști'}" if n else (s.get("beds") or "")
-    return f"""<a class="card" href="{R}{spec_url(s)}{anchor}">
-  <div class="card-icon">{icon(s['icon'])}</div><h3>{E(s['name'])}</h3><p>{E(s['summary'])}</p>
-  <div class="card-foot"><span>{E(foot)}</span><span class="more">Detalii →</span></div></a>"""
 
 
 def post_card(n):
@@ -488,170 +413,9 @@ INFO_CRUMB = [("Informații utile", "informatii-utile/")]
 
 
 # ---------------------------------------------------------------- pages
-def quick_links():
-    v = CFG.get("visiting_pdf")
-    items = [("Informații pacienți", "internare-si-externare/", "clipboard"), ("Program ambulatoriu", "ambulatoriu/", "calendar"),
-             ("Program de vizită", "reguli-si-program-de-vizita/", "clock"), ("Anunțuri și concursuri", "cariere/", "document"),
-             ("Tarife", "servicii-medicale-cu-plata/", "money")]
-    return '<div class="quick-links">' + "".join(f'<a href="{R}{u}">{icon(i)}<span>{t}</span></a>' for t, u, i in items) + "</div>"
 
 
-def home():
-    stats = "".join(stat(s) for s in CFG["stats"])
-    book = booking_href(R)
-    tgt = ' target="_blank" rel="noopener"' if ext(book) else ""
-    featured = [d for d in DOCS if d.get("role", "").startswith(("Șef", "Coordonator"))][:8] or DOCS[:8]
-    vis = "".join(f'<li><strong>{E(a)}:</strong> {E(b)}{("<br>" + E(c)) if c else ""}</li>' for a, b, c in CFG.get("visiting", []))
-    body = f"""
-<section class="home-hero">
-  <div class="container">
-    <div>
-      <span class="eyebrow" style="color:var(--accent)">{E(CFG['legal_name'])}</span>
-      <h1>{E(CFG['hero_title'])}</h1>
-      <p>{E(CFG['hero_subtitle'])}</p>
-      <div class="hero-actions">
-        <a class="btn btn-accent" href="{book}"{tgt}>Programări online</a>
-        <a class="btn btn-outline" style="color:#fff" href="{R}specialitati-medicale/">Specialități medicale</a>
-      </div>
-    </div>
-    <div class="hero-contact">
-      <h3>Contactează-ne</h3>
-      <ul>
-        <li>{icon('pin')}<span>{E(C['address'])}</span></li>
-        <li>{icon('phone')}<span>Centrală: <a href="tel:{C['phone_href']}">{C['phone']}</a></span></li>
-        {f'<li>{icon("calendar")}<span>Programări: <a href="tel:{C["phone_appointments_href"]}">{C["phone_appointments"]}</a></span></li>' if C.get("phone_appointments_href") else ""}
-        <li>{icon('mail')}<a href="mailto:{C['email']}">{C['email']}</a></li>
-        <li>{icon('ambulance')}<span>Gardă non-stop, 24/24 h</span></li>
-      </ul>
-      <a class="btn btn-white" href="{R}contact/">Contact {icon('arrow')}</a>
-    </div>
-  </div>
-</section>
-<div class="container">{quick_links()}</div>
 
-<section class="section">
-  <div class="container split">
-    <div class="media">{f'<img src="{R}{CFG["hero_image"]}" alt="Sediul {E(NAME)}">' if CFG.get("hero_image") else icon("hospital")}<div class="media-badge"><strong>{CFG['founded']}</strong>anul înființării</div></div>
-    <div>
-      <span class="eyebrow">Despre noi</span>
-      <h2 class="h2">Un spital cu tradiție, construit în jurul pacientului.</h2>
-      <p class="muted">Înființat în 1963 ca policlinică a platformei industriale „23 August”, spitalul poartă din 1991 numele industriașului Nicolae Malaxa. Astăzi are 263 de paturi, secții clinice universitare, ambulatoriu integrat de specialitate și linii de gardă non-stop.</p>
-      <div class="stats stats-light" style="grid-template-columns:repeat(2,1fr);text-align:left;margin:30px 0">
-        {"".join(stat(s) for s in CFG["stats"][:4])}
-      </div>
-      <div class="hero-actions"><a class="btn btn-primary" href="{R}despre-noi/">Află mai multe</a>
-      <a class="btn btn-outline" style="color:var(--primary)" href="tel:{C['phone_href']}">{icon('phone')} {C['phone']}</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="section-sm bg-primary"><div class="container stats">{stats}</div></section>
-
-<section class="section bg-soft">
-  <div class="container">
-    <div class="section-head"><span class="eyebrow">Specialități medicale</span><h2>Secții, compartimente și laboratoare</h2>
-      <p>Secții clinice cu paturi, servicii paraclinice și ambulatoriu de specialitate, care lucrează împreună pentru diagnostic și tratament.</p></div>
-    <div class="grid g4">{"".join(spec_card(s) for s in SPECS if not s.get("ambulatoriu_only"))[:]}</div>
-  </div>
-</section>
-
-<section class="section"><div class="container"><div class="cta-band">
-  <div><h2>Servicii decontate prin CASMB</h2><p>Consultații, analize și investigații gratuite pentru asigurați, pe baza biletului de trimitere.</p></div>
-  <a class="btn btn-white" href="{R}servicii-decontate-prin-cas/">Mai multe detalii {icon('arrow')}</a>
-</div></div></section>
-
-<section class="section bg-soft">
-  <div class="container split" style="align-items:start">
-    <div>
-      <span class="eyebrow">Programări</span><h2 class="h2">Ai nevoie de o consultație sau de o internare?</h2>
-      <p class="muted">Programările se fac telefonic sau online. Internarea poate fi programată și de medicul curant, după consultul în ambulatoriu.</p>
-      <div class="info-box"><span class="ring">{icon('phone')}</span><div><small>Centrală (apoi tasta secției)</small><strong>{C['phone']}</strong></div></div>
-      {f'<div class="info-box"><span class="ring">{icon("calendar")}</span><div><small>Programări</small><strong>{C["phone_appointments"]}</strong></div></div>' if C.get("phone_appointments") else ""}
-      <a class="btn btn-primary" href="{book}"{tgt}>Programează-te online {icon('arrow')}</a>
-    </div>
-    <div class="form-card">
-      <h3>{icon('clock')} Program de vizită</h3>
-      <ul class="visit-list">{vis}</ul>
-      <a class="read-more" href="{R}reguli-si-program-de-vizita/">Reguli pentru vizitatori →</a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head"><span class="eyebrow">De ce să ne alegi?</span><h2>Pentru că în centrul a tot ceea ce facem ești tu, pacientul nostru.</h2></div>
-    <div class="grid g2">
-      <div class="feature"><div class="card-icon">{icon('award')}</div><div><h3>Spital acreditat</h3><p>Acreditat ANMCS, certificat ISO 9001, laborator acreditat RENAR (ISO 15189).</p></div></div>
-      <div class="feature"><div class="card-icon">{icon('people')}</div><div><h3>Clinici universitare</h3><p>Secții clinice în colaborare cu UMF „Carol Davila”, cu activitate de cercetare și studii clinice.</p></div></div>
-      <div class="feature"><div class="card-icon">{icon('ambulance')}</div><div><h3>Gardă non-stop</h3><p>Linii de gardă 24/24 h pentru obstetrică-ginecologie, neonatologie, diabet, medicină internă, chirurgie, ATI și laborator.</p></div></div>
-      <div class="feature"><div class="card-icon">{icon('cpu')}</div><div><h3>Aparatură modernă</h3><p>Computer tomograf multislice, mamograf digital, laparoscopie, facoemulsificare și bază de recuperare completă.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section bg-soft">
-  <div class="container">
-    <div class="section-head"><span class="eyebrow">Profesionalism și dăruire</span><h2>Cunoaște-ne echipa</h2>
-      <p>Medici cu experiență, care lucrează împreună pentru un singur lucru: binele tău.</p></div>
-    <div class="grid g4">{"".join(doctor_card(d, show_spec=True) for d in featured)}</div>
-    <div class="center mt-40"><a class="btn btn-primary" href="{R}team/">Toți medicii</a></div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head"><span class="eyebrow">Noutăți</span><h2>Noutăți și campanii</h2></div>
-    <div class="grid g3">{"".join(post_card(n) for n in NEWS[:3])}</div>
-    <div class="center mt-40"><a class="btn btn-primary" href="{R}noutati/">Vezi toate</a></div>
-  </div>
-</section>"""
-    layout("", NAME, body, current="", section="Acasă")
-
-
-def about():
-    values = "".join(f'<div class="card"><div class="card-icon">{icon(i)}</div><h3>{E(v["title"])}</h3><p>{E(v["text"])}</p></div>'
-                     for v, i in zip(L["values"], ["hands", "award", "cpu", "check"]))
-    body = page_hero("Scurt istoric", ABOUT_CRUMB[:0] + [("Despre noi", None)]) + f"""
-<section class="section"><div class="container split">
-  <div class="media"><img src="{R}uploads/images/nicolae-malaxa.jpg" alt="Nicolae Malaxa" style="object-fit:contain;background:#fff"></div>
-  <div class="prose"><span class="eyebrow">Istoric</span><h2>Nicolae Malaxa</h2>
-    <p>Nicolae Malaxa, un industriaș vizionar, născut la Huși, inginer format la Politehnica din Karlsruhe, în Germania, înființează în 1921 un atelier pentru fabricat material rulant și pentru reparat locomotive și vagoane. În perioada 1923–1927 construiește o uzină lângă Halta Titan. Patru ani mai târziu, industriașul român încheie un contract cu societatea Căile Ferate Române pentru fabricarea unor locomotive de concepție proprie românească.</p>
-  </div>
-</div></section>
-<section class="section bg-soft"><div class="container split">
-  <div class="prose"><span class="eyebrow">Spitalul</span><h2>De la Policlinica „23 August” la Spitalul Clinic „Nicolae Malaxa”</h2>
-    <p>Înființată în anul 1963, Policlinica „23 August” deservea întreaga platformă industrială „23 August”. În anul 1991 denumirea de Spitalul de Întreprindere „23 August” a fost schimbată în actuala denumire, Spitalul Clinic „Nicolae Malaxa”.</p>
-    <p>În perioada 2007–2008 spitalul a intrat în consolidare, reamenajare și dotare, lucrările finalizându-se în anul 2010.</p>
-    <p>Din 2011 a preluat în atribuțiile și responsabilitățile sale o parte din Spitalul Clinic Caritas – Acad. Prof. Dr. „Nicolae Cajal” (obstetrică-ginecologie, neonatologie, chirurgie, ATI, anatomie patologică), ca urmare a desființării acestuia.</p>
-    <a class="btn btn-primary" href="{R}structura-organizatorica/">Structura organizatorică</a>
-  </div>
-  <div class="media"><img src="{R}uploads/images/locomotiva.jpg" alt="Locomotivă Malaxa"></div>
-</div></section>
-<section class="section"><div class="container"><div class="section-head"><h2>Valorile noastre</h2></div><div class="grid g4">{values}</div></div></section>"""
-    layout("despre-noi/", "Scurt istoric", body, current="despre-noi/")
-
-
-def structure():
-    rows = "".join(f'<tr{" class=total" if a == "TOTAL" else ""}><td>{E(a)}</td><td class="price">{E(b)}</td></tr>' for a, b in L["structure"])
-    content = f"""<h2>Structura organizatorică</h2>
-<div class="table-wrap"><table><thead><tr><th>Secție / compartiment</th><th style="text-align:right">Paturi</th></tr></thead><tbody>{rows}</tbody></table></div>
-<p>Pe lângă secțiile cu paturi, spitalul are ambulatoriu integrat de specialitate, laborator de analize medicale, laborator de radiologie și imagistică medicală, serviciu de anatomie patologică, cameră de gardă și farmacie.</p>
-{docs_list([["Organigrama Spitalului Clinic „Nicolae Malaxa” (PDF)", "uploads/docs/files/organigrama-sp-malaxa.pdf"]])}"""
-    simple("structura-organizatorica/", "Structura organizatorică", content, ABOUT_CRUMB + [("Structura organizatorică", None)], current="despre-noi/")
-
-
-def management():
-    mg = "".join(f'<div class="card center-card"><div class="doctor-photo sm"><span class="initials">{initials(m["name"])}</span></div><h3>{E(m["name"])}</h3><p><strong>{E(m["role"])}</strong>{("<br>Audiențe: " + E(m["audiente"])) if m.get("audiente") else ""}</p></div>' for m in L["management"])
-    board = "".join(f'<li>{E(x)}</li>' for b in L["board"] for x in b["members"])
-    ethics = "".join(f"<li>{E(x)}</li>" for x in L.get("ethics", []))
-    bd = L.get("board_doc")
-    body = page_hero("Echipa managerială", ABOUT_CRUMB + [("Echipa managerială", None)]) + f"""
-<section class="section"><div class="container"><div class="section-head"><h2>Comitetul director</h2><p>Audiențele se programează prin secretariat.</p></div><div class="grid g3">{mg}</div></div></section>
-<section class="section bg-soft"><div class="container prose"><h2>Consiliul de administrație</h2><ul class="list-check">{board}</ul>{docs_list([bd]) if bd else ""}</div></section>
-<section class="section"><div class="container prose"><h2>Consiliul etic</h2><ul class="list-check">{ethics}</ul>
-{docs_list([["Anuarul consiliului etic – 2020", "uploads/docs/files/Anuarul Etic-2020.pdf"], ["Raportul consiliului etic – Sem. 2 2020", "uploads/docs/files/Raport Consiliul Etic-s2.2020.pdf"]])}
-{f'<p>Sesizări privind integritatea: <a href="mailto:{C["email_integrity"]}">{C["email_integrity"]}</a></p>' if C.get("email_integrity") else ""}</div></section>"""
-    layout("echipa-de-management/", "Echipa managerială", body, current="despre-noi/")
 
 
 def accreditations():
@@ -689,106 +453,10 @@ def partners():
     layout("parteneriate/", "Parteneriate", body, current="despre-noi/")
 
 
-def centers():
-    cs = [("Centrul de Diabet, Nutriție și Boli Metabolice", "Secție clinică cu 45 de paturi, spitalizare de zi și cabinete de ambulatoriu cu program zilnic; derulează Programul Național de Sănătate – Diabet.", "diabet", "drop"),
-          ("Clinica universitară de Alergologie și Imunologie", "Clinică universitară a UMF „Carol Davila”, cu Laborator de Imunologie Clinică și testare alergologică in vivo și in vitro.", "alergologie", "flask"),
-          ("Laborator de analize medicale acreditat RENAR", "Acreditat conform ISO 15189:2013 pentru hematologie, chimie clinică, imunologie și parazitologie.", "laborator", "microscope"),
-          ("Secția Clinică Obstetrică-Ginecologie", "50 de paturi, 2 săli de naștere, laparoscopie STORZ și nucleu de cercetare cu studii clinice în desfășurare.", "obstetrica-ginecologie", "female")]
-    items = "".join(f'<a class="card" href="{R}service/{s}/"><div class="card-icon">{icon(i)}</div><h3>{E(t)}</h3><p>{E(d)}</p><span class="read-more">Detalii →</span></a>' for t, d, s, i in cs)
-    body = page_hero("Centre de excelență", [("Specialități medicale", "specialitati-medicale/"), ("Centre de excelență", None)]) + f'<section class="section"><div class="container"><div class="grid g2">{items}</div></div></section>'
-    layout("centre-de-excelenta/", "Centre de excelență", body, current="specialitati-medicale/")
 
 
-def specialties_page():
-    body = page_hero("Specialități medicale", [("Specialități medicale", None)]) + \
-        f'<section class="section bg-soft"><div class="container"><div class="grid g4">{"".join(spec_card(s) for s in SPECS if not s.get("ambulatoriu_only"))}</div>' \
-        f'<div class="center mt-40"><a class="btn btn-primary" href="{R}centre-de-excelenta/">Centre de excelență</a> <a class="btn btn-outline" style="color:var(--primary)" href="{R}ambulatoriu/">Ambulatoriu de specialitate</a></div></div></section>'
-    layout("specialitati-medicale/", "Specialități medicale", body, current="specialitati-medicale/")
 
 
-def ambulatoriu():
-    cards = []
-    for s in amb_specs():
-        a = s.get("amb", {})
-        lines = "".join(f"<li>{icon('clock')}<span>{E(x)}</span></li>" for x in a.get("program", [])) + "".join(f"<li>{icon('phone')}<span>{E(x)}</span></li>" for x in a.get("phone", [])[:2])
-        cards.append(f'<a class="card" href="{R}{spec_url(s)}#ambulatoriu"><div class="card-icon">{icon(s["icon"])}</div><h3>Cabinet {E(s["name"])}</h3><ul class="cb-list dark">{lines}</ul><span class="read-more">Medici și program →</span></a>')
-    body = page_hero("Ambulatoriu", [("Ambulatoriu", None)]) + f"""
-<section class="section"><div class="container">
-  <div class="section-head"><h2>Ambulatoriul integrat de specialitate</h2><p>Consultații de specialitate fără internare. Pentru serviciile decontate de CASMB sunt necesare biletul de trimitere, cardul de sănătate, dovada calității de asigurat și actul de identitate.</p></div>
-  <div class="grid g2" style="max-width:860px;margin:0 auto 50px">
-    <div class="info-box" style="margin:0"><span class="ring">{icon('phone')}</span><div><small>Centrală</small><strong>{C['phone']}</strong></div></div>
-    <a class="info-box" style="margin:0" href="{booking_href(R)}" target="_blank" rel="noopener"><span class="ring">{icon('calendar')}</span><div><small>Programări online</small><strong>programari.axamedis.ro</strong></div></a>
-  </div>
-  <div class="grid g3">{"".join(cards)}</div>
-</div></section>"""
-    layout("ambulatoriu/", "Ambulatoriu", body, current="ambulatoriu/")
-
-
-def specialty(s):
-    team = [d for d in DOCS if d["specialty"] == s["slug"]]
-    side_items = "".join(f'<li><a class="{"active" if x["slug"] == s["slug"] else ""}" href="{R}{spec_url(x)}">{E(x["name"])}</a></li>' for x in SPECS)
-    parts = []
-    if s.get("beds"):
-        parts.append(f'<p class="pill">{icon("hospital")} {E(s["beds"])}</p>')
-    parts.append(paras(s.get("intro", [])) or f"<p>{E(s['summary'])}</p>")
-    if team:
-        parts.append(f'<h2>Echipa medicală</h2><div class="grid g3 team-grid">{"".join(doctor_card(d) for d in team)}</div>')
-    for sec in s.get("sections", []):
-        h = f"<h3>{E(sec['title'])}</h3>" if sec.get("title") else ""
-        if sec.get("accordion"):
-            parts.append(h + accordion([(x["q"], ul(x["a"])) for x in sec["accordion"]], open_first=False))
-        else:
-            parts.append(h + paras(sec.get("text", [])) + (ul(sec["items"], "list-check" + (" cols" if len(sec["items"]) > 8 else "")) if sec.get("items") else ""))
-    if s.get("equipment"):
-        parts.append(f'<h3>Dotări</h3>{ul(s["equipment"], "list-check cols" if len(s["equipment"]) > 5 else "list-check")}')
-    for t, u in s.get("links", []):
-        parts.append(f'<p>{a_doc(t, u, "btn btn-primary")}</p>')
-    a = s.get("amb")
-    if a:
-        sched = ""
-        if a.get("schedule"):
-            sched = '<div class="table-wrap"><table><thead><tr><th>Medic</th><th>Program</th></tr></thead><tbody>' + "".join(f"<tr><td><strong>{E(m)}</strong></td><td>{E(p)}</td></tr>" for m, p in a["schedule"]) + "</tbody></table></div>"
-        info = "".join(f'<div class="info-box"><span class="ring">{icon("clock")}</span><div><small>Program</small><strong>{E(x)}</strong></div></div>' for x in a.get("program", []))
-        phones = ul(a.get("phone", []), "list-plain")
-        docs = '<h4>Documente necesare</h4><ul class="list-check">' + "".join(f"<li>{x}</li>" for x in ["Bilet de trimitere de la medicul de familie / medic specialist în contract cu casa de asigurări", "Cardul de sănătate", "Dovada calității de asigurat", "CI / BI / Pașaport, original și xerocopie"]) + "</ul>"
-        svc = (f"<h4>Servicii în ambulatoriu</h4>{ul(a['services'])}" if a.get("services") else "")
-        parts.append(f'<div class="amb-block" id="ambulatoriu"><h2>Ambulatoriu de specialitate</h2>{paras(a.get("intro", []))}{info}{phones}{sched}{svc}{docs}</div>')
-    if s.get("gallery"):
-        parts.append(f"<h2>Galerie foto</h2>{gallery(s['gallery'])}")
-    pg = next((p for p in L["prices"] if p["group"] == s.get("price_group")), None)
-    if pg:
-        rows = "".join(f'<tr><td>{E(x)}</td><td class="price">{E(y)}</td></tr>' for x, y in pg["items"])
-        parts.append(f'<h2>Servicii medicale cu plată</h2><p class="muted">{E(L["price_note"][0])}</p><details class="price-toggle"><summary>Vezi tarifele ({len(pg["items"])} servicii)</summary><div class="table-wrap"><table><thead><tr><th>Serviciu</th><th style="text-align:right">Tarif</th></tr></thead><tbody>{rows}</tbody></table></div></details>')
-    body = page_hero(s["name"], [("Specialități medicale", "specialitati-medicale/"), (s["name"], None)]) + f"""
-<section class="section"><div class="container with-sidebar">
-  <aside class="sidebar"><nav class="side-menu" aria-label="Specialități medicale"><h3>Specialități medicale</h3><ul>{side_items}</ul></nav>{contact_box(s.get("phone"), s.get("hours"))}</aside>
-  <div class="prose">{"".join(parts)}</div>
-</div></section>"""
-    layout(spec_url(s), s["name"], body, desc=s["summary"], current="specialitati-medicale/", section="Specialități medicale")
-
-
-def team_page():
-    groups = [(s, [d for d in DOCS if d["specialty"] == s["slug"]]) for s in SPECS]
-    groups = [(s, ds) for s, ds in groups if ds]
-    filters = '<button class="active" data-filter="all">Toți</button>' + "".join(f'<button data-filter="{s["slug"]}">{E(s["name"])}</button>' for s, _ in groups)
-    blocks = "".join(f'<div class="team-group" data-group="{s["slug"]}"><h2><a href="{R}{spec_url(s)}">{E(s["name"])}</a></h2><div class="grid g4">{"".join(doctor_card(d) for d in ds)}</div></div>' for s, ds in groups)
-    body = page_hero("Medici", [("Medici", None)]) + f'<section class="section"><div class="container"><div class="filters" id="teamFilters">{filters}</div>{blocks}</div></section>'
-    layout("team/", "Medici", body, current="team/")
-
-
-def doctor_page(d):
-    s = SPEC_BY[d["specialty"]]
-    photo = f'<img src="{R}{d["photo"]}" alt="{E(d["name"])}">' if d.get("photo") else f'<span class="initials">{initials(d["name"])}</span>'
-    bio = f"<p>{E(d['bio'])}</p>" if d.get("bio") else ""
-    amb = next((p for m, p in s.get("amb", {}).get("schedule", []) if initials(m.split("–")[-1]) == initials(d["name"]) and m.split()[-1] in d["name"]), None)
-    amb_html = f'<div class="info-box"><span class="ring">{icon("clock")}</span><div><small>Program ambulatoriu</small><strong>{E(amb)}</strong></div></div>' if amb else ""
-    role = f'<p class="pill">{E(d["role"])}</p>' if d.get("role") else ""
-    body = f"""<section class="section"><div class="container profile">
-  <div><div class="doctor-photo">{photo}</div><div class="profile-spec"><a href="{R}{spec_url(s)}">{E(s['name'])}</a></div>{contact_box(s.get("phone"))}</div>
-  <div class="prose"><h1>{E(d['name'])}</h1>{role}<p class="grade">{E(d['grade'])}</p>{bio}{amb_html}
-  <p><a class="btn btn-primary" href="{R}{spec_url(s)}">{E(s['name'])} {icon('arrow')}</a></p></div>
-</div></section>"""
-    layout(doc_url(d), d["name"], body, desc=f"{d['name']} – {d['grade']}, {s['name']}", current="team/", section="Medici")
 
 
 def sidebar_news():
@@ -850,21 +518,6 @@ def garzi_page():
     simple("program-garzi/", "Program gărzi spital", content, INFO_CRUMB + [("Program gărzi", None)], current="informatii-utile/")
 
 
-def info_hub():
-    def tiles(items):
-        return '<div class="grid g3">' + "".join(f'<a class="card" href="{R}{u}"><div class="card-icon">{icon(i)}</div><h3>{t}</h3><span class="read-more">Află mai multe →</span></a>' for t, u, i in items) + "</div>"
-    pac = [("Internare și externare", "internare-si-externare/", "clipboard"), ("Servicii decontate prin CASMB", "servicii-decontate-prin-cas/", "check"),
-           ("Tarife servicii medicale", "servicii-medicale-cu-plata/", "money"), ("Drepturile și obligațiile pacienților", "drepturile-pacientilor/", "shield"),
-           ("Program gărzi spital", "program-garzi/", "ambulance"), ("Campanii de sănătate", "educatie-pentru-sanatate/", "award"),
-           ("Chestionar de feedback", "chestionar-de-feedback/", "chat"), ("Întrebări frecvente", "intrebari-frecvente/", "clipboard")]
-    viz = [("Program și reguli de vizită", "reguli-si-program-de-vizita/", "clock"), ("Chestionar de feedback", "chestionar-de-feedback/", "chat")]
-    pub = [("Informații de interes public", "interes-public/", "document"), ("Anunțuri și achiziții", "anunturi/", "cart"), ("Declarație privind accesibilitatea", "declaratie-privind-accesibilitatea/", "a11y")]
-    body = page_hero("Informații utile", [("Informații utile", None)]) + f"""
-<section class="section"><div class="container"><h2 class="h2">Pentru pacienți</h2>{tiles(pac)}</div></section>
-<section class="section bg-soft"><div class="container"><h2 class="h2">Pentru vizitatori și aparținători</h2>{tiles(viz)}</div></section>
-<section class="section"><div class="container"><h2 class="h2">Interes public</h2>{tiles(pub)}</div></section>"""
-    layout("informatii-utile/", "Informații utile", body, current="informatii-utile/")
-
 
 def visitors_hub():
     body = page_hero("Pentru vizitatori și aparținători", INFO_CRUMB + [("Pentru vizitatori și aparținători", None)]) + f"""
@@ -875,20 +528,9 @@ def visitors_hub():
     layout("pentru-vizitatori-si-apartinatori/", "Pentru vizitatori și aparținători", body, current="informatii-utile/")
 
 
-def admission():
-    a = L["admission"]
-    content = f"""<h2>Programarea internării</h2>{paras(a['intro'])}
-<h3>Programarea se poate face</h3>{ul(a['how'])}
-<div class="info-box"><span class="ring">{icon('phone')}</span><div><small>Centrală – apoi tasta secției</small><strong>{C['phone']}</strong></div></div>
-<h3>Documente necesare la internare</h3>{ul(a['docs'])}
-<p class="notice">{E(a['warning'][0].replace('ATENTIE !!!', 'ATENȚIE!'))}</p>
-<h2>Informații despre externare</h2><h3>La externare pacientul va primi</h3>{ul(a['discharge_docs'])}{paras(a['discharge_text'])}
-<h2>Ce să aveți la internare</h2>{ul(["Pijama, halat, papuci de interior, obiecte și produse de igienă personală", "Medicamentele pentru tratamentul afecțiunilor cronice, unde este cazul (diabetici etc.)"])}"""
-    simple("internare-si-externare/", "Internare și externare", content, INFO_CRUMB + [("Internare și externare", None)], current="informatii-utile/")
-
 
 def cas_page():
-    feats = [("Medici cu experiență", "people"), ("Tehnologie medicală modernă", "cpu"), ("Laborator acreditat RENAR", "flask"), ("Ambulatoriu integrat", "stethoscope")]
+    feats = [("Medici cu experiență", "people"), ("Tehnologie medicală modernă", "cpu"), ("Laborator acreditat RENAR", "flask"), ("Cabinete de specialitate în ambulatoriu", "stethoscope")]
     cats = [("Ambulatoriu de specialitate", "ambulatoriu/", "stethoscope"), ("Laborator analize medicale", "service/laborator/", "flask"), ("Radiologie și imagistică", "service/radiologie/", "xray"), ("Medicină fizică și reabilitare", "service/recuperare/", "run")]
     body = page_hero("Servicii decontate prin CASMB", INFO_CRUMB + [("Servicii decontate prin CASMB", None)]) + f"""
 <section class="section"><div class="container split">
@@ -907,17 +549,6 @@ def cas_page():
     layout("servicii-decontate-prin-cas/", "Servicii decontate prin CASMB", body, current="informatii-utile/")
 
 
-def paid_page():
-    items = [(f'{p["group"]} ({len(p["items"])})', '<div class="table-wrap"><table><thead><tr><th>Serviciu</th><th style="text-align:right">Tarif</th></tr></thead><tbody>' +
-              "".join(f'<tr><td>{E(a)}</td><td class="price">{E(b)}</td></tr>' for a, b in p["items"]) + "</tbody></table></div>") for p in L["prices"]]
-    content = f"""<h2>Tarife servicii medicale</h2>
-<p class="notice">{E(L['price_note'][0])}</p>
-<p class="muted">{E(L['price_note'][1])}</p>
-<div class="info-box"><span class="ring">{icon('phone')}</span><div><small>Informații și programări</small><strong>{C['phone']}</strong></div></div>
-<div class="filter-input"><input type="search" id="priceFilter" placeholder="Caută un serviciu (ex.: hemoleucogramă, CT, ecografie)…" aria-label="Caută în tarife"></div>
-<div id="priceAccordion">{accordion(items, open_first=False)}</div>"""
-    simple("servicii-medicale-cu-plata/", "Tarife servicii medicale", content, INFO_CRUMB + [("Tarife", None)], current="informatii-utile/")
-
 
 def rights_page():
     r_ = L["rights"]
@@ -930,11 +561,11 @@ def rights_page():
 def visit_rules():
     rows = "".join(f"<tr><td><strong>{E(a)}</strong></td><td>{E(b)}{('<br>' + E(c)) if c else ''}</td></tr>" for a, b, c in CFG.get("visiting", []))
     pdf = docs_list([["Program de vizită aparținători (PDF)", CFG["visiting_pdf"]]]) if CFG.get("visiting_pdf") else ""
-    content = f"""<h2>Program de vizită pacienți</h2>
+    content = f"""<h2>Program de vizită</h2>
 <div class="table-wrap"><table><thead><tr><th>Secție</th><th>Program</th></tr></thead><tbody>{rows}</tbody></table></div>{pdf}
 <h2>Reguli pentru vizitatori</h2>
 {ul(["Vizitatorii respectă orele de vizită impuse de specificul fiecărei secții", "La intrarea în secție, vizitatorii se echipează cu halate și papuci de protecție", "Pacienții sunt rugați să limiteze pe cât posibil numărul vizitatorilor", "Fumatul și consumul de băuturi alcoolice sunt interzise în incinta spitalului", "Vizitatorii respectă regulile de acces, de conduită și disciplină ale spitalului"])}"""
-    simple("reguli-si-program-de-vizita/", "Program și reguli de vizită", content, INFO_CRUMB + [("Program de vizită", None)], current="informatii-utile/")
+    simple("reguli-si-program-de-vizita/", "Program de vizită", content, INFO_CRUMB + [("Program de vizită", None)], current="informatii-utile/")
 
 
 def feedback_page():
@@ -961,9 +592,10 @@ def public_interest():
         if p.get("page"):
             href, label = R + p["page"], "Vezi pagina"
         elif p.get("docs"):
-            href, label = f"#doc-{i}", f"{len(p['docs'])} {'document' if len(p['docs']) == 1 else 'documente'}"
+            sid = re.sub(r"[^a-z0-9]+", "-", unicodedata.normalize("NFD", p["title"].lower()).encode("ascii", "ignore").decode()).strip("-")
+            href, label = f"#doc-{sid}", f"{len(p['docs'])} {'document' if len(p['docs']) == 1 else 'documente'}"
             note = f'<p class="muted">{E(p["note"])}</p>' if p.get("note") else ""
-            sections.append(f'<details id="doc-{i}"><summary>{E(p["title"])} <small>({len(p["docs"])})</small></summary><div class="acc-body">{note}{docs_list(p["docs"])}</div></details>')
+            sections.append(f'<details id="doc-{sid}"><summary>{E(p["title"])} <small>({len(p["docs"])})</small></summary><div class="acc-body">{note}{docs_list(p["docs"])}</div></details>')
         elif p.get("link"):
             href, label = p["link"], "Vezi documentele"
         else:
@@ -1055,6 +687,596 @@ def not_found():
     (OUT / "404.html").write_text((OUT / "404/index.html").read_text(encoding="utf-8").replace('"../', f'"{BASE_PATH}'), encoding="utf-8")
 
 
+
+# ==== DATA ====================================================================
+HOSP = json.loads((ROOT / "content/hospital.json").read_text(encoding="utf-8"))
+AMB = json.loads((ROOT / "content/ambulatory.json").read_text(encoding="utf-8"))
+HOSP_BY = {h["slug"]: h for h in HOSP}
+AMB_BY = {c["slug"]: c for c in AMB}
+CATEGORIES = [("clinic", "Secții și compartimente clinice"), ("paraclinic", "Laboratoare și servicii paraclinice"), ("other", "Alte structuri")]
+
+
+def sort_key(name):
+    """Alphabetical by surname, then first name (titles such as Dr./Biol./Psiholog are ignored)."""
+    bare = re.sub(r"^(Conf\. univ\. dr\.|Dr\.|Biol\.|Psiholog|Ec\.|Dna|Dl|As\. med\.( princ\.)?)\s*", "", name)
+    plain = unicodedata.normalize("NFD", bare.lower()).encode("ascii", "ignore").decode()
+    return (plain, bare)
+
+
+DOCS.sort(key=lambda d: sort_key(d["name"]))
+
+
+# ==== helpers =================================================================
+def rich(text):
+    """Escape text; [[...]] marks a draft/placeholder that the hospital must confirm."""
+    return re.sub(r"\[\[(.*?)\]\]", r'<span class="placeholder">\1</span>', E(text))
+
+
+def lines_html(lines):
+    """Paragraphs, with consecutive '– …' lines rendered as a dashed list."""
+    out, items = [], []
+    def flush():
+        if items:
+            out.append('<ul class="list-check">' + "".join(f"<li>{rich(i)}</li>" for i in items) + "</ul>")
+            items.clear()
+    for ln in lines:
+        if not ln:
+            continue
+        if ln.startswith("– "):
+            items.append(ln[2:])
+        else:
+            flush()
+            out.append(f"<p>{rich(ln)}</p>")
+    flush()
+    return "".join(out)
+
+
+def ul(items, cls="list-check"):
+    out = []
+    for x in items:
+        x = re.sub(r"^[–-]\s+", "", x)
+        if x.endswith(":") and len(x) < 60:
+            out.append(f'</ul><h4 class="list-sub">{E(x.rstrip(":"))}</h4><ul class="{cls}">')
+        else:
+            out.append(f"<li>{rich(cap(x))}</li>")
+    return f'<ul class="{cls}">' + "".join(out) + "</ul>"
+
+
+def hosp_url(h): return f"service/{h['slug']}/"
+def cab_url(c): return f"ambulatoriu/{c['slug']}/"
+def spec_url(s): return hosp_url(s)
+
+
+def section_doctors(slug): return [d for d in DOCS if d.get("section") == slug]
+def cabinet_doctors(slug): return [d for d in DOCS if d.get("cabinet") == slug]
+
+
+def redirect(path, target):
+    """Old URL kept working: a tiny page that forwards to the new one."""
+    depth = path.count("/")
+    r = "../" * depth
+    dest = OUT / path / "index.html"
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(f'<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url={r}{target}">'
+                    f'<link rel="canonical" href="{r}{target}"><title>Pagina s-a mutat</title><a href="{r}{target}">Pagina s-a mutat aici.</a>', encoding="utf-8")
+
+
+# ==== navigation ==============================================================
+NAV = [
+    ("Despre noi", "despre-noi/", [
+        ("Scurt istoric", "despre-noi/"), ("Misiune, viziune, valori", "despre-noi/#misiune"), ("Conducere", "conducere/"),
+        ("Structura organizatorică", "structura-organizatorica/"), ("Acreditări / Certificări", "acreditari/"),
+        ("Indicatori și statistici", "indicatori-de-calitate/"), ("Noutăți și campanii", "noutati/"),
+        ("Cercetare și proiecte", "cercetare-si-inovare/"), ("Parteneriate", "parteneriate/"), ("Cariere", "cariere/")]),
+    ("Spital", "spital/", "HOSP"),
+    ("Ambulatoriu", "ambulatoriu/", "AMB"),
+    ("Medici", "team/", None),
+    ("Informații utile", "informatii-utile/", [
+        ("§Pentru pacienți", None), ("Tipuri de prezentare", "tipuri-de-prezentare/"),
+        ("Servicii decontate prin CASMB", "servicii-decontate-prin-cas/"), ("Contracte cu CASMB și CNAS", "contracte-casmb-cnas/"),
+        ("Plata serviciilor medicale", "servicii-medicale-cu-plata/"), ("Drepturile și obligațiile pacienților", "drepturile-pacientilor/"),
+        ("Program gărzi spital", "program-garzi/"), ("Chestionar de feedback", "chestionar-de-feedback/"), ("Întrebări frecvente", "intrebari-frecvente/"),
+        ("§Pentru vizitatori și aparținători", None), ("Program de vizită", "reguli-si-program-de-vizita/"),
+        ("§Interes public", None), ("Informații de interes public", "interes-public/"), ("Anunțuri și achiziții", "anunturi/")]),
+    ("Contact", "contact/", None),
+]
+
+
+def nav_pairs(sub):
+    if sub == "HOSP":
+        out = []
+        for cat, label in CATEGORIES:
+            out.append(("§" + label, None))
+            out += [(h["name"], hosp_url(h)) for h in HOSP if h["category"] == cat]
+        return out
+    if sub == "AMB":
+        return [(c["name"], cab_url(c)) for c in AMB]
+    return sub
+
+
+def nav_html(r, current):
+    out = []
+    top = (current or "").split("/")[0]
+    owner = {"service": "spital/", "ambulatoriu": "ambulatoriu/", "team": "team/"}.get(top)
+    for label, url, sub in NAV:
+        active = " active" if current is not None and (owner == url or top == url.split("/")[0]) else ""
+        if sub is None:
+            out.append(f'<li class="{active.strip()}"><a href="{r}{url}">{label}</a></li>')
+            continue
+        pairs = nav_pairs(sub)
+        items = "".join(f'<li class="label">{t[1:]}</li>' if t.startswith("§") else f'<li><a href="{r}{u}">{E(t)}</a></li>' for t, u in pairs)
+        cls = "submenu cols" if sub in ("HOSP", "AMB") else "submenu"
+        out.append(f'<li class="has-sub{active}"><a href="{r}{url}">{label} {icon("caret", "caret")}</a><ul class="{cls}">{items}</ul></li>')
+    return "<ul>" + "".join(out) + "</ul>"
+
+
+def mobile_nav(r):
+    out = []
+    for label, url, sub in NAV:
+        if sub is None:
+            out.append(f'<li><a href="{r}{url}">{label}</a></li>')
+            continue
+        pairs = [(t, u) for t, u in nav_pairs(sub) if u]
+        items = f'<li><a href="{r}{url}">Vezi tot</a></li>' + "".join(f'<li><a href="{r}{u}">{E(t)}</a></li>' for t, u in pairs)
+        out.append(f'<li><details><summary>{label} {icon("caret", "caret")}</summary><ul>{items}</ul></details></li>')
+    return '<nav class="mobile-nav" aria-label="Meniu mobil"><ul>' + "".join(out) + "</ul></nav>"
+
+
+# ==== cards ===================================================================
+def doctor_card(d, show_spec=False):
+    role = f'<em class="role">{E(d["role"])}</em>' if d.get("role") else ""
+    where = []
+    if d.get("section"):
+        where.append(HOSP_BY[d["section"]]["name"])
+    if d.get("cabinet"):
+        where.append("Ambulatoriu – " + AMB_BY[d["cabinet"]]["name"].replace("Cabinet ", ""))
+    sub = " · ".join(where) if show_spec else (d["grade"] or "")
+    tags = " ".join(filter(None, ["spital" if d.get("section") else "", "ambulatoriu" if d.get("cabinet") else ""]))
+    if d.get("photo"):
+        return f'<a class="doctor" data-tags="{tags}" href="{R}{doc_url(d)}"><div class="doctor-photo"><img src="{R}{d["photo"]}" alt="{E(d["name"])}" loading="lazy"></div>{role}<h3>{E(d["name"])}</h3><span>{E(sub)}</span></a>'
+    return f'<a class="doctor doctor-card" data-tags="{tags}" href="{R}{doc_url(d)}"><span class="avatar">{initials(d["name"])}</span>{role}<h3>{E(d["name"])}</h3><span>{E(sub)}</span></a>'
+
+
+def unit_card(item, url, n):
+    foot = f"{n} {'specialist' if n == 1 else 'specialiști'}" if n else (item.get("beds") or ("Informații în curs de actualizare" if item.get("pending") else ""))
+    return f"""<a class="card" href="{R}{url}">
+  <div class="card-icon">{icon(item['icon'])}</div><h3>{E(item['name'])}</h3><p>{E(item['summary'])}</p>
+  <div class="card-foot"><span>{E(foot)}</span><span class="more">Detalii →</span></div></a>"""
+
+
+def spec_card(h, anchor=""):
+    return unit_card(h, hosp_url(h) + anchor, len(section_doctors(h["slug"])))
+
+
+def cab_card(c):
+    return unit_card(c, cab_url(c), len(cabinet_doctors(c["slug"])))
+
+
+# ==== pages ===================================================================
+def quick_links():
+    items = [("Tipuri de prezentare", "tipuri-de-prezentare/", "clipboard"), ("Spital", "spital/", "hospital"),
+             ("Ambulatoriu", "ambulatoriu/", "stethoscope"), ("Program de vizită", "reguli-si-program-de-vizita/", "clock"),
+             ("Plata serviciilor", "servicii-medicale-cu-plata/", "money")]
+    return '<div class="quick-links">' + "".join(f'<a href="{R}{u}">{icon(i)}<span>{t}</span></a>' for t, u, i in items) + "</div>"
+
+
+def split_choice():
+    """Two clearly separate entry points: the hospital and the outpatient clinic."""
+    n_h = sum(1 for h in HOSP if h["category"] == "clinic")
+    return f"""<div class="grid g2 split-choice">
+  <a class="choice" href="{R}spital/"><span class="choice-icon">{icon('hospital')}</span><span><small>Internare și servicii spitalicești</small><strong>Spital</strong>
+    <em>Secții și compartimente cu paturi, camera de gardă, laboratoare și servicii paraclinice.</em></span><span class="choice-go">{icon('arrow')}</span></a>
+  <a class="choice" href="{R}ambulatoriu/"><span class="choice-icon">{icon('stethoscope')}</span><span><small>Consultații fără internare</small><strong>Ambulatoriu</strong>
+    <em>Cabinete de specialitate, recoltare analize, radiologie și imagistică.</em></span><span class="choice-go">{icon('arrow')}</span></a>
+</div>"""
+
+
+def home():
+    stats = "".join(stat(s) for s in CFG["stats"])
+    book = booking_href(R)
+    tgt = ' target="_blank" rel="noopener"' if ext(book) else ""
+    featured = sorted([d for d in DOCS if d.get("role", "").startswith(("Șef", "Coordonator"))], key=lambda d: sort_key(d["name"]))[:8]
+    vis = "".join(f'<li><strong>{E(a)}:</strong> {E(b)}{("<br>" + E(c)) if c else ""}</li>' for a, b, c in CFG.get("visiting", []))
+    body = f"""
+<section class="home-hero">
+  <div class="container">
+    <div>
+      <span class="eyebrow" style="color:var(--accent)">{E(CFG['legal_name'])}</span>
+      <h1>{E(CFG['hero_title'])}</h1>
+      <p>{E(CFG['hero_subtitle'])}</p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="{R}spital/">Spital</a>
+        <a class="btn btn-accent" href="{R}ambulatoriu/">Ambulatoriu</a>
+        <a class="btn btn-outline" style="color:#fff" href="{book}"{tgt}>Programări online</a>
+      </div>
+    </div>
+    <div class="hero-contact">
+      <h3>Contactează-ne</h3>
+      <ul>
+        <li>{icon('pin')}<span>{E(C['address'])}</span></li>
+        <li>{icon('phone')}<span>Centrală: <a href="tel:{C['phone_href']}">{C['phone']}</a></span></li>
+        {f'<li>{icon("calendar")}<span>Programări: <a href="tel:{C["phone_appointments_href"]}">{C["phone_appointments"]}</a></span></li>' if C.get("phone_appointments_href") else ""}
+        <li>{icon('mail')}<a href="mailto:{C['email']}">{C['email']}</a></li>
+        <li>{icon('ambulance')}<span>Camera de gardă: non-stop, 24/24 h</span></li>
+      </ul>
+      <a class="btn btn-white" href="{R}contact/">Contact {icon('arrow')}</a>
+    </div>
+  </div>
+</section>
+<div class="container">{quick_links()}</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Unde mergeți</span><h2>Spital sau ambulatoriu?</h2>
+      <p>Internarea (continuă sau de zi) și camera de gardă țin de spital. Consultațiile fără internare se fac în cabinetele din ambulatoriu.</p></div>
+    {split_choice()}
+    <div class="center mt-40"><a class="btn btn-primary" href="{R}tipuri-de-prezentare/">Tipuri de prezentare: gardă, internare de zi, internare continuă, ambulatoriu</a></div>
+  </div>
+</section>
+
+<section class="section bg-soft">
+  <div class="container split">
+    <div class="media">{f'<img src="{R}{CFG["hero_image"]}" alt="Sediul {E(NAME)}">' if CFG.get("hero_image") else icon("hospital")}<div class="media-badge"><strong>{CFG['founded']}</strong>anul înființării</div></div>
+    <div>
+      <span class="eyebrow">Despre noi</span>
+      <h2 class="h2">Un spital cu tradiție, construit în jurul pacientului.</h2>
+      <p class="muted">Înființat în 1963 ca policlinică a platformei industriale „23 August”, spitalul poartă din 1991 numele industriașului Nicolae Malaxa. Astăzi are 263 de paturi pentru spitalizare continuă și 10 pentru spitalizare de zi, secții clinice universitare, cabinete de specialitate în ambulatoriu și camera de gardă non-stop.</p>
+      <div class="stats stats-light" style="grid-template-columns:repeat(2,1fr);text-align:left;margin:30px 0">
+        {"".join(stat(s) for s in CFG["stats"][:4])}
+      </div>
+      <div class="hero-actions"><a class="btn btn-primary" href="{R}despre-noi/">Află mai multe</a>
+      <a class="btn btn-outline" style="color:var(--primary)" href="tel:{C['phone_href']}">{icon('phone')} {C['phone']}</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm bg-primary"><div class="container stats">{stats}</div></section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Spital</span><h2>Secții și compartimente clinice</h2>
+      <p>Spitalizare continuă și de zi, în secții și compartimente clinice universitare.</p></div>
+    <div class="grid g4">{"".join(spec_card(h) for h in HOSP if h["category"] == "clinic")}</div>
+    <div class="center mt-40"><a class="btn btn-primary" href="{R}spital/">Toate structurile spitalului</a> <a class="btn btn-outline" style="color:var(--primary)" href="{R}ambulatoriu/">Cabinetele din ambulatoriu</a></div>
+  </div>
+</section>
+
+<section class="section"><div class="container"><div class="cta-band">
+  <div><h2>Servicii decontate prin CASMB</h2><p>Consultații, analize și investigații decontate pentru asigurați, pe baza biletului de trimitere.</p></div>
+  <div class="hero-actions" style="margin:0"><a class="btn btn-white" href="{R}servicii-decontate-prin-cas/">Mai multe detalii {icon('arrow')}</a>
+  <a class="btn btn-white" href="{R}contracte-casmb-cnas/">Contracte CASMB / CNAS {icon('arrow')}</a></div>
+</div></div></section>
+
+<section class="section bg-soft">
+  <div class="container split" style="align-items:start">
+    <div>
+      <span class="eyebrow">Programări</span><h2 class="h2">Ai nevoie de o consultație sau de o internare?</h2>
+      <p class="muted">Programările se fac telefonic sau online. Internarea poate fi programată și de medicul curant, după consultul în ambulatoriu.</p>
+      <div class="info-box"><span class="ring">{icon('phone')}</span><div><small>Centrală (apoi tasta secției)</small><strong>{C['phone']}</strong></div></div>
+      {f'<div class="info-box"><span class="ring">{icon("calendar")}</span><div><small>Programări</small><strong>{C["phone_appointments"]}</strong></div></div>' if C.get("phone_appointments") else ""}
+      <a class="btn btn-primary" href="{book}"{tgt}>Programează-te online {icon('arrow')}</a>
+    </div>
+    <div class="form-card">
+      <h3>{icon('clock')} Program de vizită</h3>
+      <ul class="visit-list">{vis}</ul>
+      <a class="read-more" href="{R}reguli-si-program-de-vizita/">Reguli pentru vizitatori →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">De ce să ne alegi?</span><h2>Pentru că în centrul a tot ceea ce facem ești tu, pacientul nostru.</h2></div>
+    <div class="grid g2">
+      <div class="feature"><div class="card-icon">{icon('award')}</div><div><h3>Spital acreditat</h3><p>Acreditat ANMCS, certificat ISO 9001, laborator acreditat RENAR (ISO 15189).</p></div></div>
+      <div class="feature"><div class="card-icon">{icon('people')}</div><div><h3>Clinici universitare</h3><p>Secții clinice în colaborare cu UMF „Carol Davila”, cu activitate de cercetare și studii clinice.</p></div></div>
+      <div class="feature"><div class="card-icon">{icon('ambulance')}</div><div><h3>Gardă non-stop</h3><p>Linii de gardă 24/24 h pentru obstetrică-ginecologie, neonatologie, diabet, medicină internă, chirurgie generală, ATI și laborator.</p></div></div>
+      <div class="feature"><div class="card-icon">{icon('cpu')}</div><div><h3>Aparatură modernă</h3><p>Computer tomograf multislice, mamograf digital, laparoscopie, facoemulsificare și bază de recuperare completă.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-soft">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Profesionalism și dăruire</span><h2>Cunoaște-ne echipa</h2>
+      <p>Medici cu experiență, care lucrează împreună pentru un singur lucru: binele tău.</p></div>
+    <div class="grid g4">{"".join(doctor_card(d, show_spec=True) for d in featured)}</div>
+    <div class="center mt-40"><a class="btn btn-primary" href="{R}team/">Toți medicii</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Noutăți</span><h2>Noutăți și campanii</h2></div>
+    <div class="grid g3">{"".join(post_card(n) for n in NEWS[:3])}</div>
+    <div class="center mt-40"><a class="btn btn-primary" href="{R}noutati/">Vezi toate</a></div>
+  </div>
+</section>"""
+    layout("", NAME, body, current="", section="Acasă")
+
+
+def about():
+    values = "".join(f'<div class="card"><div class="card-icon">{icon(i)}</div><h3>{E(v["title"])}</h3><p>{rich(v["text"])}</p></div>'
+                     for v, i in zip(L["values"], ["hands", "award", "cpu", "check"]))
+    h1, h2 = L["history"]
+    body = page_hero("Scurt istoric", [("Despre noi", None)]) + f"""
+<section class="section"><div class="container split">
+  <div class="media"><img src="{R}uploads/images/nicolae-malaxa.jpg" alt="Nicolae Malaxa" style="object-fit:contain;background:#fff"></div>
+  <div class="prose"><span class="eyebrow">Istoric</span><h2>Scurt istoric</h2><p>{E(h1)}</p></div>
+</div></section>
+<section class="section bg-soft"><div class="container split">
+  <div class="prose"><p>{E(h2)}</p><a class="btn btn-primary" href="{R}structura-organizatorica/">Structura organizatorică</a></div>
+  <div class="media"><img src="{R}uploads/images/locomotiva.jpg" alt="Locomotivă Malaxa"></div>
+</div></section>
+<section class="section" id="misiune"><div class="container">
+  <div class="grid g2">
+    <div class="card"><div class="card-icon">{icon('hands')}</div><h3>Misiune</h3><p>{rich(L['mission'])}</p></div>
+    <div class="card"><div class="card-icon">{icon('star')}</div><h3>Viziune</h3><p>{rich(L['vision'])}</p></div>
+  </div>
+  <div class="section-head" style="margin-top:60px"><h2>Valori</h2></div><div class="grid g4">{values}</div>
+</div></section>"""
+    layout("despre-noi/", "Scurt istoric", body, current="despre-noi/")
+
+
+def structure():
+    o = L["organigram"]
+    def table(head, rows, nums):
+        th = "".join(f'<th{" style=text-align:right" if i in nums else ""}>{h}</th>' for i, h in enumerate(head))
+        trs = "".join("<tr>" + "".join(f'<td{" class=price" if i in nums else ""}>{E(c)}</td>' for i, c in enumerate(r)) + "</tr>" for r in rows)
+        return f'<div class="table-wrap"><table><thead><tr>{th}</tr></thead><tbody>{trs}</tbody></table></div>'
+    content = f"""<p>Structura de mai jos este cea din organigrama aprobată de Administrația Spitalelor și Serviciilor Medicale București (ASSMB). „Posturi” reprezintă numărul de posturi aprobate (conducere + execuție).</p>
+{docs_list([o['source']])}
+<h2>Conducere</h2>{ul(o['leadership'])}
+<h2>Secții și compartimente clinice</h2>{table(['Paturi', 'Secție / compartiment', 'Posturi'], o['clinic'], {0, 2})}
+<p><strong>Total:</strong> {E(o['beds_total'])}.</p>
+<h2>Laboratoare, explorări paraclinice și alte structuri medicale</h2>{table(['Structură', 'Posturi'], o['paraclinic'], {1})}
+<h2>Ambulatoriu – cabinete de specialitate</h2>{table(['Cabinet', 'Posturi'], o['ambulatory'], {1})}
+<h2>Structuri funcționale și administrative</h2>{table(['Structură', 'Posturi'], o['support'], {1})}
+<p><strong>Total posturi:</strong> {E(o['posts_total'])}.</p>"""
+    simple("structura-organizatorica/", "Structura organizatorică", content, ABOUT_CRUMB + [("Structura organizatorică", None)], current="despre-noi/")
+
+
+def management():
+    mg = "".join(f'<div class="card center-card"><div class="doctor-photo sm"><span class="initials">{initials(m["name"])}</span></div><h3>{E(m["name"])}</h3><p><strong>{E(m["role"])}</strong>{("<br>Audiențe: " + E(m["audiente"])) if m.get("audiente") else ""}</p></div>' for m in L["management"])
+    board = "".join(f'<tr><td><strong>{E(b["rank"])}</strong></td><td>{E(b["name"])}</td><td>{E(b.get("represents", ""))}</td></tr>' for b in L["board"])
+    ethics = "".join(f'<tr><td><strong>{E(b["rank"])}</strong></td><td>{E(b["name"])}{(" – " + E(b["represents"])) if b.get("represents") else ""}</td></tr>' for b in L["ethics"])
+    cd = "".join(f'<tr><td><strong>{E(m["role"])}</strong></td><td>{E(m["name"])}</td></tr>' for m in L["management"])
+    bd = L.get("board_doc")
+    toc = "".join(f'<a class="btn btn-sm btn-outline" style="color:var(--primary)" href="#{a}">{t}</a> ' for a, t in [("conducerea", "Conducerea"), ("ca", "Consiliul de administrație"), ("cd", "Comitetul director"), ("ce", "Consiliul etic")])
+    body = page_hero("Conducere", ABOUT_CRUMB + [("Conducere", None)]) + f"""
+<section class="section-sm"><div class="container center">{toc}</div></section>
+<section class="section" id="conducerea"><div class="container"><div class="section-head"><h2>Conducerea</h2><p>Audiențele se programează prin secretariat.</p></div><div class="grid g3">{mg}</div></div></section>
+<section class="section bg-soft" id="ca"><div class="container prose"><h2>Consiliul de administrație (CA)</h2>
+<div class="table-wrap"><table><thead><tr><th>Calitate</th><th>Nume</th><th>Reprezentant al</th></tr></thead><tbody>{board}</tbody></table></div>{docs_list([bd]) if bd else ""}</div></section>
+<section class="section" id="cd"><div class="container prose"><h2>Comitetul director (CD)</h2>
+<div class="table-wrap"><table><thead><tr><th>Funcție</th><th>Nume</th></tr></thead><tbody>{cd}</tbody></table></div></div></section>
+<section class="section bg-soft" id="ce"><div class="container prose"><h2>Consiliul etic (CE)</h2>
+<div class="table-wrap"><table><thead><tr><th>Calitate</th><th>Nume</th></tr></thead><tbody>{ethics}</tbody></table></div>
+{docs_list([["Anuarul consiliului etic – 2020", "uploads/docs/files/Anuarul Etic-2020.pdf"], ["Raportul consiliului etic – Sem. 2 2020", "uploads/docs/files/Raport Consiliul Etic-s2.2020.pdf"]])}
+{f'<p>Sesizări privind integritatea: <a href="mailto:{C["email_integrity"]}">{C["email_integrity"]}</a></p>' if C.get("email_integrity") else ""}</div></section>"""
+    layout("conducere/", "Conducere", body, current="despre-noi/")
+
+
+def centers():
+    cs = [("Centrul de Diabet, Nutriție și Boli Metabolice", "Secție clinică cu 45 de paturi, spitalizare de zi și cabinete de ambulatoriu cu program zilnic; derulează Programul Național de Sănătate – Diabet.", "service/diabet/", "drop"),
+          ("Clinica universitară de Alergologie și Imunologie", "Clinică universitară a UMF „Carol Davila”, cu laborator de imunologie clinică și testare alergologică in vivo și in vitro.", "service/alergologie/", "flask"),
+          ("Laboratorul de analize medicale acreditat RENAR", "Acreditat conform ISO 15189:2013 pentru hematologie, chimie clinică, imunologie și parazitologie.", "service/laborator/", "microscope"),
+          ("Secția Clinică Obstetrică-Ginecologie", "50 de paturi, 2 săli de naștere, laparoscopie STORZ și nucleu de cercetare cu studii clinice în desfășurare.", "service/obstetrica-ginecologie/", "female")]
+    items = "".join(f'<a class="card" href="{R}{u}"><div class="card-icon">{icon(i)}</div><h3>{E(t)}</h3><p>{E(d)}</p><span class="read-more">Detalii →</span></a>' for t, d, u, i in cs)
+    body = page_hero("Centre de excelență", [("Spital", "spital/"), ("Centre de excelență", None)]) + f'<section class="section"><div class="container"><div class="grid g2">{items}</div></div></section>'
+    layout("centre-de-excelenta/", "Centre de excelență", body, current="spital/")
+
+
+def specialties_page():
+    groups = "".join(f'<h2 class="h2" style="margin-top:50px">{label}</h2><div class="grid g4">{"".join(spec_card(h) for h in HOSP if h["category"] == cat)}</div>' for cat, label in CATEGORIES)
+    body = page_hero("Spital", [("Spital", None)]) + f"""
+<section class="section bg-soft"><div class="container">
+  <div class="section-head"><h2>Structurile spitalului</h2><p>Internarea continuă și de zi, camera de gardă, laboratoarele și serviciile paraclinice. Pentru consultații fără internare, vedeți <a href="{R}ambulatoriu/"><u>cabinetele din ambulatoriu</u></a>.</p></div>
+  {groups}
+  <div class="center mt-40"><a class="btn btn-primary" href="{R}tipuri-de-prezentare/">Tipuri de prezentare</a> <a class="btn btn-outline" style="color:var(--primary)" href="{R}centre-de-excelenta/">Centre de excelență</a> <a class="btn btn-outline" style="color:var(--primary)" href="{R}ambulatoriu/">Ambulatoriu</a></div>
+</div></section>"""
+    layout("spital/", "Spital", body, current="spital/")
+
+
+def ambulatoriu():
+    body = page_hero("Ambulatoriu", [("Ambulatoriu", None)]) + f"""
+<section class="section"><div class="container">
+  <div class="section-head"><h2>Servicii medicale în ambulatoriu</h2><p>Consultații de specialitate fără internare. Pentru internare și camera de gardă, vedeți <a href="{R}spital/"><u>structurile spitalului</u></a>.</p></div>
+  <div class="grid g2" style="max-width:860px;margin:0 auto 30px">
+    <div class="info-box" style="margin:0"><span class="ring">{icon('phone')}</span><div><small>Programări – centrală</small><strong>{C['phone']}</strong></div></div>
+    <a class="info-box" style="margin:0" href="{booking_href(R)}" target="_blank" rel="noopener"><span class="ring">{icon('calendar')}</span><div><small>Programări online</small><strong>programari.axamedis.ro</strong></div></a>
+  </div>
+  <div class="center" style="margin-bottom:40px"><a class="btn btn-primary" href="{R}tipuri-de-prezentare/#ambulatoriu">Cum vă prezentați: documente, condiții, excepții</a></div>
+  <div class="grid g4">{"".join(cab_card(c) for c in AMB)}</div>
+</div></section>"""
+    layout("ambulatoriu/", "Ambulatoriu", body, current="ambulatoriu/")
+
+
+AMB_DOCS = ["Bilet de trimitere de la medicul de familie sau de la un medic specialist aflat în contract cu casa de asigurări", "Cardul de sănătate",
+            "Dovada calității de asigurat", "Act de identitate (CI / BI / pașaport), original și copie"]
+HOSP_DOCS = ["Bilet de internare de la medicul de familie sau bilet de trimitere de la medicul din ambulatoriu / scrisoare medicală",
+             "Cardul de sănătate", "Dovada calității de asigurat", "Act de identitate (CI / BI / pașaport / certificat de naștere), original și copie"]
+
+
+def unit_page(item, kind):
+    """One template for hospital structures and outpatient cabinets, with the same order of information:
+    descriere → echipa medicală → servicii → dotări → program → programări și contact → documente necesare → tarife → galerie → legături."""
+    is_h = kind == "hosp"
+    items = HOSP if is_h else AMB
+    url_of = hosp_url if is_h else cab_url
+    team = section_doctors(item["slug"]) if is_h else cabinet_doctors(item["slug"])
+    parts = []
+    # 1. Descriere
+    if item.get("beds"):
+        parts.append(f'<p class="pill">{icon("hospital")} {E(item["beds"])}</p>')
+    parts.append(f'<h2>Descriere</h2>{lines_html(item.get("intro") or [item["summary"]])}')
+    # 2. Echipa medicală
+    if team:
+        parts.append(f'<h2>Echipa medicală</h2><div class="grid g3 team-grid">{"".join(doctor_card(d) for d in team)}</div>')
+    # 3. Servicii medicale (and other content sections)
+    for sec in item.get("sections", []):
+        h = f"<h3>{E(sec['title'])}</h3>" if sec.get("title") else ""
+        if sec.get("accordion"):
+            parts.append(h + accordion([(x["q"], ul(x["a"])) for x in sec["accordion"]], open_first=False))
+        else:
+            parts.append(h + paras(sec.get("text", [])) + (ul(sec["items"], "list-check" + (" cols" if len(sec["items"]) > 8 else "")) if sec.get("items") else ""))
+    # 4. Dotări
+    if item.get("equipment"):
+        parts.append(f'<h2>Dotări</h2>{ul(item["equipment"], "list-check cols" if len(item["equipment"]) > 5 else "list-check")}')
+    # 5. Program
+    if item.get("hours"):
+        parts.append("<h2>Program</h2>" + "".join(f'<div class="info-box"><span class="ring">{icon("clock")}</span><div><strong>{E(x)}</strong></div></div>' for x in item["hours"]))
+    if item.get("schedule"):
+        parts.append('<h3>Program medici</h3><div class="table-wrap"><table><thead><tr><th>Medic</th><th>Program</th></tr></thead><tbody>'
+                     + "".join(f"<tr><td><strong>{E(m)}</strong></td><td>{E(p)}</td></tr>" for m, p in item["schedule"]) + "</tbody></table></div>")
+    # 6. Programări și contact
+    if item.get("phone"):
+        parts.append(f'<h2>Programări și contact</h2>{ul(item["phone"], "list-plain")}')
+    # 7. Documente necesare (patient-facing structures)
+    if is_h and item["category"] == "clinic" and item["slug"] != "camera-de-garda":
+        parts.append(f'<h2>Documente necesare la internare</h2>{ul(HOSP_DOCS)}<p><a class="read-more" href="{R}tipuri-de-prezentare/">Tipuri de prezentare: condiții și excepții →</a></p>')
+    elif not is_h:
+        parts.append(f'<h2>Documente necesare</h2>{ul(AMB_DOCS)}<p><a class="read-more" href="{R}tipuri-de-prezentare/#ambulatoriu">Condiții și excepții →</a></p>')
+    # 8. Tarife
+    pg = next((p for p in L["prices"] if p["group"] == item.get("price_group")), None)
+    if pg:
+        rows = "".join(f'<tr><td>{E(x)}</td><td class="price">{E(y)}</td></tr>' for x, y in pg["items"])
+        parts.append(f'<h2>Tarife</h2><p class="muted">Pentru pacienții neasigurați, fără bilet de trimitere sau fără programare. <a href="{R}servicii-medicale-cu-plata/"><u>Plata serviciilor medicale</u></a></p><details class="price-toggle"><summary>Vezi tarifele ({len(pg["items"])} servicii)</summary><div class="table-wrap"><table><thead><tr><th>Serviciu</th><th style="text-align:right">Tarif</th></tr></thead><tbody>{rows}</tbody></table></div></details>')
+    # 9. Galerie foto
+    if item.get("gallery"):
+        parts.append(f"<h2>Galerie foto</h2>{gallery(item['gallery'])}")
+    # 10. Legături: the matching cabinet / section
+    links = []
+    if is_h and item.get("cabinet") in AMB_BY:
+        c = AMB_BY[item["cabinet"]]
+        links.append((f"Ambulatoriu: {c['name']}", cab_url(c)))
+    if not is_h and item.get("structure") in HOSP_BY:
+        h = HOSP_BY[item["structure"]]
+        links.append((f"Spital: {h['name']}", hosp_url(h)))
+    links += [(t, u) for t, u in item.get("links", [])]
+    if links:
+        parts.append('<h2>Vezi și</h2><div class="doc-list">' + "".join(a_doc(t, u) for t, u in links) + "</div>")
+
+    if is_h:
+        side = "".join(f'<li class="label">{label}</li>' + "".join(f'<li><a class="{"active" if x["slug"] == item["slug"] else ""}" href="{R}{url_of(x)}">{E(x["name"])}</a></li>' for x in items if x["category"] == cat) for cat, label in CATEGORIES)
+        crumbs = [("Spital", "spital/"), (item["name"], None)]
+        side_title = "Spital"
+    else:
+        side = "".join(f'<li><a class="{"active" if x["slug"] == item["slug"] else ""}" href="{R}{url_of(x)}">{E(x["name"])}</a></li>' for x in items)
+        crumbs = [("Ambulatoriu", "ambulatoriu/"), (item["name"], None)]
+        side_title = "Ambulatoriu"
+    body = page_hero(item["name"], crumbs) + f"""
+<section class="section"><div class="container with-sidebar">
+  <aside class="sidebar"><nav class="side-menu" aria-label="{side_title}"><h3>{side_title}</h3><ul>{side}</ul></nav>{contact_box(None, None)}</aside>
+  <div class="prose">{"".join(parts)}</div>
+</div></section>"""
+    layout(url_of(item), item["name"], body, desc=item["summary"], current=("spital/" if is_h else "ambulatoriu/"), section="Spital" if is_h else "Ambulatoriu")
+
+
+def specialty(s):
+    unit_page(s, "hosp")
+
+
+def cabinet(c):
+    unit_page(c, "amb")
+
+
+def team_page():
+    filters = '<button class="active" data-filter="all">Toți ({})</button><button data-filter="spital">Spital ({})</button><button data-filter="ambulatoriu">Ambulatoriu ({})</button>'.format(
+        len(DOCS), sum(1 for d in DOCS if d.get("section")), sum(1 for d in DOCS if d.get("cabinet")))
+    body = page_hero("Medici", [("Medici", None)]) + f"""
+<section class="section"><div class="container">
+  <div class="section-head"><p>Medicii sunt prezentați în ordinea alfabetică a numelui, urmat de prenume. Sub fiecare nume sunt trecute secția din spital și/sau cabinetul din ambulatoriu.</p></div>
+  <div class="filters" id="teamFilters">{filters}</div>
+  <div class="grid g4" id="teamGrid">{"".join(doctor_card(d, show_spec=True) for d in DOCS)}</div>
+</div></section>"""
+    layout("team/", "Medici", body, current="team/")
+
+
+def doctor_page(d):
+    s = HOSP_BY.get(d.get("section"))
+    c = AMB_BY.get(d.get("cabinet"))
+    photo = f'<img src="{R}{d["photo"]}" alt="{E(d["name"])}">' if d.get("photo") else f'<span class="initials">{initials(d["name"])}</span>'
+    bio = f"<p>{E(d['bio'])}</p>" if d.get("bio") else ""
+    amb = None
+    if c:
+        last = d["name"].split()[1] if len(d["name"].split()) > 1 else ""
+        amb = next((p for m, p in c.get("schedule", []) if last and last in m), None)
+    where = []
+    if s:
+        where.append(f'<a class="btn btn-primary" href="{R}{hosp_url(s)}">Spital: {E(s["name"])} {icon("arrow")}</a>')
+    if c:
+        where.append(f'<a class="btn btn-outline" style="color:var(--primary)" href="{R}{cab_url(c)}">Ambulatoriu: {E(c["name"])} {icon("arrow")}</a>')
+    amb_html = f'<div class="info-box"><span class="ring">{icon("clock")}</span><div><small>Program în ambulatoriu</small><strong>{E(amb)}</strong></div></div>' if amb else ""
+    role = f'<p class="pill">{E(d["role"])}</p>' if d.get("role") else ""
+    grade = f'<p class="grade">{E(d["grade"])}</p>' if d.get("grade") else ""
+    primary = s or c
+    body = f"""<section class="section"><div class="container profile">
+  <div><div class="doctor-photo">{photo}</div><div class="profile-spec">{E(primary['name'])}</div>{contact_box(primary.get("phone"))}</div>
+  <div class="prose"><h1>{E(d['name'])}</h1>{role}{grade}{bio}{amb_html}
+  <p class="hero-actions">{"".join(where)}</p></div>
+</div></section>"""
+    layout(doc_url(d), d["name"], body, desc=f"{d['name']} – {d['grade']}", current="team/", section="Medici")
+
+
+def presentation_page():
+    T = L["presentation"]
+    nav = "".join(f'<a class="card center-card" href="#{t["id"]}"><div class="card-icon">{icon(t["icon"])}</div><h3>{E(t["title"])}</h3></a>' for t in T)
+    secs = ""
+    for i, t in enumerate(T):
+        fields = "".join(f'<div class="pres-row"><h3>{E(k)}</h3><div>{lines_html(v)}</div></div>' for k, v in t["fields"])
+        secs += f'<section class="section{" bg-soft" if i % 2 else ""}" id="{t["id"]}"><div class="container prose"><h2>{icon(t["icon"])} {E(t["title"])}</h2><div class="pres">{fields}</div></div></section>'
+    body = page_hero("Tipuri de prezentare", INFO_CRUMB + [("Tipuri de prezentare", None)]) + f"""
+<section class="section-sm"><div class="container"><div class="section-head"><p>Alegeți modul în care vă prezentați la spital. Pentru fiecare găsiți specificațiile, timpul alocat, modalitățile, condițiile, documentele necesare și excepțiile.</p></div>
+<div class="grid g4">{nav}</div></div></section>{secs}"""
+    layout("tipuri-de-prezentare/", "Tipuri de prezentare", body, current="informatii-utile/")
+
+
+def paid_page():
+    P = L["payment"]
+    items = [(f'{p["group"]} ({len(p["items"])})', '<div class="table-wrap"><table><thead><tr><th>Serviciu</th><th style="text-align:right">Tarif</th></tr></thead><tbody>' +
+              "".join(f'<tr><td>{E(a)}</td><td class="price">{E(b)}</td></tr>' for a, b in p["items"]) + "</tbody></table></div>") for p in L["prices"]]
+    content = f"""<h2>Plata serviciilor medicale</h2>
+<p>Pacienții asigurați beneficiază de serviciile decontate de CASMB, pe baza biletului de trimitere (<a href="{R}servicii-decontate-prin-cas/"><u>servicii decontate prin CASMB</u></a>). Serviciile se plătesc în următoarele situații:</p>
+{lines_html(P['when'])}
+<h3>Tarife aprobate</h3><p>{E(P['decision'])}</p>
+<h3>Alte situații în care se plătește</h3>{lines_html(P['other'])}
+<h3>Cum se plătește</h3>{lines_html(["– " + x for x in P['how']])}
+<div class="info-box"><span class="ring">{icon('phone')}</span><div><small>Informații și programări</small><strong>{C['phone']}</strong></div></div>
+<h2>Lista serviciilor medicale cu plată și tarifele</h2>
+<div class="filter-input"><input type="search" id="priceFilter" placeholder="Caută un serviciu (ex.: hemoleucogramă, CT, ecografie)…" aria-label="Caută în tarife"></div>
+<div id="priceAccordion">{accordion(items, open_first=False)}</div>"""
+    simple("servicii-medicale-cu-plata/", "Plata serviciilor medicale", content, INFO_CRUMB + [("Plata serviciilor medicale", None)], current="informatii-utile/")
+
+
+def contracts_page():
+    K = L["contracts"]
+    rows = "".join(f'<tr><td><strong style="font-size:20px">{E(t)}</strong></td><td>{rich(d)}</td></tr>' for t, d in K["types"])
+    prog = next((p["docs"] for p in L["public_interest"] if p["title"] == "Programe naționale"), [])
+    content = f"""<h2>Contracte cu CASMB și CNAS</h2><p>{E(K['intro'])}</p>
+<div class="table-wrap"><table><thead><tr><th>Tip</th><th>Descriere</th></tr></thead><tbody>{rows}</tbody></table></div>
+<h3>Documente</h3>{docs_list(prog) if prog else ""}
+<p><a class="btn btn-primary" href="https://www.casmb.ro/asigurati_servicii.php" target="_blank" rel="noopener">CASMB – servicii pentru asigurați {icon('external')}</a></p>"""
+    simple("contracte-casmb-cnas/", "Contracte cu CASMB și CNAS", content, INFO_CRUMB + [("Contracte CASMB / CNAS", None)], current="informatii-utile/")
+
+
+def info_hub():
+    def tiles(items):
+        return '<div class="grid g3">' + "".join(f'<a class="card" href="{R}{u}"><div class="card-icon">{icon(i)}</div><h3>{t}</h3><span class="read-more">Află mai multe →</span></a>' for t, u, i in items) + "</div>"
+    pac = [("Tipuri de prezentare", "tipuri-de-prezentare/", "clipboard"), ("Servicii decontate prin CASMB", "servicii-decontate-prin-cas/", "check"),
+           ("Contracte cu CASMB și CNAS", "contracte-casmb-cnas/", "contract"), ("Plata serviciilor medicale", "servicii-medicale-cu-plata/", "money"),
+           ("Drepturile și obligațiile pacienților", "drepturile-pacientilor/", "shield"), ("Program gărzi spital", "program-garzi/", "ambulance"),
+           ("Campanii de sănătate", "educatie-pentru-sanatate/", "award"), ("Chestionar de feedback", "chestionar-de-feedback/", "chat"),
+           ("Întrebări frecvente", "intrebari-frecvente/", "clipboard")]
+    viz = [("Program de vizită", "reguli-si-program-de-vizita/", "clock"), ("Chestionar de feedback", "chestionar-de-feedback/", "chat")]
+    pub = [("Informații de interes public", "interes-public/", "document"), ("Anunțuri și achiziții", "anunturi/", "cart"), ("Declarație privind accesibilitatea", "declaratie-privind-accesibilitatea/", "a11y")]
+    body = page_hero("Informații utile", [("Informații utile", None)]) + f"""
+<section class="section"><div class="container"><h2 class="h2">Pentru pacienți</h2>{tiles(pac)}</div></section>
+<section class="section bg-soft"><div class="container"><h2 class="h2">Pentru vizitatori și aparținători</h2>{tiles(viz)}</div></section>
+<section class="section"><div class="container"><h2 class="h2">Interes public</h2>{tiles(pub)}</div></section>"""
+    layout("informatii-utile/", "Informații utile", body, current="informatii-utile/")
+
+
 def build():
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -1067,13 +1289,18 @@ def build():
 
     home(); about(); structure(); management(); accreditations(); indicators(); research(); partners(); centers()
     specialties_page(); ambulatoriu(); team_page()
-    for s in SPECS: specialty(s)
+    for h in HOSP: specialty(h)
+    for c in AMB: cabinet(c)
     for d in DOCS: doctor_page(d)
     news_list()
     for n in NEWS: post_page(n)
-    careers(); announcements(); garzi_page(); info_hub(); visitors_hub(); admission(); cas_page(); paid_page(); rights_page()
+    careers(); announcements(); garzi_page(); info_hub(); visitors_hub(); presentation_page(); contracts_page(); cas_page(); paid_page(); rights_page()
     visit_rules(); feedback_page(); health_education(); faq_page(); public_interest(); contact(); accessibility(); privacy()
     search_page(); not_found()
+    # Old addresses keep working
+    for old, new in [("specialitati-medicale/", "spital/"), ("internare-si-externare/", "tipuri-de-prezentare/"), ("echipa-de-management/", "conducere/"),
+                     ("service/psihologie/", "ambulatoriu/psihologie/"), ("service/stomatologie/", "ambulatoriu/stomatologie/"), ("service/orl/", "ambulatoriu/orl/")]:
+        redirect(old, new)
 
     (OUT / "search-index.json").write_text(json.dumps(SEARCH_INDEX, ensure_ascii=False), encoding="utf-8")
     base = CFG["base_url"].rstrip("/")

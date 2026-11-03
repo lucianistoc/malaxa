@@ -42,6 +42,7 @@
       $$("button", filters).forEach((x) => x.classList.toggle("active", x === b));
       const f = b.dataset.filter;
       $$(".team-group").forEach((g) => { g.hidden = f !== "all" && g.dataset.group !== f; });
+      $$("#teamGrid [data-tags]").forEach((d) => { d.hidden = f !== "all" && !d.dataset.tags.split(" ").includes(f); });
     });
   }
 
