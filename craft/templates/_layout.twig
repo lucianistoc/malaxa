@@ -56,6 +56,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ url('static/css/style.css') }}">
+{# Hide native scrollbars before first paint (site-rendered bars in main.js); without JS the native ones stay. #}
+<script>document.documentElement.classList.add("site-scrollbars")</script>
 <style>:root{--primary:{{ s.colorPrimary ?? '#0b2d63' }};--primary-dark:{{ s.colorPrimaryDark ?? '#071d44' }};--accent:{{ s.colorAccent ?? '#1aa3c9' }};--accent-dark:{{ s.colorAccentDark ?? '#11819f' }};--highlight:{{ s.colorHighlight ?? '#d7262e' }};--soft:{{ s.colorSoft ?? '#f2f6fc' }};--pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104' viewBox='0 0 120 104'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.05' stroke-width='2'%3E%3Cpath d='M30 2l28 16v32L30 66 2 50V18z'/%3E%3Cpath d='M90 38l28 16v32L90 102 62 86V54z'/%3E%3Cpath d='M30 26v16M22 34h16M90 62v16M82 70h16'/%3E%3C/g%3E%3C/svg%3E");{% if heroImg %}--hero-image:url("{{ heroImg.url }}");{% endif %}}</style>
 </head>
 <body>

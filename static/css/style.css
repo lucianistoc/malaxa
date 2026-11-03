@@ -556,8 +556,18 @@ body.oc-open .oc-close { transform: none; transition: opacity var(--dur-base) va
 /* Site-rendered scrollbars (see main.js). Native bars are hidden only when the script has added
    .site-scrollbars, so without JavaScript the browser's own bars remain. */
 html.site-scrollbars, html.site-scrollbars * { scrollbar-width: none; }
-html.site-scrollbars ::-webkit-scrollbar { display: none; width: 0; height: 0; }
-.sb { position: fixed; z-index: 199; opacity: 0; pointer-events: none; transition: opacity var(--dur-base) var(--ease-out); }
+/* Safari ignores scrollbar-width, so hide WebKit scrollbars too, including the page's own (root) scrollbar,
+   whose track otherwise shows as a faint gradient strip with an edge line on macOS. */
+html.site-scrollbars::-webkit-scrollbar, html.site-scrollbars body::-webkit-scrollbar, html.site-scrollbars *::-webkit-scrollbar {
+  display: none; width: 0; height: 0; background: transparent;
+}
+html.site-scrollbars::-webkit-scrollbar-track, html.site-scrollbars *::-webkit-scrollbar-track,
+html.site-scrollbars::-webkit-scrollbar-thumb, html.site-scrollbars *::-webkit-scrollbar-thumb,
+html.site-scrollbars::-webkit-scrollbar-corner, html.site-scrollbars *::-webkit-scrollbar-corner {
+  background: transparent; border: 0; box-shadow: none;
+}
+.sb { position: fixed; z-index: 199; opacity: 0; pointer-events: none; transition: opacity var(--dur-base) var(--ease-out);
+  background: transparent; border: 0; outline: 0; box-shadow: none; -webkit-tap-highlight-color: transparent; }
 .sb.sb-page { top: 2px; right: 0; bottom: 2px; width: 14px; }
 .sb:not(.sb-page) { z-index: 205; }                       /* inner areas sit above the side panel */
 .sb.sb-y:not(.sb-page) { width: 14px; }
