@@ -139,7 +139,26 @@ def a_doc(t, u, cls="doc-link"):
     tgt = ' target="_blank" rel="noopener"' if ext(u) else ""
     ic = "download" if u.lower().endswith((".pdf", ".doc", ".docx", ".xls", ".xlsx")) else ("external" if ext(u) else "arrow")
     href = u if ext(u) else R + quote(u, safe="/#")
-    return f'<a class="{cls}" href="{E(href)}"{tgt}>{icon(ic)}<span>{E(t)}</span></a>'
+    return f'<a class="{cls}" href="{E(href)}"{tgt}>{icon(ic)}<span>{E(file_label(t, u))}</span></a>'
+
+
+def file_label(t, u):
+    """Append format and size to links to local documents: "Regulament (PDF, 240 KB)"."""
+    if ext(u) or "." not in u.rsplit("/", 1)[-1]:
+        return t
+    f = ROOT / u.split("#")[0]
+    fmt = u.rsplit(".", 1)[-1].upper()
+    if fmt not in ("PDF", "DOC", "DOCX", "XLS", "XLSX") or not f.is_file():
+        return t
+    kb = f.stat().st_size / 1024
+    size = f"{kb / 1024:.1f} MB".replace(".", ",") if kb >= 1024 else f"{max(1, round(kb))} KB"
+    t = re.sub(r"\s*\((PDF|DOC|DOCX|XLS|XLSX)\)\s*$", "", t, flags=re.I)
+    return f"{t} ({fmt}, {size})"
+
+
+def updated():
+    d = CFG.get("content_updated")
+    return f'<p class="updated">Ultima actualizare: {E(d)}</p>' if d else ""
 
 
 
@@ -211,7 +230,7 @@ def layout(path, title, body, desc=None, current=None, section="Pagini"):
 <link rel="canonical" href="{CFG['base_url'].rstrip('/')}/{path}">
 <link rel="icon" href="{r}favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{r}static/css/style.css">
 <!-- Hide native scrollbars before first paint (site-rendered bars in main.js); without JS the native ones stay. -->
 <script>document.documentElement.classList.add("site-scrollbars")</script>
@@ -339,7 +358,7 @@ def layout(path, title, body, desc=None, current=None, section="Pagini"):
 def page_hero(title, crumbs=()):
     bc = f'<a href="{R}">Acasă</a>' + "".join(f' / <a href="{R}{u}">{E(t)}</a>' if u else f" / {E(t)}" for t, u in crumbs)
     return f"""<section class="page-hero">
-  <span class="hero-side">{E(CFG['legal_name'])}</span>
+  <span class="hero-side" aria-hidden="true">{E(CFG['legal_name'])}</span>
   <div class="hero-social socials">{socials()}</div>
   <div class="container"><h1>{E(title)}</h1><div class="breadcrumbs">{bc}</div></div>
   <a class="hero-phone" href="tel:{C['phone_href']}"><span class="ring">{icon('phone')}</span>{C['phone']}</a>
@@ -562,7 +581,7 @@ def visit_rules():
     rows = "".join(f"<tr><td><strong>{E(a)}</strong></td><td>{E(b)}{('<br>' + E(c)) if c else ''}</td></tr>" for a, b, c in CFG.get("visiting", []))
     pdf = docs_list([["Program de vizită aparținători (PDF)", CFG["visiting_pdf"]]]) if CFG.get("visiting_pdf") else ""
     content = f"""<h2>Program de vizită</h2>
-<div class="table-wrap"><table><thead><tr><th>Secție</th><th>Program</th></tr></thead><tbody>{rows}</tbody></table></div>{pdf}
+<div class="table-wrap"><table><thead><tr><th>Secție</th><th>Program</th></tr></thead><tbody>{rows}</tbody></table></div>{pdf}{updated()}
 <h2>Reguli pentru vizitatori</h2>
 {ul(["Vizitatorii respectă orele de vizită impuse de specificul fiecărei secții", "La intrarea în secție, vizitatorii se echipează cu halate și papuci de protecție", "Pacienții sunt rugați să limiteze pe cât posibil numărul vizitatorilor", "Fumatul și consumul de băuturi alcoolice sunt interzise în incinta spitalului", "Vizitatorii respectă regulile de acces, de conduită și disciplină ale spitalului"])}"""
     simple("reguli-si-program-de-vizita/", "Program de vizită", content, INFO_CRUMB + [("Program de vizită", None)], current="informatii-utile/")
@@ -626,7 +645,7 @@ def contact():
     book = booking_href(R)
     body = page_hero("Contact", [("Contact", None)]) + f"""
 <section class="section"><div class="container">
-  <div class="section-head"><h2>{E(CFG['legal_name'])}</h2><p>{E(C['address'])}</p></div>
+  <div class="section-head"><h2>{E(CFG['legal_name'])}</h2><p>{E(C['address'])}</p>{updated()}</div>
   <div class="grid g4 contact-cards">
     <div class="card"><div class="card-icon">{icon('phone')}</div><h3>Telefon</h3><p><a href="tel:{C['phone_href']}">{C['phone']}</a>{('<br>Fax: ' + C['fax']) if C.get('fax') else ''}</p></div>
     <div class="card"><div class="card-icon">{icon('calendar')}</div><h3>Programări</h3><p>{f'<a href="tel:{C["phone_appointments_href"]}">{C["phone_appointments"]}</a><br>' if C.get("phone_appointments_href") else ""}<a href="{book}" target="_blank" rel="noopener">Programări online</a></p></div>
@@ -709,7 +728,9 @@ DOCS.sort(key=lambda d: sort_key(d["name"]))
 # ==== helpers =================================================================
 def rich(text):
     """Escape text; [[...]] marks a draft/placeholder that the hospital must confirm."""
-    return re.sub(r"\[\[(.*?)\]\]", r'<span class="placeholder">\1</span>', E(text))
+    # HIDE_PLACEHOLDERS=1 (public launch) renders drafts as plain text instead of highlighted
+    cls = "" if os.environ.get("HIDE_PLACEHOLDERS") else ' class="placeholder"'
+    return re.sub(r"\[\[(.*?)\]\]", rf'<span{cls}>\1</span>', E(text))
 
 
 def lines_html(lines):
@@ -1125,7 +1146,7 @@ def unit_page(item, kind):
         parts.append(f'<h2>Dotări</h2>{ul(item["equipment"], "list-check cols" if len(item["equipment"]) > 5 else "list-check")}')
     # 5. Program
     if item.get("hours"):
-        parts.append("<h2>Program</h2>" + "".join(f'<div class="info-box"><span class="ring">{icon("clock")}</span><div><strong>{E(x)}</strong></div></div>' for x in item["hours"]))
+        parts.append("<h2>Program</h2>" + updated() + "".join(f'<div class="info-box"><span class="ring">{icon("clock")}</span><div><strong>{E(x)}</strong></div></div>' for x in item["hours"]))
     if item.get("schedule"):
         parts.append('<h3>Program medici</h3><div class="table-wrap"><table><thead><tr><th>Medic</th><th>Program</th></tr></thead><tbody>'
                      + "".join(f"<tr><td><strong>{E(m)}</strong></td><td>{E(p)}</td></tr>" for m, p in item["schedule"]) + "</tbody></table></div>")
@@ -1245,7 +1266,7 @@ def paid_page():
 <div class="info-box"><span class="ring">{icon('phone')}</span><div><small>Informații și programări</small><strong>{C['phone']}</strong></div></div>
 <h2>Lista serviciilor medicale cu plată și tarifele</h2>
 <div class="filter-input"><input type="search" id="priceFilter" placeholder="Caută un serviciu (ex.: hemoleucogramă, CT, ecografie)…" aria-label="Caută în tarife"></div>
-<div id="priceAccordion">{accordion(items, open_first=False)}</div>"""
+<div id="priceAccordion">{accordion(items, open_first=False)}</div>{updated()}"""
     simple("servicii-medicale-cu-plata/", "Plata serviciilor medicale", content, INFO_CRUMB + [("Plata serviciilor medicale", None)], current="informatii-utile/")
 
 
@@ -1256,7 +1277,7 @@ def contracts_page():
     content = f"""<h2>Contracte cu CASMB și CNAS</h2><p>{E(K['intro'])}</p>
 <div class="table-wrap"><table><thead><tr><th>Tip</th><th>Descriere</th></tr></thead><tbody>{rows}</tbody></table></div>
 <h3>Documente</h3>{docs_list(prog) if prog else ""}
-<p><a class="btn btn-primary" href="https://www.casmb.ro/asigurati_servicii.php" target="_blank" rel="noopener">CASMB – servicii pentru asigurați {icon('external')}</a></p>"""
+<p><a class="btn btn-primary" href="https://www.casmb.ro/asigurati_servicii.php" target="_blank" rel="noopener">CASMB – servicii pentru asigurați {icon('external')}</a></p>{updated()}"""
     simple("contracte-casmb-cnas/", "Contracte cu CASMB și CNAS", content, INFO_CRUMB + [("Contracte CASMB / CNAS", None)], current="informatii-utile/")
 
 

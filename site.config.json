@@ -48,18 +48,45 @@
     "autobuz": "Liniile 102, 202"
   },
   "visiting": [
-    ["Secții", "Luni – Vineri: 15:00 – 19:00", "Sâmbătă – Duminică: 10:00 – 16:00 și 19:00 – 20:00"],
-    ["ATI", "Luni – Duminică: 15:00 – 16:00 și 19:00 – 20:00", ""],
-    ["Neonatologie", "Luni – Duminică: 14:00 – 15:00 și 19:30 – 20:30", ""]
+    [
+      "Secții",
+      "Luni – Vineri: 15:00 – 19:00",
+      "Sâmbătă – Duminică: 10:00 – 16:00 și 19:00 – 20:00"
+    ],
+    [
+      "ATI",
+      "Luni – Duminică: 15:00 – 16:00 și 19:00 – 20:00",
+      ""
+    ],
+    [
+      "Neonatologie",
+      "Luni – Duminică: 14:00 – 15:00 și 19:30 – 20:30",
+      ""
+    ]
   ],
   "visiting_pdf": "uploads/docs/files/program_vizita_apartinatori.pdf",
   "feedback_url": "http://infrastructura-sanatate.ms.ro/formulare/pacienti/264",
   "stats": [
-    {"value": 263, "label": "Paturi"},
-    {"value": 82000, "label": "Consultații ambulatoriu/an"},
-    {"value": 10800, "label": "Internări continue/an"},
-    {"value": 570000, "label": "Analize de laborator/an"},
-    {"value": 67, "label": "Medici și specialiști"}
+    {
+      "value": 263,
+      "label": "Paturi"
+    },
+    {
+      "value": 82000,
+      "label": "Consultații ambulatoriu/an"
+    },
+    {
+      "value": 10800,
+      "label": "Internări continue/an"
+    },
+    {
+      "value": 570000,
+      "label": "Analize de laborator/an"
+    },
+    {
+      "value": 67,
+      "label": "Medici și specialiști"
+    }
   ],
   "social": {
     "facebook": "https://www.facebook.com/NicolaeMalaxa/",
@@ -70,10 +97,20 @@
   "accreditation_badge": "Acreditat ANMCS",
   "accreditation_image": "uploads/acreditari/anmcs-4.png",
   "external_links": [
-    ["Administrația Spitalelor și Serviciilor Medicale București", "http://assmb.ro/"],
-    ["CASMB – servicii pentru asigurați", "https://www.casmb.ro/asigurati_servicii.php"],
-    ["Lista cabinetelor de medicină de familie", "http://www.cnas.ro/casmb/page/lista-cabinete-medicina-de-familie.html"]
+    [
+      "Administrația Spitalelor și Serviciilor Medicale București",
+      "http://assmb.ro/"
+    ],
+    [
+      "CASMB – servicii pentru asigurați",
+      "https://www.casmb.ro/asigurati_servicii.php"
+    ],
+    [
+      "Lista cabinetelor de medicină de familie",
+      "http://www.cnas.ro/casmb/page/lista-cabinete-medicina-de-familie.html"
+    ]
   ],
   "base_url": "https://www.spitalmalaxa.ro",
-  "lang": "ro"
+  "lang": "ro",
+  "content_updated": "03.11.2026"
 }
