@@ -182,6 +182,21 @@
       b.thumb.style[b.axis === "y" ? "height" : "width"] = thumb + "px";
       b.thumb.style.transform = b.axis === "y" ? "translateY(" + offset + "px)" : "translateX(" + offset + "px)";
       b.thumbLen = thumb; b.trackLen = len;
+      if (!b.el) b.track.classList.toggle("sb-light", isDarkAt(innerWidth - 8, b.track.getBoundingClientRect().top + offset + thumb / 2));
+    };
+    // The page bar has no outline, so it switches to a light thumb over dark sections (hero, stats, footer), like macOS.
+    const isDarkAt = (x, y) => {
+      const under = document.elementsFromPoint(x, y).find((n) => !n.closest(".sb"));
+      for (let n = under; n && n !== document.documentElement; n = n.parentElement) {
+        const c = getComputedStyle(n);
+        if (c.backgroundImage !== "none" && /hero|footer/.test(n.className)) return true; // photo/pattern backgrounds are dark
+        const m = c.backgroundColor.match(/[\d.]+/g);
+        if (m && (m[3] === undefined || +m[3] > .5)) {
+          const [r, g, bl] = m.map(Number);
+          return (0.2126 * r + 0.7152 * g + 0.0722 * bl) / 255 < 0.45;
+        }
+      }
+      return false;
     };
     const reveal = (b) => {
       b.track.classList.add("on");
