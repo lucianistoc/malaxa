@@ -1073,7 +1073,7 @@ def management():
 <div class="table-wrap"><table><thead><tr><th>Funcție</th><th>Nume</th></tr></thead><tbody>{cd}</tbody></table></div></div></section>
 <section class="section bg-soft" id="ce"><div class="container prose"><h2>Consiliul etic (CE)</h2>
 <div class="table-wrap"><table><thead><tr><th>Calitate</th><th>Nume</th></tr></thead><tbody>{ethics}</tbody></table></div>
-{docs_list([["Anuarul consiliului etic – 2020", "uploads/docs/files/Anuarul Etic-2020.pdf"], ["Raportul consiliului etic – Sem. 2 2020", "uploads/docs/files/Raport Consiliul Etic-s2.2020.pdf"]])}
+{docs_list([["Anuarul consiliului etic – 2020", "uploads/docs/files/Anuarul Etic-2020.pdf"], ["Raportul consiliului etic – semestrul II 2020", "uploads/docs/files/Raport Consiliul Etic-s2.2020.pdf"]])}
 {f'<p>Sesizări privind integritatea: <a href="mailto:{C["email_integrity"]}">{C["email_integrity"]}</a></p>' if C.get("email_integrity") else ""}</div></section>"""
     layout("conducere/", "Conducere", body, current="despre-noi/")
 
