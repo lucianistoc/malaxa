@@ -3042,8 +3042,8 @@
   "Spitalul poartă numele lui Nicolae Malaxa, industriaș vizionar născut la Huși și inginer format la Politehnica din Karlsruhe, în Germania. În 1921 a înființat un atelier pentru fabricarea materialului rulant și repararea locomotivelor și a vagoanelor, iar în perioada 1923–1927 a construit o uzină lângă Halta Titan. Patru ani mai târziu a încheiat cu Căile Ferate Române un contract pentru fabricarea unor locomotive de concepție proprie românească.",
   "Înființată în anul 1963, Policlinica „23 August” deservea întreaga platformă industrială „23 August”. În anul 1991, Spitalul de Întreprindere „23 August” a primit actuala denumire, Spitalul Clinic „Nicolae Malaxa”. În perioada 2007–2008 spitalul a intrat într-un amplu proces de consolidare, reamenajare și dotare, finalizat în anul 2010, iar din 2011 a preluat o parte din activitatea Spitalului Clinic Caritas – Acad. Prof. Dr. „Nicolae Cajal” (obstetrică-ginecologie, neonatologie, chirurgie, ATI și anatomie patologică), ca urmare a desființării acestuia."
  ],
- "mission": "[[Propunere, de validat de conducerea spitalului:]] Spitalul Clinic „Nicolae Malaxa” oferă servicii medicale de spitalizare continuă, spitalizare de zi și ambulatoriu, sigure și de calitate, accesibile tuturor pacienților, cu respect pentru demnitatea și drepturile fiecăruia, și contribuie la formarea profesională a viitorilor medici, în colaborare cu UMF „Carol Davila”.",
- "vision": "[[Propunere, de validat de conducerea spitalului:]] Să fie un spital clinic de referință pentru comunitatea din estul Bucureștiului, recunoscut pentru calitatea actului medical, pentru siguranța pacienților și pentru activitatea didactică și de cercetare.",
+ "mission": "[[Text provizoriu – formularea finală va fi transmisă de conducerea spitalului.]] Spitalul Clinic „Nicolae Malaxa” oferă servicii medicale de spitalizare continuă, spitalizare de zi și ambulatoriu, sigure și de calitate, accesibile tuturor pacienților, cu respect pentru demnitatea și drepturile fiecăruia, și contribuie la formarea profesională a viitorilor medici, în colaborare cu UMF „Carol Davila”.",
+ "vision": "[[Text provizoriu – formularea finală va fi transmisă de conducerea spitalului.]] Să fie un spital clinic de referință pentru comunitatea din estul Bucureștiului, recunoscut pentru calitatea actului medical, pentru siguranța pacienților și pentru activitatea didactică și de cercetare.",
  "presentation": [
   {
    "id": "camera-de-garda",
@@ -3068,8 +3068,9 @@
     [
      "Timp alocat",
      [
-      "Pacienții sunt evaluați în ordinea gravității, nu a sosirii.",
-      "[[Timpul orientativ de așteptare și de evaluare – de completat de spital.]]"
+      "Durata maximă a prezentării în camera de gardă este de 2 ore.",
+      "Pentru fiecare pacient se întocmește fișa de consult de gardă / fișa de prezentare.",
+      "Pacienții sunt evaluați în ordinea gravității, nu a sosirii."
      ]
     ],
     [
@@ -3117,7 +3118,8 @@
     [
      "Timp de internare",
      [
-      "[[Durata maximă a unei vizite de spitalizare de zi, conform normelor CNAS în vigoare – de confirmat de spital.]]"
+      "O internare de zi durează minimum 2 ore și maximum 12 ore.",
+      "Pentru fiecare internare se întocmește fișa de spitalizare de zi (FSZ)."
      ]
     ],
     [
@@ -3146,7 +3148,7 @@
      "Excepții",
      [
       "– pacienții neasigurați pot beneficia de servicii contra cost, conform listei de tarife",
-      "[[Alte excepții – de completat de spital.]]"
+      "[[Alte excepții – vor fi completate în formularul tipizat transmis de spital.]]"
      ]
     ]
    ]
@@ -3165,6 +3167,8 @@
     [
      "Timp de internare",
      [
+      "Internarea continuă durează minimum 12 ore.",
+      "Pentru fiecare internare se întocmește foaia de observație clinică generală (FOCG).",
       "Durata internării este stabilită de medicul curant, în funcție de diagnostic și de evoluția pacientului (de exemplu, în secția de chirurgie generală durata medie de spitalizare este de 5 zile).",
       "Internările se fac dimineața, pe bază de programare, în intervalul stabilit de fiecare secție."
      ]
@@ -3233,6 +3237,12 @@
      ]
     ],
     [
+     "Cine efectuează consultul",
+     [
+      "Consultul este efectuat de un medic specialist sau primar; în cabinetele spitalului consultă și cadre universitare (conferențiari, profesori) și doctori în științe medicale."
+     ]
+    ],
+    [
      "Modalități de prezentare",
      [
       "– programare telefonică la centrala spitalului (021 255 54 05) sau la numărul cabinetului",
@@ -3259,7 +3269,7 @@
      "Excepții",
      [
       "– fără bilet de trimitere, fără calitatea de asigurat sau fără programare, consultațiile se pot efectua contra cost, conform listei de tarife",
-      "[[Categoriile de pacienți care nu au nevoie de bilet de trimitere – de completat de spital.]]"
+      "[[Categoriile de pacienți care nu au nevoie de bilet de trimitere – vor fi completate în formularul tipizat transmis de spital.]]"
      ]
     ]
    ]
@@ -3277,9 +3287,8 @@
    "– pacienții neasigurați internați semnează un angajament de plată și achită cheltuielile de spitalizare dacă nu prezintă dovada calității de asigurat"
   ],
   "how": [
-   "[[Unde se face plata (casierie / ghișeu) și programul – de completat de spital.]]",
-   "[[Modalități de plată acceptate (numerar, card) – de completat de spital.]]",
-   "[[Documentul primit după plată (chitanță / factură) – de completat de spital.]]"
+   "Plata se face la casieria spitalului, la etajul 1.",
+   "Se poate plăti cu cardul bancar sau în numerar."
   ]
  },
  "contracts": {
@@ -3287,23 +3296,23 @@
   "types": [
    [
     "U",
-    "[[Descrierea tipului de contract U – de completat de spital.]]"
+    "Unitate sanitară cu paturi (spital)"
    ],
    [
     "S",
-    "[[Descrierea tipului de contract S – de completat de spital.]]"
+    "Specialități clinice în ambulatoriul de specialitate"
    ],
    [
     "P",
-    "[[Descrierea tipului de contract P – de completat de spital.]]"
+    "Servicii paraclinice (laborator de analize medicale, imagistică medicală)"
    ],
    [
     "R",
-    "[[Descrierea tipului de contract R – de completat de spital.]]"
+    "Servicii de recuperare medicală în ambulatoriul de specialitate"
    ],
    [
     "D",
-    "[[Descrierea tipului de contract D – de completat de spital.]]"
+    "Servicii de medicină dentară"
    ]
   ]
  }
