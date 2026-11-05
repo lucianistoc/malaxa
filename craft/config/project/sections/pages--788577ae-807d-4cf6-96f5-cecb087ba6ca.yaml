@@ -4,7 +4,7 @@ entryTypes:
   -
     uid: e0f81612-5b39-4787-8bb4-5239d44288ec # Pagină
   -
-    uid: 50bef859-48a6-46ef-87b0-9bac0a75607b # Listă specialități
+    uid: 779239da-aeb8-459f-9452-e9fe8e3db729 # Listă spital
   -
     uid: a4d43f3e-631e-41d5-a775-10ce33c38fbc # Listă ambulatoriu
   -
@@ -13,6 +13,8 @@ entryTypes:
     uid: e9f79389-5287-42fb-9a52-4f4a04c765ad # Listă noutăți
   -
     uid: ae4ad608-fa3d-4fcd-8b9d-7509942dee96 # Pagină tarife
+  -
+    uid: 49ef516e-9cef-4cfb-b318-d0aa81777a98 # Pagină tipuri de prezentare
   -
     uid: 7bbb534c-5c76-440b-af92-3a88cf264c6e # Pagină interes public
   -
@@ -27,7 +29,7 @@ previewTargets:
     urlFormat: '{url}'
 propagationMethod: all
 siteSettings:
-  41b27c9e-7368-451c-a99e-d03a10527f71: # Spitalul Clinic „Nicolae Malaxa”
+  41b27c9e-7368-451c-a99e-d03a10527f71: # Spitalul Clinic Nicolae Malaxa
     enabledByDefault: true
     hasUrls: true
     template: _pages/entry

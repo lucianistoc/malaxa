@@ -1,0 +1,95 @@
+{#- Hospital structures (Spital) and outpatient cabinets (Ambulatoriu) share this template, so both present the
+    same information in the same order: descriere → echipa medicală → servicii → dotări → program →
+    programări și contact → documente necesare → tarife → galerie → vezi și. -#}
+{% extends '_layout' %}
+{% from '_partials/icons.twig' import icon %}
+{% import '_partials/ui.twig' as ui %}
+{% set description = entry.summary %}
+
+{% block content %}
+{%- set isHosp = entry.section.handle == 'hospital' -%}
+{%- set index = craft.entries.section('pages').type(isHosp ? 'hospitalIndex' : 'ambulatoryIndex').one() -%}
+{%- set indexTitle = index.title ?? (isHosp ? 'Spital' : 'Ambulatoriu') -%}
+{{ ui.pageHero(entry.title, [{title: indexTitle, url: index.url ?? null}, {title: entry.title}]) }}
+{%- set team = craft.entries.section('doctors').relatedTo({targetElement: entry, field: isHosp ? 'hospitalUnit' : 'cabinet'}).all()|byName -%}
+{%- set siblings = craft.entries.section(entry.section.handle).all() -%}
+<section class="section"><div class="container with-sidebar">
+  <aside class="sidebar">
+    <nav class="side-menu" aria-label="{{ indexTitle }}"><h3>{{ indexTitle }}</h3><ul>
+      {%- if isHosp -%}
+        {%- for opt in craft.app.fields.getFieldByHandle('unitCategory').options -%}
+          {%- set group = siblings|filter(x => x.unitCategory.value == opt.value) -%}
+          {%- if group|length %}<li class="label">{{ opt.label }}</li>{% endif -%}
+          {%- for x in group %}<li><a class="{{ x.id == entry.id ? 'active' }}" href="{{ x.url }}">{{ x.title }}</a></li>{% endfor -%}
+        {%- endfor -%}
+      {%- else -%}
+        {%- for x in siblings %}<li><a class="{{ x.id == entry.id ? 'active' }}" href="{{ x.url }}">{{ x.title }}</a></li>{% endfor -%}
+      {%- endif -%}
+    </ul></nav>
+    {{ ui.contactBox() }}
+  </aside>
+  <div class="prose">
+    {# 1. Descriere #}
+    {% if entry.beds %}<p class="pill">{{ icon('hospital') }} {{ entry.beds }}</p>{% endif %}
+    <h2>Descriere</h2>
+    {{ entry.body ? entry.body|drafts : ('<p>' ~ entry.summary|e ~ '</p>')|raw }}
+
+    {# 2. Echipa medicală #}
+    {% if team|length %}<h2>Echipa medicală</h2><div class="grid g3 team-grid">{% for d in team %}{{ ui.doctorCard(d) }}{% endfor %}</div>{% endif %}
+
+    {# 3. Servicii și alte informații #}
+    {{ ui.blocks(entry.contentBlocks.all(), true) }}
+
+    {# 4. Dotări #}
+    {% if entry.equipment|length %}<h2>Dotări</h2>{{ ui.list(entry.equipment, entry.equipment|length > 5 ? 'list-check cols' : 'list-check') }}{% endif %}
+
+    {# 5. Program #}
+    {% if entry.hours|length %}
+      <h2>Program</h2>{{ ui.updated() }}
+      {% for x in entry.hours %}<div class="info-box"><span class="ring">{{ icon('clock') }}</span><div><strong>{{ x.text }}</strong></div></div>{% endfor %}
+    {% endif %}
+    {% if entry.schedule|length %}
+      <h3>Program medici</h3>
+      <div class="table-wrap"><table><thead><tr><th>Medic</th><th>Program</th></tr></thead><tbody>{% for r in entry.schedule %}<tr><td><strong>{{ r.doctor }}</strong></td><td>{{ r.program }}</td></tr>{% endfor %}</tbody></table></div>
+    {% endif %}
+
+    {# 6. Programări și contact #}
+    {% if entry.phones|length %}<h2>Programări și contact</h2>{{ ui.list(entry.phones, 'list-plain') }}{% endif %}
+
+    {# 7. Documente necesare (for the structures patients come to) #}
+    {%- set presentation = ui.pageUrl('tipuri-de-prezentare') -%}
+    {% if not isHosp %}
+      <h2>Documente necesare</h2>
+      {{ ui.list(['Bilet de trimitere de la medicul de familie sau de la un medic specialist aflat în contract cu casa de asigurări', 'Cardul de sănătate', 'Dovada calității de asigurat', 'Act de identitate (CI / BI / pașaport), original și copie']) }}
+      <p><a class="read-more" href="{{ presentation }}#ambulatoriu">Condiții și excepții →</a></p>
+    {% elseif entry.unitCategory.value == 'clinic' and entry.slug != 'camera-de-garda' %}
+      <h2>Documente necesare la internare</h2>
+      {{ ui.list(['Bilet de internare de la medicul de familie sau bilet de trimitere de la medicul din ambulatoriu / scrisoare medicală', 'Cardul de sănătate', 'Dovada calității de asigurat', 'Act de identitate (CI / BI / pașaport / certificat de naștere), original și copie']) }}
+      <p><a class="read-more" href="{{ presentation }}">Tipuri de prezentare: condiții și excepții →</a></p>
+    {% endif %}
+
+    {# 8. Tarife #}
+    {% set pg = entry.priceGroup.one() %}
+    {% if pg %}
+      <h2>Tarife</h2>
+      <p class="muted">Pentru pacienții neasigurați, fără bilet de trimitere sau fără programare. <a href="{{ ui.pageUrl('servicii-medicale-cu-plata') }}"><u>Plata serviciilor medicale</u></a></p>
+      <details class="price-toggle"><summary>Vezi tarifele ({{ pg.priceItems|length }} servicii)</summary><div class="table-wrap"><table><thead><tr><th>Serviciu</th><th style="text-align:right">Tarif</th></tr></thead><tbody>
+        {% for r in pg.priceItems %}<tr><td>{{ r.service }}</td><td class="price">{{ r.price }}</td></tr>{% endfor %}
+      </tbody></table></div></details>
+    {% endif %}
+
+    {# 9. Galerie foto #}
+    {% if entry.gallery.exists() %}<h2>Galerie foto</h2>{{ ui.gallery(entry.gallery.all()) }}{% endif %}
+
+    {# 10. Vezi și: the matching cabinet / section, then other links #}
+    {%- set rel = entry.relatedUnit.one() -%}
+    {%- set links = (entry.docLinks ?: [])|filter(l => l.url) -%}
+    {% if rel or links|length %}
+      <h2>Vezi și</h2><div class="doc-list">
+        {%- if rel %}{{ ui.docLink((rel.section.handle == 'hospital' ? 'Spital: ' : 'Ambulatoriu: ') ~ rel.title, rel.url) }}{% endif -%}
+        {%- for l in links %}{{ ui.docLink(l.title, l.url) }}{% endfor -%}
+      </div>
+    {% endif %}
+  </div>
+</div></section>
+{% endblock %}

@@ -1,8 +1,9 @@
 baseUrl: $PRIMARY_SITE_URL
+enabled: true
 handle: default
 hasUrls: true
 language: ro
-name: 'Spitalul Clinic „Nicolae Malaxa”'
+name: 'Spitalul Clinic Nicolae Malaxa'
 primary: true
 siteGroup: 2501a265-dccf-4d58-afe5-9ab8f4fedb2b # Spitalul Clinic „Nicolae Malaxa”
 sortOrder: 1

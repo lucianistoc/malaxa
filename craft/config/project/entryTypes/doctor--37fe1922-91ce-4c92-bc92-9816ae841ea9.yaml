@@ -2,7 +2,7 @@ allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
-  3033a932-738d-487b-abaa-4a6bc8ee7123:
+  e1dd76f1-a5b9-4c70-83d3-f50975acfa08:
     cardThumbAlignment: end
     tabs:
       -
@@ -32,24 +32,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: f9149a1e-d7ce-4b6c-b652-8addf5eddc19
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: null
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 000061d7-26b1-4619-9d7e-b92c666ac71f # Specialitate
-            handle: null
-            instructions: null
-            label: null
-            oldFieldUid: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 376af0cd-575f-419a-91ac-7e090865cc20
+            uid: 1278e62e-44f1-4d40-bad2-d15e45e4d62e
             userCondition: null
             warning: null
             width: 100
@@ -66,7 +49,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: d5146847-7120-4818-8217-4ae5c0cd7745
+            uid: 522ba00a-8926-48e4-9679-e1bed1bcd4c8
             userCondition: null
             warning: null
             width: 100
@@ -83,7 +66,41 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: fe5a38fa-39ac-45c2-b673-d374fbd89dc4
+            uid: fdd808ee-3357-4602-bc84-6e81a79bd129
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ba512b7d-8a46-4c4b-9f8a-817c5bec1e62 # Secție / compartiment (spital)
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2e12324b-43d8-4eab-adee-2610d8dd592c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: b384c218-f6bf-4a32-a7f2-173374b2df1b # Cabinet (ambulatoriu)
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a3d3589f-8df0-47e4-abaf-8d0260a427cc
             userCondition: null
             warning: null
             width: 100
@@ -100,7 +117,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: e3710e3c-6f4f-4071-97d9-321af76553a0
+            uid: d412c425-ea8f-4477-8f2a-d0ba5c4aeeee
             userCondition: null
             warning: null
             width: 100
@@ -117,12 +134,12 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 826aa757-acf0-438c-ab35-d6f54c7a009a
+            uid: 8a7e62e7-6064-48d2-a78b-f090e7f23ea9
             userCondition: null
             warning: null
             width: 100
         name: Conținut
-        uid: 51a1f905-0877-4ac4-8821-b1a6074a797a
+        uid: 9cd1bcdd-ca13-421b-b080-7be42a9f2e4f
         userCondition: null
     thumbFieldKey: null
 handle: doctor

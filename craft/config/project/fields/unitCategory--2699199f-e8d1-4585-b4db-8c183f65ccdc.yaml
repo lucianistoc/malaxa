@@ -1,0 +1,38 @@
+columnSuffix: null
+handle: unitCategory
+instructions: null
+name: Categorie
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Secții și compartimente clinice'
+        -
+          - value
+          - clinic
+        -
+          - default
+          - true
+    -
+      __assoc__:
+        -
+          - label
+          - 'Laboratoare și servicii paraclinice'
+        -
+          - value
+          - paraclinic
+    -
+      __assoc__:
+        -
+          - label
+          - 'Alte structuri'
+        -
+          - value
+          - other
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -13,7 +13,7 @@ previewTargets:
     urlFormat: '{url}'
 propagationMethod: all
 siteSettings:
-  41b27c9e-7368-451c-a99e-d03a10527f71: # Spitalul Clinic „Nicolae Malaxa”
+  41b27c9e-7368-451c-a99e-d03a10527f71: # Spitalul Clinic Nicolae Malaxa
     enabledByDefault: true
     hasUrls: true
     template: _doctors/entry

@@ -29,4 +29,12 @@
  * @link https://craftcms.com/docs/5.x/system/routing.html#redirection
  */
 
-return [];
+return [
+    // Addresses from before the hospital / outpatient split
+    'specialitati-medicale' => 'spital',
+    'internare-si-externare' => 'tipuri-de-prezentare',
+    'echipa-de-management' => 'conducere',
+    'service/psihologie' => 'ambulatoriu/psihologie',
+    'service/stomatologie' => 'ambulatoriu/stomatologie',
+    'service/orl' => 'ambulatoriu/orl',
+];

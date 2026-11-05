@@ -5,7 +5,7 @@
 
 {% block content %}
 {{ ui.pageHero('Căutare', [{title: 'Căutare'}]) }}
-{%- set results = q ? craft.entries.section(['pages', 'specialties', 'doctors', 'news']).search(q).orderBy('score').limit(60).all() : [] -%}
+{%- set results = q ? craft.entries.section(['pages', 'hospital', 'ambulatory', 'doctors', 'news']).search(q).orderBy('score').limit(60).all() : [] -%}
 <section class="section"><div class="container" style="max-width:860px">
   <form class="search-form" action="" role="search"><input type="search" name="q" value="{{ q }}" aria-label="Caută"><button class="btn btn-primary" type="submit">Caută</button></form>
   <div class="results" aria-live="polite">

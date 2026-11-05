@@ -1,0 +1,310 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  edffcf2e-3898-4039-aaad-4f1d06804212:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 565d4a8c-b170-4df7-af1b-c47d8b0447c1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: a14a8059-4767-4a33-bd02-f11e3727c1c8 # Iconiță
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 07ae7687-1b36-4c07-956e-5c5af1a0d385
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 1c808e13-8e8e-49ff-b55f-4e636337f139 # Rezumat
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7ba5f247-4706-4a6a-9065-484c795552dc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7614de45-c8f5-40ff-81ac-053174b747ef # Paturi
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6c22681d-7525-4b98-a43d-71c932e29010
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: d357be62-5f79-4691-acd2-751d09445d0c # Text
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 224cb7bd-29e6-467b-a514-eab10777ed5a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: e50fb4ab-433f-4f82-80da-2afeb343ada3 # Blocuri de conținut
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 09b79c18-1500-4498-a9a0-a5234c3db4a9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: e1f2d152-afdb-4e60-9369-1924d79cc0b9 # Dotări
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 50aa930e-c12e-4610-8b29-16594921fe8a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f7333526-80cc-445a-9cb3-058773718ea9 # Galerie foto
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e09ab1bf-eba3-4ab1-acce-3c57b18b72e2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 90914f59-4591-45fe-9ea9-ea2fb6b55c2b # Informații în curs de actualizare
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8e169a09-f5b9-4cac-92e4-65c893065398
+            userCondition: null
+            warning: null
+            width: 100
+        name: Conținut
+        uid: ba93043c-1478-4183-99c9-ae2cca455b6e
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f1ba0221-a386-4433-b06e-1c64483e90da # Program
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6a0db28d-dc60-488c-809c-1e18d446d06d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 1f2d24f3-dd2c-42fb-a15b-d3f84a7263fd # Program medici
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3b739c7b-f948-4566-8d18-47e6654e8d6c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 8ff9eaed-07c8-4d31-a76f-2cb9ebb52190 # Telefoane
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 795f3f0c-51bb-4821-b624-de618653168e
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Program și contact'
+        uid: d12bba99-d301-48da-88a8-bbda09adb4a6
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 25657f3f-5ed6-47d2-b796-ef38dd4dfed4 # Structură asociată
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 811c49db-0aac-4a2f-b65e-a547d59e6333
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: be4f204c-5fa3-46e7-ad16-46409de6eb56 # Linkuri
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 866e6f7d-dbc0-41eb-8e4d-9ecdd9b4545a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Legături
+        uid: ef770ae6-0757-4ace-92b2-5148cb5aab2d
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 352ec77e-c8d1-44ad-a7cf-e5a64fbc5170 # Grupă de tarife
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6155e018-fa8d-4d52-9488-b419852e4e36
+            userCondition: null
+            warning: null
+            width: 100
+        name: Tarife
+        uid: 8838b53a-869f-49a5-a851-8391ef94d1e5
+        userCondition: null
+    thumbFieldKey: null
+handle: cabinet
+hasTitleField: true
+icon: null
+name: 'Cabinet ambulatoriu'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

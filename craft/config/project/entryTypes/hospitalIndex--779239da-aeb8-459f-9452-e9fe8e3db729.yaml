@@ -2,7 +2,7 @@ allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
-  37a9f5ce-6554-47d2-8706-987ae3c6311a:
+  2838b03a-2543-4eda-ad1a-06236fd7a75d:
     cardThumbAlignment: end
     tabs:
       -
@@ -32,7 +32,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 73a9782c-e984-4c8f-a344-4c068c039190
+            uid: eeb8b0d3-a043-489c-ae84-97a58f187114
             userCondition: null
             warning: null
             width: 100
@@ -49,7 +49,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: f13a1d5a-ef10-42c2-98d7-25172be8883c
+            uid: fda0f309-66a7-4b95-b8f7-4743668e7cd6
             userCondition: null
             warning: null
             width: 100
@@ -66,7 +66,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 6f4a9e3c-1c88-49b7-a55f-383e06e72379
+            uid: 16521b0a-19d6-46a2-8505-6c677ef559f2
             userCondition: null
             warning: null
             width: 100
@@ -83,12 +83,29 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 6c8ce8e0-3f5e-4147-bfa8-7a6fe71576de
+            uid: ce6fe185-171a-47ac-9708-674fedf2cc27
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 5674c780-88ae-4c3f-b5e5-c5979740ab6d # Cuprins
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e73e5ac7-a613-4959-a572-88521d5408b5
             userCondition: null
             warning: null
             width: 100
         name: Conținut
-        uid: d4f83106-cd67-4bd1-ab2d-f1f798d55a6c
+        uid: f547b11b-aad7-443b-ba22-4f5d855620eb
         userCondition: null
       -
         elementCondition: null
@@ -106,7 +123,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: c6422d9f-4a05-4e42-884c-db7e60be2a8e
+            uid: d4d3655e-c6e2-4ec5-a9b0-587df440ebbc
             userCondition: null
             warning: null
             width: 100
@@ -123,18 +140,35 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: b10de86a-130a-48f3-9ddc-d35f3bc81ae0
+            uid: c90d690b-c0c3-474f-a8c1-8a1b1338dde4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 6747fcb3-84b2-42f0-af7b-0bac58aeed5c # Link extern
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 84bfa121-8f44-43f1-b61e-d684a1c85786
             userCondition: null
             warning: null
             width: 100
         name: Navigare
-        uid: 6e063cc8-d271-47ef-a786-3bf3cf330739
+        uid: 983a6096-500b-49ba-9426-bf65fd1720e5
         userCondition: null
     thumbFieldKey: null
-handle: specialtiesIndex
+handle: hospitalIndex
 hasTitleField: true
 icon: null
-name: 'Listă specialități'
+name: 'Listă spital'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

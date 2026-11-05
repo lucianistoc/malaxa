@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: ambulatoryOnly
-instructions: 'Ascunde din lista secțiilor (apare doar la Ambulatoriu).'
-name: 'Doar ambulatoriu'
+handle: showToc
+instructions: 'Afișează sus butoane către blocurile care au ancoră.'
+name: Cuprins
 searchable: false
 settings:
   default: false

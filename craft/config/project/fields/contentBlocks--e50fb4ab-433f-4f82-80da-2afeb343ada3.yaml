@@ -53,6 +53,11 @@ settings:
         -
           - uid
           - a899c2b6-0812-4134-8027-f7a347009a0f # Atenționare
+    -
+      __assoc__:
+        -
+          - uid
+          - 40cd682d-e1af-4612-816f-d2acf0fe1d0a # Tip de prezentare
   includeTableView: false
   maxEntries: null
   minEntries: null

@@ -2,7 +2,7 @@ allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
-  583ca542-932a-4df2-9806-d0e5310f8a3d:
+  039d736e-e139-4558-ba65-cbac0ccb4268:
     cardThumbAlignment: end
     tabs:
       -
@@ -21,7 +21,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 746db93d-dcab-44de-90d8-001c2968bd22
+            uid: ee3fefd5-70fd-410d-bf9d-ad41074e0149
             userCondition: null
             warning: null
             width: 100
@@ -38,12 +38,29 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 6b00506e-036a-473d-aea4-158856c587ca
+            uid: 1a8226d2-0ab3-4f6e-a140-7a069dc8ea3a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: b1845912-aaa5-4be9-9194-9eb7f6309efc # Ancoră
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1a09bee8-ab22-41f4-b055-f2bc29620ca8
             userCondition: null
             warning: null
             width: 100
         name: Conținut
-        uid: 33ee66e7-9083-4f3f-8ff1-8bb8f17e246b
+        uid: 98228843-db42-4fa9-a814-ff3ff3f67677
         userCondition: null
     thumbFieldKey: null
 handle: blockCards

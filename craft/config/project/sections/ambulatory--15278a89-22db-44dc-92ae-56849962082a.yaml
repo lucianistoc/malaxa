@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: b56e8324-aeb1-4d3c-a08b-964e4738fb9b # Cabinet ambulatoriu
+handle: ambulatory
+maxAuthors: 1
+minAuthors: 1
+name: 'Ambulatoriu – cabinete'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  41b27c9e-7368-451c-a99e-d03a10527f71: # Spitalul Clinic Nicolae Malaxa
+    enabledByDefault: true
+    hasUrls: true
+    template: _units/entry
+    uriFormat: 'ambulatoriu/{slug}'
+structure:
+  maxLevels: 1
+  uid: c6f9a4f1-084f-43c4-bd69-94e35086507e
+type: structure

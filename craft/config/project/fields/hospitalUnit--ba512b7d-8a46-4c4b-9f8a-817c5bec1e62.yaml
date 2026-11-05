@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: specialty
-instructions: null
-name: Specialitate
+handle: hospitalUnit
+instructions: 'Lăsați gol dacă medicul lucrează doar în ambulatoriu.'
+name: 'Secție / compartiment (spital)'
 searchable: false
 settings:
   allowSelfRelations: false
@@ -16,7 +16,7 @@ settings:
   showUnpermittedEntries: false
   showUnpermittedSections: false
   sources:
-    - 'section:9cdb1b93-0eb2-450d-90f4-899d9de90a9e' # Specialități medicale
+    - 'section:048cd7ae-c256-45bc-b801-733e3adfe1b5' # Spital – secții și servicii
   targetSiteId: null
   validateRelatedElements: false
   viewMode: list
