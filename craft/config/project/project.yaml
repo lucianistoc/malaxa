@@ -1,4 +1,4 @@
-dateModified: 1793632944
+dateModified: 1793868313
 email:
   fromEmail: lucian.istoc1@gmail.com
   fromName: 'Spitalul Clinic „Nicolae Malaxa”'
@@ -17,9 +17,9 @@ meta:
     1c808e13-8e8e-49ff-b55f-4e636337f139: Rezumat # Rezumat
     1cf60fe9-5c8d-4eb3-b096-7b1e295b1e66: 'Grupă de tarife' # Grupă de tarife
     1d831964-6cb5-4950-a9fa-06df17603d23: Notă # Notă
+    1f2d24f3-dd2c-42fb-a15b-d3f84a7263fd: 'Program medici' # Program medici
     1f940ec0-df57-40df-99a7-7033de2f4aa2: Text # Text
     2b85a2a8-ee09-44ff-894d-b0ee8790ba3b: Fotografie # Fotografie
-    2e3517ab-f491-4f92-82be-21eee383a4a2: 'Ambulatoriu – servicii' # Ambulatoriu – servicii
     2ee0b1ae-0919-4c95-9890-5756d26fd468: Articol # Articol
     2feb8465-150a-4309-8135-e4950c163841: 'Titlu secțiune' # Titlu secțiune
     4cd12731-03f3-49bf-9358-5329dbf57320: Adresă # Adresă
@@ -38,21 +38,20 @@ meta:
     9a5f430e-d4ef-493b-b42a-8a9a1b616757: 'Hero – subtitlu' # Hero – subtitlu
     9bb3ef6e-f389-49a4-848e-ae17e6d19dfe: 'Siglă acreditare' # Siglă acreditare
     9c628247-fbcc-4376-9134-0c53a24f49f5: Fax # Fax
-    9cdb1b93-0eb2-450d-90f4-899d9de90a9e: 'Specialități medicale' # Specialități medicale
     9e2ed1e7-f21f-4c5f-8f7d-989a80c58cf2: Acordeon # Acordeon
+    16a42cfe-3048-43b6-88a2-3af121487dd0: Rânduri # Rânduri
     17d97f6f-1eac-44dd-a099-fcd0d511c400: Imagine # Imagine
     34fceb71-85b1-49e6-be8d-b6ef6b4b3ab4: 'Elemente listă' # Elemente listă
     37fe1922-91ce-4c92-bc92-9816ae841ea9: Medic # Medic
+    40cd682d-e1af-4612-816f-d2acf0fe1d0a: 'Tip de prezentare' # Tip de prezentare
     41b27c9e-7368-451c-a99e-d03a10527f71: 'Spitalul Clinic „Nicolae Malaxa”' # Spitalul Clinic „Nicolae Malaxa”
-    50bef859-48a6-46ef-87b0-9bac0a75607b: 'Listă specialități' # Listă specialități
+    048cd7ae-c256-45bc-b801-733e3adfe1b5: 'Spital – secții și servicii' # Spital – secții și servicii
+    49ef516e-9cef-4cfb-b318-d0aa81777a98: 'Pagină tipuri de prezentare' # Pagină tipuri de prezentare
     55e52c05-0523-4d9b-92f6-6eb29699ac11: 'Culoare principală' # Culoare principală
-    000061d7-26b1-4619-9d7e-b92c666ac71f: Specialitate # Specialitate
     72edebcb-e87e-4f1e-b278-6cb7de8f91fd: Transport # Transport
     77fcb3fd-a89e-473d-a994-989ce29b5c45: 'Logo – emblemă' # Logo – emblemă
-    80a18167-49a4-4bc0-a562-37cc46c9d6d8: 'Ambulatoriu – descriere' # Ambulatoriu – descriere
     83f5b4e3-5466-4fb0-b216-bf2c4c017535: Cifre # Cifre
     157a091f-257e-4557-a610-0c3ee975c7de: 'Logo – text' # Logo – text
-    351ac5ff-6f1a-49df-b078-46e38f2a63e1: 'Ambulatoriu – program medici' # Ambulatoriu – program medici
     352ec77e-c8d1-44ad-a7cf-e5a64fbc5170: 'Grupă de tarife' # Grupă de tarife
     0570df68-2350-4a0f-9a86-24e3d2d6d956: 'Program audiențe' # Program audiențe
     635fb02c-d1a9-4193-9304-bf190ed34278: Carduri # Carduri
@@ -60,17 +59,20 @@ meta:
     2501a265-dccf-4d58-afe5-9ab8f4fedb2b: 'Spitalul Clinic „Nicolae Malaxa”' # Spitalul Clinic „Nicolae Malaxa”
     3462a0b8-2c1f-4872-a240-fcd7f7d34ce3: 'Afișează data publicării' # Afișează data publicării
     4273ff4e-2949-4bbd-97e1-73f19d71aa05: 'Listă medici' # Listă medici
+    5674c780-88ae-4c3f-b5e5-c5979740ab6d: Cuprins # Cuprins
     6116d319-60fe-4904-a4bb-e059ca92cf68: 'Culoare principală (închisă)' # Culoare principală (închisă)
     6747fcb3-84b2-42f0-af7b-0bac58aeed5c: 'Link extern' # Link extern
     7614de45-c8f5-40ff-81ac-053174b747ef: Paturi # Paturi
     8726b676-dcaa-41d7-9cbd-a955cdb32df7: 'Programări online – URL' # Programări online – URL
+    15278a89-22db-44dc-92ae-56849962082a: 'Ambulatoriu – cabinete' # Ambulatoriu – cabinete
     22091d5d-0326-48e7-ab1d-06b458b745e5: 'Text cu imagine' # Text cu imagine
-    59257e2a-9edc-49dc-b014-de2275ee311e: Specialitate # Specialitate
+    25657f3f-5ed6-47d2-b796-ef38dd4dfed4: 'Structură asociată' # Structură asociată
     63443a80-0337-448e-9feb-ec30638cc686: 'Chestionar feedback – URL' # Chestionar feedback – URL
     86483fa6-ee21-45aa-906e-245b14bf414a: 'Adresă scurtă' # Adresă scurtă
-    316245e8-98db-4d66-b7b4-0848653906bf: 'Ambulatoriu – telefoane' # Ambulatoriu – telefoane
-    629309ff-bb40-4d4a-9914-83ac5ab97c60: 'Doar ambulatoriu' # Doar ambulatoriu
+    90914f59-4591-45fe-9ea9-ea2fb6b55c2b: 'Informații în curs de actualizare' # Informații în curs de actualizare
+    779239da-aeb8-459f-9452-e9fe8e3db729: 'Listă spital' # Listă spital
     788577ae-807d-4cf6-96f5-cecb087ba6ca: Pagini # Pagini
+    2699199f-e8d1-4585-b4db-8c183f65ccdc: Categorie # Categorie
     3497914f-130f-4935-8115-df692aef0ea4: 'Grad profesional' # Grad profesional
     6287951d-6a9a-423b-a685-82881dcf1eba: 'Grupă de documente' # Grupă de documente
     6790997c-5777-46e9-90b7-d19e90e12f71: Slogan # Slogan
@@ -80,7 +82,6 @@ meta:
     95270732-d48e-47b5-87a0-dc0f76c1e92b: 'Email integritate' # Email integritate
     a0abe989-fa74-4677-89f1-06d0135e9cba: Listă # Listă
     a4d43f3e-631e-41d5-a775-10ce33c38fbc: 'Listă ambulatoriu' # Listă ambulatoriu
-    a7a116f7-7f82-44d5-b072-307bcbbf9c14: 'Ambulatoriu – program' # Ambulatoriu – program
     a14a8059-4767-4a33-bd02-f11e3727c1c8: Iconiță # Iconiță
     a79a703e-4f20-439b-9365-5b5da1692175: 'Pagina principală' # Pagina principală
     a899c2b6-0812-4134-8027-f7a347009a0f: Atenționare # Atenționare
@@ -91,9 +92,15 @@ meta:
     af26a0a5-21b2-492c-9311-a2183aa3bc44: 'Setări site' # Setări site
     b0bffc6d-e026-4976-b227-5ba29c849407: 'Despre medic' # Despre medic
     b8d20b64-0924-4f2b-98cb-5ad1c4fe2653: 'Pagina principală' # Pagina principală
+    b56e8324-aeb1-4d3c-a08b-964e4738fb9b: 'Cabinet ambulatoriu' # Cabinet ambulatoriu
+    b384c218-f6bf-4a32-a7f2-173374b2df1b: 'Cabinet (ambulatoriu)' # Cabinet (ambulatoriu)
     b794ae97-89ce-49be-980b-7ac43a41c64c: Galerie # Galerie
+    b1845912-aaa5-4be9-9194-9eb7f6309efc: Ancoră # Ancoră
+    ba512b7d-8a46-4c4b-9f8a-817c5bec1e62: 'Secție / compartiment (spital)' # Secție / compartiment (spital)
     bd5bd3ee-0328-4f34-bdc6-b3611d27cc49: 'Pagină contact' # Pagină contact
     be4f204c-5fa3-46e7-ad16-46409de6eb56: Linkuri # Linkuri
+    be633c25-04fb-4f52-9c63-a4551021e2b9: 'Structură spital' # Structură spital
+    bedee14f-99b4-47d5-b3c9-b9404ed405f0: 'Ultima actualizare' # Ultima actualizare
     c2f280e1-fc7d-4710-9c0e-9e3e9c6b603f: Rezumat # Rezumat
     c407ffde-0b2d-4960-ac5c-65a2fe2db322: 'Telefon programări' # Telefon programări
     c619c88b-4061-48ba-8862-3ecc18f43e57: 'Program vizită (PDF)' # Program vizită (PDF)
@@ -113,7 +120,6 @@ meta:
     ea6cfc3d-43a1-45b2-ac62-be5f32c3eaf9: Tabel # Tabel
     eaab39de-0fa2-41d2-9fe7-cd76a097a39c: Medici # Medici
     edd32b0e-142e-46ab-8261-d6b5ab14cbf9: 'Purtător de cuvânt' # Purtător de cuvânt
-    ee5bf176-eacc-4837-ae5f-7064680752b8: 'Are cabinet în ambulatoriu' # Are cabinet în ambulatoriu
     f02a44f5-b789-4503-945e-2925f80746e4: 'Hero – imagine' # Hero – imagine
     f1a773e1-ee6e-40ba-9a27-6c0e9e0018bb: 'Grup în meniu' # Grup în meniu
     f1a7547d-48cb-4421-b19e-268c4bf46fde: 'Capete de tabel' # Capete de tabel

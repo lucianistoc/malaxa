@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: contentUpdated
+instructions: 'Data afișată pe paginile cu program, tarife și contact (ZZ.LL.AAAA).'
+name: 'Ultima actualizare'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

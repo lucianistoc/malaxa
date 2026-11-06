@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: relatedUnit
+instructions: 'Secția din spital care corespunde cabinetului (sau invers); apare la „Vezi și”.'
+name: 'Structură asociată'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: null
+  showSearchInput: true
+  showSiteMenu: false
+  showUnpermittedEntries: false
+  showUnpermittedSections: false
+  sources:
+    - 'section:048cd7ae-c256-45bc-b801-733e3adfe1b5' # Spital – secții și servicii
+    - 'section:15278a89-22db-44dc-92ae-56849962082a' # Ambulatoriu – cabinete
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries

@@ -2,7 +2,7 @@ allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
-  9d0fabd1-7520-49d8-a3fd-e62b48696a35:
+  39c8b968-f802-40e5-838f-d649398fd2c4:
     cardThumbAlignment: end
     tabs:
       -
@@ -32,7 +32,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 65609ab0-b0e3-4f68-8a79-ce944f2831e8
+            uid: 58453ba8-107d-4545-bacf-985919452139
             userCondition: null
             warning: null
             width: 100
@@ -49,7 +49,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 18af36eb-cce9-4777-b109-d53073f0cf23
+            uid: e712ebf0-64db-40b6-8e6d-5e551b35b99c
             userCondition: null
             warning: null
             width: 100
@@ -66,7 +66,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 18d03944-c989-4fef-a960-a708e1fe4cc3
+            uid: 11f165c9-438b-46da-a9fc-c926e86c6a44
             userCondition: null
             warning: null
             width: 100
@@ -83,12 +83,29 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 122f0119-f14c-4817-b590-f796b8240939
+            uid: d061fbe3-dadd-4718-989c-faa484b87018
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 5674c780-88ae-4c3f-b5e5-c5979740ab6d # Cuprins
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3714d283-74e0-4535-8ee1-a4f32f32c45e
             userCondition: null
             warning: null
             width: 100
         name: Conținut
-        uid: e96690de-caec-4717-9842-33ac3dce4978
+        uid: f5816dd9-79b1-40de-bbaa-9769fa22dbf5
         userCondition: null
       -
         elementCondition: null
@@ -106,7 +123,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: d2b3a2e0-6e72-4aab-9656-4f02992103ae
+            uid: 54809794-06c1-4f98-bf92-286f0fbb597d
             userCondition: null
             warning: null
             width: 100
@@ -123,12 +140,29 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 21afa811-f773-4081-a82d-b4041d5f9676
+            uid: c6e9b915-ad8f-48a4-b7fe-a03bdfe5fb64
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: null
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 6747fcb3-84b2-42f0-af7b-0bac58aeed5c # Link extern
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 35b60bf9-7782-4e38-a050-bfe0782ba5ac
             userCondition: null
             warning: null
             width: 100
         name: Navigare
-        uid: 563b373e-8991-4ba8-89ac-fb78baa0cdf9
+        uid: 01f8fe2c-a3f7-4904-96f8-5d777141c7e9
         userCondition: null
     thumbFieldKey: null
 handle: newsIndex

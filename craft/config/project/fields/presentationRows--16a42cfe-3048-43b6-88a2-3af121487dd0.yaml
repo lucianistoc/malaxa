@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: ambSchedule
+handle: presentationRows
 instructions: null
-name: 'Ambulatoriu – program medici'
+name: Rânduri
 searchable: false
 settings:
   addRowLabel: 'Adaugă rând'
@@ -13,10 +13,10 @@ settings:
           __assoc__:
             -
               - heading
-              - Medic
+              - 'Titlu (ex.: Condiții)'
             -
               - handle
-              - doctor
+              - label
             -
               - type
               - singleline
@@ -29,13 +29,13 @@ settings:
           __assoc__:
             -
               - heading
-              - Program
+              - 'Text (un rând = un paragraf; rândurile care încep cu „– ” devin listă)'
             -
               - handle
-              - program
+              - text
             -
               - type
-              - singleline
+              - multiline
             -
               - width
               - ''

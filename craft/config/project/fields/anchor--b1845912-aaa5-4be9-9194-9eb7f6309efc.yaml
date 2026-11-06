@@ -1,14 +1,14 @@
 columnSuffix: null
-handle: ambIntro
-instructions: null
-name: 'Ambulatoriu – descriere'
+handle: anchor
+instructions: 'Opțional: ID pentru link direct către acest bloc (ex.: ca → pagina#ca).'
+name: Ancoră
 searchable: false
 settings:
   byteLimit: null
   charLimit: null
   code: false
-  initialRows: 3
-  multiline: true
+  initialRows: 4
+  multiline: false
   placeholder: null
   uiMode: normal
 translationKeyFormat: null

@@ -36,7 +36,7 @@ Edit `.env` with your database credentials. The defaults expect a PostgreSQL dat
 `uploads` volume, the global settings and the CKEditor plugin are created automatically:
 
 ```bash
-php craft install --email=you@example.com --username=admin --site-name="Spitalul Clinic Nicolae Malaxa" --site-url='$PRIMARY_SITE_URL' --language=ro
+php craft install --email=you@example.com --username=admin --site-name="Spitalul Clinic „Nicolae Malaxa”" --site-url='$PRIMARY_SITE_URL' --language=ro
 ```
 
 Register the files in `uploads/` as assets, then import the hospital's content from `../site.config.json` and
@@ -64,15 +64,21 @@ first import, Craft is the source of truth for the content. Edit in the control 
 | Section (control panel) | Type | What it holds | URL |
 |---|---|---|---|
 | **Pagina principală** | single | Homepage texts and the "why us" cards | `/` |
-| **Pagini** | structure (2 levels) | Every content page. The structure is the navigation: top-level pages are menu items and their children form the submenu (with optional group labels). Pages are built from content blocks. | `/{slug}` |
-| **Specialități medicale** | structure | Sections and outpatient clinics: description, beds, blocks, equipment, hours, phones, outpatient schedule, gallery, linked price group | `/service/{slug}` |
-| **Medici** | structure | Doctors: specialty, grade, role, photo, bio | `/team/{slug}` |
+| **Pagini** | structure (2 levels) | Every content page. The structure is the navigation: top-level pages are menu items and their children form the submenu (with optional group labels). A child page with a **Link** is only a menu shortcut (e.g. "Misiune, viziune, valori" → `despre-noi/#misiune`). Pages are built from content blocks. | `/{slug}` |
+| **Spital – secții și servicii** | structure | Hospital structures, grouped by **Categorie** (clinical sections, paraclinical services, other): description, beds, blocks, equipment, hours, doctors' schedule, contact lines, gallery, linked price group, matching cabinet | `/service/{slug}` |
+| **Ambulatoriu – cabinete** | structure | Outpatient cabinets, with the same fields as the hospital structures and the matching hospital section. **Informații în curs de actualizare** shows the "being updated" note on cards. | `/ambulatoriu/{slug}` |
+| **Medici** | structure | Doctors: grade, role, hospital section and/or outpatient cabinet, photo, bio. Lists are always alphabetical by surname, then first name. | `/team/{slug}` |
 | **Noutăți** | channel | News and campaigns | `/noutati/{slug}` |
-| **Tarife** | structure | Price groups (service, price) shown on the prices page and on each specialty | – |
+| **Tarife** | structure | Price groups (service, price) shown on the payment page and on each structure or cabinet | – |
 | **Documente de interes public** | structure | The tiles and document lists on the "Interes public" page | – |
-| **Setări site** (global set) | – | Name, logo, hero, stats, contacts, booking/feedback links, visiting hours, transport, social and useful links, brand colors | – |
+| **Setări site** (global set) | – | Name, logo, hero, stats, contacts, booking/feedback links, visiting hours, transport, social and useful links, brand colors, and the **Ultima actualizare** date shown on pages with schedules, prices and contacts | – |
 
-**Content blocks** (`contentBlocks`) are available on pages and specialties:
+Hospital structures and outpatient cabinets share one template (`_units/entry.twig`), so both present the same
+information in the same order: description, medical team, services, equipment, schedule, appointments and contact,
+required documents, prices, gallery, see also.
+
+**Content blocks** (`contentBlocks`) are available on pages, hospital structures and cabinets. Every block has an
+optional **Ancoră** (anchor id) for direct links such as `conducere/#ca`:
 
 - **Text:** rich text
 - **Text cu imagine:** text with an image (alternating sides on full-width pages)
@@ -83,30 +89,39 @@ first import, Craft is the source of truth for the content. Edit in the control 
 - **Carduri:** title, text, icon and link; icon `user` makes a person card
 - **Galerie:** photo gallery
 - **Atenționare:** a highlighted notice
+- **Tip de prezentare:** one way of coming to the hospital (title, icon, rows such as Specificații, Condiții, Documente)
+
+In plain-text fields, a line starting with `– ` becomes a dashed list item, and text in `[[double brackets]]` is shown
+highlighted as a draft the hospital still has to confirm. Set `HIDE_PLACEHOLDERS=1` in the environment to show drafts as
+plain text.
 
 **Page types** with special templates in the "Pagini" section:
 
-- `specialtiesIndex`: the specialties grid
-- `ambulatoryIndex`: outpatient clinics
-- `doctorsIndex`: the doctors directory with filters
+- `hospitalIndex`: the hospital structures, grouped by category (Spital)
+- `ambulatoryIndex`: the outpatient cabinets (Ambulatoriu)
+- `doctorsIndex`: all doctors, alphabetical, with the Toți / Spital / Ambulatoriu filter
 - `newsIndex`: the news list
-- `pricesPage`: searchable price list
+- `pricesPage`: payment information plus the searchable price list
+- `presentationPage`: the "Tipuri de prezentare" page, built from **Tip de prezentare** blocks
 - `publicInterest`: document tiles plus the Law 544 section
 - `contactPage`: contact page
 
-Everything else uses the generic `page` type.
+Everything else uses the generic `page` type. Its **Cuprins** switch adds buttons to the blocks that have an anchor
+(used on Conducere).
 
 ## Code
 
 | Path | What |
 |---|---|
 | `config/project/` | Project config: the content model as YAML. Commit it and deploy it with `php craft up`. |
-| `modules/malaxa/console/controllers/SchemaController.php` | `php craft malaxa/schema`, which created the content model. It isn't needed for a normal install, because project config is applied by `install`/`up`. |
-| `modules/malaxa/console/controllers/ImportController.php` | `php craft malaxa/import`, the one-time content import |
+| `modules/malaxa/console/controllers/SchemaController.php` | `php craft malaxa/schema`, which created the content model (and moved an existing install from the old combined "Specialități medicale" section to Spital / Ambulatoriu). It isn't needed for a normal install, because project config is applied by `install`/`up`. |
+| `modules/malaxa/console/controllers/ImportController.php` | `php craft malaxa/import`, the content import from `../content/*.json` |
+| `modules/malaxa/twig/Extension.php` | Twig filters shared with the static generator's rules: `rich`/`drafts` (draft highlighting), `lines` (dashed lists), `byName` (alphabetical doctors), `fileLabel` (document format and size) |
 | `templates/_layout.twig` | Header, navigation (from the page structure), mobile menu, footer |
 | `templates/_partials/ui.twig` | Shared macros (cards, documents, accordions, content block renderer…) |
 | `templates/_partials/icons.twig` | Inline SVG icon set |
-| `templates/_pages/`, `_specialties/`, `_doctors/`, `_news/` | Entry templates |
+| `templates/_pages/`, `_units/`, `_doctors/`, `_news/` | Entry templates (`_units/` serves both hospital structures and outpatient cabinets) |
+| `config/redirects.php` | Old addresses (e.g. `specialitati-medicale` → `spital`) |
 | `templates/cautare.twig`, `templates/404.twig` | Search results (Craft's search index) and the 404 page |
 
 ## Deploying

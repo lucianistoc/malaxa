@@ -8,7 +8,8 @@ use yii\base\Module as BaseModule;
 
 /**
  * Site module: console commands for building the content model and importing
- * the hospital's content (see console/controllers).
+ * the hospital's content (see console/controllers), plus the Twig filters the
+ * templates use (see twig/Extension.php).
  */
 class Module extends BaseModule
 {
@@ -23,5 +24,7 @@ class Module extends BaseModule
         }
 
         parent::init();
+
+        Craft::$app->getView()->registerTwigExtension(new twig\Extension());
     }
 }

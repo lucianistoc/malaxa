@@ -1,0 +1,25 @@
+columnSuffix: null
+handle: cabinet
+instructions: 'Lăsați gol dacă medicul nu consultă în ambulatoriu.'
+name: 'Cabinet (ambulatoriu)'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: null
+  showSearchInput: true
+  showSiteMenu: false
+  showUnpermittedEntries: false
+  showUnpermittedSections: false
+  sources:
+    - 'section:15278a89-22db-44dc-92ae-56849962082a' # Ambulatoriu – cabinete
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries

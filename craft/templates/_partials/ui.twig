@@ -17,7 +17,7 @@
 
 {% macro docLink(title, url, cls) -%}
   {%- from '_partials/icons.twig' import icon -%}
-  {%- set external = url matches '/^https?:/' -%}
+  {%- set external = url matches '/^https?:/' and not (url starts with siteUrl) -%}
   {%- set isFile = url matches '/\\.(pdf|docx?|xlsx?)$/i' -%}
   <a class="{{ cls ?? 'doc-link' }}" href="{{ _self.href(url) }}"{% if external or isFile %} target="_blank" rel="noopener"{% endif %}>{{ icon(isFile ? 'download' : (external ? 'external' : 'arrow')) }}<span>{{ title }}</span></a>
 {%- endmacro %}
@@ -26,7 +26,7 @@
 {% macro docList(assets, links, cls) -%}
   {%- if assets|length or links|length -%}
   <div class="doc-list{{ cls ? ' ' ~ cls }}">
-    {%- for a in assets %}{{ _self.docLink(a.title, a.url) }}{% endfor -%}
+    {%- for a in assets %}{{ _self.docLink(a|fileLabel, a.url) }}{% endfor -%}
     {%- for l in links ?? [] %}{% if l.url %}{{ _self.docLink(l.title, l.url) }}{% endif %}{% endfor -%}
   </div>
   {%- endif -%}
@@ -37,11 +37,11 @@
   {%- set items = items ?: [] -%}
   <ul class="{{ cls }}">
   {%- for row in items -%}
-    {%- set t = row.text ?? row -%}
+    {%- set t = (row.text ?? row)|replace('/^[–-]\\s+/', '') -%}
     {%- if t|length < 60 and t ends with ':' -%}
       </ul><h4 class="list-sub">{{ t|trim(':') }}</h4><ul class="{{ cls }}">
     {%- elseif t -%}
-      <li>{{ t|ucfirst }}</li>
+      <li>{{ t|ucfirst|rich }}</li>
     {%- endif -%}
   {%- endfor -%}
   </ul>
@@ -65,25 +65,48 @@
   {%- for p in parts|slice(0, 2) %}{{ p|slice(0, 1)|upper }}{% endfor -%}
 {%- endmacro %}
 
+{#- Doctor card. With showSpec, the line under the name says where the doctor works (hospital section and/or
+    outpatient cabinet); data-tags drive the Toți / Spital / Ambulatoriu filter on the doctors page. -#}
 {% macro doctorCard(d, showSpec) -%}
-  {%- set spec = d.specialty.one() -%}
-  {%- set sub = showSpec ?? false ? (spec.title ?? '') : d.grade -%}
+  {%- set sec = d.hospitalUnit.one() -%}
+  {%- set cab = d.cabinet.one() -%}
+  {%- set where = [] -%}
+  {%- if sec %}{% set where = where|merge([sec.title]) %}{% endif -%}
+  {%- if cab %}{% set where = where|merge(['Ambulatoriu – ' ~ cab.title|replace('/^Cabinet\\s+/', '')]) %}{% endif -%}
+  {%- set sub = showSpec ?? false ? where|join(' · ') : d.grade -%}
+  {%- set tags = [sec ? 'spital', cab ? 'ambulatoriu']|filter|join(' ') -%}
   {%- set role = d.role ? '<em class="role">' ~ d.role|e ~ '</em>' : '' -%}
   {%- set photo = d.photo.one() -%}
   {%- if photo -%}
-    <a class="doctor" href="{{ d.url }}"><div class="doctor-photo"><img src="{{ photo.url }}" alt="{{ d.title }}" loading="lazy"></div>{{ role|raw }}<h3>{{ d.title }}</h3><span>{{ sub }}</span></a>
+    <a class="doctor" data-tags="{{ tags }}" href="{{ d.url }}"><div class="doctor-photo"><img src="{{ photo.url }}" alt="{{ d.title }}" loading="lazy"></div>{{ role|raw }}<h3>{{ d.title }}</h3><span>{{ sub }}</span></a>
   {%- else -%}
-    <a class="doctor doctor-card" href="{{ d.url }}"><span class="avatar">{{ _self.initials(d.title) }}</span>{{ role|raw }}<h3>{{ d.title }}</h3><span>{{ sub }}</span></a>
+    <a class="doctor doctor-card" data-tags="{{ tags }}" href="{{ d.url }}"><span class="avatar">{{ _self.initials(d.title) }}</span>{{ role|raw }}<h3>{{ d.title }}</h3><span>{{ sub }}</span></a>
   {%- endif -%}
 {%- endmacro %}
 
-{% macro specCard(s, anchor) -%}
+{#- Card for a hospital structure or an outpatient cabinet. -#}
+{% macro unitCard(u) -%}
   {%- from '_partials/icons.twig' import icon -%}
-  {%- set n = craft.entries.section('doctors').relatedTo({targetElement: s, field: 'specialty'}).count() -%}
-  {%- set foot = n ? n ~ (n == 1 ? ' specialist' : ' specialiști') : s.beds -%}
-  <a class="card" href="{{ s.url }}{{ anchor ?? '' }}">
-    <div class="card-icon">{{ icon(s.iconName.value ?? 'hospital') }}</div><h3>{{ s.title }}</h3><p>{{ s.summary }}</p>
+  {%- set n = craft.entries.section('doctors').relatedTo({targetElement: u, field: u.section.handle == 'hospital' ? 'hospitalUnit' : 'cabinet'}).count() -%}
+  {%- set foot = n ? n ~ (n == 1 ? ' specialist' : ' specialiști') : (u.beds ?: (u.pending ? 'Informații în curs de actualizare' : '')) -%}
+  <a class="card" href="{{ u.url }}">
+    <div class="card-icon">{{ icon(u.iconName.value ?? 'hospital') }}</div><h3>{{ u.title }}</h3><p>{{ u.summary }}</p>
     <div class="card-foot"><span>{{ foot }}</span><span class="more">Detalii →</span></div></a>
+{%- endmacro %}
+
+{#- "Ultima actualizare" line for pages with schedules, prices and contacts (date set in Setări site). -#}
+{% macro updated() -%}
+  {%- if siteSettings.contentUpdated %}<p class="updated">Ultima actualizare: {{ siteSettings.contentUpdated }}</p>{% endif -%}
+{%- endmacro %}
+
+{#- Buttons to the blocks of a page that have an anchor (e.g. Conducere: CA, CD, CE). -#}
+{% macro toc(blocks) -%}
+  {%- set items = blocks|filter(b => b.anchor and b.heading) -%}
+  {%- if items|length -%}
+  <section class="section-sm"><div class="container center">
+    {%- for b in items %}<a class="btn btn-sm btn-outline" style="color:var(--primary)" href="#{{ b.anchor }}">{{ b.heading|replace('/\\s*\\(.*\\)$/', '') }}</a> {% endfor -%}
+  </div></section>
+  {%- endif -%}
 {%- endmacro %}
 
 {% macro postCard(n) -%}
@@ -111,7 +134,7 @@
     {%- else -%}
     <{{ tag }} class="card{{ not c.text ? ' center-card' }}"{% if c.url %} href="{{ _self.href(c.url) }}"{% if c.url matches '/^https?:/' %} target="_blank" rel="noopener"{% endif %}{% endif %}>
       <div class="card-icon">{{ icon(c.icon ?: 'hospital') }}</div><h3>{{ c.title }}</h3>
-      {%- if c.text %}<p>{{ c.text|nl2br }}</p>{% endif -%}
+      {%- if c.text %}<p>{{ c.text|rich|nl2br }}</p>{% endif -%}
       {%- if c.url %}<span class="read-more">{{ c.url matches '/^https?:/' ? 'Site oficial' : 'Află mai multe' }} →</span>{% endif -%}
     </{{ tag }}>
     {%- endif -%}
@@ -125,45 +148,60 @@
   {%- endif -%}
 {%- endmacro %}
 
-{#- Render a contentBlocks (Matrix) field. -#}
-{% macro blocks(blocks) -%}
+{#- Render a contentBlocks (Matrix) field. With sub, block headings are one level lower (inside unit pages).
+    List and document headings are subheadings (h3) once the page already has a heading (seen), so levels are never skipped. -#}
+{% macro blocks(blocks, sub, seen) -%}
+  {%- set h2 = sub ?? false ? 'h3' : 'h2' -%}
+  {%- set seen = (sub ?? false) or (seen ?? false) -%}
   {%- for b in blocks -%}
+    {%- set h3 = seen ? 'h3' : h2 -%}
     {%- set h = b.heading ?? '' -%}
+    {%- set id = b.anchor ? ' id="' ~ b.anchor|e('html_attr') ~ '"' : '' -%}
+    {%- if id and not h %}<div{{ id|raw }}></div>{% set id = '' %}{% endif -%}
     {%- switch b.type.handle -%}
       {%- case 'blockText' -%}
-        {% if h %}<h2>{{ h }}</h2>{% endif %}{{ b.body|replace('{siteUrl}', siteUrl) }}
+        {% if h %}<{{ h2 }}{{ id|raw }}>{{ h }}</{{ h2 }}>{% endif %}{{ b.body|replace('{siteUrl}', siteUrl)|drafts }}
       {%- case 'blockMedia' -%}
         {%- set img = b.image.one() -%}
         <div class="split block-split">
-          <div class="prose">{% if h %}<h2>{{ h }}</h2>{% endif %}{{ b.body }}</div>
+          <div class="prose">{% if h %}<{{ h2 }}{{ id|raw }}>{{ h }}</{{ h2 }}>{% endif %}{{ b.body|replace('{siteUrl}', siteUrl)|drafts }}</div>
           {% if img %}<div class="media"><img src="{{ img.url }}" alt="{{ img.alt ?? h }}" style="object-fit:contain;background:#fff"></div>{% endif %}
         </div>
       {%- case 'blockList' -%}
         {%- set items = b.listItems ?: [] -%}
         {%- set avg = items|reduce((c, i) => c + (i.text|length), 0) / max(items|length, 1) -%}
-        {% if h %}<h3>{{ h }}</h3>{% endif %}{{ _self.list(items, items|length > 8 and avg < 70 ? 'list-check cols' : 'list-check') }}
+        {% if h %}<{{ h3 }}{{ id|raw }}>{{ h }}</{{ h3 }}>{% endif %}{{ _self.list(items, items|length > 8 and avg < 70 ? 'list-check cols' : 'list-check') }}
       {%- case 'blockTable' -%}
         {%- set heads = b.tableHeadings|split('|')|map(x => x|trim) -%}
         {%- set used = heads|filter(x => x)|length ?: 3 -%}
-        {% if h %}<h2>{{ h }}</h2>{% endif %}
-        <div class="table-wrap"><table><thead><tr>{% for x in heads|slice(0, used) %}<th{% if not loop.first %} style="text-align:right"{% endif %}>{{ x }}</th>{% endfor %}</tr></thead><tbody>
+        {#- Numbers (beds, posts, prices, years) are right-aligned; text columns stay left. -#}
+        {%- set num = '/^[\\d\\s.,+%–-]+(lei)?$/u' -%}
+        {% if h %}<{{ h2 }}{{ id|raw }}>{{ h }}</{{ h2 }}>{% endif %}
+        <div class="table-wrap"><table><thead><tr>
+          {%- for x in heads|slice(0, used) %}{% set col = loop.index0 %}<th{% if b.tableRows|filter(r => [r.c1, r.c2, r.c3][col] matches num)|length == b.tableRows|length and b.tableRows|length %} style="text-align:right"{% endif %}>{{ x }}</th>{% endfor -%}
+        </tr></thead><tbody>
         {%- for r in b.tableRows -%}
           {%- set cells = [r.c1, r.c2, r.c3]|slice(0, used) -%}
-          <tr{% if r.c1 == 'TOTAL' %} class="total"{% endif %}>{% for c in cells %}{% if loop.first %}<td>{{ c }}</td>{% elseif heads[1] == 'Program' %}<td>{{ c }}{% if r.c3 %}<br>{{ r.c3 }}{% endif %}</td>{% else %}<td class="price">{{ c }}</td>{% endif %}{% endfor %}</tr>
+          <tr{% if r.c1 == 'TOTAL' %} class="total"{% endif %}>{% for c in cells %}{% if heads[1] == 'Program' and loop.index == 2 %}<td>{{ c }}{% if r.c3 %}<br>{{ r.c3 }}{% endif %}</td>{% elseif loop.first and used > 1 and not (c matches num) %}<td><strong>{{ c|rich }}</strong></td>{% elseif c matches num %}<td class="price">{{ c }}</td>{% else %}<td>{{ c|rich }}</td>{% endif %}{% endfor %}</tr>
         {%- endfor -%}
         </tbody></table></div>
       {%- case 'blockAccordion' -%}
-        {% if h %}<h2 class="h2">{{ h }}</h2>{% endif %}
+        {% if h %}<{{ h2 }} class="h2"{{ id|raw }}>{{ h }}</{{ h2 }}>{% endif %}
         {{ _self.accordion(b.accordionItems|map(i => {q: i.question, a: i.answer matches '/\\n/' ? _self.list(i.answer|split("\n")) : '<p>' ~ i.answer|e ~ '</p>'}), b.accordionItems|length < 10 and h) }}
       {%- case 'blockDocuments' -%}
-        {% if h %}<h3>{{ h }}</h3>{% endif %}{{ _self.docList(b.documents.all(), b.docLinks, b.documents.count() > 15 ? 'scroll') }}
+        {% if h %}<{{ h3 }}{{ id|raw }}>{{ h }}</{{ h3 }}>{% endif %}{{ _self.docList(b.documents.all(), b.docLinks, b.documents.count() > 15 ? 'scroll') }}
       {%- case 'blockCards' -%}
-        <div class="block-cards">{% if h %}<h2>{{ h }}</h2>{% endif %}{{ _self.cards(b.cardItems) }}</div>
+        <div class="block-cards">{% if h %}<{{ h2 }}{{ id|raw }}>{{ h }}</{{ h2 }}>{% endif %}{{ _self.cards(b.cardItems) }}</div>
       {%- case 'blockGallery' -%}
-        {% if h %}<h2>{{ h }}</h2>{% endif %}{{ _self.gallery(b.gallery.all()) }}
+        {% if h %}<{{ h2 }}{{ id|raw }}>{{ h }}</{{ h2 }}>{% endif %}{{ _self.gallery(b.gallery.all()) }}
       {%- case 'blockNotice' -%}
-        <p class="notice">{{ b.note }}</p>
+        <p class="notice"{{ id|raw }}>{{ b.note|rich }}</p>
+      {%- case 'blockPresentation' -%}
+        {%- from '_partials/icons.twig' import icon -%}
+        <{{ h2 }}{{ id|raw }}>{{ icon(b.iconName.value ?? 'clipboard') }} {{ h }}</{{ h2 }}>
+        <div class="pres">{% for r in b.presentationRows %}<div class="pres-row"><h3>{{ r.label }}</h3><div>{{ r.text|lines }}</div></div>{% endfor %}</div>
     {%- endswitch -%}
+    {%- if h %}{% set seen = true %}{% endif -%}
   {%- endfor -%}
 {%- endmacro %}
 
@@ -171,7 +209,7 @@
   {%- from '_partials/icons.twig' import icon -%}
   {%- set s = siteSettings -%}
   <section class="page-hero">
-    <span class="hero-side">{{ s.legalName }}</span>
+    <span class="hero-side" aria-hidden="true">{{ s.legalName }}</span>
     <div class="hero-social socials">{{ _self.socials() }}</div>
     <div class="container"><h1>{{ title }}</h1><div class="breadcrumbs"><a href="{{ siteUrl }}">Acasă</a>
       {%- for c in crumbs ?? [] %} / {% if c.url ?? false %}<a href="{{ c.url }}">{{ c.title }}</a>{% else %}{{ c.title }}{% endif %}{% endfor -%}
@@ -209,20 +247,21 @@
   {%- set media = 0 -%}
   {%- for b in blocks -%}
     {%- set h = b.heading ?? '' -%}
+    {%- set id = b.anchor ? ' id="' ~ b.anchor|e('html_attr') ~ '"' : '' -%}
     {%- if b.type.handle == 'blockMedia' -%}
       {%- set img = b.image.one() -%}
       {%- set media = media + 1 -%}
-      <section class="section{{ media is even ? ' bg-soft' }}"><div class="container split">
-        {%- set text -%}<div class="prose">{% if h %}<h2>{{ h }}</h2>{% endif %}{{ b.body }}</div>{%- endset -%}
+      <section class="section{{ media is even ? ' bg-soft' }}"{{ id|raw }}><div class="container split">
+        {%- set text -%}<div class="prose">{% if h %}<h2>{{ h }}</h2>{% endif %}{{ b.body|replace('{siteUrl}', siteUrl)|drafts }}</div>{%- endset -%}
         {%- set pic -%}{% if img %}<div class="media"><img src="{{ img.url }}" alt="{{ img.alt ?? h }}"></div>{% endif %}{%- endset -%}
         {{ (media is odd ? pic ~ text : text ~ pic)|raw }}
       </div></section>
     {%- elseif b.type.handle == 'blockCards' -%}
-      <section class="section{{ loop.index is even and media == 0 ? ' bg-soft' }}"><div class="container">
+      <section class="section{{ loop.index is even and media == 0 ? ' bg-soft' }}"{{ id|raw }}><div class="container">
         {% if h %}<div class="section-head"><h2>{{ h }}</h2></div>{% endif %}{{ _self.cards(b.cardItems) }}
       </div></section>
     {%- else -%}
-      <section class="section-sm"><div class="container prose">{{ _self.blocks([b]) }}</div></section>
+      <section class="section-sm"><div class="container prose">{{ _self.blocks([b], false, loop.index > 1) }}</div></section>
     {%- endif -%}
   {%- endfor -%}
 {%- endmacro %}

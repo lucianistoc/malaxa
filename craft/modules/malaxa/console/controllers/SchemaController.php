@@ -32,7 +32,7 @@ use yii\console\ExitCode;
  *
  *     php craft malaxa/schema
  *
- * Safe to re-run: anything that already exists is left alone. The result is
+ * Safe to re-run: existing fields and sections are kept; entry type layouts are refreshed. The result is
  * written to config/project/*.yaml, which is what gets committed and deployed.
  */
 class SchemaController extends Controller
@@ -55,52 +55,71 @@ class SchemaController extends Controller
             'viewMode' => Matrix::VIEW_MODE_BLOCKS,
             'showCardsInGrid' => false,
         ]);
+        /** @var Matrix $blocks */
+        $blocks = $this->fields['contentBlocks'];
+        if (array_map(fn($t) => $t->handle, $blocks->getEntryTypes()) !== array_map(fn($t) => $t->handle, $blockTypes)) {
+            $blocks->setEntryTypes($blockTypes);
+            Craft::$app->getFields()->saveField($blocks);
+            $this->stdout("  field contentBlocks: block types updated\n");
+        }
 
-        // Sections that other fields relate to must exist first.
-        $specialties = $this->section('specialties', 'Specialități medicale', Section::TYPE_STRUCTURE, 'service/{slug}', '_specialties/entry', [
-            $this->entryType('specialty', 'Specialitate', [
-                'Conținut' => ['iconName', 'summary', 'beds', 'body', 'contentBlocks', 'equipment', 'gallery'],
-                'Program și contact' => ['hours', 'phones', 'relatedLinks'],
-                'Ambulatoriu' => ['hasAmbulatory', 'ambulatoryOnly', 'ambIntro', 'ambProgram', 'ambPhones', 'ambSchedule', 'ambServices'],
-                'Tarife' => [],
-            ]),
+        // Sections that other fields relate to must exist first. The hospital (Spital) and the outpatient
+        // clinic (Ambulatoriu) are separate sections that share one template, so both show the same
+        // information in the same order.
+        $unitTabs = fn(bool $hospital) => [
+            'Conținut' => array_merge(['iconName'], $hospital ? ['unitCategory'] : [], ['summary', 'beds', 'body', 'contentBlocks', 'equipment', 'gallery', 'pending']),
+            'Program și contact' => ['hours', 'schedule', 'phones'],
+        ];
+        $hospital = $this->section('hospital', 'Spital – secții și servicii', Section::TYPE_STRUCTURE, 'service/{slug}', '_units/entry', [
+            $this->entryType('hospitalUnit', 'Structură spital', $unitTabs(true)),
+        ]);
+        $ambulatory = $this->section('ambulatory', 'Ambulatoriu – cabinete', Section::TYPE_STRUCTURE, 'ambulatoriu/{slug}', '_units/entry', [
+            $this->entryType('cabinet', 'Cabinet ambulatoriu', $unitTabs(false)),
         ]);
         $priceGroups = $this->section('priceGroups', 'Tarife', Section::TYPE_STRUCTURE, null, null, [
             $this->entryType('priceGroup', 'Grupă de tarife', ['Conținut' => ['priceItems']]),
         ]);
         $this->field(Entries::class, 'priceGroup', 'Grupă de tarife', [
             'sources' => ['section:' . $priceGroups->uid], 'maxRelations' => 1,
-            'instructions' => 'Tarifele afișate pe pagina specialității.',
+            'instructions' => 'Tarifele afișate pe pagina structurii sau a cabinetului.',
         ]);
-        $this->field(Entries::class, 'specialty', 'Specialitate', [
-            'sources' => ['section:' . $specialties->uid], 'maxRelations' => 1,
+        $this->field(Entries::class, 'relatedUnit', 'Structură asociată', [
+            'sources' => ['section:' . $hospital->uid, 'section:' . $ambulatory->uid], 'maxRelations' => 1,
+            'instructions' => 'Secția din spital care corespunde cabinetului (sau invers); apare la „Vezi și”.',
         ]);
-        // Now that priceGroup exists, add it to the specialty layout's "Tarife" tab.
-        $this->entryType('specialty', 'Specialitate', [
-            'Conținut' => ['iconName', 'summary', 'beds', 'body', 'contentBlocks', 'equipment', 'gallery'],
-            'Program și contact' => ['hours', 'phones', 'relatedLinks'],
-            'Ambulatoriu' => ['hasAmbulatory', 'ambulatoryOnly', 'ambIntro', 'ambProgram', 'ambPhones', 'ambSchedule', 'ambServices'],
-            'Tarife' => ['priceGroup'],
-        ], true, null, true);
+        $this->field(Entries::class, 'hospitalUnit', 'Secție / compartiment (spital)', [
+            'sources' => ['section:' . $hospital->uid], 'maxRelations' => 1,
+            'instructions' => 'Lăsați gol dacă medicul lucrează doar în ambulatoriu.',
+        ]);
+        $this->field(Entries::class, 'cabinet', 'Cabinet (ambulatoriu)', [
+            'sources' => ['section:' . $ambulatory->uid], 'maxRelations' => 1,
+            'instructions' => 'Lăsați gol dacă medicul nu consultă în ambulatoriu.',
+        ]);
+        // Now that the relation fields exist, add the "Legături" and "Tarife" tabs.
+        foreach ([['hospitalUnit', 'Structură spital', true], ['cabinet', 'Cabinet ambulatoriu', false]] as [$h, $n, $isHosp]) {
+            $this->entryType($h, $n, $unitTabs($isHosp) + ['Legături' => ['relatedUnit', 'relatedLinks'], 'Tarife' => ['priceGroup']], true, null, true);
+        }
+        $this->pruneOldModel();
 
         $this->section('doctors', 'Medici', Section::TYPE_STRUCTURE, 'team/{slug}', '_doctors/entry', [
-            $this->entryType('doctor', 'Medic', ['Conținut' => ['specialty', 'grade', 'role', 'photo', 'bio']]),
+            $this->entryType('doctor', 'Medic', ['Conținut' => ['grade', 'role', 'hospitalUnit', 'cabinet', 'photo', 'bio']], true, null, true),
         ]);
         $this->section('news', 'Noutăți', Section::TYPE_CHANNEL, 'noutati/{slug}', '_news/entry', [
             $this->entryType('newsItem', 'Articol', ['Conținut' => ['category', 'showDate', 'excerpt', 'image', 'body', 'attachment', 'linkUrl']]),
         ]);
         $pages = null;
-        $pageLayout = ['Conținut' => ['heading', 'body', 'contentBlocks'], 'Navigare' => ['hideFromNav', 'navGroup']];
-        $pageTypes = [
-            $this->entryType('page', 'Pagină', $pageLayout),
-            $this->entryType('specialtiesIndex', 'Listă specialități', $pageLayout),
-            $this->entryType('ambulatoryIndex', 'Listă ambulatoriu', $pageLayout),
-            $this->entryType('doctorsIndex', 'Listă medici', $pageLayout),
-            $this->entryType('newsIndex', 'Listă noutăți', $pageLayout),
-            $this->entryType('pricesPage', 'Pagină tarife', $pageLayout),
-            $this->entryType('publicInterest', 'Pagină interes public', $pageLayout),
-            $this->entryType('contactPage', 'Pagină contact', $pageLayout),
-        ];
+        $pageLayout = ['Conținut' => ['heading', 'body', 'contentBlocks', 'showToc'], 'Navigare' => ['hideFromNav', 'navGroup', 'linkUrl']];
+        $pageTypes = array_map(fn($t) => $this->entryType($t[0], $t[1], $pageLayout, true, null, true), [
+            ['page', 'Pagină'],
+            ['hospitalIndex', 'Listă spital'],
+            ['ambulatoryIndex', 'Listă ambulatoriu'],
+            ['doctorsIndex', 'Listă medici'],
+            ['newsIndex', 'Listă noutăți'],
+            ['pricesPage', 'Pagină plata serviciilor / tarife'],
+            ['presentationPage', 'Pagină tipuri de prezentare'],
+            ['publicInterest', 'Pagină interes public'],
+            ['contactPage', 'Pagină contact'],
+        ]);
         $pages = $this->section('pages', 'Pagini', Section::TYPE_STRUCTURE, '{slug}', '_pages/entry', $pageTypes);
         $this->field(Entries::class, 'linkedPage', 'Pagină asociată', [
             'sources' => ['section:' . $pages->uid], 'maxRelations' => 1,
@@ -118,6 +137,7 @@ class SchemaController extends Controller
             'Hero' => ['heroTitle', 'heroSubtitle', 'heroImage', 'stats'],
             'Contact' => ['phone', 'phoneAppointments', 'fax', 'phoneHr', 'email', 'emailOffice', 'emailIntegrity', 'spokesperson', 'address', 'addressShort', 'mapQuery', 'bookingUrl', 'feedbackUrl', 'audiences', 'transport'],
             'Vizită' => ['visiting', 'visitingPdf'],
+            'Actualizare' => ['contentUpdated'],
             'Linkuri' => ['socialLinks', 'externalLinks'],
             'Culori' => ['colorPrimary', 'colorPrimaryDark', 'colorAccent', 'colorAccentDark', 'colorHighlight', 'colorSoft'],
         ]);
@@ -179,18 +199,22 @@ class SchemaController extends Controller
         $table('docLinks', 'Linkuri', [['title', 'Titlu'], ['url', 'URL']]);
         $this->fields['relatedLinks'] = $this->fields['docLinks'];
 
-        // Specialty
+        // Hospital structures and outpatient cabinets
+        $this->field(Dropdown::class, 'unitCategory', 'Categorie', [
+            'options' => [
+                ['label' => 'Secții și compartimente clinice', 'value' => 'clinic', 'default' => true],
+                ['label' => 'Laboratoare și servicii paraclinice', 'value' => 'paraclinic'],
+                ['label' => 'Alte structuri', 'value' => 'other'],
+            ],
+        ]);
         $text('beds', 'Paturi');
         $list('hours', 'Program');
-        $list('phones', 'Telefoane');
+        $table('schedule', 'Program medici', [['doctor', 'Medic'], ['program', 'Program']]);
+        $list('phones', 'Programări și contact');
         $list('equipment', 'Dotări');
-        $switch('hasAmbulatory', 'Are cabinet în ambulatoriu');
-        $switch('ambulatoryOnly', 'Doar ambulatoriu', ['instructions' => 'Ascunde din lista secțiilor (apare doar la Ambulatoriu).']);
-        $multi('ambIntro', 'Ambulatoriu – descriere');
-        $list('ambProgram', 'Ambulatoriu – program');
-        $list('ambPhones', 'Ambulatoriu – telefoane');
-        $table('ambSchedule', 'Ambulatoriu – program medici', [['doctor', 'Medic'], ['program', 'Program']]);
-        $list('ambServices', 'Ambulatoriu – servicii');
+        $switch('pending', 'Informații în curs de actualizare', ['instructions' => 'Afișează mesajul că programul și medicii sunt în curs de actualizare.']);
+        $text('anchor', 'Ancoră', ['instructions' => 'Opțional: ID pentru link direct către acest bloc (ex.: ca → pagina#ca).']);
+        $table('presentationRows', 'Rânduri', [['label', 'Titlu (ex.: Condiții)'], ['text', 'Text (un rând = un paragraf; rândurile care încep cu „– ” devin listă)', 'multiline']]);
 
         // Doctor
         $text('grade', 'Grad profesional');
@@ -208,6 +232,7 @@ class SchemaController extends Controller
 
         // Pages
         $switch('hideFromNav', 'Ascunde din meniu');
+        $switch('showToc', 'Cuprins', ['instructions' => 'Afișează sus butoane către blocurile care au ancoră.']);
         $text('navGroup', 'Grup în meniu', ['instructions' => 'Opțional: titlul grupului din submeniu (ex.: Pentru pacienți).']);
 
         // Globals
@@ -221,6 +246,7 @@ class SchemaController extends Controller
             $text($h, $n);
         }
         $multi('heroSubtitle', 'Hero – subtitlu');
+        $text('contentUpdated', 'Ultima actualizare', ['instructions' => 'Data afișată pe paginile cu program, tarife și contact (ZZ.LL.AAAA).']);
         $asset('heroImage', 'Hero – imagine', true, ['image']);
         $asset('logoIcon', 'Logo – emblemă', true, ['image']);
         $asset('badgeImage', 'Siglă acreditare', true, ['image']);
@@ -242,17 +268,42 @@ class SchemaController extends Controller
     /** @return EntryType[] */
     private function createBlockTypes(): array
     {
-        return [
-            $this->entryType('blockText', 'Text', ['Conținut' => ['heading', 'body']], false),
-            $this->entryType('blockMedia', 'Text cu imagine', ['Conținut' => ['heading', 'body', 'image']], false),
-            $this->entryType('blockList', 'Listă', ['Conținut' => ['heading', 'listItems']], false),
-            $this->entryType('blockTable', 'Tabel', ['Conținut' => ['heading', 'tableHeadings', 'tableRows']], false),
-            $this->entryType('blockAccordion', 'Acordeon', ['Conținut' => ['heading', 'accordionItems']], false),
-            $this->entryType('blockDocuments', 'Documente', ['Conținut' => ['heading', 'documents', 'docLinks']], false),
-            $this->entryType('blockCards', 'Carduri', ['Conținut' => ['heading', 'cardItems']], false),
-            $this->entryType('blockGallery', 'Galerie', ['Conținut' => ['heading', 'gallery']], false),
-            $this->entryType('blockNotice', 'Atenționare', ['Conținut' => ['note']], false),
+        $types = [
+            ['blockText', 'Text', ['heading', 'body']],
+            ['blockMedia', 'Text cu imagine', ['heading', 'body', 'image']],
+            ['blockList', 'Listă', ['heading', 'listItems']],
+            ['blockTable', 'Tabel', ['heading', 'tableHeadings', 'tableRows']],
+            ['blockAccordion', 'Acordeon', ['heading', 'accordionItems']],
+            ['blockDocuments', 'Documente', ['heading', 'documents', 'docLinks']],
+            ['blockCards', 'Carduri', ['heading', 'cardItems']],
+            ['blockGallery', 'Galerie', ['heading', 'gallery']],
+            ['blockNotice', 'Atenționare', ['note']],
+            ['blockPresentation', 'Tip de prezentare', ['heading', 'iconName', 'presentationRows']],
         ];
+        return array_map(fn($t) => $this->entryType($t[0], $t[1], ['Conținut' => array_merge($t[2], ['anchor'])], false, null, true), $types);
+    }
+
+    /** Removes the old combined "Specialități medicale" model (replaced by the hospital and ambulatory sections). */
+    private function pruneOldModel(): void
+    {
+        $entries = Craft::$app->getEntries();
+        if ($old = $entries->getSectionByHandle('specialties')) {
+            $entries->deleteSection($old);
+            $this->stdout("  removed section specialties\n");
+        }
+        foreach (['specialty', 'specialtiesIndex'] as $h) {
+            if ($et = $entries->getEntryTypeByHandle($h)) {
+                $entries->deleteEntryType($et);
+                $this->stdout("  removed entry type $h\n");
+            }
+        }
+        $fields = Craft::$app->getFields();
+        foreach (['specialty', 'hasAmbulatory', 'ambulatoryOnly', 'ambIntro', 'ambProgram', 'ambPhones', 'ambSchedule', 'ambServices'] as $h) {
+            if ($f = $fields->getFieldByHandle($h)) {
+                $fields->deleteField($f);
+                $this->stdout("  removed field $h\n");
+            }
+        }
     }
 
     // ------------------------------------------------------------------ helpers
@@ -318,6 +369,15 @@ class SchemaController extends Controller
     {
         $entries = Craft::$app->getEntries();
         if ($s = $entries->getSectionByHandle($handle)) {
+            $have = array_map(fn($t) => $t->handle, $s->getEntryTypes());
+            $want = array_map(fn($t) => $t->handle, $types);
+            if ($have !== $want) {
+                $s->setEntryTypes($types);
+                if (!$entries->saveSection($s)) {
+                    throw new \RuntimeException("Section $handle: " . json_encode($s->getErrors()));
+                }
+                $this->stdout("  section $handle: entry types updated\n");
+            }
             return $s;
         }
         $siteSettings = [];
@@ -353,10 +413,7 @@ class SchemaController extends Controller
     private function globalSet(string $handle, string $name, array $tabs): void
     {
         $globals = Craft::$app->getGlobals();
-        if ($globals->getSetByHandle($handle)) {
-            return;
-        }
-        $set = new GlobalSet(['name' => $name, 'handle' => $handle]);
+        $set = $globals->getSetByHandle($handle) ?? new GlobalSet(['name' => $name, 'handle' => $handle]);
         $layout = new FieldLayout(['type' => GlobalSet::class]);
         $tabModels = [];
         foreach ($tabs as $tabName => $handles) {

@@ -2,11 +2,11 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: 59257e2a-9edc-49dc-b014-de2275ee311e # Specialitate
-handle: specialties
+    uid: be633c25-04fb-4f52-9c63-a4551021e2b9 # Structură spital
+handle: hospital
 maxAuthors: 1
 minAuthors: 1
-name: 'Specialități medicale'
+name: 'Spital – secții și servicii'
 previewTargets:
   -
     label: 'Primary entry page'
@@ -16,9 +16,9 @@ siteSettings:
   41b27c9e-7368-451c-a99e-d03a10527f71: # Spitalul Clinic „Nicolae Malaxa”
     enabledByDefault: true
     hasUrls: true
-    template: _specialties/entry
+    template: _units/entry
     uriFormat: 'service/{slug}'
 structure:
   maxLevels: 1
-  uid: 76a58c47-62c5-44bf-b5e1-bd89eedb3029
+  uid: a895b411-b377-4f97-aab0-f4904a9f7925
 type: structure

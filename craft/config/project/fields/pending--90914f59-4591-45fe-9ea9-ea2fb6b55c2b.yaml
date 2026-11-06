@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: hasAmbulatory
-instructions: null
-name: 'Are cabinet în ambulatoriu'
+handle: pending
+instructions: 'Afișează mesajul că programul și medicii sunt în curs de actualizare.'
+name: 'Informații în curs de actualizare'
 searchable: false
 settings:
   default: false

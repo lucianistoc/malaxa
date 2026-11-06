@@ -3,6 +3,8 @@
 {% import '_partials/ui.twig' as ui %}
 
 {% block content %}
+{#- A page with a "Link" (e.g. "Misiune, viziune, valori" → despre-noi/#misiune) is only a menu shortcut. -#}
+{% if entry.linkUrl %}{% redirect ui.href(entry.linkUrl)|trim %}{% endif %}
 {%- set s = siteSettings -%}
 {%- set crumbs = entry.parent ? [{title: entry.parent.title, url: entry.parent.url}, {title: entry.title}] : [{title: entry.title}] -%}
 {#- A page with sub-pages uses its "heading" as its own nav label (e.g. Despre noi → Scurt istoric); show it as the banner title. -#}
@@ -10,54 +12,52 @@
 {{ ui.pageHero(isHub ? entry.heading : entry.title, crumbs) }}
 
 {%- set intro -%}
-  {% if entry.heading and not isHub %}<h2>{{ entry.heading }}</h2>{% endif %}{{ entry.body }}
+  {% if entry.heading and not isHub %}<h2>{{ entry.heading }}</h2>{% endif %}{{ entry.body|replace('{siteUrl}', siteUrl)|drafts }}
 {%- endset -%}
 
 {% switch entry.type.handle %}
 
-{# ------------------------------------------------------------ specialties index #}
-{% case 'specialtiesIndex' %}
+{# ------------------------------------------------------------ hospital index (Spital) #}
+{% case 'hospitalIndex' %}
+{%- set units = craft.entries.section('hospital').all() -%}
 <section class="section bg-soft"><div class="container">
-  {% if intro|trim %}<div class="prose" style="margin-bottom:30px">{{ intro }}</div>{% endif %}
-  <div class="grid g4">{% for sp in craft.entries.section('specialties').ambulatoryOnly('not 1').all() %}{{ ui.specCard(sp) }}{% endfor %}</div>
+  <div class="section-head">{% if entry.heading %}<h2>{{ entry.heading }}</h2>{% endif %}{{ entry.body|replace('{siteUrl}', siteUrl)|drafts }}</div>
+  {%- for opt in craft.app.fields.getFieldByHandle('unitCategory').options -%}
+    {%- set group = units|filter(u => u.unitCategory.value == opt.value) -%}
+    {%- if group|length -%}
+    <h2 class="h2" style="margin-top:50px">{{ opt.label }}</h2><div class="grid g4">{% for u in group %}{{ ui.unitCard(u) }}{% endfor %}</div>
+    {%- endif -%}
+  {%- endfor -%}
   <div class="center mt-40">
-    {% for child in entry.children.all() %}<a class="btn btn-primary" href="{{ child.url }}">{{ child.title }}</a> {% endfor %}
-    <a class="btn btn-outline" style="color:var(--primary)" href="{{ ui.pageUrl('ambulatoriu') }}">Ambulatoriu de specialitate</a>
+    <a class="btn btn-primary" href="{{ ui.pageUrl('tipuri-de-prezentare') }}">Tipuri de prezentare</a>
+    {% for child in entry.children.all() %}<a class="btn btn-outline" style="color:var(--primary)" href="{{ child.url }}">{{ child.title }}</a> {% endfor %}
+    <a class="btn btn-outline" style="color:var(--primary)" href="{{ ui.pageUrl('ambulatoriu') }}">Ambulatoriu</a>
   </div>
   {{ ui.blocks(entry.contentBlocks.all()) }}
 </div></section>
 
-{# ------------------------------------------------------------ outpatient index #}
+{# ------------------------------------------------------------ outpatient index (Ambulatoriu) #}
 {% case 'ambulatoryIndex' %}
 <section class="section"><div class="container">
-  <div class="section-head">{% if entry.heading %}<h2>{{ entry.heading }}</h2>{% endif %}{{ entry.body }}</div>
-  <div class="grid g2" style="max-width:860px;margin:0 auto 50px">
-    <div class="info-box" style="margin:0"><span class="ring">{{ icon('phone') }}</span><div><small>Centrală</small><strong>{{ s.phone }}</strong></div></div>
+  <div class="section-head">{% if entry.heading %}<h2>{{ entry.heading }}</h2>{% endif %}{{ entry.body|replace('{siteUrl}', siteUrl)|drafts }}</div>
+  <div class="grid g2" style="max-width:860px;margin:0 auto 30px">
+    <div class="info-box" style="margin:0"><span class="ring">{{ icon('phone') }}</span><div><small>Programări – centrală</small><strong>{{ s.phone }}</strong></div></div>
     {% if s.bookingUrl %}<a class="info-box" style="margin:0" href="{{ s.bookingUrl }}" target="_blank" rel="noopener"><span class="ring">{{ icon('calendar') }}</span><div><small>Programări online</small><strong>{{ s.bookingUrl|replace('/^https?:\\/\\/([^\\/]+).*$/', '$1') }}</strong></div></a>{% endif %}
   </div>
-  <div class="grid g3">
-  {%- for sp in craft.entries.section('specialties').hasAmbulatory(true).all() -%}
-    <a class="card" href="{{ sp.url }}#ambulatoriu"><div class="card-icon">{{ icon(sp.iconName.value) }}</div><h3>Cabinet {{ sp.title }}</h3>
-      <ul class="cb-list dark">{% for x in sp.ambProgram %}<li>{{ icon('clock') }}<span>{{ x.text }}</span></li>{% endfor %}{% for x in sp.ambPhones|slice(0, 2) %}<li>{{ icon('phone') }}<span>{{ x.text }}</span></li>{% endfor %}</ul>
-      <span class="read-more">Medici și program →</span></a>
-  {%- endfor -%}
-  </div>
+  <div class="center" style="margin-bottom:40px"><a class="btn btn-primary" href="{{ ui.pageUrl('tipuri-de-prezentare') }}#ambulatoriu">Cum vă prezentați: documente, condiții, excepții</a></div>
+  <div class="grid g4">{% for c in craft.entries.section('ambulatory').all() %}{{ ui.unitCard(c) }}{% endfor %}</div>
   {{ ui.blocks(entry.contentBlocks.all()) }}
 </div></section>
 
-{# ------------------------------------------------------------ doctors index #}
+{# ------------------------------------------------------------ doctors index (alphabetical, filter Toți / Spital / Ambulatoriu) #}
 {% case 'doctorsIndex' %}
-{%- set groups = [] -%}
-{%- for sp in craft.entries.section('specialties').all() -%}
-  {%- set ds = craft.entries.section('doctors').relatedTo({targetElement: sp, field: 'specialty'}).all() -%}
-  {%- if ds|length %}{% set groups = groups|merge([{sp: sp, ds: ds}]) %}{% endif -%}
-{%- endfor -%}
+{%- set docs = craft.entries.section('doctors').all()|byName -%}
+{%- set nSec = docs|filter(d => d.hospitalUnit.exists())|length -%}
+{%- set nCab = docs|filter(d => d.cabinet.exists())|length -%}
 <section class="section"><div class="container">
-  {% if intro|trim %}<div class="prose" style="margin-bottom:30px">{{ intro }}</div>{% endif %}
-  <div class="filters" id="teamFilters"><button class="active" data-filter="all">Toți</button>{% for g in groups %}<button data-filter="{{ g.sp.slug }}">{{ g.sp.title }}</button>{% endfor %}</div>
-  {% for g in groups %}
-    <div class="team-group" data-group="{{ g.sp.slug }}"><h2><a href="{{ g.sp.url }}">{{ g.sp.title }}</a></h2><div class="grid g4">{% for d in g.ds %}{{ ui.doctorCard(d) }}{% endfor %}</div></div>
-  {% endfor %}
+  {% if intro|trim %}<div class="section-head">{{ intro }}</div>{% endif %}
+  <div class="filters" id="teamFilters"><button class="active" data-filter="all">Toți ({{ docs|length }})</button><button data-filter="spital">Spital ({{ nSec }})</button><button data-filter="ambulatoriu">Ambulatoriu ({{ nCab }})</button></div>
+  <div class="grid g4" id="teamGrid">{% for d in docs %}{{ ui.doctorCard(d, true) }}{% endfor %}</div>
 </div></section>
 
 {# ------------------------------------------------------------ news index #}
@@ -68,23 +68,37 @@
   {% include '_partials/news-sidebar' %}
 </div></section>
 
-{# ------------------------------------------------------------ prices #}
+{# ------------------------------------------------------------ payment and prices #}
 {% case 'pricesPage' %}
 {%- set groups = craft.entries.section('priceGroups').all() -%}
 <section class="section"><div class="container with-sidebar right">
   <div class="prose">
     {% if entry.heading %}<h2>{{ entry.heading }}</h2>{% endif %}
+    {{ entry.body|replace('{siteUrl}', siteUrl)|drafts }}
     {{ ui.blocks(entry.contentBlocks.all()) }}
-    <div class="muted">{{ entry.body }}</div>
     <div class="info-box"><span class="ring">{{ icon('phone') }}</span><div><small>Informații și programări</small><strong>{{ s.phone }}</strong></div></div>
+    <h2>Lista serviciilor medicale cu plată și tarifele</h2>
     <div class="filter-input"><input type="search" id="priceFilter" placeholder="Caută un serviciu (ex.: hemoleucogramă, CT, ecografie)…" aria-label="Caută în tarife"></div>
     <div id="priceAccordion">{{ ui.accordion(groups|map(g => {
       q: g.title ~ ' (' ~ g.priceItems|length ~ ')',
       a: '<div class="table-wrap"><table><thead><tr><th>Serviciu</th><th style="text-align:right">Tarif</th></tr></thead><tbody>' ~ g.priceItems|map(r => '<tr><td>' ~ r.service|e ~ '</td><td class="price">' ~ r.price|e ~ '</td></tr>')|join ~ '</tbody></table></div>'
     }), false) }}</div>
+    {{ ui.updated() }}
   </div>
   <aside class="sidebar">{{ ui.contactBox() }}</aside>
 </div></section>
+
+{# ------------------------------------------------------------ types of presentation #}
+{% case 'presentationPage' %}
+{%- set types = entry.contentBlocks.type('blockPresentation').all() -%}
+<section class="section-sm"><div class="container">
+  {% if intro|trim %}<div class="section-head">{{ intro }}</div>{% endif %}
+  <div class="grid g4">{% for t in types %}<a class="card center-card" href="#{{ t.anchor }}"><div class="card-icon">{{ icon(t.iconName.value ?? 'clipboard') }}</div><h3>{{ t.heading }}</h3></a>{% endfor %}</div>
+</div></section>
+{% for t in types %}
+<section class="section{{ loop.index is even ? ' bg-soft' }}"><div class="container prose">{{ ui.blocks([t]) }}</div></section>
+{% endfor %}
+{{ ui.wideBlocks(entry.contentBlocks.all()|filter(b => b.type.handle != 'blockPresentation')) }}
 
 {# ------------------------------------------------------------ public interest #}
 {% case 'publicInterest' %}
@@ -125,7 +139,7 @@
 {% case 'contactPage' %}
 {%- set book = s.bookingUrl ?: '#programari' -%}
 <section class="section"><div class="container">
-  <div class="section-head"><h2>{{ s.legalName }}</h2><p>{{ s.address }}</p></div>
+  <div class="section-head"><h2>{{ s.legalName }}</h2><p>{{ s.address }}</p>{{ ui.updated() }}</div>
   <div class="grid g4 contact-cards">
     <div class="card"><div class="card-icon">{{ icon('phone') }}</div><h3>Telefon</h3><p><a href="tel:{{ ui.tel(s.phone) }}">{{ s.phone }}</a>{% if s.fax %}<br>Fax: {{ s.fax }}{% endif %}</p></div>
     <div class="card"><div class="card-icon">{{ icon('calendar') }}</div><h3>Programări</h3><p>{% if s.phoneAppointments %}<a href="tel:{{ ui.tel(s.phoneAppointments) }}">{{ s.phoneAppointments }}</a><br>{% endif %}<a href="{{ book }}" target="_blank" rel="noopener">Programări online</a></p></div>
@@ -139,7 +153,7 @@
     <div class="info-box"><span class="ring">{{ icon('phone') }}</span><div><small>Centrală – apoi tasta secției dorite</small><strong>{{ s.phone }}</strong></div></div>
     {% if s.phoneAppointments %}<div class="info-box"><span class="ring">{{ icon('calendar') }}</span><div><small>Programări</small><strong>{{ s.phoneAppointments }}</strong></div></div>{% endif %}
     <a class="btn btn-primary" href="{{ book }}" target="_blank" rel="noopener">Programări online {{ icon('external') }}</a>
-    {{ ui.blocks(entry.contentBlocks.all()) }}
+    {{ ui.blocks(entry.contentBlocks.all(), false, true) }}
   </div>
   <div class="form-card"><h3>Mass-media</h3><p>Purtător de cuvânt: {{ s.spokesperson }}</p><h3>Integritate</h3><p>Sesizări: <a href="mailto:{{ s.emailIntegrity }}">{{ s.emailIntegrity }}</a></p>
   <h3>Concursuri / Resurse umane</h3><p>{{ s.phoneHr }} (R.U.N.O.S.)</p></div>
@@ -153,12 +167,15 @@
 {% default %}
 {%- set blocks = entry.contentBlocks.all() -%}
 {%- set wide = blocks|filter(b => b.type.handle in ['blockCards', 'blockMedia'])|length > 0 -%}
+{#- Pages whose content goes out of date (schedules, contracts) show the "last updated" date. -#}
+{%- set stamp = entry.slug in ['reguli-si-program-de-vizita', 'contracte-casmb-cnas', 'program-garzi'] ? ui.updated() : '' -%}
+{% if entry.showToc %}{{ ui.toc(blocks) }}{% endif %}
 {% if wide %}
   {% if intro|trim %}<section class="section-sm"><div class="container prose">{{ intro }}</div></section>{% endif %}
   {{ ui.wideBlocks(blocks) }}
 {% else %}
   <section class="section"><div class="container">
-    <div class="with-sidebar right"><div class="prose">{{ intro }}{{ ui.blocks(blocks) }}</div><aside class="sidebar">{{ ui.contactBox() }}</aside></div>
+    <div class="with-sidebar right"><div class="prose">{{ intro }}{{ ui.blocks(blocks, false, entry.heading and not isHub) }}{{ stamp }}</div><aside class="sidebar">{{ ui.contactBox() }}</aside></div>
   </div></section>
 {% endif %}
 {% endswitch %}

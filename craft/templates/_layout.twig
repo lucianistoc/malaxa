@@ -1,4 +1,4 @@
-{#- Site layout: header + navigation (built from the "Pagini" structure), off-canvas menu, footer. -#}
+{#- Site layout: header + navigation (built from the "Pagini" structure and the Spital / Ambulatoriu sections), off-canvas menu, footer. -#}
 {% from '_partials/icons.twig' import icon %}
 {% import '_partials/ui.twig' as ui %}
 {%- set s = siteSettings -%}
@@ -12,8 +12,10 @@
 {%- set logoImg = s.logoIcon.one() -%}
 {%- set badgeImg = s.badgeImage.one() -%}
 
-{#- Navigation: top-level pages, their children, and generated submenus for the specialties/outpatient index pages. -#}
-{%- set specialties = craft.entries.section('specialties').all() -%}
+{#- Navigation: top-level pages and their children; the Spital and Ambulatoriu index pages get generated submenus
+    (hospital structures grouped by category, outpatient cabinets). A child page with a "Link" points there. -#}
+{%- set hospitalUnits = craft.entries.section('hospital').all() -%}
+{%- set cabinets = craft.entries.section('ambulatory').all() -%}
 {%- set topPages = craft.entries.section('pages').level(1).hideFromNav('not 1').all() -%}
 {%- set currentTop = entry is defined and entry.section.handle == 'pages' ? (entry.level == 1 ? entry : entry.parent) : null -%}
 {%- set activeHandle = entry.section.handle ?? '' -%}
@@ -21,21 +23,25 @@
 {%- for p in topPages -%}
   {%- set sub = [] -%}
   {%- switch p.type.handle -%}
-    {%- case 'specialtiesIndex' -%}
-      {%- set sub = specialties|filter(x => not x.ambulatoryOnly)|map(x => {title: x.title, url: x.url}) -%}
+    {%- case 'hospitalIndex' -%}
+      {%- for opt in craft.app.fields.getFieldByHandle('unitCategory').options -%}
+        {%- set group = hospitalUnits|filter(x => x.unitCategory.value == opt.value) -%}
+        {%- if group|length %}{% set sub = sub|merge([{label: opt.label}])|merge(group|map(x => {title: x.title, url: x.url})) %}{% endif -%}
+      {%- endfor -%}
     {%- case 'ambulatoryIndex' -%}
-      {%- set sub = specialties|filter(x => x.hasAmbulatory)|map(x => {title: x.title, url: x.url ~ '#ambulatoriu'}) -%}
+      {%- set sub = cabinets|map(x => {title: x.title, url: x.url}) -%}
     {%- default -%}
       {%- set kids = p.children.hideFromNav('not 1').all() -%}
       {%- if kids|length and p.heading -%}{%- set sub = sub|merge([{title: p.heading, url: p.url}]) -%}{%- endif -%}
       {%- set group = '' -%}
       {%- for k in kids -%}
         {%- if k.navGroup and k.navGroup != group %}{% set group = k.navGroup %}{% set sub = sub|merge([{label: group}]) %}{% endif -%}
-        {%- set sub = sub|merge([{title: k.title, url: k.url}]) -%}
+        {%- set sub = sub|merge([{title: k.title, url: k.linkUrl ? ui.href(k.linkUrl)|trim : k.url}]) -%}
       {%- endfor -%}
   {%- endswitch -%}
   {%- set active = (currentTop and currentTop.id == p.id)
-      or (p.type.handle == 'specialtiesIndex' and activeHandle == 'specialties')
+      or (p.type.handle == 'hospitalIndex' and activeHandle == 'hospital')
+      or (p.type.handle == 'ambulatoryIndex' and activeHandle == 'ambulatory')
       or (p.type.handle == 'doctorsIndex' and activeHandle == 'doctors')
       or (p.slug == 'despre-noi' and activeHandle == 'news') -%}
   {%- set navItems = navItems|merge([{title: p.title, url: p.url, sub: sub, active: active, type: p.type.handle}]) -%}
@@ -54,7 +60,7 @@
 <link rel="canonical" href="{{ craft.app.request.absoluteUrl|split('?')|first }}">
 <link rel="icon" href="{{ logoImg ? logoImg.url : '' }}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ url('static/css/style.css') }}">
 {# Hide native scrollbars before first paint (site-rendered bars in main.js); without JS the native ones stay. #}
 <script>document.documentElement.classList.add("site-scrollbars")</script>
@@ -71,7 +77,7 @@
     <nav class="nav" aria-label="Meniu principal"><ul>
       {%- for n in navItems -%}
         {%- if n.sub|length -%}
-          <li class="has-sub{{ n.active ? ' active' }}"><a href="{{ n.url }}">{{ n.title }} {{ icon('caret', 'caret') }}</a><ul class="submenu{{ n.sub|length > 12 ? ' cols' }}">
+          <li class="has-sub{{ n.active ? ' active' }}"><a href="{{ n.url }}">{{ n.title }} {{ icon('caret', 'caret') }}</a><ul class="submenu{{ n.type in ['hospitalIndex', 'ambulatoryIndex'] ? ' cols' }}">
           {%- for i in n.sub %}{% if i.label is defined %}<li class="label">{{ i.label }}</li>{% else %}<li><a href="{{ i.url }}">{{ i.title }}</a></li>{% endif %}{% endfor -%}
           </ul></li>
         {%- else -%}
@@ -99,7 +105,7 @@
   {{ logo }}
   <nav class="mobile-nav" aria-label="Meniu mobil"><ul>
     {%- for n in navItems -%}
-      {%- if n.sub|length and n.type != 'ambulatoryIndex' -%}
+      {%- if n.sub|length -%}
         <li><details><summary>{{ n.title }} {{ icon('caret', 'caret') }}</summary><ul><li><a href="{{ n.url }}">Vezi tot</a></li>
         {%- for i in n.sub %}{% if i.url is defined %}<li><a href="{{ i.url }}">{{ i.title }}</a></li>{% endif %}{% endfor -%}
         </ul></details></li>
@@ -142,7 +148,7 @@
     <div>
       <h4>{{ s.legalName }}</h4>
       <ul>
-        {% for slug in ['despre-noi', 'specialitati-medicale', 'ambulatoriu', 'team', 'cariere', 'contact'] %}
+        {% for slug in ['despre-noi', 'conducere', 'spital', 'ambulatoriu', 'team', 'cariere', 'contact'] %}
           {% set p = craft.entries.section('pages').slug(slug).one() %}
           {% if p %}<li><a href="{{ p.url }}">{{ slug == 'despre-noi' ? (p.heading ?: p.title) : p.title }}</a></li>{% endif %}
         {% endfor %}
@@ -151,9 +157,11 @@
     <div>
       <h4>Informații utile</h4>
       <ul>
-        {% for slug in ['internare-si-externare', 'servicii-medicale-cu-plata', 'reguli-si-program-de-vizita', 'interes-public', 'intrebari-frecvente', 'declaratie-privind-accesibilitatea'] %}
+        {#- Short labels for the footer; any other page shows its title. -#}
+        {% set short = {'contracte-casmb-cnas': 'Contracte CASMB / CNAS'} %}
+        {% for slug in ['tipuri-de-prezentare', 'servicii-medicale-cu-plata', 'contracte-casmb-cnas', 'reguli-si-program-de-vizita', 'interes-public', 'intrebari-frecvente', 'declaratie-privind-accesibilitatea'] %}
           {% set p = craft.entries.section('pages').slug(slug).one() %}
-          {% if p %}<li><a href="{{ p.url }}">{{ p.title }}</a></li>{% endif %}
+          {% if p %}<li><a href="{{ p.url }}">{{ short[slug] ?? p.title }}</a></li>{% endif %}
         {% endfor %}
       </ul>
     </div>

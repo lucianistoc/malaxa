@@ -15,8 +15,9 @@
       <h1>{{ s.heroTitle }}</h1>
       <p>{{ s.heroSubtitle }}</p>
       <div class="hero-actions">
-        <a class="btn btn-accent" href="{{ book }}"{{ tgt|raw }}>Programări online</a>
-        <a class="btn btn-outline" style="color:#fff" href="{{ ui.pageUrl('specialitati-medicale') }}">Specialități medicale</a>
+        <a class="btn btn-accent" href="{{ ui.pageUrl('spital') }}">Spital</a>
+        <a class="btn btn-accent" href="{{ ui.pageUrl('ambulatoriu') }}">Ambulatoriu</a>
+        <a class="btn btn-outline" style="color:#fff" href="{{ book }}"{{ tgt|raw }}>Programări online</a>
       </div>
     </div>
     <div class="hero-contact">
@@ -26,19 +27,33 @@
         <li>{{ icon('phone') }}<span>Centrală: <a href="tel:{{ ui.tel(s.phone) }}">{{ s.phone }}</a></span></li>
         {% if s.phoneAppointments %}<li>{{ icon('calendar') }}<span>Programări: <a href="tel:{{ ui.tel(s.phoneAppointments) }}">{{ s.phoneAppointments }}</a></span></li>{% endif %}
         <li>{{ icon('mail') }}<a href="mailto:{{ s.email }}">{{ s.email }}</a></li>
-        <li>{{ icon('ambulance') }}<span>Gardă non-stop, 24/24 h</span></li>
+        <li>{{ icon('ambulance') }}<span>Camera de gardă: non-stop, 24/24 h</span></li>
       </ul>
       <a class="btn btn-white" href="{{ ui.pageUrl('contact') }}">Contact {{ icon('arrow') }}</a>
     </div>
   </div>
 </section>
 <div class="container"><div class="quick-links">
-  {%- for q in [['Informații pacienți', 'internare-si-externare', 'clipboard'], ['Program ambulatoriu', 'ambulatoriu', 'calendar'], ['Program de vizită', 'reguli-si-program-de-vizita', 'clock'], ['Anunțuri și concursuri', 'cariere', 'document'], ['Tarife', 'servicii-medicale-cu-plata', 'money']] -%}
+  {%- for q in [['Tipuri de prezentare', 'tipuri-de-prezentare', 'clipboard'], ['Spital', 'spital', 'hospital'], ['Ambulatoriu', 'ambulatoriu', 'stethoscope'], ['Program de vizită', 'reguli-si-program-de-vizita', 'clock'], ['Plata serviciilor', 'servicii-medicale-cu-plata', 'money']] -%}
     <a href="{{ ui.pageUrl(q[1]) }}">{{ icon(q[2]) }}<span>{{ q[0] }}</span></a>
   {%- endfor -%}
 </div></div>
 
 <section class="section">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Unde mergeți</span><h2>Spital sau ambulatoriu?</h2>
+      <p>Internarea (continuă sau de zi) și camera de gardă țin de spital. Consultațiile fără internare se fac în cabinetele din ambulatoriu.</p></div>
+    <div class="grid g2 split-choice">
+      <a class="choice" href="{{ ui.pageUrl('spital') }}"><span class="choice-icon">{{ icon('hospital') }}</span><span><small>Internare și servicii spitalicești</small><strong>Spital</strong>
+        <em>Secții și compartimente cu paturi, camera de gardă, laboratoare și servicii paraclinice.</em></span><span class="choice-go">{{ icon('arrow') }}</span></a>
+      <a class="choice" href="{{ ui.pageUrl('ambulatoriu') }}"><span class="choice-icon">{{ icon('stethoscope') }}</span><span><small>Consultații fără internare</small><strong>Ambulatoriu</strong>
+        <em>Cabinete de specialitate, recoltare analize, radiologie și imagistică.</em></span><span class="choice-go">{{ icon('arrow') }}</span></a>
+    </div>
+    <div class="center mt-40"><a class="btn btn-primary" href="{{ ui.pageUrl('tipuri-de-prezentare') }}">Tipuri de prezentare: gardă, internare de zi, internare continuă, ambulatoriu</a></div>
+  </div>
+</section>
+
+<section class="section bg-soft">
   <div class="container split">
     <div class="media">{% if img %}<img src="{{ img.url }}" alt="Sediul {{ s.legalName }}">{% else %}{{ icon('hospital') }}{% endif %}<div class="media-badge"><strong>{{ s.founded }}</strong>anul înființării</div></div>
     <div>
@@ -56,17 +71,19 @@
 
 <section class="section-sm bg-primary"><div class="container stats">{% for st in s.stats %}{{ ui.stat(st.value, st.label) }}{% endfor %}</div></section>
 
-<section class="section bg-soft">
+<section class="section">
   <div class="container">
-    <div class="section-head"><span class="eyebrow">Specialități medicale</span><h2>Secții, compartimente și laboratoare</h2>
-      <p>Secții clinice cu paturi, servicii paraclinice și ambulatoriu de specialitate, care lucrează împreună pentru diagnostic și tratament.</p></div>
-    <div class="grid g4">{% for sp in craft.entries.section('specialties').ambulatoryOnly('not 1').all() %}{{ ui.specCard(sp) }}{% endfor %}</div>
+    <div class="section-head"><span class="eyebrow">Spital</span><h2>Secții și compartimente clinice</h2>
+      <p>Spitalizare continuă și de zi, în secții și compartimente clinice universitare.</p></div>
+    <div class="grid g4">{% for u in craft.entries.section('hospital').unitCategory('clinic').all() %}{{ ui.unitCard(u) }}{% endfor %}</div>
+    <div class="center mt-40"><a class="btn btn-primary" href="{{ ui.pageUrl('spital') }}">Toate structurile spitalului</a> <a class="btn btn-outline" style="color:var(--primary)" href="{{ ui.pageUrl('ambulatoriu') }}">Cabinetele din ambulatoriu</a></div>
   </div>
 </section>
 
 <section class="section"><div class="container"><div class="cta-band">
-  <div><h2>Servicii decontate prin CASMB</h2><p>Consultații, analize și investigații gratuite pentru asigurați, pe baza biletului de trimitere.</p></div>
-  <a class="btn btn-white" href="{{ ui.pageUrl('servicii-decontate-prin-cas') }}">Mai multe detalii {{ icon('arrow') }}</a>
+  <div><h2>Servicii decontate prin CASMB</h2><p>Consultații, analize și investigații decontate pentru asigurați, pe baza biletului de trimitere.</p></div>
+  <div class="hero-actions" style="margin:0"><a class="btn btn-white" href="{{ ui.pageUrl('servicii-decontate-prin-cas') }}">Mai multe detalii {{ icon('arrow') }}</a>
+  <a class="btn btn-white" href="{{ ui.pageUrl('contracte-casmb-cnas') }}">Contracte CASMB / CNAS {{ icon('arrow') }}</a></div>
 </div></div></section>
 
 <section class="section bg-soft">
@@ -99,7 +116,7 @@
   <div class="container">
     <div class="section-head"><span class="eyebrow">Profesionalism și dăruire</span><h2>Cunoaște-ne echipa</h2>
       <p>Medici cu experiență, care lucrează împreună pentru un singur lucru: binele tău.</p></div>
-    {%- set featured = craft.entries.section('doctors').role(['Șef*', 'Coordonator*']).limit(8).all() -%}
+    {%- set featured = craft.entries.section('doctors').role(['Șef*', 'Coordonator*']).all()|byName|slice(0, 8) -%}
     <div class="grid g4">{% for d in featured %}{{ ui.doctorCard(d, true) }}{% endfor %}</div>
     <div class="center mt-40"><a class="btn btn-primary" href="{{ ui.pageUrl('team') }}">Toți medicii</a></div>
   </div>
