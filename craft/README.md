@@ -36,7 +36,7 @@ Edit `.env` with your database credentials. The defaults expect a PostgreSQL dat
 `uploads` volume, the global settings and the CKEditor plugin are created automatically:
 
 ```bash
-php craft install --email=you@example.com --username=admin --site-name="Spitalul Clinic Nicolae Malaxa" --site-url='$PRIMARY_SITE_URL' --language=ro
+php craft install --email=you@example.com --username=admin --site-name="Spitalul Clinic „Nicolae Malaxa”" --site-url='$PRIMARY_SITE_URL' --language=ro
 ```
 
 Register the files in `uploads/` as assets, then import the hospital's content from `../site.config.json` and
